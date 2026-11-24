@@ -21,6 +21,12 @@ T, P, RU, PL = "travel_trips", "travel_packages", "travel_runs", "travel_plans"
 res = json.load(open(res_path))
 
 
+try:
+    VERS = json.load(open(os.path.join(dbdir, "versions.json")))
+except Exception:
+    VERS = {}
+
+
 def load_existing(coll):
     out = {}
     for f in glob.glob(os.path.join(dbdir, coll, "*.json")):
@@ -28,7 +34,7 @@ def load_existing(coll):
         doc_id = os.path.splitext(os.path.basename(f))[0]
         ver = d.get("version") if isinstance(d, dict) else None
         body = d.get("data") if isinstance(d, dict) and isinstance(d.get("data"), dict) else d
-        out[doc_id] = (body, ver)
+        out[doc_id] = (body, ver or VERS.get(coll + "/" + doc_id))
     return out
 
 
