@@ -2,8 +2,8 @@
  "_note": "Rough per-person estimates in EUR for summer 2027, used when the bot cannot look a price up. Edit freely; the hub settings can override perDay values. Train prices are standard reserved seats (Japan: Shinkansen Nozomi/Hikari, bought as single tickets, usually cheaper than a 7-day JR Pass for Tokyo-Kyoto-Osaka routes).",
  "countries": {
   "Japan": {
-   "foodPerDay": 35,
-   "activitiesPerDay": 15,
+   "foodPerDay": 30,
+   "activitiesPerDay": 12,
    "localTransportPerDay": 8,
    "airportTransfer": 18,
    "minRating": 3.9
@@ -93,7 +93,10 @@
   "Tainan>Kaohsiung": 5,
   "Ninh Binh>Ha Long Bay": 25,
   "Ha Long Bay>Hoi An": 75,
-  "Chiang Mai>Koh Samui": 80
+  "Chiang Mai>Koh Samui": 80,
+  "Seoul>Gyeongju": 35,
+  "Gyeongju>Busan": 10,
+  "Chiang Rai>Bangkok": 45
  },
  "unknownLegEstimate": 60,
  "bags": {
@@ -120,5 +123,11 @@
    "British Airways",
    "Air France"
   ]
+ },
+ "comfort": {
+  "_note": "Effective flight price = price + eurPerHour for every hour above hoursFree per direction; flights over maxHours are skipped. Keeps cheap but exhausting itineraries from winning.",
+  "hoursFree": 18,
+  "eurPerHour": 10,
+  "maxHours": 30
  }
 }

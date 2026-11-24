@@ -1,0 +1,411 @@
+<title>Agent Hub</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@500;700&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="office.css" id="hubCss">
+<link rel="stylesheet" href="flipdeck.css" id="fdCss" media="not all">
+<link rel="stylesheet" href="travel.css" id="tvCss" media="not all">
+
+<div class="wrap" id="hubView">
+  <header>
+    <div>
+      <p class="eyebrow">Your agents, one building</p>
+      <h1>Agent Hub</h1>
+    </div>
+    <div class="clock" aria-live="off"><b id="clk">--:--</b><span id="shift">local time</span></div>
+  </header>
+
+  <div class="grid">
+    <section class="stage" aria-label="Office building">
+      <div class="tower" id="tower">
+        <canvas id="cv" width="400" height="360" role="img" aria-label="Pixel-art cutaway of a five-storey office building with agents walking on their floors, including the Travel Desk on the top floor"></canvas>
+        <div class="overlay" id="ov"></div>
+      </div>
+      <div class="controls">
+        <div class="toggles">
+          <button class="btn" id="tagsBtn" aria-pressed="true" type="button">Name tags</button>
+          <button class="btn" id="pauseBtn" aria-pressed="false" type="button">Pause</button>
+        </div>
+      </div>
+    </section>
+
+    <aside>
+      <div class="board">
+        <h2>Directory</h2>
+        <ol class="dir" id="dir"></ol>
+      </div>
+      <div class="board detail" id="detail"></div>
+    </aside>
+  </div>
+
+</div>
+
+<div id="fdView" style="display:none">
+<a href="#" id="fdBack" title="Back to the building (Esc). Keys: 1-5 deal tabs, / agent filter" style="position:fixed;left:12px;bottom:12px;z-index:60;padding:8px 12px;border-radius:999px;background:#141413;color:#faf9f5;font:600 13px/1 system-ui,sans-serif;text-decoration:none;box-shadow:0 2px 8px rgba(0,0,0,.25)">&larr; Agent Hub</a>
+
+<header class="topbar">
+  <div class="wrap">
+    <div class="brand">
+      <div class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 30 30"><rect x="1" y="1" width="28" height="28" fill="none" stroke="#2a3a4b"/><path d="M6 22 L12 14 L17 18 L24 7" fill="none" stroke="#ffb34a" stroke-width="2"/><circle cx="24" cy="7" r="2.4" fill="#62d2e8"/></svg>
+      </div>
+      <div>
+        <h1>Flipdeck</h1>
+        <small>Resale intelligence · Marktplaats</small>
+      </div>
+    </div>
+    <div class="sysline" aria-live="polite">
+      <span><span class="led" id="dbLed"></span><span id="dbState">Connecting</span></span>
+      <span>Agents armed <b id="armedCount">–</b></span>
+      <span>Next sweep <b id="nextSweep">–</b></span>
+      <span>Pickup zone <b id="pickupZone">–</b></span>
+      <span title="Esc: back to the building · 1-5: Open, Watching, Bought, Sold, Dismissed · /: agent filter">Keys <b>Esc &middot; 1&ndash;5 &middot; /</b></span>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="readouts" aria-label="Summary">
+    <div class="readout hot"><div class="k">Open deals</div><div class="v" id="rOpen">0</div><div class="s" id="rOpenS">Waiting for first sweep</div></div>
+    <div class="readout good"><div class="k">Potential profit</div><div class="v" id="rProfit">€ 0</div><div class="s">Open deals, after fees &amp; shipping</div></div>
+    <div class="readout"><div class="k">Best discount</div><div class="v" id="rBest">–</div><div class="s" id="rBestS">vs. estimated market price</div></div>
+    <div class="readout"><div class="k">Scanned · 24 h</div><div class="v" id="rScanned">0</div><div class="s" id="rScannedS">listings checked</div></div>
+  </section>
+
+  <section class="section" aria-labelledby="hAgents">
+    <div class="shead">
+      <h2 id="hAgents">Agent bay</h2>
+      <p>Each agent searches Marktplaats during a sweep and flags listings at least its threshold below market.</p>
+    </div>
+    <div class="bay" id="bay"></div>
+  </section>
+
+  <section class="section" aria-labelledby="hDeals">
+    <div class="shead">
+      <h2 id="hDeals">Deal feed</h2>
+      <div class="tools">
+        <div class="seg" id="statusSeg" role="group" aria-label="Filter by status">
+          <button type="button" data-v="open" aria-pressed="true">Open</button>
+          <button type="button" data-v="watch" aria-pressed="false">Watching</button>
+          <button type="button" data-v="bought" aria-pressed="false">Bought</button>
+          <button type="button" data-v="sold" aria-pressed="false">Sold</button>
+          <button type="button" data-v="dismissed" aria-pressed="false">Dismissed</button>
+        </div>
+        <select class="sel" id="agentFilter" aria-label="Filter by agent"><option value="all">All agents</option></select>
+        <select class="sel" id="sortSel" aria-label="Sort deals">
+          <option value="found">Newest</option>
+          <option value="discount">Biggest discount</option>
+          <option value="profit">Highest profit</option>
+        </select>
+      </div>
+    </div>
+    <div class="feed" id="feed"></div>
+  </section>
+
+  <section class="section" aria-labelledby="hLedger">
+    <div class="shead">
+      <h2 id="hLedger">Profit ledger</h2>
+      <p>What you bought, what it cost all-in, and what you made.</p>
+      <div class="tools"><button class="btn sm" type="button" data-act="buy-manual">Log a purchase</button></div>
+    </div>
+    <div id="ledgerWrap"></div>
+    <div class="shead track-head">
+      <h3 id="hTrack">Agent track record</h3>
+      <p>How often each agent's deals were worth buying, and how its market prices compare with yours.</p>
+    </div>
+    <div id="trackWrap"></div>
+  </section>
+
+  <section class="section" aria-labelledby="hCars">
+    <div class="shead">
+      <h2 id="hCars">Car scout</h2>
+      <p>Cheap, reliable first cars near home. Runs only when you press Scan for cars, never on its own.</p>
+      <div class="tools">
+        <button class="btn primary sm" type="button" id="carScanBtn" disabled>Scan for cars</button>
+        <div class="seg" id="carSeg" role="group" aria-label="Filter cars">
+          <button type="button" data-v="new" aria-pressed="true">Shortlist</button>
+          <button type="button" data-v="interested" aria-pressed="false">Interested</button>
+          <button type="button" data-v="testdrive" aria-pressed="false">Test drive</button>
+          <button type="button" data-v="passed" aria-pressed="false">Passed</button>
+        </div>
+        <select class="sel" id="carSort" aria-label="Sort cars">
+          <option value="score">Best match</option>
+          <option value="price">Cheapest</option>
+          <option value="dist">Closest</option>
+          <option value="found">Newest</option>
+        </select>
+      </div>
+    </div>
+    <div id="carPanel"></div>
+    <div class="feed" id="carFeed"></div>
+  </section>
+
+  <section class="section" aria-labelledby="hLog">
+    <div class="shead">
+      <h2 id="hLog">Sweep log</h2>
+      <p>Each agent's latest run.</p>
+    </div>
+    <div id="logWrap"></div>
+  </section>
+</main>
+
+<div class="scrim" id="scrim" hidden></div>
+<aside class="drawer" id="drawer" hidden aria-labelledby="drawerTitle" role="dialog">
+  <h2 id="drawerTitle">Configure agent</h2>
+  <form id="agentForm" novalidate>
+    <div style="display:flex;flex-direction:column;gap:16px">
+      <div class="row2">
+        <div class="field"><label for="fCode">Codename</label><input type="text" id="fCode" maxlength="14" placeholder="BRICK"></div>
+        <div class="field"><label for="fName">Name</label><input type="text" id="fName" maxlength="40" placeholder="LEGO sets"></div>
+      </div>
+      <div class="field"><label for="fDesc">What it hunts</label><input type="text" id="fDesc" maxlength="90" placeholder="Sealed and complete sets, retired themes"></div>
+      <div class="field">
+        <label for="fQueries">Search terms</label>
+        <textarea id="fQueries" spellcheck="false" placeholder="lego star wars&#10;lego technic sealed"></textarea>
+        <span class="hint">One Marktplaats search per line. Fewer, sharper terms make faster sweeps.</span>
+      </div>
+      <div class="field">
+        <label for="fDisc">Minimum discount vs. market</label>
+        <div class="range-row"><input type="range" id="fDisc" min="10" max="60" step="5" value="30"><output id="fDiscOut" for="fDisc">30%</output></div>
+      </div>
+      <div class="row2">
+        <div class="field"><label for="fMax">Max buy price (€)</label><input type="number" id="fMax" min="1" step="1" inputmode="numeric"></div>
+        <div class="field"><label for="fProfit">Min profit (€)</label><input type="number" id="fProfit" min="0" step="1" inputmode="numeric"></div>
+      </div>
+      <div class="field">
+        <label for="fInterval">Run every</label>
+        <select id="fInterval">
+          <option value="1">Every hour (fast)</option>
+          <option value="2">2 hours</option>
+          <option value="4">4 hours</option>
+          <option value="6">6 hours</option>
+          <option value="12">12 hours</option>
+          <option value="24">Once a day</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="fNotes">Instructions for the agent</label>
+        <textarea id="fNotes" placeholder="e.g. Skip bulk lots under €20. Prefer sets with box. Watch for fakes (Lepin)."></textarea>
+      </div>
+      <div class="field">
+        <label>Signal colour</label>
+        <div class="swatches" id="swatches"></div>
+      </div>
+      <div class="formerr" id="formErr" hidden></div>
+    </div>
+  </form>
+  <div class="dfoot">
+    <button class="btn primary" type="submit" form="agentForm" id="saveBtn">Save agent</button>
+    <button class="btn" type="button" id="cancelBtn">Cancel</button>
+    <span class="spacer"></span>
+    <button class="btn danger" type="button" id="deleteBtn">Delete</button>
+  </div>
+</aside>
+
+<div class="scrim" id="dlgScrim" hidden></div>
+<section class="dlg" id="dismissDlg" hidden role="dialog" aria-labelledby="dlgTitle">
+  <h2 id="dlgTitle">Why pass on this one?</h2>
+  <div class="ditem" id="dlgItem"></div>
+  <div class="field">
+    <label>Reasons</label>
+    <div class="reasons" id="dlgReasons"></div>
+  </div>
+  <div class="field">
+    <label for="dlgPrice">Realistic resale price (€), if you know it</label>
+    <input type="number" id="dlgPrice" min="0" step="1" inputmode="numeric" placeholder="e.g. 160">
+  </div>
+  <div class="field">
+    <label for="dlgNote">What should the agent learn from this?</label>
+    <textarea id="dlgNote" placeholder="e.g. Switch OLEDs barely sell above €160, asking prices are way too optimistic."></textarea>
+  </div>
+  <div class="formerr" id="dlgErr" hidden></div>
+  <div class="dlg-foot">
+    <button class="btn primary" type="button" id="dlgSave">Dismiss and log</button>
+    <button class="btn" type="button" id="dlgCancel">Cancel</button>
+  </div>
+</section>
+
+<div class="scrim" id="buyScrim" hidden></div>
+<section class="dlg" id="buyDlg" hidden role="dialog" aria-labelledby="buyTitle">
+  <h2 id="buyTitle">Log purchase</h2>
+  <div class="ditem" id="buyItem"></div>
+  <div id="buyManualFields" style="display:flex;flex-direction:column;gap:16px">
+    <div class="field"><label for="bName">Item</label><input type="text" id="bName" maxlength="120" placeholder="e.g. Skylanders Trap Team PS4"></div>
+    <div class="field"><label for="bUrl">Listing link (optional)</label><input type="text" id="bUrl" maxlength="300" placeholder="https://www.marktplaats.nl/..."></div>
+  </div>
+  <div class="row2">
+    <div class="field"><label for="bPrice">Buy price (€)</label><input type="number" id="bPrice" min="0" step="0.01" inputmode="decimal"></div>
+    <div class="field"><label for="bShip">Shipping / travel to get it (€)</label><input type="number" id="bShip" min="0" step="0.01" inputmode="decimal"></div>
+  </div>
+  <div class="field"><label for="bExtra">Other costs (€)</label><input type="number" id="bExtra" min="0" step="0.01" inputmode="decimal"><span class="hint">Cleaning, repairs, buyer-protection fee, parts.</span></div>
+  <div class="row2">
+    <div class="field"><label for="bSale">Expected sale price (€)</label><input type="number" id="bSale" min="0" step="0.01" inputmode="decimal"></div>
+    <div class="field"><label for="bSaleCost">Expected selling costs (€)</label><input type="number" id="bSaleCost" min="0" step="0.01" inputmode="decimal"><span class="hint">Shipping to the buyer, fees.</span></div>
+  </div>
+  <div class="est" id="buyEst"></div>
+  <div class="formerr" id="buyErr" hidden></div>
+  <div class="dlg-foot">
+    <button class="btn primary" type="button" id="buySave">Save purchase</button>
+    <button class="btn" type="button" id="buyCancel">Cancel</button>
+  </div>
+</section>
+
+<div class="scrim" id="soldScrim" hidden></div>
+<section class="dlg" id="soldDlg" hidden role="dialog" aria-labelledby="soldTitle">
+  <h2 id="soldTitle">Log sale</h2>
+  <div class="ditem" id="soldItem"></div>
+  <div class="row2">
+    <div class="field"><label for="sPrice">Sold for (€)</label><input type="number" id="sPrice" min="0" step="0.01" inputmode="decimal"></div>
+    <div class="field"><label for="sCost">Selling costs (€)</label><input type="number" id="sCost" min="0" step="0.01" inputmode="decimal"><span class="hint">Shipping to the buyer, fees.</span></div>
+  </div>
+  <div class="est" id="soldEst"></div>
+  <div class="formerr" id="soldErr" hidden></div>
+  <div class="dlg-foot">
+    <button class="btn primary" type="button" id="soldSave">Save sale</button>
+    <button class="btn" type="button" id="soldCancel">Cancel</button>
+  </div>
+</section>
+
+<div class="scrim" id="askScrim" hidden></div>
+<aside class="drawer ask" id="askDrawer" hidden role="dialog" aria-labelledby="askTitle">
+  <div class="askhead"><h2 id="askTitle">Authenticity check</h2><button class="btn sm" type="button" id="askClose">Close</button></div>
+  <div class="ditem" id="askItem"></div>
+  <div class="asklog" id="askLog" aria-live="polite"></div>
+  <div class="askstarters" id="askStarters"></div>
+  <div class="askthumbs" id="askThumbs"></div>
+  <div class="askform">
+    <textarea id="askInput" rows="3" placeholder="Ask about this item. Paste or drop listing screenshots to have Claude check them."></textarea>
+    <div class="askbar">
+      <label class="btn sm" id="askPhotoBtn" hidden>Add photos<input type="file" id="askFile" accept="image/*" multiple hidden></label>
+      <span class="spacer"></span>
+      <button class="btn sm" type="button" id="askClear">New chat</button>
+      <button class="btn sm" type="button" id="askStop" hidden>Stop</button>
+      <button class="btn primary sm" type="button" id="askSend">Send</button>
+    </div>
+    <div class="formerr" id="askErr" hidden></div>
+  </div>
+</aside>
+
+<div class="toast" id="toast" hidden></div>
+</div>
+
+<div id="tvView" style="display:none">
+<a href="#" id="tvBack" title="Back to the building (Esc)" style="position:fixed;left:12px;bottom:12px;z-index:60;padding:8px 12px;border-radius:999px;background:#141413;color:#faf9f5;font:600 13px/1 system-ui,sans-serif;text-decoration:none;box-shadow:0 2px 8px rgba(0,0,0,.25)">&larr; Agent Hub</a>
+
+<header class="topbar">
+  <div class="wrap">
+    <div class="brand">
+      <div class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 30 30"><rect x="1" y="1" width="28" height="28" fill="none" stroke="#2a3a4b"/><path d="M5 20 C 11 18, 16 12, 25 7" fill="none" stroke="#2a3a4b" stroke-width="1" stroke-dasharray="2 2"/><path d="M19 9 L25 7 L23 13 Z" fill="#ffb34a"/><circle cx="6" cy="20" r="2.4" fill="#62d2e8"/></svg>
+      </div>
+      <div>
+        <h1>Travel Desk</h1>
+        <small>Trip planner · Japan &amp; South-East Asia</small>
+      </div>
+    </div>
+    <div class="sysline" aria-live="polite">
+      <span><span class="led" id="tvLed"></span><span id="tvDbState">Connecting</span></span>
+      <span>Window <b id="tvWindow">–</b></span>
+      <span>Last search <b id="tvLast">–</b></span>
+      <span>Next search <b id="tvNext">–</b></span>
+    </div>
+    <div class="tools" style="display:flex;gap:8px">
+      <button class="btn sm" type="button" id="tvSettingsBtn" disabled>Settings</button>
+      <button class="btn primary sm" type="button" id="tvRunBtn" disabled>Search now</button>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="readouts" aria-label="Summary">
+    <div class="readout hot"><div class="k">Best trip · per person</div><div class="v" id="tvBest">–</div><div class="s" id="tvBestS">Waiting for the first search</div></div>
+    <div class="readout good"><div class="k">Budget · per person</div><div class="v" id="tvBudget">–</div><div class="s" id="tvBudgetS">flights, stays, trains, food, activities</div></div>
+    <div class="readout"><div class="k">Cheapest flight</div><div class="v" id="tvFlight">–</div><div class="s" id="tvFlightS">return, per person</div></div>
+    <div class="readout"><div class="k">Routes tested</div><div class="v" id="tvRoutes">0</div><div class="s" id="tvRoutesS">picked by Atlas from your wishes</div></div>
+  </section>
+
+  <section class="section" aria-labelledby="tvhTrips">
+    <div class="shead">
+      <h2 id="tvhTrips">Trip feed</h2>
+      <p>Each route priced all-in per person for the cheapest dates that fit. Cheapest first.</p>
+    </div>
+    <div class="feed" id="tvFeed"></div>
+  </section>
+
+  <section class="section" aria-labelledby="tvhPkg">
+    <div class="shead">
+      <h2 id="tvhPkg">Package tours</h2>
+      <p>Tour operators' round trips in your window. All-in adds food and activities so you can compare.</p>
+    </div>
+    <div id="tvPkgWrap"></div>
+  </section>
+
+  <section class="section" aria-labelledby="tvhRoutes">
+    <div class="shead">
+      <h2 id="tvhRoutes">Routes Atlas is testing</h2>
+      <p>Chosen from your interests and pace. Change those in Settings and Atlas re-plans at the next search.</p>
+    </div>
+    <div class="bay" id="tvBay"></div>
+  </section>
+
+  <section class="section" aria-labelledby="tvhLog">
+    <div class="shead">
+      <h2 id="tvhLog">Search log</h2>
+      <p>The latest daily searches.</p>
+    </div>
+    <div id="tvLogWrap"></div>
+  </section>
+</main>
+
+<div class="scrim" id="tvScrim" hidden></div>
+<aside class="drawer" id="tvDrawer" hidden aria-labelledby="tvDrawerTitle" role="dialog">
+  <h2 id="tvDrawerTitle">Trip settings</h2>
+  <form id="tvForm" novalidate>
+    <div style="display:flex;flex-direction:column;gap:16px">
+      <div class="row2">
+        <div class="field"><label for="tvStart">Leave from</label><input type="date" id="tvStart"></div>
+        <div class="field"><label for="tvEnd">Home by</label><input type="date" id="tvEnd"></div>
+      </div>
+      <div class="row2">
+        <div class="field"><label for="tvMinDays">Minimum days</label><input type="number" id="tvMinDays" min="5" max="30" step="1" inputmode="numeric"></div>
+        <div class="field"><label for="tvPace">Pace</label>
+          <select id="tvPace"><option value="relaxed">Relaxed · fewer places</option><option value="relaxed-medium">Relaxed to medium</option><option value="medium">Medium</option><option value="fast">Fast · see a lot</option></select></div>
+      </div>
+      <div class="row2">
+        <div class="field"><label for="tvBMin">Budget from (€ p.p.)</label><input type="number" id="tvBMin" min="0" step="50" inputmode="numeric"></div>
+        <div class="field"><label for="tvBMax">Budget up to (€ p.p.)</label><input type="number" id="tvBMax" min="0" step="50" inputmode="numeric"></div>
+      </div>
+      <div class="field"><label>Interests</label><div class="tv-checks" id="tvInterests"></div></div>
+      <div class="field"><label>Destinations</label><div class="tv-checks" id="tvCountries"></div><span class="hint">Japan stays the priority; others are shown as plan B.</span></div>
+      <div class="field"><label>Departure airports</label><div class="tv-checks" id="tvAirports"></div></div>
+      <div class="field"><label>Package tours from</label><div class="tv-checks" id="tvPkgCountries"></div></div>
+      <div class="row2">
+        <div class="field"><label for="tvFood">Food per day in Japan (€)</label><input type="number" id="tvFood" min="0" step="5" inputmode="numeric"></div>
+        <div class="field"><label for="tvAct">Activities per day (€)</label><input type="number" id="tvAct" min="0" step="5" inputmode="numeric"></div>
+      </div>
+      <div class="field"><label for="tvHours">Comfortable flight time (hours, one way)</label><input type="number" id="tvHours" min="10" max="30" step="1" inputmode="numeric"><span class="hint">Longer trips still count, with €10 added per extra hour so a cheap but exhausting route doesn't win.</span></div>
+      <div class="field"><label for="tvWishes">Wishes for Atlas</label><textarea id="tvWishes" placeholder="e.g. one night in a ryokan, close to stations, no hostels with parties"></textarea></div>
+      <div class="formerr" id="tvFormErr" hidden></div>
+    </div>
+  </form>
+  <div class="dfoot">
+    <button class="btn primary" type="submit" form="tvForm" id="tvSaveBtn">Save settings</button>
+    <button class="btn" type="button" id="tvCancelBtn">Cancel</button>
+  </div>
+</aside>
+<div class="toast" id="tvToast" hidden></div>
+</div>
+
+<script>
+/* View router: #flipdeck (or #flipdeck/<section>) shows Flipdeck, #travel shows the Travel Desk (which reuses flipdeck.css plus travel.css); anything else shows the building. */
+(()=>{const hv=document.getElementById('hubView'),fv=document.getElementById('fdView'),tv=document.getElementById('tvView'),hc=document.getElementById('hubCss'),fc=document.getElementById('fdCss'),tc=document.getElementById('tvCss');
+const SEC={deals:'hDeals',agents:'hAgents',cars:'hCars',ledger:'hLedger',log:'hLog'};
+function show(){const m=location.hash.match(/^#flipdeck(?:\/(\w+))?$/),fd=!!m,tr=/^#travel(\/|$)/.test(location.hash),hub=!fd&&!tr;
+hv.style.display=hub?'':'none';fv.style.display=fd?'':'none';tv.style.display=tr?'':'none';hc.media=hub?'all':'not all';fc.media=hub?'not all':'all';tc.media=tr?'all':'not all';if(hub)window.dispatchEvent(new Event('resize'));window.scrollTo(0,0);
+const el=fd&&SEC[m[1]]&&document.getElementById(SEC[m[1]]);if(el){el.scrollIntoView();setTimeout(()=>el.scrollIntoView(),700);}}
+addEventListener('hashchange',show);show();})();
+</script>
+<script src="floors.js" charset="utf-8"></script>
+<script src="office.js" charset="utf-8"></script>
+<script src="flipdeck.js" charset="utf-8"></script>
+<script src="travel.js" charset="utf-8"></script>

@@ -1,9 +1,11 @@
 #!/usr/bin/env python3
 """Turn run.py results into hub database documents (one JSON file per document) and a push line.
 
-Usage: python3 save.py <results.json> <dbdir> <outdir> <nowIso>
-  dbdir  : where ArtifactData list wrote the current docs (<dbdir>/trips/<id>.json ...), may be empty
-  outdir : writes trips/<planId>.json, packages/<slug>.json, runs/<id>.json, summary.json
+Usage: python3 save.py <results.json> <dbdir> <outdir> <nowIso> [plans.json]
+  dbdir  : where ArtifactData list wrote the current docs (<dbdir>/travel_trips/<id>.json ...), may be empty
+  outdir : writes travel_trips/<planId>.json, travel_packages/<slug>.json, travel_plans/<id>.json,
+           travel_runs/<id>.json and summary.json
+Collections live in the Agent Hub database next to Flipdeck's; this script only ever writes travel_* collections.
 
 summary.json: {lastSummary, push (string or null), writes:[{op, collection, doc_id, file_path, if_version}]}
 """
@@ -14,6 +16,8 @@ import re
 import sys
 
 res_path, dbdir, outdir, now = sys.argv[1:5]
+plans_path = sys.argv[5] if len(sys.argv) > 5 else None
+T, P, RU, PL = "travel_trips", "travel_packages", "travel_runs", "travel_plans"
 res = json.load(open(res_path))
 
 
@@ -28,8 +32,9 @@ def load_existing(coll):
     return out
 
 
-trips_old = load_existing("trips")
-pk_old = load_existing("packages")
+trips_old = load_existing(T)
+pk_old = load_existing(P)
+pl_old = load_existing(PL)
 writes, pushes, summ = [], [], []
 
 
@@ -49,12 +54,12 @@ for p in res["plans"]:
     old = trips_old.get(p["planId"])
     prev = old[0] if old else {}
     if not b:
-        summ.append(f"{p['name']}: {'; '.join(p.get('notes') or ['geen prijs'])}")
+        summ.append(f"{p['name']}: {'; '.join(p.get('notes') or ['no price'])}")
         if prev:  # keep the last good result, add the note
             prev = dict(prev)
             prev["lastNote"] = "; ".join(p.get("notes") or [])
             prev["lastTriedAt"] = now
-            put("trips", p["planId"], prev, old)
+            put(T, p["planId"], prev, old)
         continue
     hist = (prev.get("history") or [])[-59:] + [{"at": now, "totalPP": b["totalPP"], "flightPP": b["flight"]["pricePP"]}]
     best_ever = prev.get("bestEver")
@@ -63,12 +68,12 @@ for p in res["plans"]:
         best_ever = {"totalPP": b["totalPP"], "at": now, "depart": b["depart"]}
     doc = {"planId": p["planId"], "name": p["name"], "country": p["country"], "updatedAt": now,
            "best": b, "history": hist, "bestEver": best_ever, "lastNote": None}
-    put("trips", p["planId"], doc, old)
+    put(T, p["planId"], doc, old)
     summ.append(f"{p['name']} €{b['totalPP']}")
     # push rule: within budget and new best (or first result), or a drop of >= 75 versus last run
     last = (prev.get("history") or [{}])[-1].get("totalPP")
     drop = last - b["totalPP"] if last else 0
-    within = b["verdict"] in ("binnen budget", "topdeal")
+    within = b["verdict"] in ("within budget", "top deal")
     if within and (improved or drop >= 75):
         pushes.append(f"{p['name']} {b['days']}d €{b['totalPP']} p.p. ({b['verdict']}) {b['depart'][5:]}→{b['return'][5:]} vlucht {b['flight']['origin']} {'/'.join(b['flight']['airlines'])}")
 
@@ -81,30 +86,49 @@ for r in res.get("packages", []):
         continue
     seen.add(doc_id)
     old = pk_old.get(doc_id)
-    doc = {**r, "source": "Journaway", "updatedAt": now}
+    doc = {**r, "source": r.get("source") or "Journaway", "updatedAt": now}
     prev_min = (old[0].get("minAllInPP") if old else None)
     allin = min((d["allInPP"] for d in r.get("departures", [])), default=None)
     doc["minAllInPP"] = allin
-    put("packages", doc_id, doc, old)
+    put(P, doc_id, doc, old)
     if allin and allin <= 2500 and (prev_min is None or allin < prev_min - 50):
         pushes.append(f"Pakket {r['title'][:60]} €{allin} p.p. incl. eten")
 
 # packages that no longer show up in the window: drop them so the hub stays current
 for doc_id, old in pk_old.items():
     if doc_id not in seen and res.get("packages"):
-        w = {"op": "delete", "collection": "packages", "doc_id": doc_id}
+        w = {"op": "delete", "collection": P, "doc_id": doc_id}
         if old[1]:
             w["if_version"] = old[1]
         writes.append(w)
 
+if plans_path:
+    new_ids = set()
+    for p in json.load(open(plans_path)):
+        new_ids.add(p["id"])
+        put(PL, p["id"], {**p, "updatedAt": now}, pl_old.get(p["id"]))
+    for doc_id, old in pl_old.items():
+        if doc_id not in new_ids:
+            w = {"op": "delete", "collection": PL, "doc_id": doc_id}
+            if old[1]:
+                w["if_version"] = old[1]
+            writes.append(w)
+        # results of a dropped plan go too
+    for doc_id, old in trips_old.items():
+        if doc_id not in new_ids:
+            w = {"op": "delete", "collection": T, "doc_id": doc_id}
+            if old[1]:
+                w["if_version"] = old[1]
+            writes.append(w)
+
 pk_best = min(((d["allInPP"], r["title"]) for r in res.get("packages", []) for d in r.get("departures", [])), default=None)
 if pk_best:
-    summ.append(f"pakket vanaf €{pk_best[0]}")
+    summ.append(f"package from €{pk_best[0]}")
 if res.get("googleBlocked"):
-    summ.append("Google blokkeerde een deel")
+    summ.append("Google blocked part of the search")
 line = " · ".join(summ)[:300]
 run_id = now.replace(":", "-")
-put("runs", run_id, {"at": now, "summary": line, "googleBlocked": res.get("googleBlocked"), "pushes": pushes}, None)
+put(RU, run_id, {"at": now, "summary": line, "googleBlocked": res.get("googleBlocked"), "pushes": pushes}, None)
 push = None
 if pushes:
     push = "VAKANTIE: " + pushes[0] + (f" (+{len(pushes) - 1} meer)" if len(pushes) > 1 else "")
