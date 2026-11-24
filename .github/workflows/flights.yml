@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
   push:
     branches: [claude/compassionate-hawking-lq51s3]
-    paths: [".github/workflows/flights.yml", "scan_flights.py", "search_config.json"]
+    paths: [".github/workflows/flights.yml", "scan_flights.py", "search_config.json", "gflights.js", "flights.py"]
 permissions:
   contents: write
 concurrency:

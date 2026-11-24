@@ -19,6 +19,18 @@ const { chromium } = require('playwright');
     try { await p.waitForSelector('[aria-label^="From "][aria-label*="euros"]', { timeout: 60000 }); }
     catch (e) { out.error = out.blocked ? 'Google rate limit (429)' : 'no prices on page'; }
     await p.waitForTimeout(1500);
+    if (!out.error) {
+      // Sort by price (default is "top flights") and open the full list, so cheap but less "convenient" options count too
+      try {
+        const price = p.locator('[aria-label^="Price, Not selected"]').first();
+        if (await price.count()) { await price.click(); await p.waitForTimeout(4000); out.sorted = 'price'; }
+        for (let i = 0; i < 3; i++) {
+          const more = p.locator('[aria-label*="more flights" i]').first();
+          if (!(await more.count())) break;
+          await more.click(); await p.waitForTimeout(3000);
+        }
+      } catch (e) { out.note = 'sort/expand failed: ' + String(e).slice(0, 80); }
+    }
     out.labels = await p.$$eval('[aria-label^="From "][aria-label*="euros"]', els => els.map(e => e.getAttribute('aria-label')));
     if (out.labels.length) { out.blocked = false; out.error = null; }
   } catch (e) {
