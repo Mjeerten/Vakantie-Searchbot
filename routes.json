@@ -2,20 +2,21 @@
  "_note": "Route ideas the planner picks from. nights are the base for a 'between relaxed and medium' pace; tags match the interests in the settings (city, culture, nature, beach). The planner scales nights to the pace and drops routes that do not fit the travel window.",
  "routes": [
   {
-   "id": "jp-kanazawa",
+   "id": "jp-golden",
    "country": "Japan",
-   "name": "Japan via Kanazawa",
+   "name": "Japan golden route: Tokyo, Kanazawa, Kyoto, Koyasan, Osaka",
    "flyIn": "TYO",
    "flyOut": "OSA",
    "priority": 1,
    "tags": [
     "city",
-    "culture"
+    "culture",
+    "nature"
    ],
    "stops": [
     {
      "city": "Tokyo",
-     "nights": 6,
+     "nights": 5,
      "flex": 0
     },
     {
@@ -29,19 +30,65 @@
      "flex": 0
     },
     {
+     "city": "Koyasan",
+     "nights": 1,
+     "flex": 0
+    },
+    {
      "city": "Osaka",
      "nights": 3,
      "flex": 0
     }
    ],
-   "why": "samurai and geisha districts, one of Japan's finest gardens, quieter than Kyoto. Bullet train from Tokyo."
+   "why": "The priority route: classic cities plus Kanazawa (samurai and geisha districts, Kenroku-en, seafood) and one night in a Koyasan temple (shukubo: monks' vegetarian dinner, morning prayers, Okunoin cemetery)."
   },
   {
-   "id": "jp-kanazawa-rev",
+   "id": "jp-golden-rev",
    "country": "Japan",
-   "name": "Japan via Kanazawa, reversed",
+   "name": "Japan golden route, reversed",
    "flyIn": "OSA",
    "flyOut": "TYO",
+   "priority": 1.5,
+   "tags": [
+    "city",
+    "culture",
+    "nature"
+   ],
+   "stops": [
+    {
+     "city": "Osaka",
+     "nights": 3,
+     "flex": 0
+    },
+    {
+     "city": "Koyasan",
+     "nights": 1,
+     "flex": 0
+    },
+    {
+     "city": "Kyoto",
+     "nights": 4,
+     "flex": 0
+    },
+    {
+     "city": "Kanazawa",
+     "nights": 2,
+     "flex": 0
+    },
+    {
+     "city": "Tokyo",
+     "nights": 5,
+     "flex": 0
+    }
+   ],
+   "why": "The golden route the other way round: fly into Osaka, end in Tokyo."
+  },
+  {
+   "id": "jp-kanazawa",
+   "country": "Japan",
+   "name": "Japan classic + Kanazawa",
+   "flyIn": "TYO",
+   "flyOut": "OSA",
    "priority": 2,
    "tags": [
     "city",
@@ -49,6 +96,41 @@
    ],
    "stops": [
     {
+     "city": "Tokyo",
+     "nights": 6,
+     "flex": 0
+    },
+    {
+     "city": "Kanazawa",
+     "nights": 2,
+     "flex": 0
+    },
+    {
+     "city": "Kyoto",
+     "nights": 4,
+     "flex": 0
+    },
+    {
+     "city": "Osaka",
+     "nights": 3,
+     "flex": 0
+    }
+   ],
+   "why": "Classic cities plus 2 nights Kanazawa: samurai and geisha districts, Kenroku-en garden, Omicho fish market; less touristy than Kyoto."
+  },
+  {
+   "id": "jp-kanazawa-rev",
+   "country": "Japan",
+   "name": "Japan classic + Kanazawa, reversed",
+   "flyIn": "OSA",
+   "flyOut": "TYO",
+   "priority": 2.5,
+   "tags": [
+    "city",
+    "culture"
+   ],
+   "stops": [
+    {
      "city": "Osaka",
      "nights": 3,
      "flex": 0
@@ -69,7 +151,79 @@
      "flex": 0
     }
    ],
-   "why": "Kanazawa route the other way round: in via Osaka (often cheaper), Hokuriku bullet train from Kanazawa to Tokyo, end in Tokyo."
+   "why": "Kanazawa route the other way round."
+  },
+  {
+   "id": "jp-koyasan",
+   "country": "Japan",
+   "name": "Japan classic + Koyasan",
+   "flyIn": "TYO",
+   "flyOut": "OSA",
+   "priority": 3,
+   "tags": [
+    "city",
+    "culture",
+    "nature"
+   ],
+   "stops": [
+    {
+     "city": "Tokyo",
+     "nights": 6,
+     "flex": 0
+    },
+    {
+     "city": "Kyoto",
+     "nights": 4,
+     "flex": 0
+    },
+    {
+     "city": "Koyasan",
+     "nights": 1,
+     "flex": 0
+    },
+    {
+     "city": "Osaka",
+     "nights": 3,
+     "flex": 0
+    }
+   ],
+   "why": "Classic cities plus one night in a Koyasan temple (shukubo), about 2 h from Osaka by Nankai train and cable car."
+  },
+  {
+   "id": "jp-koyasan-rev",
+   "country": "Japan",
+   "name": "Japan classic + Koyasan, reversed",
+   "flyIn": "OSA",
+   "flyOut": "TYO",
+   "priority": 3.5,
+   "tags": [
+    "city",
+    "culture",
+    "nature"
+   ],
+   "stops": [
+    {
+     "city": "Osaka",
+     "nights": 3,
+     "flex": 0
+    },
+    {
+     "city": "Koyasan",
+     "nights": 1,
+     "flex": 0
+    },
+    {
+     "city": "Kyoto",
+     "nights": 4,
+     "flex": 0
+    },
+    {
+     "city": "Tokyo",
+     "nights": 6,
+     "flex": 0
+    }
+   ],
+   "why": "Koyasan route the other way round."
   },
   {
    "id": "jp-classic",
@@ -77,36 +231,6 @@
    "name": "Japan classic: Tokyo, Kyoto, Osaka",
    "flyIn": "TYO",
    "flyOut": "OSA",
-   "priority": 3,
-   "tags": [
-    "city",
-    "culture"
-   ],
-   "stops": [
-    {
-     "city": "Tokyo",
-     "nights": 6,
-     "flex": 0
-    },
-    {
-     "city": "Kyoto",
-     "nights": 4,
-     "flex": 0
-    },
-    {
-     "city": "Osaka",
-     "nights": 3,
-     "flex": 0
-    }
-   ],
-   "why": "The plain version: only Tokyo, Kyoto and Osaka. Fewest train legs and hotel moves, so the cheapest Japan option; Nara and day trips from Kyoto/Osaka still possible."
-  },
-  {
-   "id": "jp-classic-rev",
-   "country": "Japan",
-   "name": "Japan classic, reversed",
-   "flyIn": "OSA",
-   "flyOut": "TYO",
    "priority": 4,
    "tags": [
     "city",
@@ -114,6 +238,36 @@
    ],
    "stops": [
     {
+     "city": "Tokyo",
+     "nights": 6,
+     "flex": 0
+    },
+    {
+     "city": "Kyoto",
+     "nights": 4,
+     "flex": 0
+    },
+    {
+     "city": "Osaka",
+     "nights": 3,
+     "flex": 0
+    }
+   ],
+   "why": "The plain version: only Tokyo, Kyoto and Osaka. Fewest train legs and hotel moves; Nara is a day trip."
+  },
+  {
+   "id": "jp-classic-rev",
+   "country": "Japan",
+   "name": "Japan classic, reversed",
+   "flyIn": "OSA",
+   "flyOut": "TYO",
+   "priority": 4.5,
+   "tags": [
+    "city",
+    "culture"
+   ],
+   "stops": [
+    {
      "city": "Osaka",
      "nights": 3,
      "flex": 0
@@ -129,7 +283,7 @@
      "flex": 0
     }
    ],
-   "why": "Tokyo, Kyoto and Osaka the other way round: fly into Osaka, end in Tokyo (often a cheaper flight home from Tokyo)."
+   "why": "Tokyo, Kyoto and Osaka the other way round: fly into Osaka, end in Tokyo."
   },
   {
    "id": "vn-north-south",

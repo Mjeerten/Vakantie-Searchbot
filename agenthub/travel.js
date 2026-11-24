@@ -155,7 +155,7 @@
     /* Japan: one card per route family (golden, via Kanazawa, golden + Kanazawa), the cheapest of both directions */
     const fam = (t) => String(t.planId || t.id || "").replace(/-rev$/, ""), famBest = new Map();
     for (const t of list.filter((t) => t.country === "Japan")) { const k = fam(t), c = famBest.get(k); if (!c || t.best.totalPP < c.best.totalPP) famBest.set(k, t); }
-    const ORDER = ["jp-kanazawa", "jp-classic"], rank = (t) => { const i = ORDER.indexOf(fam(t)); return i < 0 ? 99 : i; };
+    const ORDER = ["jp-golden", "jp-kanazawa", "jp-koyasan", "jp-classic"], rank = (t) => { const i = ORDER.indexOf(fam(t)); return i < 0 ? 99 : i; };
     const jp = [...famBest.values()].sort((a, b) => rank(a) - rank(b) || score(a) - score(b)), rest = list.filter((t) => t.country !== "Japan");
     for (const t of jp) box.append(tripCard(t));
     if (jp.length && rest.length) box.append(el("div", { class: "tv-divider", text: "Other trips" }));

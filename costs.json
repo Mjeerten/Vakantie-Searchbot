@@ -59,8 +59,6 @@
   }
  },
  "legs": {
-  "Tokyo>Hakone": 25,
-  "Hakone>Kyoto": 80,
   "Tokyo>Kyoto": 85,
   "Kyoto>Osaka": 5,
   "Kyoto>Nara": 5,
@@ -71,7 +69,6 @@
   "Osaka>Tokyo": 90,
   "Tokyo>Kanazawa": 90,
   "Kanazawa>Kyoto": 45,
-  "Kanazawa>Hakone": 100,
   "Tokyo>Nikko": 30,
   "Tokyo>Kawaguchiko": 25,
   "Kawaguchiko>Kyoto": 85,
@@ -112,7 +109,9 @@
   "Shanghai>Zhangjiajie": 80,
   "Zhangjiajie>Chengdu": 60,
   "Chongqing>Shanghai": 110,
-  "Xi'an>Chongqing": 40
+  "Xi'an>Chongqing": 40,
+  "Kyoto>Koyasan": 25,
+  "Koyasan>Osaka": 15
  },
  "unknownLegEstimate": 60,
  "bags": {
@@ -144,5 +143,6 @@
   "hoursFree": 18,
   "eurPerHour": 10,
   "maxHours": 30
- }
+ },
+ "_koyasanNote": "Koyasan: Nankai line from Osaka Namba + cable car (~2 h, ~EUR 15 one way; Koyasan World Heritage Ticket incl. buses ~EUR 22). Temple stays (shukubo) include vegetarian dinner and breakfast."
 }
