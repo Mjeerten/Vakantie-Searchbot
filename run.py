@@ -208,6 +208,26 @@ def tp_ow(o, d, start, end):
     return _TP[k]
 
 
+def tp_reference(airports, dest, start, end):
+    """No cached fare fits the exact dates (common far ahead): give the cheapest cached return
+    that leaves within 2 weeks of the window, as a price reference note (never used in totals)."""
+    lo = (D(start) - dt.timedelta(days=14)).isoformat()
+    hi = (D(end) + dt.timedelta(days=14)).isoformat()
+    best = None
+    for ap in airports:
+        k = ("ref", ap, dest)
+        if k not in _TP:
+            _TP[k] = tp.round_trips(ap, dest, lo, hi, 9, 30)
+        for r in _TP[k][:1]:
+            if best is None or r["pricePP"] < best["pricePP"]:
+                best = r
+    if not best:
+        return None
+    return (f"Price reference (Travelpayouts cache, dates not in your window): {best['from']}-{best['to']} return "
+            f"{best['depart'][:10]} to {best['return'][:10]}, EUR {best['pricePP']} p.p. ({best['airline']}). "
+            "Few fares are cached this far ahead; exact-date fares appear as summer 2027 gets closer.")
+
+
 def tp_candidates(plan, nights, cfg, airports):
     """Cheapest cached fares that fit this plan exactly: depart D, home D + nights + 1."""
     if cfg.get("useTravelpayouts") is False:
@@ -264,6 +284,10 @@ def evaluate(plan, cfg, budget, fx, do_hotels, pause):
     # 1) Travelpayouts (cached fares for every date) first
     cands = tp_candidates(plan, nights, cfg, airports)
     src = "travelpayouts"
+    if not cands and tp.STATUS["ok"] and cfg.get("useTravelpayouts") is not False:
+        ref = tp_reference(airports, plan["flyIn"], cfg["windowStart"], cfg["windowEnd"])
+        if ref:
+            out["notes"].append(ref)
     if not cands:
         # 2) fallback: Google Flights for up to 3 dates (first airport), then other airports for the best date
         src = "google"
