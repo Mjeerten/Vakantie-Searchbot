@@ -275,9 +275,6 @@ function openItems(){if(CEO_PAUSED)return [];const items=openAlerts().map(x=>({k
   if(age>7)items.unshift({kind:'broken',title:`The CEO hasn't checked in since ${fmt(S.check.runAt)}`,detail:'The CEO routine may have stopped. Ask Claude in a chat to look at it.'});
   return items;}
 function renderBubble(){
-  const tb=S.tv.best,max=S.tv.cfg?.budgetMaxPP??2500;
-  if(tb&&tb.best.totalPP<=max){const html=`<b><i style="background:var(--ok)"></i>Trip within budget</b><span>${esc(tb.name)}: ${eur(tb.best.totalPP)} p.p.</span>${linkBtn('#travel','Open Travel Desk')}`;
-    if(bubble.dataset.h!==html){bubble.innerHTML=html;bubble.dataset.h=html;bubble.classList.remove('bad');}bubble.hidden=false;return;}
   const it=openItems();if(!it.length){bubble.hidden=true;return;}
   const bad=it.some(x=>x.kind==='broken'),f=it[0];
   const html=`<b><i></i>${it.length===1?'1 thing to check':it.length+' things to check'}</b><span>${esc(f.title)}</span>${f.link?linkBtn(f.link,f.linkLabel,'',f.kind==='check'?f.key:''):''}`;
