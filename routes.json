@@ -2,84 +2,12 @@
  "_note": "Route ideas the planner picks from. nights are the base for a 'between relaxed and medium' pace; tags match the interests in the settings (city, culture, nature, beach). The planner scales nights to the pace and drops routes that do not fit the travel window.",
  "routes": [
   {
-   "id": "jp-golden",
-   "country": "Japan",
-   "name": "Japan golden route",
-   "flyIn": "TYO",
-   "flyOut": "OSA",
-   "priority": 1,
-   "tags": [
-    "city",
-    "culture",
-    "nature"
-   ],
-   "stops": [
-    {
-     "city": "Tokyo",
-     "nights": 6,
-     "flex": 1
-    },
-    {
-     "city": "Hakone",
-     "nights": 1,
-     "flex": 1
-    },
-    {
-     "city": "Kyoto",
-     "nights": 4,
-     "flex": 0
-    },
-    {
-     "city": "Osaka",
-     "nights": 3,
-     "flex": 0
-    }
-   ],
-   "why": "Tokyo, Hakone (Fuji views, onsen), Kyoto and Osaka: the classic first trip. In via Tokyo, home from Osaka, no backtracking. Nara as a day trip from Kyoto or Osaka."
-  },
-  {
-   "id": "jp-golden-rev",
-   "country": "Japan",
-   "name": "Japan golden route, reversed",
-   "flyIn": "OSA",
-   "flyOut": "TYO",
-   "priority": 2,
-   "tags": [
-    "city",
-    "culture",
-    "nature"
-   ],
-   "stops": [
-    {
-     "city": "Osaka",
-     "nights": 3,
-     "flex": 0
-    },
-    {
-     "city": "Kyoto",
-     "nights": 4,
-     "flex": 0
-    },
-    {
-     "city": "Hakone",
-     "nights": 1,
-     "flex": 1
-    },
-    {
-     "city": "Tokyo",
-     "nights": 6,
-     "flex": 1
-    }
-   ],
-   "why": "The same cities the other way round. Flights into Osaka are sometimes cheaper, and you end in Tokyo for the last shopping and nightlife."
-  },
-  {
    "id": "jp-kanazawa",
    "country": "Japan",
    "name": "Japan via Kanazawa",
    "flyIn": "TYO",
    "flyOut": "OSA",
-   "priority": 4,
+   "priority": 1,
    "tags": [
     "city",
     "culture"
@@ -106,7 +34,7 @@
      "flex": 0
     }
    ],
-   "why": "Swaps Fuji for Kanazawa: samurai and geisha districts, one of Japan's finest gardens, quieter than Kyoto. Bullet train from Tokyo."
+   "why": "samurai and geisha districts, one of Japan's finest gardens, quieter than Kyoto. Bullet train from Tokyo."
   },
   {
    "id": "jp-kanazawa-rev",
@@ -114,7 +42,7 @@
    "name": "Japan via Kanazawa, reversed",
    "flyIn": "OSA",
    "flyOut": "TYO",
-   "priority": 4.5,
+   "priority": 2,
    "tags": [
     "city",
     "culture"
@@ -144,94 +72,12 @@
    "why": "Kanazawa route the other way round: in via Osaka (often cheaper), Hokuriku bullet train from Kanazawa to Tokyo, end in Tokyo."
   },
   {
-   "id": "jp-golden-kanazawa",
-   "country": "Japan",
-   "name": "Japan golden route + Kanazawa",
-   "flyIn": "OSA",
-   "flyOut": "TYO",
-   "priority": 3,
-   "tags": [
-    "city",
-    "culture",
-    "nature"
-   ],
-   "stops": [
-    {
-     "city": "Osaka",
-     "nights": 3,
-     "flex": 0
-    },
-    {
-     "city": "Kyoto",
-     "nights": 4,
-     "flex": 0
-    },
-    {
-     "city": "Kanazawa",
-     "nights": 2,
-     "flex": 0
-    },
-    {
-     "city": "Hakone",
-     "nights": 1,
-     "flex": 0
-    },
-    {
-     "city": "Tokyo",
-     "nights": 5,
-     "flex": 0
-    }
-   ],
-   "why": "Both: Kanazawa's old districts and garden and a Hakone night with Fuji views and onsen. In via Osaka, end in Tokyo; one Tokyo night less to keep it in budget."
-  },
-  {
-   "id": "jp-golden-kanazawa-rev",
-   "country": "Japan",
-   "name": "Japan golden route + Kanazawa, Tokyo first",
-   "flyIn": "TYO",
-   "flyOut": "OSA",
-   "priority": 3.5,
-   "tags": [
-    "city",
-    "culture",
-    "nature"
-   ],
-   "stops": [
-    {
-     "city": "Tokyo",
-     "nights": 5,
-     "flex": 0
-    },
-    {
-     "city": "Hakone",
-     "nights": 1,
-     "flex": 0
-    },
-    {
-     "city": "Kanazawa",
-     "nights": 2,
-     "flex": 0
-    },
-    {
-     "city": "Kyoto",
-     "nights": 4,
-     "flex": 0
-    },
-    {
-     "city": "Osaka",
-     "nights": 3,
-     "flex": 0
-    }
-   ],
-   "why": "Golden route plus Kanazawa the other way round: in via Tokyo, Hakone, then Kanazawa, Kyoto and home from Osaka."
-  },
-  {
    "id": "jp-classic",
    "country": "Japan",
    "name": "Japan classic: Tokyo, Kyoto, Osaka",
    "flyIn": "TYO",
    "flyOut": "OSA",
-   "priority": 5,
+   "priority": 3,
    "tags": [
     "city",
     "culture"
@@ -253,7 +99,7 @@
      "flex": 0
     }
    ],
-   "why": "The plain version: only Tokyo, Kyoto and Osaka, no Hakone or Kanazawa. Fewest train legs and hotel moves, so the cheapest Japan option; Nara and day trips from Kyoto/Osaka still possible."
+   "why": "The plain version: only Tokyo, Kyoto and Osaka. Fewest train legs and hotel moves, so the cheapest Japan option; Nara and day trips from Kyoto/Osaka still possible."
   },
   {
    "id": "jp-classic-rev",
@@ -261,7 +107,7 @@
    "name": "Japan classic, reversed",
    "flyIn": "OSA",
    "flyOut": "TYO",
-   "priority": 5.5,
+   "priority": 4,
    "tags": [
     "city",
     "culture"
