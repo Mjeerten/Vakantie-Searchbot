@@ -5,9 +5,7 @@
  "minDays": 11,
  "countries": [
   "Japan",
-  "China",
-  "Vietnam",
-  "Thailand"
+  "China"
  ],
  "interests": [
   "city",
