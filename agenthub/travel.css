@@ -31,5 +31,5 @@
 }
 
 /* divider between the Japan trips and the rest of the feed */
-#tvView .tv-divider { margin: 18px 0 6px; padding-top: 10px; border-top: 1px dashed var(--line, rgba(255,255,255,.18));
-  font: 600 11px/1 "Chakra Petch", sans-serif; letter-spacing: .14em; text-transform: uppercase; color: var(--muted, #8a93a6); }
+#tvView .tv-divider { margin: 18px 0 6px; padding-top: 10px; border-top: 1px dashed var(--line);
+  font: 500 11px/1 var(--f-mono); letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
