@@ -92,6 +92,62 @@ def search(origin, dest, date, ret=None, retry_wait=45):
     return res
 
 
+# ---- tfs links (the URL format the Google Flights page itself uses), rendered in a real browser ----
+import base64
+import json as _json
+import os as _os
+
+
+def _v(n):
+    o = b""
+    while True:
+        b, n = n & 0x7F, n >> 7
+        if n:
+            o += bytes([b | 0x80])
+        else:
+            return o + bytes([b])
+
+
+def _ld(num, data):
+    return _v((num << 3) | 2) + _v(len(data)) + data
+
+
+def tfs_url(legs):
+    """legs: [(date, from, to), ...]. 2 legs mirrored = round trip, otherwise multi-city. 1 adult, economy, EUR."""
+    rt = len(legs) == 2 and legs[0][1] == legs[1][2] and legs[0][2] == legs[1][1]
+    trip = 1 if rt else (2 if len(legs) == 1 else 3)
+    m = b"".join(_ld(3, _ld(2, d.encode()) + _ld(13, _ld(2, a.encode())) + _ld(14, _ld(2, z.encode()))) for d, a, z in legs)
+    m += _v(8 << 3) + _v(1) + _v(9 << 3) + _v(1) + _v(19 << 3) + _v(trip)
+    t = base64.urlsafe_b64encode(m).decode().rstrip("=")
+    return f"https://www.google.com/travel/flights/search?tfs={t}&hl=en&gl=nl&curr=EUR"
+
+
+def search_legs(legs):
+    """Round trip or multi-city search in a browser. Returns {url, offers, blocked, error}.
+    Offer price is the whole-trip total per person; out-leg details come from the label."""
+    global BLOCKED
+    url = tfs_url(legs)
+    res = {"legs": legs, "url": url, "offers": [], "blocked": False, "error": None}
+    if BLOCKED:
+        res["blocked"] = True
+        return res
+    p = subprocess.run(["node", _os.path.join(_os.path.dirname(_os.path.abspath(__file__)), "gflights.js"), url],
+                       capture_output=True, text=True, timeout=150)
+    try:
+        r = _json.loads(p.stdout.strip().splitlines()[-1])
+    except Exception:
+        res["error"] = "gflights.js failed: " + (p.stderr or "")[-120:]
+        return res
+    body = " ".join('aria-label="' + html.escape(l, quote=True) + '"' for l in r.get("labels", []))
+    res["offers"] = parse(body)[:6]
+    if not res["offers"]:
+        res["error"] = r.get("error") or "no prices on page"
+        if r.get("blocked"):
+            BLOCKED = True
+            res["blocked"] = True
+    return res
+
+
 if __name__ == "__main__":
     import json
     a = sys.argv[1:]

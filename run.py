@@ -13,6 +13,7 @@ Only reads public result pages. Never books, logs in or fills in forms.
 import datetime as dt
 import json
 import os
+import re
 import statistics
 import subprocess
 import sys
@@ -89,62 +90,142 @@ class Budget:
         return True
 
 
-def flight_option(origin, plan, v, budget, pause, mode="rt"):
-    """Cheapest flight for one origin and one date variant.
-    mode "rt": round trip to flyIn (for an open-jaw route the train back from the last stop is added as backTrainPP).
-    mode "oj": open jaw as two one-way tickets (in to flyIn, home from flyOut)."""
+FRESH_H = 48     # a Google check is used for the total up to this age
+RECHECK_H = 20   # after this age it is queued again
+
+
+def _age_h(iso):
+    try:
+        t = dt.datetime.fromisoformat(iso.replace("Z", "+00:00"))
+        return (dt.datetime.now(dt.timezone.utc) - t).total_seconds() / 3600
+    except Exception:
+        return 1e9
+
+
+def prev_checks(dbdir, plan_id, nights):
+    """Google flight checks saved by earlier runs (travel_trips/<id>.json), still fresh and for this trip length."""
+    if not dbdir:
+        return []
+    try:
+        d = unwrap(json.load(open(os.path.join(dbdir, "travel_trips", plan_id + ".json"))))
+    except Exception:
+        return []
+    out = []
+    for c in d.get("flightChecks") or []:
+        try:
+            n = (D(c["return"]) - D(c["depart"])).days
+        except Exception:
+            continue
+        if n == nights + 1 and c.get("pricePP") and _age_h(c.get("checkedAt", "")) <= FRESH_H:
+            out.append(c)
+    return out
+
+
+def next_check(st, airports):
+    """Next (origin, depart, mode) to check on Google for this plan, or None when everything is fresh.
+    Open-jaw routes check both a multi-city ticket ("mc") and a return to the arrival city plus the train back ("rt")."""
+    p = st["plan"]
+    modes = ["mc", "rt"] if (p.get("flyOut") or p["flyIn"]) != p["flyIn"] else ["rt"]
+    recent = {(c["origin"], c["depart"], c["mode"]) for c in st["checks"] if _age_h(c["checkedAt"]) < RECHECK_H} | st["tried"]
+    dates = []
+    if st["tp"]:
+        t = min(st["tp"], key=lambda c: c["compare"])
+        for m in modes:
+            if (t["origin"], t["depart"], m) not in recent:
+                return t["origin"], t["depart"], m
+        dates.append(t["depart"])
+    vs = st["variants"]
+    order = [vs[len(vs) // 2]] + [v for i, v in enumerate(vs) if i != len(vs) // 2]
+    dates += [v["depart"] for v in order]
+    for d in dates:
+        for m in modes:
+            if (airports[0], d, m) not in recent:
+                return airports[0], d, m
+    priced = [c for c in st["checks"] if c.get("pricePP")]
+    if priced:
+        b = min(priced, key=lambda c: c["pricePP"] + c.get("backTrainPP", 0))
+        bestd, bestm = b["depart"], b["mode"]
+    else:
+        bestd, bestm = dates[0], modes[0]
+    for ap in airports[1:]:
+        if (ap, bestd, bestm) not in recent:
+            return ap, bestd, bestm
+    return None
+
+
+def run_check(plan, nights, origin, depart, mode):
     fin, fout = plan["flyIn"], plan.get("flyOut") or plan["flyIn"]
-    if mode == "rt" or fin == fout:
-        if not budget.take():
-            return None
-        r = flights.search(origin, fin, v["depart"], v["return"])
-        time.sleep(pause)
-        if not r["offers"]:
-            return {"origin": origin, "error": r["error"], "blocked": r["blocked"], "urls": [r["url"]]}
-        o = r["offers"][0]
-        back = 0
-        if fin != fout:
-            back, _ = leg_cost(plan["stops"][-1]["city"], plan["stops"][0]["city"])
-        return {"origin": origin, "type": "return " + fin + (f" (+ train back to {plan['stops'][0]['city']})" if back else ""),
-                "pricePP": o["pricePP"], "backTrainPP": back, "compare": o["pricePP"] + back,
-                "airlines": [o["airline"]], "out": o, "back": None, "urls": [r["url"]]}
-    if budget.left < 2 or flights.BLOCKED:
-        return None
-    budget.take(); a = flights.search(origin, fin, v["depart"]); time.sleep(pause)
-    budget.take(); b = flights.search(fout, origin, v["return"]); time.sleep(pause)
-    if not a["offers"] or not b["offers"]:
-        return {"origin": origin, "error": a["error"] or b["error"], "blocked": a["blocked"] or b["blocked"],
-                "urls": [a["url"], b["url"]]}
-    p = a["offers"][0]["pricePP"] + b["offers"][0]["pricePP"]
-    return {"origin": origin, "type": "open jaw (2 one-way tickets)", "pricePP": p, "backTrainPP": 0, "compare": p,
-            "airlines": [a["offers"][0]["airline"], b["offers"][0]["airline"]], "out": a["offers"][0], "back": b["offers"][0],
-            "urls": [a["url"], b["url"]]}
+    ret = (D(depart) + dt.timedelta(days=nights + 1)).isoformat()
+    home_from = fout if mode == "mc" else fin
+    r = flights.search_legs([(depart, origin, fin), (ret, home_from, origin)])
+    c = {"origin": origin, "depart": depart, "return": ret, "mode": mode,
+         "checkedAt": dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"), "url": r["url"]}
+    if mode == "rt" and fin != fout:
+        c["backTrainPP"] = leg_cost(plan["stops"][-1]["city"], plan["stops"][0]["city"])[0]
+    if r["offers"]:
+        # cheapest after the comfort penalty (long or night flights), not just the cheapest
+        scored = [(comfort({"out": o, "compare": o["pricePP"]})[0], o) for o in r["offers"]]
+        scored = [x for x in scored if x[0] is not None] or [(o["pricePP"], o) for o in r["offers"]]
+        o = min(scored, key=lambda x: x[0])[1]
+        c.update({"pricePP": o["pricePP"], "airline": o["airline"], "out": o, "cheapestPP": min(x["pricePP"] for x in r["offers"])})
+    else:
+        c["error"] = r["error"]
+    return c
+
+
+def google_cand(plan, c):
+    fin, fout = plan["flyIn"], plan.get("flyOut") or plan["flyIn"]
+    back = c.get("backTrainPP", 0)
+    if c["mode"] == "mc":
+        typ = f"multi-city ticket (in {fin}, home from {fout})"
+    else:
+        typ = "return " + fin + (f" (+ train back to {plan['stops'][0]['city']})" if back else "")
+    return {"origin": c["origin"], "src": "google", "type": typ,
+            "pricePP": c["pricePP"], "backTrainPP": back, "compare": c["pricePP"] + back, "airlines": [c.get("airline")],
+            "out": c.get("out"), "back": None, "depart": c["depart"], "return": c["return"],
+            "urls": [c["url"]], "checkedAt": c["checkedAt"]}
+
+
+BIG_CITIES = {"Tokyo": 6, "Seoul": 6, "Bangkok": 6, "Osaka": 4.5, "Ho Chi Minh City": 4, "Hanoi": 4}
+ALWAYS_AVOID = ["capsule", "cabin", "dorm", "bunk", "male only", "love hotel", "pod "]
+
+
+def _hotel_search(script, city, checkin, checkout, fx):
+    args = ["node", os.path.join(HERE, script), city, checkin, checkout] + ([str(fx)] if script == "hotels.js" else [])
+    try:
+        p = subprocess.run(args, capture_output=True, text=True, timeout=180)
+        return json.loads(p.stdout.strip().splitlines()[-1])
+    except Exception as e:
+        return {"hotels": [], "error": f"{script} failed: {e}"[:160]}
 
 
 def pick_stay(city, checkin, nights, rules, fx, cfg):
+    """Cheapest decent private room for 2: Booking.com first (real totals for the stay), Google Hotels as backup."""
     checkout = (D(checkin) + dt.timedelta(days=nights)).isoformat()
-    try:
-        p = subprocess.run(["node", os.path.join(HERE, "hotels.js"), city, checkin, checkout, str(fx)],
-                           capture_output=True, text=True, timeout=150)
-        r = json.loads(p.stdout.strip().splitlines()[-1])
-    except Exception as e:
-        return {"city": city, "checkin": checkin, "nights": nights, "error": f"hotels.js failed: {e}"[:160]}
-    minr = float(cfg.get("minRating") or rules["minRating"])
+    minr = float(cfg.get("minRating") or rules["minRating"])  # out of 5 (Booking score / 2)
     minrev = int(cfg.get("minReviews") or 100)
-    avoid = [w.lower() for w in (cfg.get("avoidWords") or ["capsule", "cabin", "dorm", "love hotel"])]
-    ok = [h for h in r.get("hotels", [])
-          if (h.get("rating") or 0) >= minr and (h.get("reviews") or 0) >= minrev
-          and not any(w in (h["name"] + " " + (h.get("kind") or "")).lower() for w in avoid)]
-    ok.sort(key=lambda h: h["nightlyEur"])
-    res = {"city": city, "checkin": checkin, "checkout": checkout, "nights": nights, "url": r.get("url"),
-           "blocked": r.get("blocked"), "error": r.get("error"), "found": len(r.get("hotels", [])), "qualifying": len(ok)}
-    if ok:
-        top = ok[:3]
-        res["pick"] = top[0]
-        res["alternatives"] = top[1:]
-        # price per person for the stay: room for 2, split in two
-        res["pricePP"] = round(top[0]["nightlyEur"] * nights / 2)
-        res["medianTop3PP"] = round(statistics.median(h["nightlyEur"] for h in top) * nights / 2)
+    avoid = list({w.lower() for w in (cfg.get("avoidWords") or []) + ALWAYS_AVOID})
+    maxmi = BIG_CITIES.get(city, 3.5)
+    res = {"city": city, "checkin": checkin, "checkout": checkout, "nights": nights}
+    for script in ("booking.js", "hotels.js"):
+        r = _hotel_search(script, city, checkin, checkout, fx)
+        ok = [h for h in r.get("hotels", [])
+              if (h.get("rating") or 0) >= minr and (h.get("reviews") or 0) >= minrev
+              and (h.get("miles") is None or h["miles"] <= maxmi)
+              and not any(w in (h["name"] + " " + (h.get("kind") or "")).lower() for w in avoid)
+              and not re.search(r"(?<!non-)(?<!non )smoking", (h.get("kind") or "").lower())]
+        ok.sort(key=lambda h: h["nightlyEur"])
+        res.update({"source": "Booking.com" if script == "booking.js" else "Google Hotels", "url": r.get("url"),
+                    "blocked": r.get("blocked"), "error": r.get("error"), "found": len(r.get("hotels", [])), "qualifying": len(ok)})
+        if ok:
+            top = ok[:3]
+            res["pick"] = top[0]
+            res["alternatives"] = top[1:]
+            # room for 2, split in two; Booking gives the real total for the stay
+            tot = top[0].get("total") or top[0]["nightlyEur"] * nights
+            res["pricePP"] = round(tot / 2)
+            res["medianTop3PP"] = round(statistics.median((h.get("total") or h["nightlyEur"] * nights) for h in top) / 2)
+            return res
     return res
 
 
@@ -181,7 +262,6 @@ def comfort(f):
             flags.append(f"long flight ({h:.0f} h)")
     for leg in ("out", "back"):
         a = (f.get(leg) or {}).get("arrives") or ""
-        import re
         m = re.search(r"(\d+):(\d+) (AM|PM)", a)
         if m:
             hr = int(m.group(1)) % 12 + (12 if m.group(3) == "PM" else 0)
@@ -272,83 +352,53 @@ def tp_candidates(plan, nights, cfg, airports):
     return out
 
 
-def evaluate(plan, cfg, budget, fx, do_hotels, pause):
+def evaluate(plan, cfg, st, do_hotels):
     country = plan.get("country", "default")
     rules = country_costs(country, cfg)
-    nights, variants = date_variants(plan, cfg)
-    out = {"planId": plan["id"], "name": plan.get("name"), "country": country, "nights": nights, "variants": [], "notes": []}
+    nights, variants, fx = st["nights"], st["variants"], st.get("fx", 0.92)
+    out = {"planId": plan["id"], "name": plan.get("name"), "country": country, "nights": nights, "variants": [],
+           "notes": list(st["notes"]), "flightChecks": sorted(st["checks"], key=lambda c: c["checkedAt"])[-30:]}
     if not variants:
         out["notes"].append("Route does not fit the travel window.")
         return out
-    airports = cfg.get("airports") or ["AMS", "BRU", "DUS", "EIN", "RTM"]
-    # 1) Travelpayouts (cached fares for every date) first
-    cands = tp_candidates(plan, nights, cfg, airports)
-    src = "travelpayouts"
-    if not cands and tp.STATUS["ok"] and cfg.get("useTravelpayouts") is not False:
-        ref = tp_reference(airports, plan["flyIn"], cfg["windowStart"], cfg["windowEnd"])
-        if ref:
-            out["notes"].append(ref)
-    if not cands:
-        # 2) fallback: Google Flights for up to 3 dates (first airport), then other airports for the best date
-        src = "google"
-        for v in variants:
-            f = flight_option(airports[0], plan, v, budget, pause)
-            v["flights"] = [f] if f else []
-        priced = [v for v in variants if v["flights"] and v["flights"][0].get("compare")]
-        if not priced:
-            out["variants"] = variants
-            out["notes"].append("No flight prices found" + (" (Google blocked the cloud)" if flights.BLOCKED else "")
-                                + ("" if tp.STATUS["ok"] else f"; Travelpayouts: {tp.STATUS['error']}"))
-            return out
-        bestv = min(priced, key=lambda v: comfort(v["flights"][0])[0])
-        for ap in airports[1:]:
-            f = flight_option(ap, plan, bestv, budget, pause)
-            if f:
-                bestv["flights"].append(f)
-        if plan.get("flyOut") and plan["flyOut"] != plan["flyIn"]:
-            f = flight_option(airports[0], plan, bestv, budget, pause, mode="oj")
-            if f:
-                bestv["flights"].append(f)
-        for f in bestv["flights"]:
-            if f and f.get("compare"):
-                f["depart"], f["return"] = bestv["depart"], bestv["return"]
-                cands.append(f)
-    for f in cands:
-        f["effective"], f["comfortFlags"] = comfort(f)
-    cands = [f for f in cands if f["effective"] is not None] or cands
-    fl = min(cands, key=lambda f: f["effective"] if f["effective"] is not None else 1e9)
-    dep = D(fl["depart"])
-    best = {"depart": fl["depart"], "checkin": (dep + dt.timedelta(days=1)).isoformat(),
-            "return": fl["return"], "days": nights + 2}
-    # Google check of the chosen cached fare (times + live price), when Google still answers
-    if src == "travelpayouts" and budget.left > 0 and not flights.BLOCKED and cfg.get("googleConfirm", True):
-        fin = plan["flyIn"]
-        if budget.take():
-            r = flights.search(fl["origin"], fin, fl["depart"], fl["return"])
-            time.sleep(pause)
-            if r["offers"]:
-                fl["google"] = {"pricePP": r["offers"][0]["pricePP"], "airline": r["offers"][0]["airline"],
-                                "duration": r["offers"][0]["duration"], "url": r["url"]}
-                fl.setdefault("urls", []).append(r["url"])
-    variants = [{"depart": c["depart"], "return": c["return"], "origin": c["origin"], "type": c["type"], "pricePP": c["pricePP"],
-                 "effective": c["effective"]} for c in sorted(cands, key=lambda c: c["effective"] or 1e9)[:8]]
+    # live Google prices win; cached Travelpayouts fares only when no Google check exists yet
+    gc = [google_cand(plan, c) for c in st["checks"] if c.get("pricePP")]
+    cands, src = (gc, "google") if gc else (list(st["tp"]), "travelpayouts")
+    fl = None
+    if cands:
+        for f in cands:
+            f["effective"], f["comfortFlags"] = comfort(f)
+        cands = [f for f in cands if f["effective"] is not None] or cands
+        fl = min(cands, key=lambda f: f["effective"] if f["effective"] is not None else 1e9)
+        dep = D(fl["depart"])
+        best = {"depart": fl["depart"], "checkin": (dep + dt.timedelta(days=1)).isoformat(),
+                "return": fl["return"], "days": nights + 2}
+        variants = [{"depart": c["depart"], "return": c["return"], "origin": c["origin"], "type": c["type"], "pricePP": c["pricePP"],
+                     "effective": c["effective"]} for c in sorted(cands, key=lambda c: c["effective"] or 1e9)[:8]]
+    else:
+        # no flight price yet: still price the stays, trains and day costs for the middle date
+        out["notes"].append("No flight price yet: Google limits searches from the cloud, so Atlas checks a few flights per run"
+                            + ("" if tp.STATUS["ok"] else f"; Travelpayouts: {tp.STATUS['error']}"))
+        mid = variants[len(variants) // 2]
+        best = {"depart": mid["depart"], "checkin": mid["checkin"], "return": mid["return"], "days": nights + 2}
+        variants = []
     # bags
     bag = 0
-    if best["days"] > 10 and not all(a in COSTS["bags"]["usuallyIncluded"] for a in fl["airlines"]):
+    if fl and best["days"] > 10 and not all(a in COSTS["bags"]["usuallyIncluded"] for a in fl["airlines"]):
         bag = COSTS["bags"]["extraBagEstimatePP"]
     # 3) stays for the best date
     stays, cursor = [], D(best["checkin"])
     for s in plan["stops"]:
         n = int(s["nights"])
         if do_hotels and not s.get("skipHotel"):
-            st = pick_stay(s.get("hotelCity") or s["city"], cursor.isoformat(), n, rules, fx, {**cfg, **(plan.get("stay") or {})})
+            sv = pick_stay(s.get("hotelCity") or s["city"], cursor.isoformat(), n, rules, fx, {**cfg, **(plan.get("stay") or {})})
         else:
-            st = {"city": s["city"], "nights": n, "checkin": cursor.isoformat()}
-        if not st.get("pricePP"):
+            sv = {"city": s["city"], "nights": n, "checkin": cursor.isoformat()}
+        if not sv.get("pricePP"):
             est = int((plan.get("stay") or {}).get("fallbackNightlyRoom") or cfg.get("fallbackNightlyRoom") or 90)
-            st["pricePP"] = round(est * n / 2)
-            st["estimated"] = True
-        stays.append(st)
+            sv["pricePP"] = round(est * n / 2)
+            sv["estimated"] = True
+        stays.append(sv)
         cursor += dt.timedelta(days=n)
     # 4) transport between stops
     legs, cities = [], [s["city"] for s in plan["stops"]]
@@ -361,9 +411,9 @@ def evaluate(plan, cfg, budget, fx, do_hotels, pause):
     days = best["days"]
     on_ground = days - 1
     parts = {
-        "flight": fl["pricePP"], "bag": bag,
+        "flight": fl["pricePP"] if fl else 0, "bag": bag,
         "stays": sum(s["pricePP"] for s in stays),
-        "transport": sum(l["pricePP"] for l in legs) + fl.get("backTrainPP", 0) + 2 * rules["airportTransfer"],
+        "transport": sum(l["pricePP"] for l in legs) + (fl or {}).get("backTrainPP", 0) + 2 * rules["airportTransfer"],
         "food": rules["foodPerDay"] * on_ground,
         "activities": rules["activitiesPerDay"] * on_ground,
         "local": rules["localTransportPerDay"] * on_ground,
@@ -378,8 +428,14 @@ def evaluate(plan, cfg, budget, fx, do_hotels, pause):
         est_flags.append("some stays estimated (no hotel price found)")
     if any(not l["known"] for l in legs):
         est_flags.append("unknown train leg estimated")
-    if fl["type"].startswith("open"):
+    if not fl:
+        out["groundOnly"] = {"depart": best["depart"], "return": best["return"], "days": days, "stays": stays, "legs": legs,
+                             "parts": parts, "totalExFlightPP": total, "flags": est_flags}
+        return out
+    if fl["type"].startswith("open jaw"):
         est_flags.append("open jaw priced as 2 one-way tickets; a multi-city ticket is often cheaper")
+    if fl.get("checkedAt"):
+        est_flags.append(f"flight price checked on Google {_age_h(fl['checkedAt']):.0f} h ago")
     if fl.get("cached"):
         est_flags.append("cached fare (seen by Aviasales users recently), check the live price")
     est_flags += fl.get("comfortFlags") or []
@@ -405,7 +461,16 @@ def packages(cfg):
         except ValueError:
             pass
     for r in rows:
+        # "2 voor 1" deals: the price shown is for two people together, so halve it for a per-person compare
+        two_for_one = bool(r.get("twoForOne")) or bool(re.search(r"2[\s-]*(voor|for|4)[\s-]*1", (r.get("title") or "") + " " + (r.get("url") or ""), re.I))
+        if two_for_one:
+            r["twoForOne"] = True
         for d in r.get("departures", []):
+            if two_for_one and not d.get("halved"):
+                d["priceFor2"] = d["price"]
+                d["price"] = round(d["price"] / 2)
+                d["halved"] = True
+                d["note"] = ((d.get("note") or "") + " 2-for-1: price shown is for 2 people, halved here").strip()
             # Journaway includes flights, hotels and listed transport; add food + activities for a fair compare
             c = country_costs(r.get("country", "default"), cfg)
             d["extraPP"] = (c["foodPerDay"] + c["activitiesPerDay"]) * (d["days"] - 1)
@@ -423,11 +488,45 @@ def main():
     if cfg.get("comfortHours"):
         COSTS.setdefault("comfort", {})["hoursFree"] = float(cfg["comfortHours"])
     fx = usd_to_eur()
-    budget = Budget(int(cfg.get("googleQueryBudget", 16)))
-    pause = float(cfg.get("googlePauseSec", 12))
+    budget = Budget(int(cfg.get("googleQueryBudget", 8)))
+    pause = float(cfg.get("googlePauseSec", 20))
+    dbdir = next((f.split("=", 1)[1] for f in flags if f.startswith("--prev=")), None)
+    airports = cfg.get("airports") or ["AMS", "BRU", "DUS", "EIN", "RTM"]
     res = {"runAt": dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"), "usdToEur": fx, "plans": [], "packages": []}
+    # 1) per plan: date variants, cached Travelpayouts fares, earlier Google checks
+    states = []
     for p in plans:
-        res["plans"].append(evaluate(p, cfg, budget, fx, "--no-hotels" not in flags, pause))
+        nights, variants = date_variants(p, cfg)
+        st = {"plan": p, "nights": nights, "variants": variants, "tp": [], "notes": [], "tried": set(),
+              "checks": prev_checks(dbdir, p["id"], nights), "fx": fx}
+        if variants:
+            st["tp"] = tp_candidates(p, nights, cfg, airports)
+            if not st["tp"] and tp.STATUS["ok"] and cfg.get("useTravelpayouts") is not False:
+                ref = tp_reference(airports, p["flyIn"], cfg["windowStart"], cfg["windowEnd"])
+                if ref:
+                    st["notes"].append(ref)
+        states.append(st)
+    # 2) Google checks, round robin over the plans so every route gets live prices over the day
+    progress = True
+    while progress and budget.left > 0 and not flights.BLOCKED:
+        progress = False
+        for st in states:
+            if not st["variants"] or budget.left <= 0 or flights.BLOCKED:
+                continue
+            nx = next_check(st, airports)
+            if not nx:
+                continue
+            budget.take()
+            st["tried"].add(nx)
+            c = run_check(st["plan"], st["nights"], *nx)
+            print(f"google {st['plan']['id']} {' '.join(nx)}: " + (f"EUR {c['pricePP']}" if c.get("pricePP") else c.get("error") or "?"), flush=True)
+            if c.get("pricePP"):
+                st["checks"] = [x for x in st["checks"] if (x["origin"], x["depart"], x["mode"]) != nx] + [c]
+            progress = True
+            time.sleep(pause)
+    # 3) stays, trains, day costs
+    for st in states:
+        res["plans"].append(evaluate(st["plan"], cfg, st, "--no-hotels" not in flags))
     res["googleBlocked"] = flights.BLOCKED
     res["travelpayouts"] = dict(tp.STATUS)
     res["googleQueriesLeft"] = budget.left

@@ -27,11 +27,11 @@
   const PKG = ["Japan", "Vietnam", "Thailand", "Zuid-Korea", "Taiwan", "Indonesie", "Maleisie", "Cambodja"];
   const label = (c) => ({ "Zuid-Korea": "South Korea", Indonesie: "Indonesia", Maleisie: "Malaysia", Cambodja: "Cambodia" }[c] || c);
 
-  /* next scheduled check: the routine looks at 08:17, 12:17, 16:17 and 20:17 Amsterdam time and searches when asked or when the last search is 20 h old */
+  /* next scheduled check: the routine looks at 08:17, 12:17, 16:17 and 20:17 Amsterdam time and searches when asked or when the last search is 3 h old (every slot: Google allows only a few flight checks per run) */
   function nextSearch(c) {
     if (!c) return "–";
     if (c.status === "running") return "running now";
-    const due = c.runRequested || !c.lastRunAt ? Date.now() : Date.parse(c.lastRunAt) + 20 * 36e5;
+    const due = c.runRequested || !c.lastRunAt ? Date.now() : Date.parse(c.lastRunAt) + 3 * 36e5;
     const now = new Date(Math.max(Date.now(), due));
     for (let i = 0; i < 9; i++) {
       for (const h of [8, 12, 16, 20]) {
@@ -104,18 +104,18 @@
       el("span", { class: "chip " + chipCls, text: vtext }),
       el("span", { class: "chip", text: `${day(b.depart)} → ${day(b.return)} · ${b.days} days` }),
       el("span", { class: "chip cyan", text: `${fl.origin || "?"} · ${(fl.airlines || []).join(" / ") || "?"}` }),
-      fl.cached ? el("span", { class: "chip", text: "cached fare" }) : el("span", { class: "chip amber", text: "live fare" }));
+      fl.cached ? el("span", { class: "chip", text: "cached fare" }) : el("span", { class: "chip amber", text: fl.checkedAt ? "Google fare · " + when(fl.checkedAt) : "live fare" }));
     const flags = el("div", { class: "flags" }, (b.flags || []).map((f) => el("span", { class: "chip warn", text: f })));
     const items = el("ul");
     const fdesc = [fl.type, fl.out && (fl.out.stops != null ? (fl.out.stops ? fl.out.stops + " stop" + (fl.out.stops > 1 ? "s" : "") : "direct") : null), fl.out && (fl.out.duration || (fl.out.hours ? fl.out.hours + " h" : null))].filter(Boolean).join(" · ");
     items.append(el("li", {}, el("b", { text: `Flight ${eur(fl.pricePP)}` }), " " + fdesc + (fl.google ? ` · Google now ${eur(fl.google.pricePP)}` : "")));
-    for (const s of (b.stays || [])) items.append(el("li", {}, el("b", { text: `${s.city} ${s.nights} nights ${eur(s.pricePP)}` }), " " + (s.pick ? `${s.pick.name} · ${s.pick.rating ?? "?"}★ (${s.pick.reviews ?? "?"} reviews) · ${eur(s.pick.nightlyEur)}/night for 2` : "estimated, no hotel price found")));
+    for (const s of (b.stays || [])) items.append(el("li", {}, el("b", { text: `${s.city} ${s.nights} nights ${eur(s.pricePP)}` }), " " + (s.pick ? `${s.pick.name} · ${s.pick.score10 != null ? s.pick.score10 + "/10" : (s.pick.rating ?? "?") + "★"} (${s.pick.reviews ?? "?"} reviews) · ${eur(s.pick.nightlyEur)}/night for 2${s.pick.kind ? " · " + s.pick.kind.split(/ (Free cancellation|We have|Breakfast)/)[0] : ""}${s.source ? " · " + s.source : ""}` : "estimated, no hotel price found")));
     for (const l of (b.legs || [])) items.append(el("li", {}, el("b", { text: `${l.from} → ${l.to} ${eur(l.pricePP)}` }), l.known ? " train/bus" : " estimate"));
     const why = S.plans.find((p) => p.id === t.planId)?.why;
     const acts = el("div", { class: "dact" });
     const seen = new Set();
     for (const u of [...(fl.urls || []), fl.google?.url]) { const s = safe(u); if (s && !seen.has(s)) { seen.add(s); acts.append(el("a", { class: "btn sm", href: s, target: "_blank", rel: "noopener", text: s.includes("aviasales") ? "Flight ↗" : "Google Flights ↗" })); } }
-    for (const s of (b.stays || [])) { const u = safe(s.url); if (u) acts.append(el("a", { class: "btn sm", href: u, target: "_blank", rel: "noopener", text: "Hotels " + s.city + " ↗" })); }
+    for (const s of (b.stays || [])) { const u = safe(s.pick?.url) || safe(s.url); if (u) acts.append(el("a", { class: "btn sm", href: u, target: "_blank", rel: "noopener", text: (s.pick?.url ? "Stay " : "Hotels ") + s.city + " ↗" })); }
     const nums = el("div", { class: "dnums" },
       el("div", { class: "row big" }, el("span", { text: "Per person" }), el("b", { text: eur(b.totalPP) })),
       el("div", { class: "row" }, el("span", { text: "For two" }), el("b", { text: eur(b.totalPP * 2) })),
@@ -160,7 +160,7 @@
     for (const { p, d } of top) {
       const u = safe(p.url), all = d.allInPP ?? d.price, [cls, vt] = verdict(all);
       tb.append(el("tr", {},
-        el("td", { class: "sum" }, u ? el("a", { href: u, target: "_blank", rel: "noopener", text: p.title }) : p.title, el("div", { style: "color:var(--dim);font:11px/1.4 var(--f-mono)", text: p.source || "Journaway" })),
+        el("td", { class: "sum" }, u ? el("a", { href: u, target: "_blank", rel: "noopener", text: p.title }) : p.title, el("div", { style: "color:var(--dim);font:11px/1.4 var(--f-mono)", text: (p.source || "Journaway") + (p.twoForOne ? " · 2-for-1: listed price is for 2, halved" : "") })),
         el("td", { text: `${day(d.from)} → ${day(d.to)} · ${d.days} d` }),
         el("td", { text: d.airport || "–" }),
         el("td", { class: "num", text: eur(d.price) }),
@@ -178,7 +178,7 @@
       const t = S.trips.find((x) => x.planId === p.id);
       box.append(el("div", { class: "agent" },
         el("div", { class: "agent-top" }, el("div", {}, el("h3", { text: label(p.country) }), el("div", { class: "aname", text: p.name })),
-          el("span", { class: "status" }, el("span", { class: "chip " + (t?.best ? verdict(t.best.totalPP)[0] : ""), text: t?.best ? eur(t.best.totalPP) : "not priced" }))),
+          el("span", { class: "status" }, el("span", { class: "chip " + (t?.best ? verdict(t.best.totalPP)[0] : ""), text: t?.best ? eur(t.best.totalPP) : t?.groundOnly ? eur(t.groundOnly.totalExFlightPP) + " + flight" : "not priced" }))),
         el("div", { class: "tv-route" }, (p.stops || []).flatMap((s, i) => [i ? el("i", { text: "→" }) : null, el("span", { text: s.city }), el("small", { text: ` ${s.nights}n` })])),
         el("p", { class: "why", text: p.why || "" }),
         el("div", { class: "specs" },

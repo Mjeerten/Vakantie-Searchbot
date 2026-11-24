@@ -6,7 +6,7 @@
 // Journaway labels prices "p.p." on the page.
 const { chromium } = require('playwright');
 const [start, end, minDays, ...countries] = process.argv.slice(2);
-const MAX_TRIPS_PER_COUNTRY = 10;
+const MAX_TRIPS_PER_COUNTRY = 14;
 // slug words that mark a trip as being in that country (Journaway uses Dutch names in its urls)
 const KEYS = { japan: ['japan'], vietnam: ['vietnam'], thailand: ['thailand'], indonesie: ['indonesie', 'bali', 'java', 'lombok'],
   'zuid-korea': ['korea'], taiwan: ['taiwan'], filipijnen: ['filipijnen'], maleisie: ['maleisie', 'borneo'], cambodja: ['cambodja'], laos: ['laos'] };
@@ -15,6 +15,14 @@ const sleep = ms => new Promise(r => setTimeout(r, ms));
 (async () => {
   const b = await chromium.launch();
   const ctx = await b.newContext({ locale: 'nl-NL', timezoneId: 'Europe/Amsterdam' });
+  // the "2 for 1" campaign page lists deals where the second person travels free (price shown is for 2)
+  let promo = [];
+  try {
+    const p = await ctx.newPage();
+    await p.goto('https://www.journaway.com/nl/inspiratie/2for1', { waitUntil: 'networkidle', timeout: 90000 });
+    promo = await p.$$eval('a[href*="/nl/aanbiedingen/"]', as => [...new Set(as.map(a => a.href.split('?')[0]))]);
+    await p.close();
+  } catch (e) { /* campaign may be over */ }
   for (const country of countries) {
     let links = [];
     try {
@@ -24,6 +32,11 @@ const sleep = ms => new Promise(r => setTimeout(r, ms));
       const keys = KEYS[country.toLowerCase()] || [country.toLowerCase()];
       links = links.filter(u => keys.some(k => u.split('/aanbiedingen/')[1].includes(k)));
       await p.close();
+    } catch (e) { console.log(JSON.stringify({ country, error: 'search page: ' + String(e).slice(0, 120) })); }
+    try {
+      const keys = KEYS[country.toLowerCase()] || [country.toLowerCase()];
+      const deals = promo.filter(u => keys.some(k => u.split('/aanbiedingen/')[1].includes(k)));
+      links = [...new Set([...deals, ...links])];  // 2-for-1 deals first
     } catch (e) { console.log(JSON.stringify({ country, error: 'search page: ' + String(e).slice(0, 120) })); continue; }
     for (const url of links.slice(0, MAX_TRIPS_PER_COUNTRY)) {
       await sleep(2000);
@@ -42,7 +55,7 @@ const sleep = ms => new Promise(r => setTimeout(r, ms));
             deps.push({ from, to, days, airport: a.departureAirport, price: a.price, fare: a.fare, note: a.priceNote });
         }
         deps.sort((x, y) => x.price - y.price);
-        console.log(JSON.stringify({ country, title, url, fromPrice: prices?.data?.minPrice ?? null, departures: deps.slice(0, 8), priceLabel: 'p.p. (Journaway)' }));
+        console.log(JSON.stringify({ country, title, url, twoForOne: /2-for-1|2for1/.test(url) || /2 for 1/i.test(title), fromPrice: prices?.data?.minPrice ?? null, departures: deps.slice(0, 8), priceLabel: 'p.p. (Journaway)' }));
       } catch (e) { console.log(JSON.stringify({ country, url, error: String(e).slice(0, 120) })); }
       await p.close();
     }

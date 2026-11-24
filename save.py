@@ -55,11 +55,13 @@ for p in res["plans"]:
     prev = old[0] if old else {}
     if not b:
         summ.append(f"{p['name']}: {'; '.join(p.get('notes') or ['no price'])}")
-        if prev:  # keep the last good result, add the note
-            prev = dict(prev)
-            prev["lastNote"] = "; ".join(p.get("notes") or [])
-            prev["lastTriedAt"] = now
-            put(T, p["planId"], prev, old)
+        # keep the last good result (if any), add the note, the flight checks and the costs without flight
+        doc = dict(prev) if prev else {"planId": p["planId"], "name": p["name"], "country": p["country"]}
+        doc["lastNote"] = "; ".join(p.get("notes") or [])
+        doc["lastTriedAt"] = now
+        doc["flightChecks"] = p.get("flightChecks") or []
+        doc["groundOnly"] = p.get("groundOnly")
+        put(T, p["planId"], doc, old)
         continue
     hist = (prev.get("history") or [])[-59:] + [{"at": now, "totalPP": b["totalPP"], "flightPP": b["flight"]["pricePP"]}]
     best_ever = prev.get("bestEver")
@@ -67,7 +69,8 @@ for p in res["plans"]:
     if improved:
         best_ever = {"totalPP": b["totalPP"], "at": now, "depart": b["depart"]}
     doc = {"planId": p["planId"], "name": p["name"], "country": p["country"], "updatedAt": now,
-           "best": b, "history": hist, "bestEver": best_ever, "lastNote": None}
+           "best": b, "history": hist, "bestEver": best_ever, "lastNote": None,
+           "flightChecks": p.get("flightChecks") or [], "groundOnly": None}
     put(T, p["planId"], doc, old)
     summ.append(f"{p['name']} €{b['totalPP']}")
     # push rule: within budget and new best (or first result), or a drop of >= 75 versus last run
