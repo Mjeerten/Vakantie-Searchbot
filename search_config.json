@@ -23,7 +23,7 @@
   "EIN",
   "RTM"
  ],
- "googleQueryBudget": 14,
- "googlePauseSec": 25,
+ "googleQueryBudget": 28,
+ "googlePauseSec": 20,
  "maxOtherPlans": 6
 }
