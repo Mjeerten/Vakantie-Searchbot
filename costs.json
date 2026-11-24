@@ -6,64 +6,56 @@
    "activitiesPerDay": 12,
    "localTransportPerDay": 8,
    "airportTransfer": 12,
-   "minRating": 3.9,
-   "extrasPerDay": 6
+   "minRating": 3.9
   },
   "Thailand": {
    "foodPerDay": 18,
    "activitiesPerDay": 12,
    "localTransportPerDay": 6,
    "airportTransfer": 10,
-   "minRating": 4.2,
-   "extrasPerDay": 4
+   "minRating": 4.2
   },
   "Vietnam": {
    "foodPerDay": 15,
    "activitiesPerDay": 10,
    "localTransportPerDay": 5,
    "airportTransfer": 10,
-   "minRating": 4.2,
-   "extrasPerDay": 4
+   "minRating": 4.2
   },
   "Zuid-Korea": {
    "foodPerDay": 30,
    "activitiesPerDay": 12,
    "localTransportPerDay": 6,
    "airportTransfer": 12,
-   "minRating": 4.0,
-   "extrasPerDay": 6
+   "minRating": 4.0
   },
   "Taiwan": {
    "foodPerDay": 22,
    "activitiesPerDay": 10,
    "localTransportPerDay": 5,
    "airportTransfer": 10,
-   "minRating": 4.0,
-   "extrasPerDay": 5
+   "minRating": 4.0
   },
   "Indonesie": {
    "foodPerDay": 15,
    "activitiesPerDay": 12,
    "localTransportPerDay": 8,
    "airportTransfer": 12,
-   "minRating": 4.2,
-   "extrasPerDay": 4
+   "minRating": 4.2
   },
   "default": {
    "foodPerDay": 25,
    "activitiesPerDay": 12,
    "localTransportPerDay": 6,
    "airportTransfer": 12,
-   "minRating": 4.1,
-   "extrasPerDay": 4
+   "minRating": 4.1
   },
   "China": {
    "foodPerDay": 15,
    "activitiesPerDay": 12,
    "localTransportPerDay": 4,
    "airportTransfer": 8,
-   "minRating": 4.0,
-   "extrasPerDay": 5
+   "minRating": 4.0
   }
  },
  "legs": {
@@ -151,6 +143,5 @@
   "hoursFree": 18,
   "eurPerHour": 10,
   "maxHours": 30
- },
- "_extrasNote": "extrasPerDay: buffer for unexpected buys (SIM/eSIM, coin lockers, laundry, souvenirs, drinks, a pharmacy run)."
+ }
 }

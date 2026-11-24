@@ -128,7 +128,7 @@ def next_check(st, airports):
     Open-jaw routes check both a multi-city ticket ("mc") and a return to the arrival city plus the train back ("rt")."""
     p = st["plan"]
     modes = ["mc", "rt"] if (p.get("flyOut") or p["flyIn"]) != p["flyIn"] else ["rt"]
-    recent = {(c["origin"], c["depart"], c["mode"]) for c in st["checks"] if _age_h(c["checkedAt"]) < RECHECK_H} | st["tried"]
+    recent = {(c["origin"], c["depart"], c["mode"]) for c in st["checks"] if not c.get("manual") and _age_h(c["checkedAt"]) < RECHECK_H} | st["tried"]
     dates = []
     if st["tp"]:
         t = min(st["tp"], key=lambda c: c["compare"])
@@ -170,7 +170,7 @@ def coverage(st, airports):
     cheapest day, and the other airports on that day. Returns (checked, total)."""
     p = st["plan"]
     modes = ["mc", "rt"] if (p.get("flyOut") or p["flyIn"]) != p["flyIn"] else ["rt"]
-    fresh = {(c["origin"], c["depart"], c["mode"]) for c in st["checks"] if _age_h(c.get("checkedAt", "")) <= FRESH_H} | st["tried"]
+    fresh = {(c["origin"], c["depart"], c["mode"]) for c in st["checks"] if not c.get("manual") and _age_h(c.get("checkedAt", "")) <= FRESH_H} | st["tried"]
     dates = [v["depart"] for v in st["variants"]]
     if not dates:
         return 0, 0
@@ -222,10 +222,28 @@ def shared_checks(path, plan_id, nights):
             and (D(c["return"]) - D(c["depart"])).days == nights + 1]
 
 
+def manual_checks(cfg, plan_id, nights):
+    """Fares the owner saw on Google Flights from the Netherlands (settings.manualFlights). Google shows
+    different fares per country, so these can beat what the bot sees from its servers. Valid 14 days."""
+    out = []
+    for m in cfg.get("manualFlights") or []:
+        try:
+            if m.get("plan") != plan_id or (D(m["return"]) - D(m["depart"])).days != nights + 1 or _age_h(m["seenAt"]) > 14 * 24:
+                continue
+            out.append({"origin": m.get("origin", "AMS"), "depart": m["depart"], "return": m["return"], "mode": m.get("mode", "mc"),
+                        "checkedAt": m["seenAt"], "url": m.get("url", ""), "pricePP": int(m["pricePP"]), "airline": m.get("airline", "?"),
+                        "manual": True, "out": {"airline": m.get("airline", "?"), "stops": m.get("stops"), "layovers": m.get("layovers", []),
+                                                "pricePP": int(m["pricePP"]), "airportChange": False, "note": m.get("note", ""),
+                                                "duration": m.get("duration"), "departs": m.get("departs"), "arrives": m.get("arrives")}})
+        except Exception:
+            continue
+    return out
+
+
 def merge_checks(*lists):
     best = {}
     for c in [c for l in lists for c in l]:
-        k = (c["origin"], c["depart"], c["mode"])
+        k = (c["origin"], c["depart"], c["mode"], bool(c.get("manual")))
         if k not in best or c["checkedAt"] > best[k]["checkedAt"]:
             best[k] = c
     return list(best.values())
@@ -263,7 +281,7 @@ def google_cand(plan, c):
     return {"origin": c["origin"], "src": "google", "type": typ,
             "pricePP": c["pricePP"], "backTrainPP": back, "compare": c["pricePP"] + back, "airlines": [c.get("airline")],
             "out": c.get("out"), "back": None, "depart": c["depart"], "return": c["return"],
-            "urls": [c["url"]], "checkedAt": c["checkedAt"]}
+            "urls": [c["url"]], "checkedAt": c["checkedAt"], "manual": bool(c.get("manual"))}
 
 
 BIG_CITIES = {"Tokyo": 4, "Seoul": 4.5, "Bangkok": 4.5, "Osaka": 3, "Kyoto": 2.5, "Ho Chi Minh City": 3, "Hanoi": 2.5,
@@ -526,7 +544,6 @@ def evaluate(plan, cfg, st, do_hotels):
         "food": rules["foodPerDay"] * on_ground,
         "activities": rules["activitiesPerDay"] * on_ground,
         "local": rules["localTransportPerDay"] * on_ground,
-        "extras": rules.get("extrasPerDay", 5) * on_ground,  # buffer for unexpected buys
     }
     total = sum(parts.values())
     bmin, bmax = cfg.get("budgetMinPP", 1500), cfg.get("budgetMaxPP", 2500)
@@ -544,7 +561,9 @@ def evaluate(plan, cfg, st, do_hotels):
         return out
     if fl["type"].startswith("open jaw"):
         est_flags.append("open jaw priced as 2 one-way tickets; a multi-city ticket is often cheaper")
-    if fl.get("checkedAt"):
+    if fl.get("manual"):
+        est_flags.append(f"flight price seen by you on Google Flights (NL) {_age_h(fl['checkedAt']) / 24:.0f} days ago; the bot's servers don't get this fare, check it before booking")
+    elif fl.get("checkedAt"):
         est_flags.append(f"flight price checked on Google {_age_h(fl['checkedAt']):.0f} h ago")
     if fl.get("cached"):
         est_flags.append("cached fare (seen by Aviasales users recently), check the live price")
@@ -583,7 +602,7 @@ def packages(cfg):
                 d["note"] = ((d.get("note") or "") + " 2-for-1: price shown is for 2 people, halved here").strip()
             # Journaway includes flights, hotels and listed transport; add food + activities for a fair compare
             c = country_costs(r.get("country", "default"), cfg)
-            d["extraPP"] = (c["foodPerDay"] + c["activitiesPerDay"] + c.get("extrasPerDay", 5)) * (d["days"] - 1)
+            d["extraPP"] = (c["foodPerDay"] + c["activitiesPerDay"]) * (d["days"] - 1)
             d["allInPP"] = d["price"] + d["extraPP"]
     return rows
 
@@ -609,7 +628,8 @@ def main():
     for p in plans:
         nights, variants = date_variants(p, cfg)
         st = {"plan": p, "nights": nights, "variants": variants, "tp": [], "notes": [], "tried": set(),
-              "checks": merge_checks(prev_checks(dbdir, p["id"], nights), shared_checks(shared, p["id"], nights)), "fx": fx}
+              "checks": merge_checks([c for c in prev_checks(dbdir, p["id"], nights) if not c.get("manual")],
+                                     shared_checks(shared, p["id"], nights), manual_checks(cfg, p["id"], nights)), "fx": fx}
         if variants:
             st["tp"] = tp_candidates(p, nights, cfg, airports)
             if not st["tp"] and tp.STATUS["ok"] and cfg.get("useTravelpayouts") is not False:

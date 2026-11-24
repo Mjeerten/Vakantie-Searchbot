@@ -20,7 +20,7 @@
   let toastT; const toast = (t) => { const e = $("tvToast"); e.textContent = t; e.hidden = false; clearTimeout(toastT); toastT = setTimeout(() => e.hidden = true, 2600); };
 
   const S = { db: null, cfg: null, cfgVer: 0, trips: [], plans: [], pkgs: [], runs: [], connected: false };
-  const SEG = [["flight", "Flight", "var(--amber)"], ["bag", "Bag", "var(--dim)"], ["stays", "Stays", "var(--cyan)"], ["transport", "Trains", "#b394ff"], ["food", "Food", "var(--good)"], ["activities", "Activities", "#ff7eb6"], ["local", "Local transport", "var(--muted)"], ["extras", "Extras buffer", "#e8c46a"]];
+  const SEG = [["flight", "Flight", "var(--amber)"], ["bag", "Bag", "var(--dim)"], ["stays", "Stays", "var(--cyan)"], ["transport", "Trains", "#b394ff"], ["food", "Food", "var(--good)"], ["activities", "Activities", "#ff7eb6"], ["local", "Local transport", "var(--muted)"]];
   const INTERESTS = [["city", "City, food & nightlife"], ["culture", "Culture & temples"], ["nature", "Nature & views"], ["beach", "Beach & relaxing"]];
   const COUNTRIES = ["Japan", "China", "Vietnam", "Thailand", "Zuid-Korea"];
   const AIRPORTS = ["AMS", "BRU", "DUS", "EIN", "RTM"];
@@ -122,7 +122,7 @@
       el("div", { class: "row" }, el("span", { text: `${b.days} days, per day` }), el("b", { text: eur(Math.round(b.totalPP / (b.days || 1))) })),
       el("div", { class: "row" }, el("span", { text: "Flight" }), el("b", { text: eur(parts.flight) })),
       el("div", { class: "row" }, el("span", { text: "Stays" }), el("b", { text: eur(parts.stays) })),
-      el("div", { class: "row" }, el("span", { text: "Food + fun" }), el("b", { text: eur((parts.food || 0) + (parts.activities || 0) + (parts.extras || 0)) })),
+      el("div", { class: "row" }, el("span", { text: "Food + fun" }), el("b", { text: eur((parts.food || 0) + (parts.activities || 0)) })),
       t.bestEver && t.bestEver.totalPP < b.totalPP ? el("div", { class: "row profit" }, el("span", { text: "Lowest seen" }), el("b", { text: eur(t.bestEver.totalPP) })) : null,
       spark(t.history),
       el("div", { class: "row" }, el("span", { text: "Updated" }), el("b", { text: when(t.updatedAt) })));
@@ -224,7 +224,7 @@
     checks("tvAirports", AIRPORTS, c.airports || AIRPORTS);
     checks("tvPkgCountries", PKG, c.packageCountries || ["Japan"], label);
     const jp = (c.perDay || {}).Japan || {};
-    $("tvFood").value = jp.foodPerDay ?? 30; $("tvAct").value = jp.activitiesPerDay ?? 12; $("tvExtra").value = jp.extrasPerDay ?? 6; $("tvHours").value = c.comfortHours ?? 18;
+    $("tvFood").value = jp.foodPerDay ?? 30; $("tvAct").value = jp.activitiesPerDay ?? 12; $("tvHours").value = c.comfortHours ?? 18;
     $("tvWishes").value = c.wishes || ""; $("tvFormErr").hidden = true;
     $("tvScrim").hidden = false; $("tvDrawer").hidden = false; $("tvStart").focus();
   }
@@ -236,7 +236,7 @@
       windowStart: $("tvStart").value, windowEnd: $("tvEnd").value, minDays: num("tvMinDays"), pace: $("tvPace").value,
       budgetMinPP: num("tvBMin"), budgetMaxPP: num("tvBMax"), interests: picked("tvInterests"), countries: picked("tvCountries"),
       airports: picked("tvAirports"), packageCountries: picked("tvPkgCountries"), comfortHours: num("tvHours"),
-      perDay: { ...(S.cfg?.perDay || {}), Japan: { foodPerDay: num("tvFood"), activitiesPerDay: num("tvAct"), extrasPerDay: num("tvExtra") } },
+      perDay: { ...(S.cfg?.perDay || {}), Japan: { foodPerDay: num("tvFood"), activitiesPerDay: num("tvAct") } },
       wishes: $("tvWishes").value.slice(0, 1500), replan: true, settingsChangedAt: new Date().toISOString(),
     };
     const bad = !body.windowStart || !body.windowEnd || body.windowEnd <= body.windowStart ? "Pick a leave date before the home-by date."
