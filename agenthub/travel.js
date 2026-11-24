@@ -148,9 +148,11 @@
       return;
     }
     /* Japan is the first choice: its trips always come first, the rest below an "Other trips" divider */
-    /* Japan: trips within budget first, longest first (most days for the money), then the rest by price */
+    /* Japan: trips within budget first. 16 days is the owner's sweet spot; a longer trip ranks higher only when each
+       extra day costs less than EUR 40 p.p. (so "a bit longer for not much more"). Over budget: by price. */
     const maxB = S.cfg?.budgetMaxPP || 2500, fits = (t) => t.best.totalPP <= maxB;
-    const jp = list.filter((t) => t.country === "Japan").sort((a, b) => (fits(b) - fits(a)) || (fits(a) ? (b.best.days - a.best.days) || (a.best.totalPP - b.best.totalPP) : a.best.totalPP - b.best.totalPP)), rest = list.filter((t) => t.country !== "Japan");
+    const score = (t) => t.best.totalPP - 40 * ((t.best.days || 16) - 16);
+    const jp = list.filter((t) => t.country === "Japan").sort((a, b) => (fits(b) - fits(a)) || (fits(a) ? score(a) - score(b) : a.best.totalPP - b.best.totalPP)), rest = list.filter((t) => t.country !== "Japan");
     for (const t of jp) box.append(tripCard(t));
     if (jp.length && rest.length) box.append(el("div", { class: "tv-divider", text: "Other trips" }));
     for (const t of rest) box.append(tripCard(t));

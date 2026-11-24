@@ -72,7 +72,8 @@
      "flex": 1
     }
    ],
-   "why": "The same cities the other way round. Flights into Osaka are sometimes cheaper, and you end in Tokyo for the last shopping and nightlife."
+   "why": "The same cities the other way round. Flights into Osaka are sometimes cheaper, and you end in Tokyo for the last shopping and nightlife.",
+   "stretch": true
   },
   {
    "id": "jp-fuji-hiroshima",

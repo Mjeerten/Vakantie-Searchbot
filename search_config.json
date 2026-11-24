@@ -15,7 +15,7 @@
   "nature"
  ],
  "pace": "relaxed-medium",
- "maxPlans": 9,
+ "maxPlans": 13,
  "airports": [
   "AMS",
   "BRU",
@@ -24,5 +24,6 @@
   "RTM"
  ],
  "googleQueryBudget": 14,
- "googlePauseSec": 25
+ "googlePauseSec": 25,
+ "maxOtherPlans": 5
 }

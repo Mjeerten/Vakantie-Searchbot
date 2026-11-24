@@ -66,13 +66,13 @@ def plan(cfg):
     out.sort(key=lambda p: p["priority"])
     jp = [p for p in out if p["country"] == "Japan"]
     rest = [p for p in out if p["country"] != "Japan"]
-    keep = int(cfg.get("maxPlans") or 9)
+    keep = int(cfg.get("maxPlans") or 13)
     # other countries: the best route of each country first (up to 3), so every chosen country gets tested
     first, seen = [], set()
     for x in rest:
         if x["country"] not in seen:
             seen.add(x["country"]); first.append(x)
-    other = (first + [x for x in rest if x not in first])[:3]
+    other = (first + [x for x in rest if x not in first])[:int(cfg.get("maxOtherPlans") or 5)]
     sel = jp[:max(1, keep - len(other))] + other
     return sel[:keep]
 
