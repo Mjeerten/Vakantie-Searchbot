@@ -336,6 +336,42 @@
     }
    ],
    "why": "Shanghai skyline and old water towns, Zhangjiajie's sandstone pillar mountains for nature, Chengdu for pandas and food, and Chongqing to finish. In via Shanghai, home from Chongqing."
+  },
+  {
+   "id": "cn-beijing-chongqing",
+   "country": "China",
+   "name": "China: Beijing to Chongqing",
+   "flyIn": "BJS",
+   "flyOut": "CKG",
+   "priority": 5.5,
+   "tags": [
+    "city",
+    "culture",
+    "nature"
+   ],
+   "stops": [
+    {
+     "city": "Beijing",
+     "nights": 4,
+     "flex": 0
+    },
+    {
+     "city": "Xi'an",
+     "nights": 3,
+     "flex": 1
+    },
+    {
+     "city": "Chengdu",
+     "nights": 4,
+     "flex": 0
+    },
+    {
+     "city": "Chongqing",
+     "nights": 4,
+     "flex": 1
+    }
+   ],
+   "why": "The same China trip the other way round: start with Beijing (Forbidden City, hutongs, Great Wall), then Xi'an, Chengdu and finish in Chongqing. Sometimes flying in via Beijing and home from Chongqing is cheaper."
   }
  ]
 }

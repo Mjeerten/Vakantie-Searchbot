@@ -19,6 +19,7 @@ import subprocess
 import sys
 import time
 import urllib.request
+from concurrent.futures import ThreadPoolExecutor
 
 import flights
 import tp
@@ -288,26 +289,51 @@ def pick_stay(city, checkin, nights, rules, fx, cfg):
     avoid = list({w.lower() for w in (cfg.get("avoidWords") or []) + ALWAYS_AVOID})
     maxmi = BIG_CITIES.get(city, 3.5)
     res = {"city": city, "checkin": checkin, "checkout": checkout, "nights": nights}
-    for script in ("booking.js", "hotels.js"):
-        r = _hotel_search(script, city, checkin, checkout, fx, maxmi)
-        ok = [h for h in r.get("hotels", [])
-              if (h.get("rating") or 0) >= minr and (h.get("reviews") or 0) >= minrev
-              and (h.get("miles") is None or h["miles"] <= maxmi)
-              and not any(w in (h["name"] + " " + (h.get("kind") or "")).lower() for w in avoid)
-              and not re.search(r"(?<!non-)(?<!non )smoking", (h.get("kind") or "").lower())]
-        ok.sort(key=lambda h: h["nightlyEur"])
-        res.update({"source": "Booking.com" if script == "booking.js" else "Google Hotels", "url": r.get("url"),
-                    "blocked": r.get("blocked"), "error": r.get("error"), "found": len(r.get("hotels", [])), "qualifying": len(ok)})
-        if ok:
-            top = ok[:3]
-            res["pick"] = top[0]
-            res["alternatives"] = top[1:]
-            # room for 2, split in two; Booking gives the real total for the stay
-            tot = top[0].get("total") or top[0]["nightlyEur"] * nights
-            res["pricePP"] = round(tot / 2)
-            res["medianTop3PP"] = round(statistics.median((h.get("total") or h["nightlyEur"] * nights) for h in top) / 2)
-            return res
+    # Booking.com and Google Hotels (which compares Agoda, Trip.com, Expedia, Hotels.com and the hotels' own sites) at once
+    with ThreadPoolExecutor(2) as ex:
+        fb = ex.submit(_hotel_search, "booking.js", city, checkin, checkout, fx, maxmi)
+        fg = ex.submit(_hotel_search, "hotels.js", city, checkin, checkout, fx)
+        rb, rg = fb.result(), fg.result()
+
+    def good(h):
+        return ((h.get("rating") or 0) >= minr and (h.get("reviews") or 0) >= minrev
+                and (h.get("miles") is None or h["miles"] <= maxmi)
+                and not any(w in (h["name"] + " " + (h.get("kind") or "")).lower() for w in avoid)
+                and not re.search(r"(?<!non-)(?<!non )smoking", (h.get("kind") or "").lower()))
+
+    gl = [h for h in rg.get("hotels", []) if h.get("nightlyEur")]
+    ok = [dict(h) for h in rb.get("hotels", []) if good(h)]
+    for h in ok:
+        # same hotel cheaper on another site (via Google Hotels)? then use that price
+        m = next((g for g in gl if same_hotel(h["name"], g["name"])), None)
+        if m and m["nightlyEur"] * nights < h["total"] - 5:
+            h["bookingTotal"] = h["total"]
+            h["total"] = m["nightlyEur"] * nights
+            h["nightlyEur"] = m["nightlyEur"]
+            h["cheaperVia"] = "Google Hotels (another booking site)"
+    src = "Booking.com"
+    if not ok:
+        # Google only: no distance known, so only as a fallback
+        ok = [dict(h, total=h["nightlyEur"] * nights) for h in gl if good(h)]
+        src = "Google Hotels"
+    ok.sort(key=lambda h: h.get("total") or h["nightlyEur"] * nights)
+    res.update({"source": src, "url": rb.get("url"), "googleUrl": rg.get("url"), "blocked": rb.get("blocked"),
+                "error": rb.get("error") or rg.get("error"), "found": len(rb.get("hotels", [])) + len(gl), "qualifying": len(ok)})
+    if ok:
+        top = ok[:3]
+        res["pick"] = top[0]
+        res["alternatives"] = top[1:]
+        tot = top[0].get("total") or top[0]["nightlyEur"] * nights
+        res["pricePP"] = round(tot / 2)  # room for 2, split in two
+        res["medianTop3PP"] = round(statistics.median((h.get("total") or h["nightlyEur"] * nights) for h in top) / 2)
     return res
+
+
+def same_hotel(a, b):
+    """Loose name match between sites ("plat hostel keikyu asakusa karin" ~ "Plat Hostel Keikyu Asakusa Karin")."""
+    t = lambda x: {w for w in re.findall(r"[a-z0-9]+", x.lower()) if len(w) > 2 and w not in ("hotel", "hostel", "the", "and", "inn")}
+    x, y = t(a), t(b)
+    return bool(x and y) and len(x & y) / min(len(x), len(y)) >= 0.6
 
 
 def hours_of(text):
