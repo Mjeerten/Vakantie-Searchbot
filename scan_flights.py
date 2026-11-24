@@ -30,6 +30,9 @@ def main():
         old = [c for c in (prev.get("plans") or {}).get(p["id"], [])
                if run._age_h(c.get("checkedAt", "")) <= run.FRESH_H and (run.D(c["return"]) - run.D(c["depart"])).days == nights + 1]
         states.append({"plan": p, "nights": nights, "variants": variants, "tp": [], "checks": old, "tried": set()})
+    import os
+    if os.environ.get("GOOGLE_BUDGET"):
+        cfg["googleQueryBudget"] = int(os.environ["GOOGLE_BUDGET"])
     budget = run.Budget(int(cfg.get("googleQueryBudget", 10)))
     run.google_round(states, airports, budget, float(cfg.get("googlePauseSec", 25)), log=lambda m: print(m, flush=True))
     out = {"updatedAt": dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"), "blocked": flights.BLOCKED,

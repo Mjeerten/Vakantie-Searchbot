@@ -152,7 +152,11 @@
        extra day costs less than EUR 40 p.p. (so "a bit longer for not much more"). Over budget: by price. */
     const maxB = S.cfg?.budgetMaxPP || 2500, fits = (t) => t.best.totalPP <= maxB;
     const score = (t) => t.best.totalPP - 40 * ((t.best.days || 16) - 16);
-    const jp = list.filter((t) => t.country === "Japan").sort((a, b) => (fits(b) - fits(a)) || (fits(a) ? score(a) - score(b) : a.best.totalPP - b.best.totalPP)), rest = list.filter((t) => t.country !== "Japan");
+    /* Japan: one card per route family (golden, via Kanazawa, golden + Kanazawa), the cheapest of both directions */
+    const fam = (t) => String(t.planId || t.id || "").replace(/-rev$/, ""), famBest = new Map();
+    for (const t of list.filter((t) => t.country === "Japan")) { const k = fam(t), c = famBest.get(k); if (!c || t.best.totalPP < c.best.totalPP) famBest.set(k, t); }
+    const ORDER = ["jp-classic", "jp-golden", "jp-kanazawa", "jp-golden-kanazawa"], rank = (t) => { const i = ORDER.indexOf(fam(t)); return i < 0 ? 99 : i; };
+    const jp = [...famBest.values()].sort((a, b) => rank(a) - rank(b) || score(a) - score(b)), rest = list.filter((t) => t.country !== "Japan");
     for (const t of jp) box.append(tripCard(t));
     if (jp.length && rest.length) box.append(el("div", { class: "tv-divider", text: "Other trips" }));
     for (const t of rest) box.append(tripCard(t));

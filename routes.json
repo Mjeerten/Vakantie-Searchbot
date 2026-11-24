@@ -185,6 +185,107 @@
    "why": "Both: Kanazawa's old districts and garden and a Hakone night with Fuji views and onsen. In via Osaka, end in Tokyo; one Tokyo night less to keep it in budget."
   },
   {
+   "id": "jp-golden-kanazawa-rev",
+   "country": "Japan",
+   "name": "Japan golden route + Kanazawa, Tokyo first",
+   "flyIn": "TYO",
+   "flyOut": "OSA",
+   "priority": 3.5,
+   "tags": [
+    "city",
+    "culture",
+    "nature"
+   ],
+   "stops": [
+    {
+     "city": "Tokyo",
+     "nights": 5,
+     "flex": 0
+    },
+    {
+     "city": "Hakone",
+     "nights": 1,
+     "flex": 0
+    },
+    {
+     "city": "Kanazawa",
+     "nights": 2,
+     "flex": 0
+    },
+    {
+     "city": "Kyoto",
+     "nights": 4,
+     "flex": 0
+    },
+    {
+     "city": "Osaka",
+     "nights": 3,
+     "flex": 0
+    }
+   ],
+   "why": "Golden route plus Kanazawa the other way round: in via Tokyo, Hakone, then Kanazawa, Kyoto and home from Osaka."
+  },
+  {
+   "id": "jp-classic",
+   "country": "Japan",
+   "name": "Japan classic: Tokyo, Kyoto, Osaka",
+   "flyIn": "TYO",
+   "flyOut": "OSA",
+   "priority": 5,
+   "tags": [
+    "city",
+    "culture"
+   ],
+   "stops": [
+    {
+     "city": "Tokyo",
+     "nights": 6,
+     "flex": 0
+    },
+    {
+     "city": "Kyoto",
+     "nights": 4,
+     "flex": 0
+    },
+    {
+     "city": "Osaka",
+     "nights": 3,
+     "flex": 0
+    }
+   ],
+   "why": "The plain version: only Tokyo, Kyoto and Osaka, no Hakone or Kanazawa. Fewest train legs and hotel moves, so the cheapest Japan option; Nara and day trips from Kyoto/Osaka still possible."
+  },
+  {
+   "id": "jp-classic-rev",
+   "country": "Japan",
+   "name": "Japan classic, reversed",
+   "flyIn": "OSA",
+   "flyOut": "TYO",
+   "priority": 5.5,
+   "tags": [
+    "city",
+    "culture"
+   ],
+   "stops": [
+    {
+     "city": "Osaka",
+     "nights": 3,
+     "flex": 0
+    },
+    {
+     "city": "Kyoto",
+     "nights": 4,
+     "flex": 0
+    },
+    {
+     "city": "Tokyo",
+     "nights": 6,
+     "flex": 0
+    }
+   ],
+   "why": "Tokyo, Kyoto and Osaka the other way round: fly into Osaka, end in Tokyo (often a cheaper flight home from Tokyo)."
+  },
+  {
    "id": "vn-north-south",
    "country": "Vietnam",
    "name": "Vietnam north to south",

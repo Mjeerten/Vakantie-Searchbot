@@ -5,6 +5,11 @@ on:
   schedule:
     - cron: "41 * * * *"
   workflow_dispatch:
+    inputs:
+      budget:
+        description: Google queries this run (default from search_config.json)
+        required: false
+        default: ""
   push:
     branches: [claude/compassionate-hawking-lq51s3]
     paths: [".github/workflows/flights.yml", "scan_flights.py", "search_config.json", "gflights.js", "flights.py", "routes.json", "planner.py"]
@@ -16,7 +21,7 @@ concurrency:
 jobs:
   scan:
     runs-on: ubuntu-latest
-    timeout-minutes: 75
+    timeout-minutes: 330
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -28,6 +33,8 @@ jobs:
         run: |
           if git fetch -q --depth 1 origin flight-data; then git show FETCH_HEAD:flight_checks.json > prev.json; else echo '{}' > prev.json; fi
       - name: Scan flights
+        env:
+          GOOGLE_BUDGET: ${{ github.event.inputs.budget }}
         run: python3 scan_flights.py search_config.json prev.json flight_checks.json
       - name: Save to flight-data branch
         env:
