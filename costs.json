@@ -3,7 +3,7 @@
  "countries": {
   "Japan": {
    "foodPerDay": 20,
-   "activitiesPerDay": 12,
+   "activitiesPerDay": 10,
    "localTransportPerDay": 8,
    "airportTransfer": 12,
    "minRating": 3.9
