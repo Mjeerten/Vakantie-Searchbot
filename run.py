@@ -420,6 +420,7 @@ def evaluate(plan, cfg, st, do_hotels):
         "food": rules["foodPerDay"] * on_ground,
         "activities": rules["activitiesPerDay"] * on_ground,
         "local": rules["localTransportPerDay"] * on_ground,
+        "extras": rules.get("extrasPerDay", 5) * on_ground,  # buffer for unexpected buys
     }
     total = sum(parts.values())
     bmin, bmax = cfg.get("budgetMinPP", 1500), cfg.get("budgetMaxPP", 2500)
@@ -476,7 +477,7 @@ def packages(cfg):
                 d["note"] = ((d.get("note") or "") + " 2-for-1: price shown is for 2 people, halved here").strip()
             # Journaway includes flights, hotels and listed transport; add food + activities for a fair compare
             c = country_costs(r.get("country", "default"), cfg)
-            d["extraPP"] = (c["foodPerDay"] + c["activitiesPerDay"]) * (d["days"] - 1)
+            d["extraPP"] = (c["foodPerDay"] + c["activitiesPerDay"] + c.get("extrasPerDay", 5)) * (d["days"] - 1)
             d["allInPP"] = d["price"] + d["extraPP"]
     return rows
 

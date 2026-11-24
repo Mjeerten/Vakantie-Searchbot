@@ -2,53 +2,60 @@
  "_note": "Rough per-person estimates in EUR for summer 2027, used when the bot cannot look a price up. Edit freely; the hub settings can override perDay values. Train prices are standard reserved seats (Japan: Shinkansen Nozomi/Hikari, bought as single tickets, usually cheaper than a 7-day JR Pass for Tokyo-Kyoto-Osaka routes).",
  "countries": {
   "Japan": {
-   "foodPerDay": 30,
+   "foodPerDay": 20,
    "activitiesPerDay": 12,
    "localTransportPerDay": 8,
-   "airportTransfer": 18,
-   "minRating": 3.9
+   "airportTransfer": 12,
+   "minRating": 3.9,
+   "extrasPerDay": 6
   },
   "Thailand": {
    "foodPerDay": 18,
    "activitiesPerDay": 12,
    "localTransportPerDay": 6,
    "airportTransfer": 10,
-   "minRating": 4.2
+   "minRating": 4.2,
+   "extrasPerDay": 4
   },
   "Vietnam": {
    "foodPerDay": 15,
    "activitiesPerDay": 10,
    "localTransportPerDay": 5,
    "airportTransfer": 10,
-   "minRating": 4.2
+   "minRating": 4.2,
+   "extrasPerDay": 4
   },
   "Zuid-Korea": {
    "foodPerDay": 30,
    "activitiesPerDay": 12,
    "localTransportPerDay": 6,
    "airportTransfer": 12,
-   "minRating": 4.0
+   "minRating": 4.0,
+   "extrasPerDay": 6
   },
   "Taiwan": {
    "foodPerDay": 22,
    "activitiesPerDay": 10,
    "localTransportPerDay": 5,
    "airportTransfer": 10,
-   "minRating": 4.0
+   "minRating": 4.0,
+   "extrasPerDay": 5
   },
   "Indonesie": {
    "foodPerDay": 15,
    "activitiesPerDay": 12,
    "localTransportPerDay": 8,
    "airportTransfer": 12,
-   "minRating": 4.2
+   "minRating": 4.2,
+   "extrasPerDay": 4
   },
   "default": {
    "foodPerDay": 25,
    "activitiesPerDay": 12,
    "localTransportPerDay": 6,
    "airportTransfer": 12,
-   "minRating": 4.1
+   "minRating": 4.1,
+   "extrasPerDay": 4
   }
  },
  "legs": {
@@ -128,5 +135,6 @@
   "hoursFree": 18,
   "eurPerHour": 10,
   "maxHours": 30
- }
+ },
+ "_extrasNote": "extrasPerDay: buffer for unexpected buys (SIM/eSIM, coin lockers, laundry, souvenirs, drinks, a pharmacy run)."
 }
