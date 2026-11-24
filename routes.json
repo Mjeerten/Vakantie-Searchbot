@@ -1,33 +1,338 @@
 {
-  "_note": "Route ideas the planner picks from. nights are the base for a 'between relaxed and medium' pace; tags match the interests in the settings (city, culture, nature, beach). The planner scales nights to the pace and drops routes that do not fit the travel window.",
-  "routes": [
-    {"id": "jp-golden", "country": "Japan", "name": "Japan golden route", "flyIn": "TYO", "flyOut": "OSA", "priority": 1,
-     "tags": ["city", "culture", "nature"],
-     "stops": [{"city": "Tokyo", "nights": 6, "flex": 1}, {"city": "Hakone", "nights": 1, "flex": 1}, {"city": "Kyoto", "nights": 4, "flex": 0}, {"city": "Osaka", "nights": 3, "flex": 0}],
-     "why": "Tokyo, Hakone (Fuji views, onsen), Kyoto and Osaka: the classic first trip. In via Tokyo, home from Osaka, no backtracking. Nara as a day trip from Kyoto or Osaka."},
-    {"id": "jp-golden-rev", "country": "Japan", "name": "Japan golden route, reversed", "flyIn": "OSA", "flyOut": "TYO", "priority": 2,
-     "tags": ["city", "culture", "nature"],
-     "stops": [{"city": "Osaka", "nights": 3, "flex": 0}, {"city": "Kyoto", "nights": 4, "flex": 0}, {"city": "Hakone", "nights": 1, "flex": 1}, {"city": "Tokyo", "nights": 6, "flex": 1}],
-     "why": "The same cities the other way round. Flights into Osaka are sometimes cheaper, and you end in Tokyo for the last shopping and nightlife."},
-    {"id": "jp-fuji-hiroshima", "country": "Japan", "name": "Japan with Fuji lakes and Hiroshima", "flyIn": "TYO", "flyOut": "OSA", "priority": 3,
-     "tags": ["city", "culture", "nature"],
-     "stops": [{"city": "Tokyo", "nights": 6, "flex": 0}, {"city": "Kawaguchiko", "nights": 2, "flex": 0}, {"city": "Kyoto", "nights": 4, "flex": 0}, {"city": "Hiroshima", "nights": 2, "flex": 0}, {"city": "Osaka", "nights": 3, "flex": 0}],
-     "why": "Longer trip with two nights at Lake Kawaguchiko for Fuji views, and Hiroshima with a day trip to Miyajima island."},
-    {"id": "jp-kanazawa", "country": "Japan", "name": "Japan via Kanazawa", "flyIn": "TYO", "flyOut": "OSA", "priority": 4,
-     "tags": ["city", "culture"],
-     "stops": [{"city": "Tokyo", "nights": 6, "flex": 0}, {"city": "Kanazawa", "nights": 2, "flex": 0}, {"city": "Kyoto", "nights": 4, "flex": 0}, {"city": "Osaka", "nights": 3, "flex": 0}],
-     "why": "Swaps Fuji for Kanazawa: samurai and geisha districts, one of Japan's finest gardens, quieter than Kyoto. Bullet train from Tokyo."},
-    {"id": "vn-north-south", "country": "Vietnam", "name": "Vietnam north to south", "flyIn": "HAN", "flyOut": "SGN", "priority": 6,
-     "tags": ["city", "culture", "nature"],
-     "stops": [{"city": "Hanoi", "nights": 3, "flex": 0}, {"city": "Ninh Binh", "nights": 2, "flex": 0}, {"city": "Ha Long Bay", "nights": 1, "flex": 0}, {"city": "Hoi An", "nights": 4, "flex": 0}, {"city": "Ho Chi Minh City", "nights": 3, "flex": 0}],
-     "why": "Street food in Hanoi and Saigon, limestone karsts in Ninh Binh, a night on Ha Long Bay and lantern-lit Hoi An (dry in summer)."},
-    {"id": "th-north", "country": "Thailand", "name": "Thailand cities and the north", "flyIn": "BKK", "flyOut": "BKK", "priority": 7,
-     "tags": ["city", "culture", "nature"],
-     "stops": [{"city": "Bangkok", "nights": 4, "flex": 0}, {"city": "Chiang Mai", "nights": 5, "flex": 0}, {"city": "Chiang Rai", "nights": 2, "flex": 0}, {"city": "Bangkok", "nights": 2, "flex": 0}],
-     "why": "Bangkok's food and nightlife, temples and mountains around Chiang Mai, the White Temple in Chiang Rai. No beach focus."},
-    {"id": "kr-seoul-busan", "country": "Zuid-Korea", "name": "South Korea Seoul to Busan", "flyIn": "SEL", "flyOut": "SEL", "priority": 8,
-     "tags": ["city", "culture", "nature"],
-     "stops": [{"city": "Seoul", "nights": 6, "flex": 0}, {"city": "Gyeongju", "nights": 2, "flex": 0}, {"city": "Busan", "nights": 4, "flex": 0}, {"city": "Seoul", "nights": 1, "flex": 0}],
-     "why": "Close to Japan in feel: big-city nightlife and food in Seoul, temples in Gyeongju, coast and markets in Busan."}
-  ]
+ "_note": "Route ideas the planner picks from. nights are the base for a 'between relaxed and medium' pace; tags match the interests in the settings (city, culture, nature, beach). The planner scales nights to the pace and drops routes that do not fit the travel window.",
+ "routes": [
+  {
+   "id": "jp-golden",
+   "country": "Japan",
+   "name": "Japan golden route",
+   "flyIn": "TYO",
+   "flyOut": "OSA",
+   "priority": 1,
+   "tags": [
+    "city",
+    "culture",
+    "nature"
+   ],
+   "stops": [
+    {
+     "city": "Tokyo",
+     "nights": 6,
+     "flex": 1
+    },
+    {
+     "city": "Hakone",
+     "nights": 1,
+     "flex": 1
+    },
+    {
+     "city": "Kyoto",
+     "nights": 4,
+     "flex": 0
+    },
+    {
+     "city": "Osaka",
+     "nights": 3,
+     "flex": 0
+    }
+   ],
+   "why": "Tokyo, Hakone (Fuji views, onsen), Kyoto and Osaka: the classic first trip. In via Tokyo, home from Osaka, no backtracking. Nara as a day trip from Kyoto or Osaka."
+  },
+  {
+   "id": "jp-golden-rev",
+   "country": "Japan",
+   "name": "Japan golden route, reversed",
+   "flyIn": "OSA",
+   "flyOut": "TYO",
+   "priority": 2,
+   "tags": [
+    "city",
+    "culture",
+    "nature"
+   ],
+   "stops": [
+    {
+     "city": "Osaka",
+     "nights": 3,
+     "flex": 0
+    },
+    {
+     "city": "Kyoto",
+     "nights": 4,
+     "flex": 0
+    },
+    {
+     "city": "Hakone",
+     "nights": 1,
+     "flex": 1
+    },
+    {
+     "city": "Tokyo",
+     "nights": 6,
+     "flex": 1
+    }
+   ],
+   "why": "The same cities the other way round. Flights into Osaka are sometimes cheaper, and you end in Tokyo for the last shopping and nightlife."
+  },
+  {
+   "id": "jp-fuji-hiroshima",
+   "country": "Japan",
+   "name": "Japan with Fuji lakes and Hiroshima",
+   "flyIn": "TYO",
+   "flyOut": "OSA",
+   "priority": 3,
+   "tags": [
+    "city",
+    "culture",
+    "nature"
+   ],
+   "stops": [
+    {
+     "city": "Tokyo",
+     "nights": 6,
+     "flex": 0
+    },
+    {
+     "city": "Kawaguchiko",
+     "nights": 2,
+     "flex": 0
+    },
+    {
+     "city": "Kyoto",
+     "nights": 4,
+     "flex": 0
+    },
+    {
+     "city": "Hiroshima",
+     "nights": 2,
+     "flex": 0
+    },
+    {
+     "city": "Osaka",
+     "nights": 3,
+     "flex": 0
+    }
+   ],
+   "why": "Longer trip with two nights at Lake Kawaguchiko for Fuji views, and Hiroshima with a day trip to Miyajima island."
+  },
+  {
+   "id": "jp-kanazawa",
+   "country": "Japan",
+   "name": "Japan via Kanazawa",
+   "flyIn": "TYO",
+   "flyOut": "OSA",
+   "priority": 4,
+   "tags": [
+    "city",
+    "culture"
+   ],
+   "stops": [
+    {
+     "city": "Tokyo",
+     "nights": 6,
+     "flex": 0
+    },
+    {
+     "city": "Kanazawa",
+     "nights": 2,
+     "flex": 0
+    },
+    {
+     "city": "Kyoto",
+     "nights": 4,
+     "flex": 0
+    },
+    {
+     "city": "Osaka",
+     "nights": 3,
+     "flex": 0
+    }
+   ],
+   "why": "Swaps Fuji for Kanazawa: samurai and geisha districts, one of Japan's finest gardens, quieter than Kyoto. Bullet train from Tokyo."
+  },
+  {
+   "id": "vn-north-south",
+   "country": "Vietnam",
+   "name": "Vietnam north to south",
+   "flyIn": "HAN",
+   "flyOut": "SGN",
+   "priority": 7,
+   "tags": [
+    "city",
+    "culture",
+    "nature"
+   ],
+   "stops": [
+    {
+     "city": "Hanoi",
+     "nights": 3,
+     "flex": 0
+    },
+    {
+     "city": "Ninh Binh",
+     "nights": 2,
+     "flex": 0
+    },
+    {
+     "city": "Ha Long Bay",
+     "nights": 1,
+     "flex": 0
+    },
+    {
+     "city": "Hoi An",
+     "nights": 4,
+     "flex": 0
+    },
+    {
+     "city": "Ho Chi Minh City",
+     "nights": 3,
+     "flex": 0
+    }
+   ],
+   "why": "Street food in Hanoi and Saigon, limestone karsts in Ninh Binh, a night on Ha Long Bay and lantern-lit Hoi An (dry in summer)."
+  },
+  {
+   "id": "th-north",
+   "country": "Thailand",
+   "name": "Thailand cities and the north",
+   "flyIn": "BKK",
+   "flyOut": "BKK",
+   "priority": 8,
+   "tags": [
+    "city",
+    "culture",
+    "nature"
+   ],
+   "stops": [
+    {
+     "city": "Bangkok",
+     "nights": 4,
+     "flex": 0
+    },
+    {
+     "city": "Chiang Mai",
+     "nights": 5,
+     "flex": 0
+    },
+    {
+     "city": "Chiang Rai",
+     "nights": 2,
+     "flex": 0
+    },
+    {
+     "city": "Bangkok",
+     "nights": 2,
+     "flex": 0
+    }
+   ],
+   "why": "Bangkok's food and nightlife, temples and mountains around Chiang Mai, the White Temple in Chiang Rai. No beach focus."
+  },
+  {
+   "id": "kr-seoul-busan",
+   "country": "Zuid-Korea",
+   "name": "South Korea Seoul to Busan",
+   "flyIn": "SEL",
+   "flyOut": "SEL",
+   "priority": 9,
+   "tags": [
+    "city",
+    "culture",
+    "nature"
+   ],
+   "stops": [
+    {
+     "city": "Seoul",
+     "nights": 6,
+     "flex": 0
+    },
+    {
+     "city": "Gyeongju",
+     "nights": 2,
+     "flex": 0
+    },
+    {
+     "city": "Busan",
+     "nights": 4,
+     "flex": 0
+    },
+    {
+     "city": "Seoul",
+     "nights": 1,
+     "flex": 0
+    }
+   ],
+   "why": "Close to Japan in feel: big-city nightlife and food in Seoul, temples in Gyeongju, coast and markets in Busan."
+  },
+  {
+   "id": "cn-chongqing-beijing",
+   "country": "China",
+   "name": "China: Chongqing to Beijing",
+   "flyIn": "CKG",
+   "flyOut": "BJS",
+   "priority": 5,
+   "tags": [
+    "city",
+    "culture",
+    "nature"
+   ],
+   "stops": [
+    {
+     "city": "Chongqing",
+     "nights": 4,
+     "flex": 1
+    },
+    {
+     "city": "Chengdu",
+     "nights": 4,
+     "flex": 0
+    },
+    {
+     "city": "Xi'an",
+     "nights": 3,
+     "flex": 1
+    },
+    {
+     "city": "Beijing",
+     "nights": 4,
+     "flex": 0
+    }
+   ],
+   "why": "Chongqing first (neon mountain city, hotpot, Hongyadong, Yangtze cable car), then Chengdu (pandas, teahouses, Leshan Buddha day trip), Xi'an (Terracotta Army, city wall, Muslim quarter) and Beijing (Forbidden City, hutongs, Great Wall). Fast trains between all stops, in via Chongqing, home from Beijing."
+  },
+  {
+   "id": "cn-shanghai-chongqing",
+   "country": "China",
+   "name": "China: Shanghai, Zhangjiajie & Sichuan",
+   "flyIn": "PVG",
+   "flyOut": "CKG",
+   "priority": 6,
+   "tags": [
+    "city",
+    "culture",
+    "nature"
+   ],
+   "stops": [
+    {
+     "city": "Shanghai",
+     "nights": 4,
+     "flex": 0
+    },
+    {
+     "city": "Zhangjiajie",
+     "nights": 3,
+     "flex": 1
+    },
+    {
+     "city": "Chengdu",
+     "nights": 3,
+     "flex": 1
+    },
+    {
+     "city": "Chongqing",
+     "nights": 4,
+     "flex": 0
+    }
+   ],
+   "why": "Shanghai skyline and old water towns, Zhangjiajie's sandstone pillar mountains for nature, Chengdu for pandas and food, and Chongqing to finish. In via Shanghai, home from Chongqing."
+  }
+ ]
 }

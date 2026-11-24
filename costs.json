@@ -56,6 +56,14 @@
    "airportTransfer": 12,
    "minRating": 4.1,
    "extrasPerDay": 4
+  },
+  "China": {
+   "foodPerDay": 15,
+   "activitiesPerDay": 12,
+   "localTransportPerDay": 4,
+   "airportTransfer": 8,
+   "minRating": 4.0,
+   "extrasPerDay": 5
   }
  },
  "legs": {
@@ -103,7 +111,15 @@
   "Chiang Mai>Koh Samui": 80,
   "Seoul>Gyeongju": 35,
   "Gyeongju>Busan": 10,
-  "Chiang Rai>Bangkok": 45
+  "Chiang Rai>Bangkok": 45,
+  "Chongqing>Chengdu": 13,
+  "Chengdu>Xi'an": 35,
+  "Xi'an>Beijing": 70,
+  "Beijing>Chongqing": 120,
+  "Shanghai>Zhangjiajie": 80,
+  "Zhangjiajie>Chengdu": 60,
+  "Chongqing>Shanghai": 110,
+  "Xi'an>Chongqing": 40
  },
  "unknownLegEstimate": 60,
  "bags": {

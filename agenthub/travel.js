@@ -22,9 +22,9 @@
   const S = { db: null, cfg: null, cfgVer: 0, trips: [], plans: [], pkgs: [], runs: [], connected: false };
   const SEG = [["flight", "Flight", "var(--amber)"], ["bag", "Bag", "var(--dim)"], ["stays", "Stays", "var(--cyan)"], ["transport", "Trains", "#b394ff"], ["food", "Food", "var(--good)"], ["activities", "Activities", "#ff7eb6"], ["local", "Local transport", "var(--muted)"], ["extras", "Extras buffer", "#e8c46a"]];
   const INTERESTS = [["city", "City, food & nightlife"], ["culture", "Culture & temples"], ["nature", "Nature & views"], ["beach", "Beach & relaxing"]];
-  const COUNTRIES = ["Japan", "Vietnam", "Thailand", "Zuid-Korea"];
+  const COUNTRIES = ["Japan", "China", "Vietnam", "Thailand", "Zuid-Korea"];
   const AIRPORTS = ["AMS", "BRU", "DUS", "EIN", "RTM"];
-  const PKG = ["Japan", "Vietnam", "Thailand", "Zuid-Korea", "Taiwan", "Indonesie", "Maleisie", "Cambodja"];
+  const PKG = ["Japan", "China", "Vietnam", "Thailand", "Zuid-Korea", "Taiwan", "Indonesie", "Maleisie", "Cambodja"];
   const label = (c) => ({ "Zuid-Korea": "South Korea", Indonesie: "Indonesia", Maleisie: "Malaysia", Cambodja: "Cambodia" }[c] || c);
 
   /* next scheduled check: the routine looks at 08:17, 12:17, 16:17 and 20:17 Amsterdam time and searches when asked or when the last search is 3 h old (every slot: Google allows only a few flight checks per run) */

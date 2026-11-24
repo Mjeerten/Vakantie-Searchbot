@@ -188,7 +188,8 @@ def google_cand(plan, c):
             "urls": [c["url"]], "checkedAt": c["checkedAt"]}
 
 
-BIG_CITIES = {"Tokyo": 4, "Seoul": 4.5, "Bangkok": 4.5, "Osaka": 3, "Kyoto": 2.5, "Ho Chi Minh City": 3, "Hanoi": 2.5}  # max miles from the centre: stay where the fun is
+BIG_CITIES = {"Tokyo": 4, "Seoul": 4.5, "Bangkok": 4.5, "Osaka": 3, "Kyoto": 2.5, "Ho Chi Minh City": 3, "Hanoi": 2.5,
+              "Chongqing": 4, "Chengdu": 3.5, "Beijing": 5, "Shanghai": 4.5, "Xi'an": 3}  # max miles from the centre: stay where the fun is
 ALWAYS_AVOID = ["capsule", "cabin", "dorm", "bunk", "male only", "love hotel", "pod "]
 
 
@@ -389,6 +390,8 @@ def evaluate(plan, cfg, st, do_hotels):
     bag = 0
     if fl and best["days"] > 10 and not all(a in COSTS["bags"]["usuallyIncluded"] for a in fl["airlines"]):
         bag = COSTS["bags"]["extraBagEstimatePP"]
+        if cfg.get("sharedBag"):
+            bag = round(bag / 2)  # one suitcase for the two of you
     # 3) stays for the best date
     stays, cursor = [], D(best["checkin"])
     for s in plan["stops"]:
@@ -427,7 +430,7 @@ def evaluate(plan, cfg, st, do_hotels):
     verdict = "top deal" if total <= bmin else "within budget" if total <= bmax else f"€{total - bmax} over budget"
     est_flags = []
     if bag:
-        est_flags.append("checked bag estimated (check if the fare includes a suitcase)")
+        est_flags.append("checked bag estimated" + (" (1 suitcase shared by 2)" if cfg.get("sharedBag") else "") + " - check if the fare includes a suitcase")
     if any(s.get("estimated") for s in stays):
         est_flags.append("some stays estimated (no hotel price found)")
     if any(not l["known"] for l in legs):
