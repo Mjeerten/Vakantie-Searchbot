@@ -1,0 +1,41 @@
+# Hourly Google Flights scan (public repo: GitHub-hosted runners are free). Japan first, then China / SE Asia.
+# Results go to the orphan branch "flight-data" (flight_checks.json); Atlas reads them on its runs.
+name: flight-checks
+on:
+  schedule:
+    - cron: "41 * * * *"
+  workflow_dispatch:
+  push:
+    branches: [claude/compassionate-hawking-lq51s3]
+    paths: [".github/workflows/flights.yml", "scan_flights.py", "search_config.json"]
+permissions:
+  contents: write
+concurrency:
+  group: flight-checks
+  cancel-in-progress: false
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Install browser
+        run: npm install --no-save playwright@1.48.2 && npx playwright install --with-deps chromium
+      - name: Previous checks
+        run: |
+          if git fetch -q --depth 1 origin flight-data; then git show FETCH_HEAD:flight_checks.json > prev.json; else echo '{}' > prev.json; fi
+      - name: Scan flights
+        run: python3 scan_flights.py search_config.json prev.json flight_checks.json
+      - name: Save to flight-data branch
+        env:
+          TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          mkdir /tmp/fd && cp flight_checks.json /tmp/fd/ && cd /tmp/fd
+          git init -q -b flight-data
+          git config user.name "flight-checks"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add flight_checks.json && git commit -qm "flight checks $(date -u +%FT%TZ)"
+          git push -q -f "https://x-access-token:${TOKEN}@github.com/${GITHUB_REPOSITORY}.git" flight-data

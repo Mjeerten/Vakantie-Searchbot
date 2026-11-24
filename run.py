@@ -163,6 +163,73 @@ def next_check(st, airports):
     return None
 
 
+
+def coverage(st, airports):
+    """Core flight options for a route: every departure day from the main airport, the other ticket type on the
+    cheapest day, and the other airports on that day. Returns (checked, total)."""
+    p = st["plan"]
+    modes = ["mc", "rt"] if (p.get("flyOut") or p["flyIn"]) != p["flyIn"] else ["rt"]
+    fresh = {(c["origin"], c["depart"], c["mode"]) for c in st["checks"] if _age_h(c.get("checkedAt", "")) <= FRESH_H} | st["tried"]
+    dates = [v["depart"] for v in st["variants"]]
+    if not dates:
+        return 0, 0
+    priced = [c for c in st["checks"] if c.get("pricePP")]
+    b = min(priced, key=lambda c: c["pricePP"] + c.get("backTrainPP", 0)) if priced else None
+    bestd, bestm = (b["depart"], b["mode"]) if b else (dates[len(dates) // 2], modes[0])
+    core = {(airports[0], d, modes[0]) for d in dates} | {(airports[0], bestd, m) for m in modes} | {(a, bestd, bestm) for a in airports[1:]}
+    return len(core & fresh), len(core)
+
+
+def google_round(states, airports, budget, pause, log=print):
+    """Google checks: Japan routes first until their core options are covered, then every route round robin."""
+    def loop(group, core_only):
+        progress = True
+        while progress and budget.left > 0 and not flights.BLOCKED:
+            progress = False
+            for st in group:
+                if not st["variants"] or budget.left <= 0 or flights.BLOCKED:
+                    continue
+                if core_only:
+                    done, tot = coverage(st, airports)
+                    if done >= tot:
+                        continue
+                nx = next_check(st, airports)
+                if not nx:
+                    continue
+                budget.take()
+                st["tried"].add(nx)
+                c = run_check(st["plan"], st["nights"], *nx)
+                log(f"google {st['plan']['id']} {' '.join(nx)}: " + (f"EUR {c['pricePP']}" if c.get("pricePP") else c.get("error") or "?"))
+                if c.get("pricePP"):
+                    st["checks"] = [x for x in st["checks"] if (x["origin"], x["depart"], x["mode"]) != nx] + [c]
+                progress = True
+                time.sleep(pause)
+    japan = [st for st in states if st["plan"].get("country") == "Japan"]
+    loop(japan, True)
+    loop(states, False)
+
+
+def shared_checks(path, plan_id, nights):
+    """Checks from the GitHub flight scanner (flight_checks.json on the flight-data branch)."""
+    if not path:
+        return []
+    try:
+        d = json.load(open(path)).get("plans", {}).get(plan_id) or []
+    except Exception:
+        return []
+    return [c for c in d if c.get("pricePP") and _age_h(c.get("checkedAt", "")) <= FRESH_H
+            and (D(c["return"]) - D(c["depart"])).days == nights + 1]
+
+
+def merge_checks(*lists):
+    best = {}
+    for c in [c for l in lists for c in l]:
+        k = (c["origin"], c["depart"], c["mode"])
+        if k not in best or c["checkedAt"] > best[k]["checkedAt"]:
+            best[k] = c
+    return list(best.values())
+
+
 def run_check(plan, nights, origin, depart, mode):
     fin, fout = plan["flyIn"], plan.get("flyOut") or plan["flyIn"]
     ret = (D(depart) + dt.timedelta(days=nights + 1)).isoformat()
@@ -508,6 +575,7 @@ def main():
     budget = Budget(int(cfg.get("googleQueryBudget", 8)))
     pause = float(cfg.get("googlePauseSec", 20))
     dbdir = next((f.split("=", 1)[1] for f in flags if f.startswith("--prev=")), None)
+    shared = next((f.split("=", 1)[1] for f in flags if f.startswith("--checks=")), None)
     airports = cfg.get("airports") or ["AMS", "BRU", "DUS", "EIN", "RTM"]
     res = {"runAt": dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"), "usdToEur": fx, "plans": [], "packages": []}
     # 1) per plan: date variants, cached Travelpayouts fares, earlier Google checks
@@ -515,7 +583,7 @@ def main():
     for p in plans:
         nights, variants = date_variants(p, cfg)
         st = {"plan": p, "nights": nights, "variants": variants, "tp": [], "notes": [], "tried": set(),
-              "checks": prev_checks(dbdir, p["id"], nights), "fx": fx}
+              "checks": merge_checks(prev_checks(dbdir, p["id"], nights), shared_checks(shared, p["id"], nights)), "fx": fx}
         if variants:
             st["tp"] = tp_candidates(p, nights, cfg, airports)
             if not st["tp"] and tp.STATUS["ok"] and cfg.get("useTravelpayouts") is not False:
@@ -523,27 +591,17 @@ def main():
                 if ref:
                     st["notes"].append(ref)
         states.append(st)
-    # 2) Google checks, round robin over the plans so every route gets live prices over the day
-    progress = True
-    while progress and budget.left > 0 and not flights.BLOCKED:
-        progress = False
-        for st in states:
-            if not st["variants"] or budget.left <= 0 or flights.BLOCKED:
-                continue
-            nx = next_check(st, airports)
-            if not nx:
-                continue
-            budget.take()
-            st["tried"].add(nx)
-            c = run_check(st["plan"], st["nights"], *nx)
-            print(f"google {st['plan']['id']} {' '.join(nx)}: " + (f"EUR {c['pricePP']}" if c.get("pricePP") else c.get("error") or "?"), flush=True)
-            if c.get("pricePP"):
-                st["checks"] = [x for x in st["checks"] if (x["origin"], x["depart"], x["mode"]) != nx] + [c]
-            progress = True
-            time.sleep(pause)
+    # 2) Google checks: Japan first, then the rest
+    google_round(states, airports, budget, pause, log=lambda m: print(m, flush=True))
     # 3) stays, trains, day costs
     for st in states:
-        res["plans"].append(evaluate(st["plan"], cfg, st, "--no-hotels" not in flags))
+        st["tried"] = set()
+        r = evaluate(st["plan"], cfg, st, "--no-hotels" not in flags)
+        done, tot = coverage(st, airports)
+        r["coverage"] = {"done": done, "total": tot}
+        if r.get("best") and done < tot:
+            r["best"].setdefault("flags", []).append(f"flight scan {done}/{tot} options checked, cheaper dates may still turn up")
+        res["plans"].append(r)
     res["googleBlocked"] = flights.BLOCKED
     res["travelpayouts"] = dict(tp.STATUS)
     res["googleQueriesLeft"] = budget.left

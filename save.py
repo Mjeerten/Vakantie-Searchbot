@@ -67,6 +67,7 @@ for p in res["plans"]:
         doc["lastTriedAt"] = now
         doc["flightChecks"] = p.get("flightChecks") or []
         doc["groundOnly"] = p.get("groundOnly")
+        doc["coverage"] = p.get("coverage")
         put(T, p["planId"], doc, old)
         continue
     hist = (prev.get("history") or [])[-59:] + [{"at": now, "totalPP": b["totalPP"], "flightPP": b["flight"]["pricePP"]}]
@@ -75,12 +76,15 @@ for p in res["plans"]:
     bookable = sum(pt.get(k, 0) for k in ("flight", "bag", "stays", "transport"))
     best_ever = prev.get("bestEver") or {}
     before = best_ever.get("bookablePP")
-    improved = before is not None and bookable <= before - 25
-    if before is None or bookable < before:
+    # only judge a route once its core flight options are all checked (so a half-finished scan never pushes)
+    cov = p.get("coverage") or {}
+    complete = cov.get("done", 0) >= cov.get("total", 0)
+    improved = complete and before is not None and bookable <= before - 25
+    if complete and (before is None or bookable < before):
         best_ever = {"totalPP": b["totalPP"], "bookablePP": bookable, "at": now, "depart": b["depart"]}
     doc = {"planId": p["planId"], "name": p["name"], "country": p["country"], "updatedAt": now,
            "best": b, "history": hist, "bestEver": best_ever, "lastNote": None,
-           "flightChecks": p.get("flightChecks") or [], "groundOnly": None}
+           "flightChecks": p.get("flightChecks") or [], "groundOnly": None, "coverage": p.get("coverage")}
     put(T, p["planId"], doc, old)
     summ.append(f"{p['name']} €{b['totalPP']}")
     # push rule (owner's wish): only when the price really got lower than ever before for this route (>= EUR 25 p.p. on
