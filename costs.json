@@ -71,6 +71,7 @@
   "Osaka>Tokyo": 90,
   "Tokyo>Kanazawa": 90,
   "Kanazawa>Kyoto": 45,
+  "Kanazawa>Hakone": 100,
   "Tokyo>Nikko": 30,
   "Tokyo>Kawaguchiko": 25,
   "Kawaguchiko>Kyoto": 85,
