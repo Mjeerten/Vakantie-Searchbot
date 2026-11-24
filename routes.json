@@ -35,7 +35,8 @@
      "flex": 0
     }
    ],
-   "why": "Tokyo, Hakone (Fuji views, onsen), Kyoto and Osaka: the classic first trip. In via Tokyo, home from Osaka, no backtracking. Nara as a day trip from Kyoto or Osaka."
+   "why": "Tokyo, Hakone (Fuji views, onsen), Kyoto and Osaka: the classic first trip. In via Tokyo, home from Osaka, no backtracking. Nara as a day trip from Kyoto or Osaka.",
+   "stretch": true
   },
   {
    "id": "jp-golden-rev",
@@ -296,7 +297,8 @@
      "flex": 0
     }
    ],
-   "why": "Chongqing first (neon mountain city, hotpot, Hongyadong, Yangtze cable car), then Chengdu (pandas, teahouses, Leshan Buddha day trip), Xi'an (Terracotta Army, city wall, Muslim quarter) and Beijing (Forbidden City, hutongs, Great Wall). Fast trains between all stops, in via Chongqing, home from Beijing."
+   "why": "Chongqing first (neon mountain city, hotpot, Hongyadong, Yangtze cable car), then Chengdu (pandas, teahouses, Leshan Buddha day trip), Xi'an (Terracotta Army, city wall, Muslim quarter) and Beijing (Forbidden City, hutongs, Great Wall). Fast trains between all stops, in via Chongqing, home from Beijing.",
+   "stretch": true
   },
   {
    "id": "cn-shanghai-chongqing",

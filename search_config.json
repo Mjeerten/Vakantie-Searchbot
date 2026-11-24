@@ -3,11 +3,26 @@
  "windowStart": "2027-07-23",
  "windowEnd": "2027-08-13",
  "minDays": 11,
- "countries": ["Japan", "China", "Vietnam", "Thailand"],
- "interests": ["city", "culture", "nature"],
+ "countries": [
+  "Japan",
+  "China",
+  "Vietnam",
+  "Thailand"
+ ],
+ "interests": [
+  "city",
+  "culture",
+  "nature"
+ ],
  "pace": "relaxed-medium",
- "maxPlans": 7,
- "airports": ["AMS", "BRU", "DUS", "EIN", "RTM"],
+ "maxPlans": 9,
+ "airports": [
+  "AMS",
+  "BRU",
+  "DUS",
+  "EIN",
+  "RTM"
+ ],
  "googleQueryBudget": 10,
  "googlePauseSec": 25
 }

@@ -43,12 +43,30 @@ def plan(cfg):
             nights -= 1
         if nights + 2 > days_max or nights + 2 < min_days:
             continue
-        out.append({"id": r["id"], "name": r["name"], "country": r["country"], "flyIn": r["flyIn"], "flyOut": r["flyOut"],
-                    "priority": r["priority"], "enabled": True, "stops": stops, "why": r["why"],
-                    "nights": nights, "days": nights + 2, "tags": r["tags"]})
+        base = {"id": r["id"], "name": r["name"], "country": r["country"], "flyIn": r["flyIn"], "flyOut": r["flyOut"],
+                "priority": r["priority"], "enabled": True, "stops": stops, "why": r["why"],
+                "nights": nights, "days": nights + 2, "tags": r["tags"]}
+        out.append(base)
+        # longer versions of the favourite routes: as many days as the window allows, and one in between,
+        # so the bot can see which length gives the most days for the money
+        if r.get("stretch"):
+            most = days_max - 2
+            for n in sorted({min(nights + 2, most), most} - {nights}):
+                if n <= nights:
+                    continue
+                st = [dict(s) for s in stops]
+                big = sorted([s for s in st if s["nights"] >= 3], key=lambda s: -s["nights"]) or st
+                i = 0
+                for _ in range(n - nights):
+                    big[i % len(big)]["nights"] += 1
+                    i += 1
+                out.append({**base, "id": f"{r['id']}-{n + 2}d", "name": f"{r['name']} ({n + 2} days)", "stops": st,
+                            "nights": n, "days": n + 2, "priority": r["priority"] + 0.1 * (n - nights),
+                            "why": r["why"] + f" Longer version: {n + 2} days instead of {nights + 2}, extra nights in the big cities."})
+    out.sort(key=lambda p: p["priority"])
     jp = [p for p in out if p["country"] == "Japan"]
     rest = [p for p in out if p["country"] != "Japan"]
-    keep = int(cfg.get("maxPlans") or 7)
+    keep = int(cfg.get("maxPlans") or 9)
     # other countries: the best route of each country first (up to 3), so every chosen country gets tested
     first, seen = [], set()
     for x in rest:

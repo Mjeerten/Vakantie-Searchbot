@@ -119,6 +119,7 @@
     const nums = el("div", { class: "dnums" },
       el("div", { class: "row big" }, el("span", { text: "Per person" }), el("b", { text: eur(b.totalPP) })),
       el("div", { class: "row" }, el("span", { text: "For two" }), el("b", { text: eur(b.totalPP * 2) })),
+      el("div", { class: "row" }, el("span", { text: `${b.days} days, per day` }), el("b", { text: eur(Math.round(b.totalPP / (b.days || 1))) })),
       el("div", { class: "row" }, el("span", { text: "Flight" }), el("b", { text: eur(parts.flight) })),
       el("div", { class: "row" }, el("span", { text: "Stays" }), el("b", { text: eur(parts.stays) })),
       el("div", { class: "row" }, el("span", { text: "Food + fun" }), el("b", { text: eur((parts.food || 0) + (parts.activities || 0) + (parts.extras || 0)) })),
@@ -147,7 +148,9 @@
       return;
     }
     /* Japan is the first choice: its trips always come first, the rest below an "Other trips" divider */
-    const jp = list.filter((t) => t.country === "Japan"), rest = list.filter((t) => t.country !== "Japan");
+    /* Japan: trips within budget first, longest first (most days for the money), then the rest by price */
+    const maxB = S.cfg?.budgetMaxPP || 2500, fits = (t) => t.best.totalPP <= maxB;
+    const jp = list.filter((t) => t.country === "Japan").sort((a, b) => (fits(b) - fits(a)) || (fits(a) ? (b.best.days - a.best.days) || (a.best.totalPP - b.best.totalPP) : a.best.totalPP - b.best.totalPP)), rest = list.filter((t) => t.country !== "Japan");
     for (const t of jp) box.append(tripCard(t));
     if (jp.length && rest.length) box.append(el("div", { class: "tv-divider", text: "Other trips" }));
     for (const t of rest) box.append(tripCard(t));
