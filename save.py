@@ -70,21 +70,24 @@ for p in res["plans"]:
         put(T, p["planId"], doc, old)
         continue
     hist = (prev.get("history") or [])[-59:] + [{"at": now, "totalPP": b["totalPP"], "flightPP": b["flight"]["pricePP"]}]
-    best_ever = prev.get("bestEver")
-    improved = best_ever is None or b["totalPP"] < best_ever["totalPP"]
-    if improved:
-        best_ever = {"totalPP": b["totalPP"], "at": now, "depart": b["depart"]}
+    # what you actually book (flight + bag + stays + trains), so a change in the food/extras estimate never counts as a deal
+    pt = b.get("parts") or {}
+    bookable = sum(pt.get(k, 0) for k in ("flight", "bag", "stays", "transport"))
+    best_ever = prev.get("bestEver") or {}
+    before = best_ever.get("bookablePP")
+    improved = before is not None and bookable <= before - 25
+    if before is None or bookable < before:
+        best_ever = {"totalPP": b["totalPP"], "bookablePP": bookable, "at": now, "depart": b["depart"]}
     doc = {"planId": p["planId"], "name": p["name"], "country": p["country"], "updatedAt": now,
            "best": b, "history": hist, "bestEver": best_ever, "lastNote": None,
            "flightChecks": p.get("flightChecks") or [], "groundOnly": None}
     put(T, p["planId"], doc, old)
     summ.append(f"{p['name']} €{b['totalPP']}")
-    # push rule: within budget and new best (or first result), or a drop of >= 75 versus last run
-    last = (prev.get("history") or [{}])[-1].get("totalPP")
-    drop = last - b["totalPP"] if last else 0
+    # push rule (owner's wish): only when the price really got lower than ever before for this route (>= EUR 25 p.p. on
+    # flight + stays + trains) and the trip is within budget. Not for a first result, not for a price that bounces back.
     within = b["verdict"] in ("within budget", "top deal")
-    if within and (improved or drop >= 75):
-        pushes.append(f"{p['name']} {b['days']}d €{b['totalPP']} p.p. ({b['verdict']}) {b['depart'][5:]}→{b['return'][5:]} vlucht {b['flight']['origin']} {'/'.join(b['flight']['airlines'])}")
+    if within and improved:
+        pushes.append(f"{p['name']} goedkoper: €{b['totalPP']} p.p. (was €{before + b['totalPP'] - bookable}), {b['days']}d {b['depart'][5:]}→{b['return'][5:]} vlucht {b['flight']['origin']} {'/'.join(b['flight']['airlines'])}")
 
 seen = set()
 for r in res.get("packages", []):
@@ -100,7 +103,7 @@ for r in res.get("packages", []):
     allin = min((d["allInPP"] for d in r.get("departures", [])), default=None)
     doc["minAllInPP"] = allin
     put(P, doc_id, doc, old)
-    if allin and allin <= 2500 and (prev_min is None or allin < prev_min - 50):
+    if allin and allin <= 2500 and prev_min is not None and allin < prev_min - 50:
         pushes.append(f"Pakket {r['title'][:60]} €{allin} p.p. incl. eten")
 
 # packages that no longer show up in the window: drop them so the hub stays current

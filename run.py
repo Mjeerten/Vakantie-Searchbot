@@ -60,7 +60,7 @@ def country_costs(country, cfg):
     return base
 
 
-def date_variants(plan, cfg, maxn=3):
+def date_variants(plan, cfg, maxn=8):
     """Depart day D (overnight flight), check in D+1, fly home on the last checkout day."""
     nights = sum(int(s["nights"]) for s in plan["stops"])
     start, end = D(cfg["windowStart"]), D(cfg["windowEnd"])
@@ -68,7 +68,8 @@ def date_variants(plan, cfg, maxn=3):
     if last_depart < start:
         return nights, []
     span = (last_depart - start).days
-    picks = sorted({0, span // 2, span}) if span else [0]
+    # every possible departure day, evenly thinned to maxn (Google checks rotate through them over the runs)
+    picks = sorted({round(i * span / (maxn - 1)) for i in range(maxn)}) if span >= maxn else list(range(span + 1))
     if plan.get("fixedDepart"):
         picks = [(D(plan["fixedDepart"]) - start).days]
     out = []
@@ -137,19 +138,28 @@ def next_check(st, airports):
     vs = st["variants"]
     order = [vs[len(vs) // 2]] + [v for i, v in enumerate(vs) if i != len(vs) // 2]
     dates += [v["depart"] for v in order]
+    # flights are most of the cost: first find the cheapest day (every possible departure day from the main airport),
+    # then try the other ticket type and the other airports on that day; stays are priced on the winning dates
     for d in dates:
-        for m in modes:
-            if (airports[0], d, m) not in recent:
-                return airports[0], d, m
+        if (airports[0], d, modes[0]) not in recent:
+            return airports[0], d, modes[0]
     priced = [c for c in st["checks"] if c.get("pricePP")]
     if priced:
         b = min(priced, key=lambda c: c["pricePP"] + c.get("backTrainPP", 0))
         bestd, bestm = b["depart"], b["mode"]
     else:
         bestd, bestm = dates[0], modes[0]
+    for m in modes:
+        if (airports[0], bestd, m) not in recent:
+            return airports[0], bestd, m
     for ap in airports[1:]:
         if (ap, bestd, bestm) not in recent:
             return ap, bestd, bestm
+    # finally the runner-up days from the other airports
+    for ap in airports[1:]:
+        for d in dates:
+            if (ap, d, bestm) not in recent:
+                return ap, d, bestm
     return None
 
 
