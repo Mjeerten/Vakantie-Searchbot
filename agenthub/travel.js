@@ -146,7 +146,11 @@
         el("p", { text: S.db === null ? "Open the Agent Hub on claude.ai while signed in." : "Atlas prices every route once a day. Press Search now to queue a search; it starts at the next check (08:17, 12:17, 16:17 or 20:17)." })));
       return;
     }
-    for (const t of list) box.append(tripCard(t));
+    /* Japan is the first choice: its trips always come first, the rest below an "Other trips" divider */
+    const jp = list.filter((t) => t.country === "Japan"), rest = list.filter((t) => t.country !== "Japan");
+    for (const t of jp) box.append(tripCard(t));
+    if (jp.length && rest.length) box.append(el("div", { class: "tv-divider", text: "Other trips" }));
+    for (const t of rest) box.append(tripCard(t));
   }
 
   function renderPackages() {
