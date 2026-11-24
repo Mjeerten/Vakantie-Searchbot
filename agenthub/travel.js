@@ -48,7 +48,7 @@
   function verdict(total) {
     const max = S.cfg?.budgetMaxPP ?? 2500, min = S.cfg?.budgetMinPP ?? 1500;
     if (total <= min) return ["good", "top deal", "ok"];
-    if (total <= max) return ["good", "within budget", "ok"];
+    if (total <= max) return ["good", "", "ok"];  // within budget: no label (owner asked)
     if (total <= max * 1.15) return ["warn", eur(total - max) + " over budget", "over"];
     return ["bad", eur(total - max) + " over budget", "far"];
   }
@@ -101,7 +101,7 @@
     const bar = el("div", { class: "tv-bar", role: "img", "aria-label": "Cost breakdown" }), leg = el("div", { class: "tv-legend" });
     for (const [k, name, col] of SEG) { const v = parts[k] || 0; if (!v) continue; bar.append(el("span", { style: `width:${v / sum * 100}%;background:${col}`, title: `${name} ${eur(v)}` })); leg.append(el("span", {}, el("i", { style: `background:${col}` }), `${name} ${eur(v)}`)); }
     const meta = el("div", { class: "dmeta" },
-      el("span", { class: "chip " + chipCls, text: vtext }),
+      vtext ? el("span", { class: "chip " + chipCls, text: vtext }) : null,
       el("span", { class: "chip", text: `${day(b.depart)} → ${day(b.return)} · ${b.days} days` }),
       el("span", { class: "chip cyan", text: `${fl.origin || "?"} · ${(fl.airlines || []).join(" / ") || "?"}` }),
       fl.cached ? el("span", { class: "chip", text: "cached fare" }) : el("span", { class: "chip amber", text: fl.checkedAt ? "Google fare · " + when(fl.checkedAt) : "live fare" }));
@@ -174,7 +174,7 @@
         el("td", { text: d.airport || "–" }),
         el("td", { class: "num", text: eur(d.price) }),
         el("td", { class: "num" }, el("b", { text: eur(all) })),
-        el("td", {}, el("span", { class: "chip " + cls, text: vt }))));
+        el("td", {}, vt ? el("span", { class: "chip " + cls, text: vt }) : null)));
     }
     box.append(el("div", { class: "log" }, el("table", {},
       el("thead", {}, el("tr", {}, ["Trip", "Dates", "From", "Tour p.p.", "All-in p.p.", ""].map((h) => el("th", { text: h })))), tb)));
