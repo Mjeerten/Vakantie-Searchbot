@@ -164,7 +164,9 @@ def run_check(plan, nights, origin, depart, mode):
         c["backTrainPP"] = leg_cost(plan["stops"][-1]["city"], plan["stops"][0]["city"])[0]
     if r["offers"]:
         # cheapest after the comfort penalty (long or night flights), not just the cheapest
-        scored = [(comfort({"out": o, "compare": o["pricePP"]})[0], o) for o in r["offers"]]
+        # never a layover where you must change airports (e.g. land at London City, depart from Heathrow)
+        same = [o for o in r["offers"] if not o.get("airportChange")]
+        scored = [(comfort({"out": o, "compare": o["pricePP"]})[0], o) for o in (same or r["offers"])]
         scored = [x for x in scored if x[0] is not None] or [(o["pricePP"], o) for o in r["offers"]]
         o = min(scored, key=lambda x: x[0])[1]
         c.update({"pricePP": o["pricePP"], "airline": o["airline"], "out": o, "cheapestPP": min(x["pricePP"] for x in r["offers"])})
@@ -186,12 +188,13 @@ def google_cand(plan, c):
             "urls": [c["url"]], "checkedAt": c["checkedAt"]}
 
 
-BIG_CITIES = {"Tokyo": 6, "Seoul": 6, "Bangkok": 6, "Osaka": 4.5, "Ho Chi Minh City": 4, "Hanoi": 4}
+BIG_CITIES = {"Tokyo": 4, "Seoul": 4.5, "Bangkok": 4.5, "Osaka": 3, "Kyoto": 2.5, "Ho Chi Minh City": 3, "Hanoi": 2.5}  # max miles from the centre: stay where the fun is
 ALWAYS_AVOID = ["capsule", "cabin", "dorm", "bunk", "male only", "love hotel", "pod "]
 
 
-def _hotel_search(script, city, checkin, checkout, fx):
-    args = ["node", os.path.join(HERE, script), city, checkin, checkout] + ([str(fx)] if script == "hotels.js" else [])
+def _hotel_search(script, city, checkin, checkout, fx, maxmi=None):
+    extra = [str(fx)] if script == "hotels.js" else ([str(round(maxmi * 1609))] if maxmi else [])
+    args = ["node", os.path.join(HERE, script), city, checkin, checkout] + extra
     try:
         p = subprocess.run(args, capture_output=True, text=True, timeout=180)
         return json.loads(p.stdout.strip().splitlines()[-1])
@@ -208,7 +211,7 @@ def pick_stay(city, checkin, nights, rules, fx, cfg):
     maxmi = BIG_CITIES.get(city, 3.5)
     res = {"city": city, "checkin": checkin, "checkout": checkout, "nights": nights}
     for script in ("booking.js", "hotels.js"):
-        r = _hotel_search(script, city, checkin, checkout, fx)
+        r = _hotel_search(script, city, checkin, checkout, fx, maxmi)
         ok = [h for h in r.get("hotels", [])
               if (h.get("rating") or 0) >= minr and (h.get("reviews") or 0) >= minrev
               and (h.get("miles") is None or h["miles"] <= maxmi)

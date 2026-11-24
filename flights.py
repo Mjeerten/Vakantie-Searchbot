@@ -59,6 +59,9 @@ def parse(body):
             "from": leave.group(1) if leave else None, "departs": f"{leave.group(3)} {leave.group(2)}" if leave else None,
             "to": leave.group(4) if leave else None, "arrives": f"{leave.group(6)} {leave.group(5)}" if leave else None,
             "layovers": lay[:3],
+            # Google says e.g. "Change of airport" / "airport change" / "transfer to Heathrow"; a layover naming two airports counts too
+            "airportChange": bool(re.search(r"change (of )?airports?|airport change|different airport|transfer to", lab, re.I))
+                             or any(len(re.findall(r"Airport", x)) > 1 for x in lay),
         })
     offers.sort(key=lambda o: o["pricePP"])
     return offers

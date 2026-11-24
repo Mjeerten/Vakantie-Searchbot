@@ -1,15 +1,15 @@
 #!/usr/bin/env node
 // Booking.com public search results reader (read-only, no login, no booking).
-// Usage: node booking.js "<city>" <checkin> <checkout>
+// Usage: node booking.js "<city>" <checkin> <checkout> [maxMetresFromCentre]
 // Prints one JSON line: {hotels:[{name, total, nightlyEur, score10, rating, reviews, kind, miles, url}], blocked, url}
 // Prices are Booking's own totals for the whole stay, 2 adults, 1 room, in EUR, cheapest first, review score 7+.
 const { chromium } = require('playwright');
 
 (async () => {
-  const [city, ci, co] = process.argv.slice(2);
+  const [city, ci, co, maxM] = process.argv.slice(2);  // maxM: optional max metres from the centre
   const nights = Math.round((new Date(co) - new Date(ci)) / 864e5);
   const url = 'https://www.booking.com/searchresults.en-gb.html?ss=' + encodeURIComponent(city) +
-    `&checkin=${ci}&checkout=${co}&group_adults=2&no_rooms=1&group_children=0&selected_currency=EUR&order=price&nflt=review_score%3D70`;
+    `&checkin=${ci}&checkout=${co}&group_adults=2&no_rooms=1&group_children=0&selected_currency=EUR&order=price&nflt=review_score%3D70` + (maxM ? '%3Bdistance%3D' + Math.round(+maxM) : '');
   const out = { hotels: [], blocked: false, url, nights };
   let b;
   try {
