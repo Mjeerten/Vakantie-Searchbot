@@ -18,6 +18,7 @@ import urllib.parse
 UA = "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0 Safari/537.36"
 LABEL = re.compile(r'aria-label="(From [0-9][^"]*?euros[^"]*)"')
 BLOCKED = False
+EMPTY_STREAK = 0   # Google's quiet throttle: page loads but results never do
 
 
 def url_for(origin, dest, date, ret=None):
@@ -128,7 +129,7 @@ def tfs_url(legs):
 def search_legs(legs):
     """Round trip or multi-city search in a browser. Returns {url, offers, blocked, error}.
     Offer price is the whole-trip total per person; out-leg details come from the label."""
-    global BLOCKED
+    global BLOCKED, EMPTY_STREAK
     url = tfs_url(legs)
     res = {"legs": legs, "url": url, "offers": [], "blocked": False, "error": None}
     if BLOCKED:
@@ -145,9 +146,14 @@ def search_legs(legs):
     res["offers"] = parse(body)[:6]
     if not res["offers"]:
         res["error"] = r.get("error") or "no prices on page"
-        if r.get("blocked"):
+        EMPTY_STREAK += 1
+        if r.get("blocked") or EMPTY_STREAK >= 2:
             BLOCKED = True
             res["blocked"] = True
+            if not r.get("blocked"):
+                res["error"] = "Google throttle (results never loaded twice in a row)"
+    else:
+        EMPTY_STREAK = 0
     return res
 
 
