@@ -206,7 +206,9 @@ def google_round(states, airports, budget, pause, log=print):
                 progress = True
                 time.sleep(pause)
     japan = [st for st in states if st["plan"].get("country") == "Japan"]
-    loop(japan, True)
+    # owner's order: finish one scanTier (both directions) before starting the next
+    for tier in sorted({st["plan"].get("scanTier", 9) for st in japan}):
+        loop([st for st in japan if st["plan"].get("scanTier", 9) == tier], True)
     loop(states, False)
 
 

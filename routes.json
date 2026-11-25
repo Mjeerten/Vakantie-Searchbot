@@ -40,7 +40,8 @@
      "flex": 0
     }
    ],
-   "why": "The priority route: classic cities plus Kanazawa (samurai and geisha districts, Kenroku-en, seafood) and one night in a Koyasan temple (shukubo: monks' vegetarian dinner, morning prayers, Okunoin cemetery)."
+   "why": "The priority route: classic cities plus Kanazawa (samurai and geisha districts, Kenroku-en, seafood) and one night in a Koyasan temple (shukubo: monks' vegetarian dinner, morning prayers, Okunoin cemetery).",
+   "scanTier": 1
   },
   {
    "id": "jp-golden-rev",
@@ -81,7 +82,8 @@
      "flex": 0
     }
    ],
-   "why": "The golden route the other way round: fly into Osaka, end in Tokyo."
+   "why": "The golden route the other way round: fly into Osaka, end in Tokyo.",
+   "scanTier": 1
   },
   {
    "id": "jp-kanazawa",
@@ -116,7 +118,8 @@
      "flex": 0
     }
    ],
-   "why": "Classic cities plus 2 nights Kanazawa: samurai and geisha districts, Kenroku-en garden, Omicho fish market; less touristy than Kyoto."
+   "why": "Classic cities plus 2 nights Kanazawa: samurai and geisha districts, Kenroku-en garden, Omicho fish market; less touristy than Kyoto.",
+   "scanTier": 4
   },
   {
    "id": "jp-kanazawa-rev",
@@ -151,7 +154,8 @@
      "flex": 0
     }
    ],
-   "why": "Kanazawa route the other way round."
+   "why": "Kanazawa route the other way round.",
+   "scanTier": 4
   },
   {
    "id": "jp-koyasan",
@@ -187,7 +191,8 @@
      "flex": 0
     }
    ],
-   "why": "Classic cities plus one night in a Koyasan temple (shukubo), about 2 h from Osaka by Nankai train and cable car."
+   "why": "Classic cities plus one night in a Koyasan temple (shukubo), about 2 h from Osaka by Nankai train and cable car.",
+   "scanTier": 2
   },
   {
    "id": "jp-koyasan-rev",
@@ -223,7 +228,8 @@
      "flex": 0
     }
    ],
-   "why": "Koyasan route the other way round."
+   "why": "Koyasan route the other way round.",
+   "scanTier": 2
   },
   {
    "id": "jp-classic",
@@ -253,7 +259,8 @@
      "flex": 0
     }
    ],
-   "why": "The plain version: only Tokyo, Kyoto and Osaka. Fewest train legs and hotel moves; Nara is a day trip."
+   "why": "The plain version: only Tokyo, Kyoto and Osaka. Fewest train legs and hotel moves; Nara is a day trip.",
+   "scanTier": 3
   },
   {
    "id": "jp-classic-rev",
@@ -283,7 +290,8 @@
      "flex": 0
     }
    ],
-   "why": "Tokyo, Kyoto and Osaka the other way round: fly into Osaka, end in Tokyo."
+   "why": "Tokyo, Kyoto and Osaka the other way round: fly into Osaka, end in Tokyo.",
+   "scanTier": 3
   },
   {
    "id": "vn-north-south",

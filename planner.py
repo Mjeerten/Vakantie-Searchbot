@@ -44,7 +44,7 @@ def plan(cfg):
         if nights + 2 > days_max or nights + 2 < min_days:
             continue
         base = {"id": r["id"], "name": r["name"], "country": r["country"], "flyIn": r["flyIn"], "flyOut": r["flyOut"],
-                "priority": r["priority"], "enabled": True, "stops": stops, "why": r["why"],
+                "priority": r["priority"], "scanTier": r.get("scanTier", 9), "enabled": True, "stops": stops, "why": r["why"],
                 "nights": nights, "days": nights + 2, "tags": r["tags"]}
         out.append(base)
         # longer versions of the favourite routes: as many days as the window allows, and one in between,
