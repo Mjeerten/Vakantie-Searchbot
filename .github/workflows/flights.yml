@@ -4,6 +4,7 @@ name: flight-checks
 on:
   schedule:
     - cron: "41 * * * *"
+    - cron: "11 */2 * * *"
   workflow_dispatch:
     inputs:
       budget:
