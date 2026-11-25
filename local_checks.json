@@ -1,7 +1,7 @@
 {
- "updatedAt": "2026-11-25T16:08:15Z",
+ "updatedAt": "2026-11-25T18:45:59Z",
  "blocked": true,
- "queries": 986,
+ "queries": 2222,
  "plans": {
   "jp-golden": [
    {
@@ -180,6 +180,32 @@
      "airportChange": false
     },
     "cheapestPP": 1482
+   },
+   {
+    "origin": "BRU",
+    "depart": "2027-07-27",
+    "return": "2027-08-12",
+    "mode": "rt",
+    "checkedAt": "2026-11-25T18:32:23Z",
+    "url": "https://www.google.com/travel/flights/search?tfs=GhoSCjIwMjctMDctMjdqBRIDQlJVcgUSA1RZTxoaEgoyMDI3LTA4LTEyagUSA1RZT3IFEgNCUlVAAUgBmAEB&hl=en&gl=nl&curr=EUR",
+    "backTrainPP": 90,
+    "pricePP": 1046,
+    "airline": "British Airways",
+    "out": {
+     "pricePP": 1046,
+     "airline": "British Airways",
+     "stops": 1,
+     "duration": "17 hr",
+     "from": "Brussels Airport",
+     "departs": "Tuesday, July 27 10:55 AM",
+     "to": "Haneda Airport",
+     "arrives": "Wednesday, July 28 10:55 AM",
+     "layovers": [
+      "Heathrow Airport"
+     ],
+     "airportChange": false
+    },
+    "cheapestPP": 1046
    }
   ],
   "jp-golden-rev": [
@@ -408,6 +434,31 @@
      "airportChange": false
     },
     "cheapestPP": 1335
+   },
+   {
+    "origin": "BRU",
+    "depart": "2027-07-26",
+    "return": "2027-08-11",
+    "mode": "mc",
+    "checkedAt": "2026-11-25T18:31:34Z",
+    "url": "https://www.google.com/travel/flights/search?tfs=GhoSCjIwMjctMDctMjZqBRIDQlJVcgUSA09TQRoaEgoyMDI3LTA4LTExagUSA1RZT3IFEgNCUlVAAUgBmAED&hl=en&gl=nl&curr=EUR",
+    "pricePP": 1256,
+    "airline": "ANA",
+    "out": {
+     "pricePP": 1256,
+     "airline": "ANA",
+     "stops": 1,
+     "duration": "16 hr 25 min",
+     "from": "Brussels Airport",
+     "departs": "Monday, July 26 7:30 PM",
+     "to": "Osaka Itami Airport",
+     "arrives": "Tuesday, July 27 6:55 PM",
+     "layovers": [
+      "Narita International Airport"
+     ],
+     "airportChange": false
+    },
+    "cheapestPP": 1227
    }
   ],
   "jp-kanazawa": [
@@ -1232,11 +1283,11 @@
  },
  "coverage": {
   "jp-golden": [
-   7,
+   8,
    11
   ],
   "jp-golden-rev": [
-   9,
+   10,
    11
   ],
   "jp-kanazawa": [
