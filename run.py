@@ -479,6 +479,22 @@ def tp_candidates(plan, nights, cfg, airports):
     return out
 
 
+CITY_NIGHT = {}  # city -> nightly room prices (for 2) actually found, this run and earlier runs
+
+
+def load_city_nights(dbdir):
+    """Real hotel prices from earlier runs (travel_trips/*.json), used when a hotel search fails this run."""
+    import glob
+    for f in glob.glob(os.path.join(dbdir or "", "travel_trips", "*.json")) if dbdir else []:
+        try:
+            b = unwrap(json.load(open(f))).get("best") or {}
+        except Exception:
+            continue
+        for s in b.get("stays") or []:
+            if s.get("pick") and s.get("pricePP") and s.get("nights") and not s.get("estimated"):
+                CITY_NIGHT.setdefault(s["city"], []).append(s["pricePP"] * 2 / int(s["nights"]))
+
+
 def evaluate(plan, cfg, st, do_hotels):
     country = plan.get("country", "default")
     rules = country_costs(country, cfg)
@@ -523,9 +539,17 @@ def evaluate(plan, cfg, st, do_hotels):
             sv = pick_stay(s.get("hotelCity") or s["city"], cursor.isoformat(), n, rules, fx, {**cfg, **(plan.get("stay") or {})})
         else:
             sv = {"city": s["city"], "nights": n, "checkin": cursor.isoformat()}
+        if sv.get("pricePP") and not sv.get("estimated"):
+            CITY_NIGHT.setdefault(sv["city"], []).append(sv["pricePP"] * 2 / n)
         if not sv.get("pricePP"):
-            est = int((plan.get("stay") or {}).get("fallbackNightlyRoom") or cfg.get("fallbackNightlyRoom") or 90)
-            sv["pricePP"] = round(est * n / 2)
+            known = CITY_NIGHT.get(s.get("hotelCity") or s["city"])
+            if known:
+                # a real hotel price for this city from another route (same summer, room for 2): far closer than a flat guess
+                sv["pricePP"] = round(statistics.median(known) * n / 2)
+                sv["estimatedFrom"] = "real hotel prices for this city on other routes"
+            else:
+                est = int((plan.get("stay") or {}).get("fallbackNightlyRoom") or cfg.get("fallbackNightlyRoom") or 90)
+                sv["pricePP"] = round(est * n / 2)
             sv["estimated"] = True
         stays.append(sv)
         cursor += dt.timedelta(days=n)
@@ -554,7 +578,8 @@ def evaluate(plan, cfg, st, do_hotels):
     if bag:
         est_flags.append("checked bag estimated" + (" (1 suitcase shared by 2)" if cfg.get("sharedBag") else "") + " - check if the fare includes a suitcase")
     if any(s.get("estimated") for s in stays):
-        est_flags.append("some stays estimated (no hotel price found)")
+        est_flags.append("hotel price estimated for " + ", ".join(s["city"] for s in stays if s.get("estimated"))
+                         + " (hotel search failed this run; based on real prices for that city on other routes where known)")
     if any(not l["known"] for l in legs):
         est_flags.append("unknown train leg estimated")
     if not fl:
@@ -642,6 +667,7 @@ def main():
     # 2) Google checks: Japan first, then the rest
     google_round(states, airports, budget, pause, log=lambda m: print(m, flush=True))
     # 3) stays, trains, day costs
+    load_city_nights(dbdir)
     for st in states:
         st["tried"] = set()
         r = evaluate(st["plan"], cfg, st, "--no-hotels" not in flags)
