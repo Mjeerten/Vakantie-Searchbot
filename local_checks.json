@@ -1,7 +1,7 @@
 {
- "updatedAt": "2026-11-25T12:37:28Z",
+ "updatedAt": "2026-11-25T13:12:20Z",
  "blocked": false,
- "queries": 133,
+ "queries": 187,
  "plans": {
   "jp-golden": [
    {
@@ -333,6 +333,31 @@
      "airportChange": false
     },
     "cheapestPP": 1766
+   },
+   {
+    "origin": "AMS",
+    "depart": "2027-07-27",
+    "return": "2027-08-12",
+    "mode": "mc",
+    "checkedAt": "2026-11-25T12:59:27Z",
+    "url": "https://www.google.com/travel/flights/search?tfs=GhoSCjIwMjctMDctMjdqBRIDQU1TcgUSA09TQRoaEgoyMDI3LTA4LTEyagUSA1RZT3IFEgNBTVNAAUgBmAED&hl=en&gl=nl&curr=EUR",
+    "pricePP": 1335,
+    "airline": "Finnair",
+    "out": {
+     "pricePP": 1335,
+     "airline": "Finnair",
+     "stops": 1,
+     "duration": "17 hr 40 min",
+     "from": "Amsterdam Airport Schiphol",
+     "departs": "Tuesday, July 27 11:55 AM",
+     "to": "Kansai International Airport",
+     "arrives": "Wednesday, July 28 12:35 PM",
+     "layovers": [
+      "Helsinki Airport"
+     ],
+     "airportChange": false
+    },
+    "cheapestPP": 1335
    }
   ],
   "jp-kanazawa": [
@@ -1161,7 +1186,7 @@
    11
   ],
   "jp-golden-rev": [
-   7,
+   8,
    11
   ],
   "jp-kanazawa": [
