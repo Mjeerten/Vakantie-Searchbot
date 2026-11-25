@@ -209,8 +209,9 @@ def google_round(states, airports, budget, pause, log=print):
     # owner's order: finish one scanTier (both directions) before starting the next
     for tier in sorted({st["plan"].get("scanTier", 9) for st in japan}):
         loop([st for st in japan if st["plan"].get("scanTier", 9) == tier], True)
-    # owner (26 Nov): China is not needed for now, so flight searches go to Japan only (every airport, date and ticket type)
+    # then every route (China included) on the free Google scanner; paid-API credits are for Japan only
     loop(japan, False)
+    loop(states, False)
 
 
 def shared_checks(path, plan_id, nights):
