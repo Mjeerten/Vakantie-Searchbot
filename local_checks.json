@@ -1,7 +1,7 @@
 {
- "updatedAt": "2026-11-25T10:23:46Z",
+ "updatedAt": "2026-11-25T11:09:19Z",
  "blocked": true,
- "queries": 5,
+ "queries": 25,
  "plans": {
   "jp-golden": [
    {
@@ -53,6 +53,56 @@
      "airportChange": false
     },
     "cheapestPP": 1557
+   },
+   {
+    "origin": "AMS",
+    "depart": "2027-07-25",
+    "return": "2027-08-10",
+    "mode": "mc",
+    "checkedAt": "2026-11-25T10:31:15Z",
+    "url": "https://www.google.com/travel/flights/search?tfs=GhoSCjIwMjctMDctMjVqBRIDQU1TcgUSA1RZTxoaEgoyMDI3LTA4LTEwagUSA09TQXIFEgNBTVNAAUgBmAED&hl=en&gl=nl&curr=EUR",
+    "pricePP": 1711,
+    "airline": "Air France",
+    "out": {
+     "pricePP": 1711,
+     "airline": "Air France",
+     "stops": 1,
+     "duration": "16 hr 20 min",
+     "from": "Amsterdam Airport Schiphol",
+     "departs": "Sunday, July 25 9:35 AM",
+     "to": "Haneda Airport",
+     "arrives": "Monday, July 26 8:55 AM",
+     "layovers": [
+      "Aéroport de Paris-Charles de Gaulle"
+     ],
+     "airportChange": false
+    },
+    "cheapestPP": 1711
+   },
+   {
+    "origin": "AMS",
+    "depart": "2027-07-27",
+    "return": "2027-08-12",
+    "mode": "mc",
+    "checkedAt": "2026-11-25T11:07:07Z",
+    "url": "https://www.google.com/travel/flights/search?tfs=GhoSCjIwMjctMDctMjdqBRIDQU1TcgUSA1RZTxoaEgoyMDI3LTA4LTEyagUSA09TQXIFEgNBTVNAAUgBmAED&hl=en&gl=nl&curr=EUR",
+    "pricePP": 1324,
+    "airline": "British Airways",
+    "out": {
+     "pricePP": 1324,
+     "airline": "British Airways",
+     "stops": 1,
+     "duration": "16 hr 50 min",
+     "from": "Amsterdam Airport Schiphol",
+     "departs": "Tuesday, July 27 7:10 AM",
+     "to": "Haneda Airport",
+     "arrives": "Wednesday, July 28 7:00 AM",
+     "layovers": [
+      "Heathrow Airport"
+     ],
+     "airportChange": false
+    },
+    "cheapestPP": 1324
    }
   ],
   "jp-golden-rev": [
@@ -105,6 +155,56 @@
      "airportChange": false
     },
     "cheapestPP": 1455
+   },
+   {
+    "origin": "AMS",
+    "depart": "2027-07-24",
+    "return": "2027-08-09",
+    "mode": "mc",
+    "checkedAt": "2026-11-25T10:24:24Z",
+    "url": "https://www.google.com/travel/flights/search?tfs=GhoSCjIwMjctMDctMjRqBRIDQU1TcgUSA09TQRoaEgoyMDI3LTA4LTA5agUSA1RZT3IFEgNBTVNAAUgBmAED&hl=en&gl=nl&curr=EUR",
+    "pricePP": 1375,
+    "airline": "Finnair",
+    "out": {
+     "pricePP": 1375,
+     "airline": "Finnair",
+     "stops": 1,
+     "duration": "17 hr 40 min",
+     "from": "Amsterdam Airport Schiphol",
+     "departs": "Saturday, July 24 11:55 AM",
+     "to": "Kansai International Airport",
+     "arrives": "Sunday, July 25 12:35 PM",
+     "layovers": [
+      "Helsinki Airport"
+     ],
+     "airportChange": false
+    },
+    "cheapestPP": 1375
+   },
+   {
+    "origin": "AMS",
+    "depart": "2027-07-25",
+    "return": "2027-08-10",
+    "mode": "mc",
+    "checkedAt": "2026-11-25T11:06:11Z",
+    "url": "https://www.google.com/travel/flights/search?tfs=GhoSCjIwMjctMDctMjVqBRIDQU1TcgUSA09TQRoaEgoyMDI3LTA4LTEwagUSA1RZT3IFEgNBTVNAAUgBmAED&hl=en&gl=nl&curr=EUR",
+    "pricePP": 1329,
+    "airline": "Finnair",
+    "out": {
+     "pricePP": 1329,
+     "airline": "Finnair",
+     "stops": 1,
+     "duration": "17 hr 40 min",
+     "from": "Amsterdam Airport Schiphol",
+     "departs": "Sunday, July 25 11:55 AM",
+     "to": "Kansai International Airport",
+     "arrives": "Monday, July 26 12:35 PM",
+     "layovers": [
+      "Helsinki Airport"
+     ],
+     "airportChange": false
+    },
+    "cheapestPP": 1301
    }
   ],
   "jp-kanazawa": [
@@ -661,9 +761,85 @@
      "airportChange": false
     },
     "cheapestPP": 1425
+   },
+   {
+    "origin": "BRU",
+    "depart": "2027-07-26",
+    "return": "2027-08-11",
+    "mode": "mc",
+    "checkedAt": "2026-11-25T10:25:16Z",
+    "url": "https://www.google.com/travel/flights/search?tfs=GhoSCjIwMjctMDctMjZqBRIDQlJVcgUSA09TQRoaEgoyMDI3LTA4LTExagUSA1RZT3IFEgNCUlVAAUgBmAED&hl=en&gl=nl&curr=EUR",
+    "pricePP": 1267,
+    "airline": "Finnair",
+    "out": {
+     "pricePP": 1267,
+     "airline": "Finnair",
+     "stops": 1,
+     "duration": "18 hr 50 min",
+     "from": "Brussels Airport",
+     "departs": "Monday, July 26 10:45 AM",
+     "to": "Kansai International Airport",
+     "arrives": "Tuesday, July 27 12:35 PM",
+     "layovers": [
+      "Helsinki Airport"
+     ],
+     "airportChange": false
+    },
+    "cheapestPP": 1227
+   },
+   {
+    "origin": "RTM",
+    "depart": "2027-07-26",
+    "return": "2027-08-11",
+    "mode": "mc",
+    "checkedAt": "2026-11-25T10:33:51Z",
+    "url": "https://www.google.com/travel/flights/search?tfs=GhoSCjIwMjctMDctMjZqBRIDUlRNcgUSA09TQRoaEgoyMDI3LTA4LTExagUSA1RZT3IFEgNSVE1AAUgBmAED&hl=en&gl=nl&curr=EUR",
+    "pricePP": 1451,
+    "airline": "British Airways and JAL",
+    "out": {
+     "pricePP": 1451,
+     "airline": "British Airways and JAL",
+     "stops": 2,
+     "duration": "24 hr 40 min",
+     "from": "Rotterdam The Hague Airport",
+     "departs": "Monday, July 26 12:05 PM",
+     "to": "Osaka Itami Airport",
+     "arrives": "Tuesday, July 27 7:45 PM",
+     "layovers": [
+      "Haneda Airport"
+     ],
+     "airportChange": false
+    },
+    "cheapestPP": 1371
    }
   ],
-  "jp-koyasan": [],
+  "jp-koyasan": [
+   {
+    "origin": "AMS",
+    "depart": "2027-07-23",
+    "return": "2027-08-07",
+    "mode": "mc",
+    "checkedAt": "2026-11-25T10:34:56Z",
+    "url": "https://www.google.com/travel/flights/search?tfs=GhoSCjIwMjctMDctMjNqBRIDQU1TcgUSA1RZTxoaEgoyMDI3LTA4LTA3agUSA09TQXIFEgNBTVNAAUgBmAED&hl=en&gl=nl&curr=EUR",
+    "pricePP": 1484,
+    "airline": "ITA",
+    "out": {
+     "pricePP": 1484,
+     "airline": "ITA",
+     "stops": 1,
+     "duration": "15 hr 30 min",
+     "from": "Amsterdam Airport Schiphol",
+     "departs": "Friday, July 23 11:55 AM",
+     "to": "Haneda Airport",
+     "arrives": "Saturday, July 24 10:25 AM",
+     "layovers": [
+      "Leonardo da Vinci International Airport"
+     ],
+     "airportChange": false
+    },
+    "cheapestPP": 1484
+   }
+  ],
   "jp-koyasan-rev": [
    {
     "origin": "AMS",
@@ -689,6 +865,31 @@
      "airportChange": false
     },
     "cheapestPP": 1375
+   },
+   {
+    "origin": "AMS",
+    "depart": "2027-07-24",
+    "return": "2027-08-08",
+    "mode": "mc",
+    "checkedAt": "2026-11-25T10:35:47Z",
+    "url": "https://www.google.com/travel/flights/search?tfs=GhoSCjIwMjctMDctMjRqBRIDQU1TcgUSA09TQRoaEgoyMDI3LTA4LTA4agUSA1RZT3IFEgNBTVNAAUgBmAED&hl=en&gl=nl&curr=EUR",
+    "pricePP": 1455,
+    "airline": "Finnair",
+    "out": {
+     "pricePP": 1455,
+     "airline": "Finnair",
+     "stops": 1,
+     "duration": "17 hr 40 min",
+     "from": "Amsterdam Airport Schiphol",
+     "departs": "Saturday, July 24 11:55 AM",
+     "to": "Kansai International Airport",
+     "arrives": "Sunday, July 25 12:35 PM",
+     "layovers": [
+      "Helsinki Airport"
+     ],
+     "airportChange": false
+    },
+    "cheapestPP": 1455
    }
   ],
   "jp-classic": [
@@ -741,6 +942,31 @@
      "airportChange": false
     },
     "cheapestPP": 1723
+   },
+   {
+    "origin": "AMS",
+    "depart": "2027-07-24",
+    "return": "2027-08-07",
+    "mode": "mc",
+    "checkedAt": "2026-11-25T10:29:20Z",
+    "url": "https://www.google.com/travel/flights/search?tfs=GhoSCjIwMjctMDctMjRqBRIDQU1TcgUSA1RZTxoaEgoyMDI3LTA4LTA3agUSA09TQXIFEgNBTVNAAUgBmAED&hl=en&gl=nl&curr=EUR",
+    "pricePP": 1599,
+    "airline": "SWISS",
+    "out": {
+     "pricePP": 1599,
+     "airline": "SWISS",
+     "stops": 1,
+     "duration": "16 hr 20 min",
+     "from": "Amsterdam Airport Schiphol",
+     "departs": "Saturday, July 24 9:50 AM",
+     "to": "Narita International Airport",
+     "arrives": "Sunday, July 25 9:10 AM",
+     "layovers": [
+      "Zurich Airport"
+     ],
+     "airportChange": false
+    },
+    "cheapestPP": 1599
    }
   ],
   "jp-classic-rev": [
@@ -768,6 +994,31 @@
      "airportChange": false
     },
     "cheapestPP": 1289
+   },
+   {
+    "origin": "AMS",
+    "depart": "2027-07-23",
+    "return": "2027-08-06",
+    "mode": "mc",
+    "checkedAt": "2026-11-25T10:30:24Z",
+    "url": "https://www.google.com/travel/flights/search?tfs=GhoSCjIwMjctMDctMjNqBRIDQU1TcgUSA09TQRoaEgoyMDI3LTA4LTA2agUSA1RZT3IFEgNBTVNAAUgBmAED&hl=en&gl=nl&curr=EUR",
+    "pricePP": 1455,
+    "airline": "Finnair",
+    "out": {
+     "pricePP": 1455,
+     "airline": "Finnair",
+     "stops": 1,
+     "duration": "17 hr 40 min",
+     "from": "Amsterdam Airport Schiphol",
+     "departs": "Friday, July 23 11:55 AM",
+     "to": "Kansai International Airport",
+     "arrives": "Saturday, July 24 12:35 PM",
+     "layovers": [
+      "Helsinki Airport"
+     ],
+     "airportChange": false
+    },
+    "cheapestPP": 1455
    }
   ],
   "cn-chongqing-beijing": [],
@@ -778,11 +1029,11 @@
  },
  "coverage": {
   "jp-golden": [
-   2,
+   4,
    11
   ],
   "jp-golden-rev": [
-   2,
+   4,
    11
   ],
   "jp-kanazawa": [
@@ -790,23 +1041,23 @@
    11
   ],
   "jp-kanazawa-rev": [
-   9,
+   11,
    11
   ],
   "jp-koyasan": [
-   0,
+   1,
    12
   ],
   "jp-koyasan-rev": [
-   1,
+   2,
    12
   ],
   "jp-classic": [
-   2,
+   3,
    13
   ],
   "jp-classic-rev": [
-   1,
+   2,
    13
   ],
   "cn-chongqing-beijing": [
