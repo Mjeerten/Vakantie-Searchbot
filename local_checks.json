@@ -1,59 +1,9 @@
 {
- "updatedAt": "2026-11-25T20:12:36Z",
+ "updatedAt": "2026-11-25T22:54:00Z",
  "blocked": true,
- "queries": 4694,
+ "queries": 15332,
  "plans": {
   "jp-golden": [
-   {
-    "origin": "AMS",
-    "depart": "2027-07-26",
-    "return": "2027-08-11",
-    "mode": "mc",
-    "checkedAt": "2026-11-25T00:31:50Z",
-    "url": "https://www.google.com/travel/flights/search?tfs=GhoSCjIwMjctMDctMjZqBRIDQU1TcgUSA1RZTxoaEgoyMDI3LTA4LTExagUSA09TQXIFEgNBTVNAAUgBmAED&hl=en&gl=nl&curr=EUR",
-    "pricePP": 1557,
-    "airline": "British Airways",
-    "out": {
-     "pricePP": 1557,
-     "airline": "British Airways",
-     "stops": 1,
-     "duration": "16 hr 45 min",
-     "from": "Amsterdam Airport Schiphol",
-     "departs": "Monday, July 26 7:15 AM",
-     "to": "Haneda Airport",
-     "arrives": "Tuesday, July 27 7:00 AM",
-     "layovers": [
-      "Heathrow Airport"
-     ],
-     "airportChange": false
-    },
-    "cheapestPP": 1557
-   },
-   {
-    "origin": "AMS",
-    "depart": "2027-07-23",
-    "return": "2027-08-08",
-    "mode": "mc",
-    "checkedAt": "2026-11-25T00:39:19Z",
-    "url": "https://www.google.com/travel/flights/search?tfs=GhoSCjIwMjctMDctMjNqBRIDQU1TcgUSA1RZTxoaEgoyMDI3LTA4LTA4agUSA09TQXIFEgNBTVNAAUgBmAED&hl=en&gl=nl&curr=EUR",
-    "pricePP": 1557,
-    "airline": "British Airways",
-    "out": {
-     "pricePP": 1557,
-     "airline": "British Airways",
-     "stops": 1,
-     "duration": "16 hr 40 min",
-     "from": "Amsterdam Airport Schiphol",
-     "departs": "Friday, July 23 7:20 AM",
-     "to": "Haneda Airport",
-     "arrives": "Saturday, July 24 7:00 AM",
-     "layovers": [
-      "Heathrow Airport"
-     ],
-     "airportChange": false
-    },
-    "cheapestPP": 1557
-   },
    {
     "origin": "AMS",
     "depart": "2027-07-25",
@@ -206,59 +156,134 @@
      "airportChange": false
     },
     "cheapestPP": 1046
-   }
-  ],
-  "jp-golden-rev": [
+   },
    {
     "origin": "AMS",
     "depart": "2027-07-26",
     "return": "2027-08-11",
     "mode": "mc",
-    "checkedAt": "2026-11-25T00:32:25Z",
-    "url": "https://www.google.com/travel/flights/search?tfs=GhoSCjIwMjctMDctMjZqBRIDQU1TcgUSA09TQRoaEgoyMDI3LTA4LTExagUSA1RZT3IFEgNBTVNAAUgBmAED&hl=en&gl=nl&curr=EUR",
-    "pricePP": 1329,
-    "airline": "Finnair",
+    "checkedAt": "2026-11-25T22:43:11Z",
+    "url": "https://www.google.com/travel/flights/search?tfs=GhoSCjIwMjctMDctMjZqBRIDQU1TcgUSA1RZTxoaEgoyMDI3LTA4LTExagUSA09TQXIFEgNBTVNAAUgBmAED&hl=en&gl=nl&curr=EUR",
+    "pricePP": 1610,
+    "airline": "Lufthansa",
     "out": {
-     "pricePP": 1329,
-     "airline": "Finnair",
+     "pricePP": 1610,
+     "airline": "Lufthansa",
      "stops": 1,
-     "duration": "17 hr 40 min",
+     "duration": "15 hr 30 min",
      "from": "Amsterdam Airport Schiphol",
-     "departs": "Monday, July 26 11:55 AM",
-     "to": "Kansai International Airport",
-     "arrives": "Tuesday, July 27 12:35 PM",
+     "departs": "Monday, July 26 11:00 AM",
+     "to": "Narita International Airport",
+     "arrives": "Tuesday, July 27 9:30 AM",
      "layovers": [
-      "Helsinki Airport"
+      "Frankfurt Airport"
      ],
      "airportChange": false
     },
-    "cheapestPP": 1329
+    "cheapestPP": 1610
    },
    {
     "origin": "AMS",
     "depart": "2027-07-23",
     "return": "2027-08-08",
     "mode": "mc",
-    "checkedAt": "2026-11-25T00:39:55Z",
-    "url": "https://www.google.com/travel/flights/search?tfs=GhoSCjIwMjctMDctMjNqBRIDQU1TcgUSA09TQRoaEgoyMDI3LTA4LTA4agUSA1RZT3IFEgNBTVNAAUgBmAED&hl=en&gl=nl&curr=EUR",
-    "pricePP": 1455,
-    "airline": "Finnair",
+    "checkedAt": "2026-11-25T22:45:03Z",
+    "url": "https://www.google.com/travel/flights/search?tfs=GhoSCjIwMjctMDctMjNqBRIDQU1TcgUSA1RZTxoaEgoyMDI3LTA4LTA4agUSA09TQXIFEgNBTVNAAUgBmAED&hl=en&gl=nl&curr=EUR",
+    "pricePP": 1557,
+    "airline": "British Airways",
     "out": {
-     "pricePP": 1455,
-     "airline": "Finnair",
+     "pricePP": 1557,
+     "airline": "British Airways",
      "stops": 1,
-     "duration": "17 hr 40 min",
+     "duration": "16 hr 40 min",
      "from": "Amsterdam Airport Schiphol",
-     "departs": "Friday, July 23 11:55 AM",
-     "to": "Kansai International Airport",
-     "arrives": "Saturday, July 24 12:35 PM",
+     "departs": "Friday, July 23 7:20 AM",
+     "to": "Haneda Airport",
+     "arrives": "Saturday, July 24 7:00 AM",
      "layovers": [
-      "Helsinki Airport"
+      "Heathrow Airport"
      ],
      "airportChange": false
     },
-    "cheapestPP": 1455
+    "cheapestPP": 1557
    },
+   {
+    "origin": "AMS",
+    "depart": "2027-07-28",
+    "return": "2027-08-13",
+    "mode": "mc",
+    "checkedAt": "2026-11-25T22:47:43Z",
+    "url": "https://www.google.com/travel/flights/search?tfs=GhoSCjIwMjctMDctMjhqBRIDQU1TcgUSA1RZTxoaEgoyMDI3LTA4LTEzagUSA09TQXIFEgNBTVNAAUgBmAED&hl=en&gl=nl&curr=EUR",
+    "pricePP": 1443,
+    "airline": "British Airways",
+    "out": {
+     "pricePP": 1443,
+     "airline": "British Airways",
+     "stops": 1,
+     "duration": "16 hr 15 min",
+     "from": "Amsterdam Airport Schiphol",
+     "departs": "Wednesday, July 28 7:45 AM",
+     "to": "Haneda Airport",
+     "arrives": "Thursday, July 29 7:00 AM",
+     "layovers": [
+      "Heathrow Airport"
+     ],
+     "airportChange": false
+    },
+    "cheapestPP": 1443
+   },
+   {
+    "origin": "EIN",
+    "depart": "2027-07-27",
+    "return": "2027-08-12",
+    "mode": "rt",
+    "checkedAt": "2026-11-25T22:48:28Z",
+    "url": "https://www.google.com/travel/flights/search?tfs=GhoSCjIwMjctMDctMjdqBRIDRUlOcgUSA1RZTxoaEgoyMDI3LTA4LTEyagUSA1RZT3IFEgNFSU5AAUgBmAEB&hl=en&gl=nl&curr=EUR",
+    "backTrainPP": 90,
+    "pricePP": 1780,
+    "airline": "KLM",
+    "out": {
+     "pricePP": 1780,
+     "airline": "KLM",
+     "stops": 1,
+     "duration": "21 hr",
+     "from": "Eindhoven Airport",
+     "departs": "Tuesday, July 27 6:25 AM",
+     "to": "Narita International Airport",
+     "arrives": "Wednesday, July 28 10:25 AM",
+     "layovers": [
+      "Amsterdam Airport Schiphol"
+     ],
+     "airportChange": false
+    },
+    "cheapestPP": 1780
+   },
+   {
+    "origin": "RTM",
+    "depart": "2027-07-27",
+    "return": "2027-08-12",
+    "mode": "rt",
+    "checkedAt": "2026-11-25T22:49:19Z",
+    "url": "https://www.google.com/travel/flights/search?tfs=GhoSCjIwMjctMDctMjdqBRIDUlRNcgUSA1RZTxoaEgoyMDI3LTA4LTEyagUSA1RZT3IFEgNSVE1AAUgBmAEB&hl=en&gl=nl&curr=EUR",
+    "backTrainPP": 90,
+    "pricePP": 1166,
+    "airline": "British Airways",
+    "out": {
+     "pricePP": 1166,
+     "airline": "British Airways",
+     "stops": 1,
+     "duration": "18 hr 20 min",
+     "from": "Rotterdam The Hague Airport",
+     "departs": "Tuesday, July 27 9:35 AM",
+     "to": "Haneda Airport",
+     "arrives": "Wednesday, July 28 10:55 AM",
+     "layovers": [],
+     "airportChange": false
+    },
+    "cheapestPP": 1166
+   }
+  ],
+  "jp-golden-rev": [
    {
     "origin": "AMS",
     "depart": "2027-07-24",
@@ -459,6 +484,56 @@
      "airportChange": false
     },
     "cheapestPP": 1227
+   },
+   {
+    "origin": "AMS",
+    "depart": "2027-07-26",
+    "return": "2027-08-11",
+    "mode": "mc",
+    "checkedAt": "2026-11-25T20:45:11Z",
+    "url": "https://www.google.com/travel/flights/search?tfs=GhoSCjIwMjctMDctMjZqBRIDQU1TcgUSA09TQRoaEgoyMDI3LTA4LTExagUSA1RZT3IFEgNBTVNAAUgBmAED&hl=en&gl=nl&curr=EUR",
+    "pricePP": 1329,
+    "airline": "Finnair",
+    "out": {
+     "pricePP": 1329,
+     "airline": "Finnair",
+     "stops": 1,
+     "duration": "17 hr 40 min",
+     "from": "Amsterdam Airport Schiphol",
+     "departs": "Monday, July 26 11:55 AM",
+     "to": "Kansai International Airport",
+     "arrives": "Tuesday, July 27 12:35 PM",
+     "layovers": [
+      "Helsinki Airport"
+     ],
+     "airportChange": false
+    },
+    "cheapestPP": 1329
+   },
+   {
+    "origin": "AMS",
+    "depart": "2027-07-23",
+    "return": "2027-08-08",
+    "mode": "mc",
+    "checkedAt": "2026-11-25T22:44:06Z",
+    "url": "https://www.google.com/travel/flights/search?tfs=GhoSCjIwMjctMDctMjNqBRIDQU1TcgUSA09TQRoaEgoyMDI3LTA4LTA4agUSA1RZT3IFEgNBTVNAAUgBmAED&hl=en&gl=nl&curr=EUR",
+    "pricePP": 1455,
+    "airline": "Finnair",
+    "out": {
+     "pricePP": 1455,
+     "airline": "Finnair",
+     "stops": 1,
+     "duration": "17 hr 40 min",
+     "from": "Amsterdam Airport Schiphol",
+     "departs": "Friday, July 23 11:55 AM",
+     "to": "Kansai International Airport",
+     "arrives": "Saturday, July 24 12:35 PM",
+     "layovers": [
+      "Helsinki Airport"
+     ],
+     "airportChange": false
+    },
+    "cheapestPP": 1455
    }
   ],
   "jp-kanazawa": [
@@ -1092,6 +1167,31 @@
      "airportChange": false
     },
     "cheapestPP": 1484
+   },
+   {
+    "origin": "AMS",
+    "depart": "2027-07-26",
+    "return": "2027-08-10",
+    "mode": "mc",
+    "checkedAt": "2026-11-25T22:50:10Z",
+    "url": "https://www.google.com/travel/flights/search?tfs=GhoSCjIwMjctMDctMjZqBRIDQU1TcgUSA1RZTxoaEgoyMDI3LTA4LTEwagUSA09TQXIFEgNBTVNAAUgBmAED&hl=en&gl=nl&curr=EUR",
+    "pricePP": 1379,
+    "airline": "British Airways",
+    "out": {
+     "pricePP": 1379,
+     "airline": "British Airways",
+     "stops": 1,
+     "duration": "16 hr 45 min",
+     "from": "Amsterdam Airport Schiphol",
+     "departs": "Monday, July 26 7:15 AM",
+     "to": "Haneda Airport",
+     "arrives": "Tuesday, July 27 7:00 AM",
+     "layovers": [
+      "Heathrow Airport"
+     ],
+     "airportChange": false
+    },
+    "cheapestPP": 1379
    }
   ],
   "jp-koyasan-rev": [
@@ -1283,7 +1383,7 @@
  },
  "coverage": {
   "jp-golden": [
-   8,
+   11,
    11
   ],
   "jp-golden-rev": [
@@ -1299,7 +1399,7 @@
    11
   ],
   "jp-koyasan": [
-   1,
+   2,
    12
   ],
   "jp-koyasan-rev": [
