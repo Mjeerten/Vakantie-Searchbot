@@ -32,7 +32,7 @@ def main():
            "queries": int(a.get("queries") or 0) + int(b.get("queries") or 0), "plans": {}, "coverage": {}}
     for p in planner.plan(cfg):
         nights, variants = run.date_variants(p, cfg)
-        checks = sorted(plans.get(p["id"], {}).values(), key=lambda c: c.get("checkedAt", ""))[-80:]
+        checks = sorted(plans.get(p["id"], {}).values(), key=lambda c: c.get("checkedAt", ""))[-250:]
         out["plans"][p["id"]] = checks
         st = {"plan": p, "nights": nights, "variants": variants, "tp": [], "checks": checks, "tried": set()}
         out["coverage"][p["id"]] = list(run.coverage(st, cfg["airports"]))

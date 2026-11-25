@@ -39,7 +39,7 @@ def main():
            "queries": int(cfg.get("googleQueryBudget", 10)) - budget.left, "plans": {}, "coverage": {}}
     for st in states:
         st["tried"] = set()
-        out["plans"][st["plan"]["id"]] = sorted(st["checks"], key=lambda c: c["checkedAt"])[-80:]
+        out["plans"][st["plan"]["id"]] = sorted(st["checks"], key=lambda c: c["checkedAt"])[-250:]
         out["coverage"][st["plan"]["id"]] = list(run.coverage(st, airports))
     json.dump(out, open(out_path, "w"), indent=1, ensure_ascii=False)
     for k, v in out["coverage"].items():
