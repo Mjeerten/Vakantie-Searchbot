@@ -1,7 +1,7 @@
 {
- "updatedAt": "2026-11-25T12:03:11Z",
+ "updatedAt": "2026-11-25T12:37:28Z",
  "blocked": false,
- "queries": 79,
+ "queries": 133,
  "plans": {
   "jp-golden": [
    {
@@ -283,6 +283,56 @@
      "airportChange": false
     },
     "cheapestPP": 1425
+   },
+   {
+    "origin": "DUS",
+    "depart": "2027-07-26",
+    "return": "2027-08-11",
+    "mode": "mc",
+    "checkedAt": "2026-11-25T12:34:27Z",
+    "url": "https://www.google.com/travel/flights/search?tfs=GhoSCjIwMjctMDctMjZqBRIDRFVTcgUSA09TQRoaEgoyMDI3LTA4LTExagUSA1RZT3IFEgNEVVNAAUgBmAED&hl=en&gl=nl&curr=EUR",
+    "pricePP": 1243,
+    "airline": "Finnair",
+    "out": {
+     "pricePP": 1243,
+     "airline": "Finnair",
+     "stops": 1,
+     "duration": "18 hr 35 min",
+     "from": "Duesseldorf Airport",
+     "departs": "Monday, July 26 11:00 AM",
+     "to": "Kansai International Airport",
+     "arrives": "Tuesday, July 27 12:35 PM",
+     "layovers": [
+      "Helsinki Airport"
+     ],
+     "airportChange": false
+    },
+    "cheapestPP": 1243
+   },
+   {
+    "origin": "EIN",
+    "depart": "2027-07-26",
+    "return": "2027-08-11",
+    "mode": "mc",
+    "checkedAt": "2026-11-25T12:36:53Z",
+    "url": "https://www.google.com/travel/flights/search?tfs=GhoSCjIwMjctMDctMjZqBRIDRUlOcgUSA09TQRoaEgoyMDI3LTA4LTExagUSA1RZT3IFEgNFSU5AAUgBmAED&hl=en&gl=nl&curr=EUR",
+    "pricePP": 1766,
+    "airline": "KLM",
+    "out": {
+     "pricePP": 1766,
+     "airline": "KLM",
+     "stops": 1,
+     "duration": "20 hr 50 min",
+     "from": "Eindhoven Airport",
+     "departs": "Monday, July 26 6:25 AM",
+     "to": "Kansai International Airport",
+     "arrives": "Tuesday, July 27 10:15 AM",
+     "layovers": [
+      "Amsterdam Airport Schiphol"
+     ],
+     "airportChange": false
+    },
+    "cheapestPP": 1766
    }
   ],
   "jp-kanazawa": [
@@ -1111,7 +1161,7 @@
    11
   ],
   "jp-golden-rev": [
-   5,
+   7,
    11
   ],
   "jp-kanazawa": [
