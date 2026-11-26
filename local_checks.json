@@ -1,7 +1,7 @@
 {
  "updatedAt": "2026-11-25T23:52:34Z",
  "blocked": true,
- "queries": 181528,
+ "queries": 363056,
  "plans": {
   "jp-golden": [
    {
@@ -8648,11 +8648,203 @@
     "error": "not among the cheapest 15 options (cheapest from any home airport EUR 1465)"
    }
   ],
-  "cn-chongqing-beijing": [],
+  "cn-chongqing-beijing": [
+   {
+    "origin": "AMS",
+    "depart": "2027-07-24",
+    "return": "2027-08-09",
+    "mode": "mc",
+    "checkedAt": "2026-11-26T00:20:00Z",
+    "source": "searchapi",
+    "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhoeEgoyMDI3LTA3LTI0agcIARIDQU1TcgcIARIDQ0tHGicSCjIwMjctMDgtMDlqBwgBEgNQRUtqBwgBEgNQS1hyBwgBEgNBTVNAAUgBcAGCAQsI____________AZgBAw&tfu=EgQIACACIgMSATA&hl=en&gl=nl&curr=EUR",
+    "pricePP": 1180,
+    "airline": "Austrian and Air China",
+    "out": {
+     "pricePP": 1180,
+     "airline": "Austrian and Air China",
+     "stops": 2,
+     "duration": "18 hr 10 min",
+     "from": "Amsterdam Airport Schiphol",
+     "fromId": "AMS",
+     "departs": "Saturday, July 24 9:55 AM",
+     "to": "Chongqing Jiangbei International Airport",
+     "arrives": "Sunday, July 25 10:05 AM",
+     "layovers": [
+      "Vienna International Airport",
+      "Beijing Capital International Airport"
+     ],
+     "airportChange": false
+    },
+    "cheapestPP": 1126
+   },
+   {
+    "origin": "AMS",
+    "depart": "2027-07-26",
+    "return": "2027-08-11",
+    "mode": "mc",
+    "checkedAt": "2026-11-26T00:20:00Z",
+    "source": "searchapi",
+    "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhoeEgoyMDI3LTA3LTI2agcIARIDQU1TcgcIARIDQ0tHGicSCjIwMjctMDgtMTFqBwgBEgNQRUtqBwgBEgNQS1hyBwgBEgNBTVNAAUgBcAGCAQsI____________AZgBAw&tfu=EgQIACACIgMSATA&hl=en&gl=nl&curr=EUR",
+    "pricePP": 1166,
+    "airline": "China Southern",
+    "out": {
+     "pricePP": 1166,
+     "airline": "China Southern",
+     "stops": 1,
+     "duration": "15 hr 10 min",
+     "from": "Amsterdam Airport Schiphol",
+     "fromId": "AMS",
+     "departs": "Monday, July 26 9:40 PM",
+     "to": "Chongqing Jiangbei International Airport",
+     "arrives": "Tuesday, July 27 6:50 PM",
+     "layovers": [
+      "Beijing Daxing International Airport"
+     ],
+     "airportChange": false
+    },
+    "cheapestPP": 1127
+   },
+   {
+    "origin": "AMS",
+    "depart": "2027-07-28",
+    "return": "2027-08-13",
+    "mode": "mc",
+    "checkedAt": "2026-11-26T00:20:00Z",
+    "source": "searchapi",
+    "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhoeEgoyMDI3LTA3LTI4agcIARIDQU1TcgcIARIDQ0tHGicSCjIwMjctMDgtMTNqBwgBEgNQRUtqBwgBEgNQS1hyBwgBEgNBTVNAAUgBcAGCAQsI____________AZgBAw&tfu=EgQIACACIgMSATA&hl=en&gl=nl&curr=EUR",
+    "pricePP": 1295,
+    "airline": "Austrian and Air China",
+    "out": {
+     "pricePP": 1295,
+     "airline": "Austrian and Air China",
+     "stops": 2,
+     "duration": "18 hr 0 min",
+     "from": "Amsterdam Airport Schiphol",
+     "fromId": "AMS",
+     "departs": "Wednesday, July 28 9:55 AM",
+     "to": "Chongqing Jiangbei International Airport",
+     "arrives": "Thursday, July 29 9:55 AM",
+     "layovers": [
+      "Vienna International Airport",
+      "Beijing Capital International Airport"
+     ],
+     "airportChange": false
+    },
+    "cheapestPP": 1146
+   }
+  ],
   "cn-chongqing-beijing-19d": [],
   "cn-chongqing-beijing-22d": [],
-  "cn-beijing-chongqing": [],
-  "cn-shanghai-chongqing": []
+  "cn-beijing-chongqing": [
+   {
+    "origin": "AMS",
+    "depart": "2027-07-24",
+    "return": "2027-08-09",
+    "mode": "mc",
+    "checkedAt": "2026-11-26T00:20:00Z",
+    "source": "searchapi",
+    "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhonEgoyMDI3LTA3LTI0agcIARIDQU1TcgcIARIDUEVLcgcIARIDUEtYGh4SCjIwMjctMDgtMDlqBwgBEgNDS0dyBwgBEgNBTVNAAUgBcAGCAQsI____________AZgBAw&tfu=EgQIACACIgMSATA&hl=en&gl=nl&curr=EUR",
+    "pricePP": 1179,
+    "airline": "Austrian and Air China",
+    "out": {
+     "pricePP": 1179,
+     "airline": "Austrian and Air China",
+     "stops": 1,
+     "duration": "12 hr 55 min",
+     "from": "Amsterdam Airport Schiphol",
+     "fromId": "AMS",
+     "departs": "Saturday, July 24 9:55 AM",
+     "to": "Beijing Capital International Airport",
+     "arrives": "Sunday, July 25 4:50 AM",
+     "layovers": [
+      "Vienna International Airport"
+     ],
+     "airportChange": false
+    },
+    "cheapestPP": 1179
+   },
+   {
+    "origin": "AMS",
+    "depart": "2027-07-27",
+    "return": "2027-08-12",
+    "mode": "mc",
+    "checkedAt": "2026-11-26T00:20:00Z",
+    "source": "searchapi",
+    "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhonEgoyMDI3LTA3LTI3agcIARIDQU1TcgcIARIDUEVLcgcIARIDUEtYGh4SCjIwMjctMDgtMTJqBwgBEgNDS0dyBwgBEgNBTVNAAUgBcAGCAQsI____________AZgBAw&tfu=EgQIACACIgMSATA&hl=en&gl=nl&curr=EUR",
+    "pricePP": 1166,
+    "airline": "China Southern",
+    "out": {
+     "pricePP": 1166,
+     "airline": "China Southern",
+     "stops": 0,
+     "duration": "9 hr 45 min",
+     "from": "Amsterdam Airport Schiphol",
+     "fromId": "AMS",
+     "departs": "Tuesday, July 27 9:40 PM",
+     "to": "Beijing Daxing International Airport",
+     "arrives": "Wednesday, July 28 1:25 PM",
+     "layovers": [],
+     "airportChange": false
+    },
+    "cheapestPP": 1135
+   }
+  ],
+  "cn-shanghai-chongqing": [
+   {
+    "origin": "AMS",
+    "depart": "2027-07-25",
+    "return": "2027-08-09",
+    "mode": "mc",
+    "checkedAt": "2026-11-26T00:20:00Z",
+    "source": "searchapi",
+    "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhonEgoyMDI3LTA3LTI1agcIARIDQU1TcgcIARIDUFZHcgcIARIDU0hBGh4SCjIwMjctMDgtMDlqBwgBEgNDS0dyBwgBEgNBTVNAAUgBcAGCAQsI____________AZgBAw&tfu=EgQIACACIgMSATA&hl=en&gl=nl&curr=EUR",
+    "pricePP": 1055,
+    "airline": "Austrian",
+    "out": {
+     "pricePP": 1055,
+     "airline": "Austrian",
+     "stops": 1,
+     "duration": "17 hr 0 min",
+     "from": "Amsterdam Airport Schiphol",
+     "fromId": "AMS",
+     "departs": "Sunday, July 25 7:00 AM",
+     "to": "Shanghai Pudong International Airport",
+     "arrives": "Monday, July 26 6:00 AM",
+     "layovers": [
+      "Vienna International Airport"
+     ],
+     "airportChange": false
+    },
+    "cheapestPP": 1055
+   },
+   {
+    "origin": "AMS",
+    "depart": "2027-07-28",
+    "return": "2027-08-12",
+    "mode": "mc",
+    "checkedAt": "2026-11-26T00:20:00Z",
+    "source": "searchapi",
+    "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhonEgoyMDI3LTA3LTI4agcIARIDQU1TcgcIARIDUFZHcgcIARIDU0hBGh4SCjIwMjctMDgtMTJqBwgBEgNDS0dyBwgBEgNBTVNAAUgBcAGCAQsI____________AZgBAw&tfu=EgQIACACIgMSATA&hl=en&gl=nl&curr=EUR",
+    "pricePP": 1106,
+    "airline": "Austrian",
+    "out": {
+     "pricePP": 1106,
+     "airline": "Austrian",
+     "stops": 1,
+     "duration": "17 hr 0 min",
+     "from": "Amsterdam Airport Schiphol",
+     "fromId": "AMS",
+     "departs": "Wednesday, July 28 7:00 AM",
+     "to": "Shanghai Pudong International Airport",
+     "arrives": "Thursday, July 29 6:00 AM",
+     "layovers": [
+      "Vienna International Airport"
+     ],
+     "airportChange": false
+    },
+    "cheapestPP": 1106
+   }
+  ]
  },
  "coverage": {
   "jp-golden": [
@@ -8688,7 +8880,7 @@
    13
   ],
   "cn-chongqing-beijing": [
-   0,
+   3,
    11
   ],
   "cn-chongqing-beijing-19d": [
@@ -8700,11 +8892,11 @@
    6
   ],
   "cn-beijing-chongqing": [
-   0,
+   2,
    11
   ],
   "cn-shanghai-chongqing": [
-   0,
+   2,
    12
   ]
  }
