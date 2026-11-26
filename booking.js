@@ -17,12 +17,20 @@ const { chromium } = require('playwright');
     const c = await b.newContext({ locale: 'en-GB', viewport: { width: 1300, height: 2400 },
       userAgent: 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0 Safari/537.36' });
     const p = await c.newPage();
-    await p.goto(url, { waitUntil: 'domcontentloaded', timeout: 60000 });
-    try { await p.waitForSelector('[data-testid="property-card"]', { timeout: 30000 }); }
-    catch (e) { out.blocked = true; out.error = 'no result cards (blocked or no results)'; }
-    // load a second batch of cards
-    await p.mouse.wheel(0, 6000); await p.waitForTimeout(2500);
-    const cards = await p.$$eval('[data-testid="property-card"]', els => els.map(e => {
+    // Booking shows ~25 cards a search (paging repeats them). Search twice, score 7+ and score 8+ (both cheapest
+    // first), so well-rated hotels just above the hostels are in the pick too
+    let cards = [];
+    for (const off of [0, 1]) {
+      await p.goto(off ? url.replace('review_score%3D70', 'review_score%3D80') : url, { waitUntil: 'domcontentloaded', timeout: 60000 });
+      try { await p.waitForSelector('[data-testid="property-card"]', { timeout: 30000 }); }
+      catch (e) { if (!off) { out.blocked = true; out.error = 'no result cards (blocked or no results)'; } break; }
+      for (let i = 0; i < 2; i++) { await p.mouse.wheel(0, 8000); await p.waitForTimeout(1500); }
+      cards = cards.concat(await readCards(p));
+      if (off) await p.waitForTimeout(3000);
+    }
+    const seen = new Set();
+    cards = cards.filter(k => !seen.has(k.name) && seen.add(k.name));
+    async function readCards(p) { return p.$$eval('[data-testid="property-card"]', els => els.map(e => {
       const t = s => { const x = e.querySelector(s); return x ? x.innerText.trim() : ''; };
       const a = e.querySelector('a[data-testid="title-link"]');
       const pr = [...e.querySelectorAll('[data-testid="price-and-discounted-price"]')].map(n => n.innerText.trim());
@@ -30,7 +38,7 @@ const { chromium } = require('playwright');
         score: t('[data-testid="review-score"]'), dist: t('[data-testid="distance"]'),
         room: t('[data-testid="recommended-units"]'), href: a ? a.href : '',
         member: /members-only|genius/i.test(e.innerText), orig: ((e.innerText.match(/Original price €\s*([\d.,]+)/) || [])[1]) || '' };
-    }));
+    })); }
     for (const k of cards) {
       const num = x => parseInt(String(x).replace(/[.,]/g, ''), 10);
       const tax = (k.rate.match(/\+\s*€\s*([\d.,]+)\s*taxes/i) || [])[1];
