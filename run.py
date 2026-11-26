@@ -346,13 +346,23 @@ def google_cand(plan, c):
         typ = f"multi-city ticket (in {fin}, home from {fout})"
     else:
         typ = "return " + fin + (f" (+ train back to {plan['stops'][0]['city']})" if back else "")
+    price, via, bags_in = c["pricePP"], None, bool(c.get("bagsIncluded"))
+    # book with the airline itself when Google's booking page offers it: its bag rules are known and changes/delays are
+    # handled by the airline, not a middleman (owner's choice, Nov 2026: worth ~EUR 100 more than the cheapest agency)
+    air = [x for x in c.get("bookWith") or [] if x.get("airline") and x.get("pricePP")]
+    if air:
+        a = min(air, key=lambda x: x["pricePP"])
+        price, via = a["pricePP"], a["name"]
+        for k in COSTS["bags"].get("confirmedIncluded", []):
+            if k["airline"] == c.get("airline") and k["bookWith"] == via:
+                bags_in = True
     return {"origin": c["origin"], "src": "google", "type": typ,
-            "pricePP": c["pricePP"], "backTrainPP": back, "compare": c["pricePP"] + back, "airlines": [c.get("airline")],
+            "pricePP": price, "bookVia": via, "backTrainPP": back, "compare": price + back, "airlines": [c.get("airline")],
             "out": c.get("out"), "back": None, "depart": c["depart"], "return": c["return"],
             "urls": [c["url"]], "checkedAt": c["checkedAt"], "manual": bool(c.get("manual")), "anyHomeAirport": bool(c.get("anyHomeAirport")), "serpapi": c.get("source") == "serpapi",
             # Google's booking page for this exact flight pair ("Book with JAL / BA ..."), its total and bag rules
             "bookUrl": c.get("bookUrl"), "bookWith": c.get("bookWith"), "bags": c.get("bags"),
-            "bagsIncluded": bool(c.get("bagsIncluded")), "back": c.get("back")}
+            "bagsIncluded": bags_in, "back": c.get("back")}
 
 
 BIG_CITIES = {"Tokyo": 4, "Seoul": 4.5, "Bangkok": 4.5, "Osaka": 3, "Kyoto": 2.5, "Ho Chi Minh City": 3, "Hanoi": 2.5,

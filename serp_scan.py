@@ -106,7 +106,7 @@ def booking(key, q, o, airports):
     print("  booking page:", (url or "")[:90], "| keys", sorted(d.keys())[:12], "| bags", bags, flush=True)
     if not opts:
         return {"error": d.get("error") or "no booking options", "back": strip(b), "pricePP": b["pricePP"]}, 2
-    free = [m for m in bags if re.search(r"(\d+|one|1st) free checked bag|free checked bags?", str(m), re.I)]
+    free = [m for m in bags if re.search(r"free checked bag|checked bags? (is |are )?(free|included)", str(m), re.I)]
     return {"bookUrl": url, "pricePP": min(x["price"] for x in opts), "back": strip(b),
             "bookWith": [{"name": x.get("book_with"), "pricePP": x["price"], "airline": bool(x.get("airline"))} for x in opts][:4],
             "bags": bags, "bagsIncluded": bool(free)}, 2
@@ -181,7 +181,7 @@ def main():
                 jobs.append(("recheck", bs["mode"], bs["depart"], bs["return"], fin, fout if bs["mode"] == "mc" else fin, ps))
         elif best:
             due = run._age_h(last.get("at", "")) >= REPEAT_H.get(p.get("scanTier"), 24)
-            serp = [c["pricePP"] + c.get("backTrainPP", 0) for c in cs if c.get("source") == "serpapi"]
+            serp = [c.get("searchPricePP", c["pricePP"]) + c.get("backTrainPP", 0) for c in cs if c.get("source") == "serpapi"]
             cheaper = serp and best.get("source") != "serpapi" and \
                 best["pricePP"] + best.get("backTrainPP", 0) <= min(serp) - 30
             if due or cheaper:

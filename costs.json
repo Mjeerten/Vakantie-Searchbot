@@ -136,6 +136,13 @@
    "China Eastern",
    "China Southern",
    "Hainan Airlines"
+  ],
+  "confirmedIncluded": [
+   {
+    "airline": "Eurowings and ANA",
+    "bookWith": "Austrian",
+    "note": "Owner checked Google's booking page (26 Nov 2026, DUS-HND 27 Jul / HND-DUS 12 Aug): '1 free carry-on, 1st checked bag free'; SerpApi returned no bag line for this ticket."
+   }
   ]
  },
  "comfort": {
