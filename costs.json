@@ -164,21 +164,19 @@
       "Tokyo": {
         "checkin": "2027-07-28",
         "nights": 5,
-        "source": "owner's choice (Booking.com, re-checked 26 Nov 2026)",
+        "source": "owner's choice: cheapest with a good location (Booking.com, checked 26 Nov 2026)",
         "pick": {
-          "name": "Shibuya South JP House",
+          "name": "plat hostel keikyu minowa forest",
           "src": "booking",
-          "total": 228,
-          "publicTotal": 254,
-          "memberPrice": true,
-          "nightlyEur": 46,
+          "total": 179,
+          "nightlyEur": 36,
           "score10": 8.4,
           "rating": 4.2,
-          "reviews": 66,
-          "miles": 4.1,
-          "beds": "twin",
-          "kind": "Entire apartment, 1 bedroom + living room, own bathroom and kitchen, 3 single beds + sofa bed",
-          "url": "https://www.booking.com/hotel/jp/shibuya-south-jp-house.en-gb.html?checkin=2027-07-28&checkout=2027-08-02&group_adults=2&no_rooms=1"
+          "reviews": 1211,
+          "miles": 4.5,
+          "beds": "double",
+          "kind": "Private double room, breakfast included; Minowa, Hibiya line to Ueno/Akihabara/Ginza",
+          "url": "https://www.booking.com/hotel/jp/amp-and-hostel-minowa.en-gb.html?checkin=2027-07-28&checkout=2027-08-02&group_adults=2&no_rooms=1"
         }
       },
       "Koyasan": {
@@ -196,6 +194,56 @@
           "beds": "futons",
           "kind": "Japanese-style room with private toilet, futons, dinner + breakfast included, free cancellation",
           "url": "https://www.booking.com/hotel/jp/kongo-sanmaiin.en-gb.html?checkin=2027-08-08&checkout=2027-08-09&group_adults=2&no_rooms=1"
+        }
+      },
+      "Kanazawa": {
+        "checkin": "2027-08-02",
+        "nights": 2,
+        "source": "owner's choice: cheapest with a good location (Booking.com, checked 26 Nov 2026)",
+        "pick": {
+          "name": "CHISUN BUDGET Kanazawa Ekimae",
+          "src": "booking",
+          "total": 75,
+          "nightlyEur": 38,
+          "score10": 8.0,
+          "reviews": 2570,
+          "miles": 1.4,
+          "beds": "double",
+          "kind": "Double room by Kanazawa station",
+          "url": "https://www.booking.com/hotel/jp/chisun-budget-kanazawa-ekimae.en-gb.html?checkin=2027-08-02&checkout=2027-08-04&group_adults=2&no_rooms=1"
+        }
+      },
+      "Kyoto": {
+        "checkin": "2027-08-04",
+        "nights": 4,
+        "source": "owner's choice: cheapest with a good location (Booking.com, checked 26 Nov 2026)",
+        "pick": {
+          "name": "Fujitaya Kyoto",
+          "src": "booking",
+          "total": 95,
+          "nightlyEur": 24,
+          "score10": 8.4,
+          "miles": 0.4,
+          "beds": "twin",
+          "kind": "Guest house, 2 separate beds, near JR Tambaguchi",
+          "url": "https://www.booking.com/hotel/jp/fujitaya-kyoto.en-gb.html?checkin=2027-08-04&checkout=2027-08-08&group_adults=2&no_rooms=1"
+        }
+      },
+      "Osaka": {
+        "checkin": "2027-08-09",
+        "nights": 2,
+        "source": "owner's choice: cheapest with a good location (Booking.com, checked 26 Nov 2026)",
+        "pick": {
+          "name": "Via Inn Shin-Osaka West",
+          "src": "booking",
+          "total": 61,
+          "nightlyEur": 31,
+          "score10": 7.8,
+          "reviews": 1176,
+          "miles": 2.2,
+          "beds": "double",
+          "kind": "Next to Shin-Osaka station (Shinkansen to Tokyo on 11 Aug)",
+          "url": "https://www.booking.com/hotel/jp/via-inn-shinosaka-west.en-gb.html?checkin=2027-08-09&checkout=2027-08-11&group_adults=2&no_rooms=1"
         }
       }
     }
