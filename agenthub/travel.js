@@ -108,11 +108,15 @@
     const flags = el("div", { class: "flags" }, (b.flags || []).map((f) => el("span", { class: "chip warn", text: f })));
     const items = el("ul");
     const fdesc = [fl.type, fl.out && (fl.out.stops != null ? (fl.out.stops ? fl.out.stops + " stop" + (fl.out.stops > 1 ? "s" : "") : "direct") : null), fl.out && (fl.out.duration || (fl.out.hours ? fl.out.hours + " h" : null))].filter(Boolean).join(" · ");
-    items.append(el("li", {}, el("b", { text: `Flight ${eur(fl.pricePP)}` }), " " + fdesc + (fl.google ? ` · Google now ${eur(fl.google.pricePP)}` : "")));
+    // control bot result: re-opened the link and found the same flight / room again
+    const vb = (v) => !v ? "" : v.status === "confirmed" ? ` · ✓ price confirmed ${when(v.at)}${v.via ? " (GitHub scan)" : ""}`
+      : v.status === "changed" ? ` · ↻ price updated ${when(v.at)} (was ${eur(v.storedPP ?? Math.round(v.storedTotal / 2))}${v.storedTotal ? " p.p." : ""})`
+      : v.status === "not found" ? ` · ⚠ not found again ${when(v.at)}` : ` · control check failed ${when(v.at)}`;
+    items.append(el("li", {}, el("b", { text: `Flight ${eur(fl.pricePP)}` }), " " + fdesc + (fl.google ? ` · Google now ${eur(fl.google.pricePP)}` : "") + vb(fl.verify)));
     const BEDS = { twin: "2 separate beds", double: "1 bed for 2" };
     for (const s of (b.stays || [])) {
       const p = s.pick, tw = s.twinPick;
-      items.append(el("li", {}, el("b", { text: `${s.city} ${s.nights} nights ${eur(s.pricePP)}` }), " " + (p ? `${p.name} · ${p.score10 != null ? p.score10 + "/10" : (p.rating ?? "?") + "★"} (${p.reviews ?? "?"} reviews) · ${eur(p.nightlyEur)}/night for 2${p.kind ? " · " + p.kind.split(/ (Free cancellation|We have|Breakfast|No prepayment)/)[0] : ""}${p.beds ? " · " + BEDS[p.beds] : ""}${p.memberPrice ? " · Genius price (free Booking account)" + (p.publicTotal ? ", without account " + eur(Math.round(p.publicTotal / 2)) + " p.p." : "") : ""}${s.cityTaxPP ? " · + city tax " + eur(s.cityTaxPP) + " p.p. paid at the hotel" : ""}${p.cheaperVia ? " · cheaper on another site via Google Hotels (Booking " + eur(p.bookingTotal) + ")" : s.source ? " · " + s.source : ""}` : (s.estimatedFrom ? "estimated from " + s.estimatedFrom : "estimated, no hotel price found"))));
+      items.append(el("li", {}, el("b", { text: `${s.city} ${s.nights} nights ${eur(s.pricePP)}` }), " " + (p ? `${p.name} · ${p.score10 != null ? p.score10 + "/10" : (p.rating ?? "?") + "★"} (${p.reviews ?? "?"} reviews) · ${eur(p.nightlyEur)}/night for 2${p.kind ? " · " + p.kind.split(/ (Free cancellation|We have|Breakfast|No prepayment)/)[0] : ""}${p.beds ? " · " + BEDS[p.beds] : ""}${p.memberPrice ? " · Genius price (free Booking account)" + (p.publicTotal ? ", without account " + eur(Math.round(p.publicTotal / 2)) + " p.p." : "") : ""}${s.cityTaxPP ? " · + city tax " + eur(s.cityTaxPP) + " p.p. paid at the hotel" : ""}${p.cheaperVia ? " · cheaper on another site via Google Hotels (Booking " + eur(p.bookingTotal) + ")" : s.source ? " · " + s.source : ""}` : (s.estimatedFrom ? "estimated from " + s.estimatedFrom : "estimated, no hotel price found")) + vb(s.verify)));
       if (tw && p && tw.name !== p.name) items.append(el("li", { class: "sub" }, `  ↳ with 2 separate beds: ${tw.name} · ${tw.score10}/10 · ${eur(s.twinPricePP)} p.p. (+${eur(s.twinPricePP - Math.round((p.total || 0) / 2))})`));
     }
     for (const l of (b.legs || [])) items.append(el("li", {}, el("b", { text: `${l.from} → ${l.to} ${eur(l.pricePP)}` }), l.how ? " " + l.how : l.known ? " train/bus" : " estimate"));
@@ -139,6 +143,7 @@
     const acts = el("div", { class: "dact" });
     const seen = new Set();
     for (const u of [...(fl.urls || []), fl.google?.url]) { const s = safe(u); if (s && !seen.has(s)) { seen.add(s); acts.append(el("a", { class: "btn sm", href: s, target: "_blank", rel: "noopener", text: s.includes("aviasales") ? "Flight ↗" : "Google Flights ↗" })); } }
+    acts.append(el("p", { class: "hint", text: "Checking a price yourself? On Google Flights click \"Sort by: price\" (it opens on \"Top flights\"), keep 1 adult (prices are per person) and look for the same airline and departure time. Booking shows Genius prices only when you are logged in (free account). Prices move during the day." }));
     for (const s of (b.stays || [])) { const u = safe(s.pick?.url) || safe(s.url); if (u) acts.append(el("a", { class: "btn sm", href: u, target: "_blank", rel: "noopener", text: (s.pick?.url ? "Stay " : "Hotels ") + s.city + " ↗" })); }
     const nums = el("div", { class: "dnums" },
       el("div", { class: "row big" }, el("span", { text: "Per person" }), el("b", { text: eur(b.totalPP) })),
