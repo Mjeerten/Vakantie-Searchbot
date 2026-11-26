@@ -151,5 +151,12 @@
   "eurPerHour": 0,
   "maxHours": 30
  },
- "_koyasanNote": "Koyasan: Nankai line from Osaka Namba + cable car (~2 h, ~EUR 15 one way; Koyasan World Heritage Ticket incl. buses ~EUR 22). Temple stays (shukubo) include vegetarian dinner and breakfast."
+ "_koyasanNote": "Koyasan: Nankai line from Osaka Namba + cable car (~2 h, ~EUR 15 one way; Koyasan World Heritage Ticket incl. buses ~EUR 22). Temple stays (shukubo) include vegetarian dinner and breakfast.",
+ "unavailableStays": [
+  {
+   "id": "rooms/1688365990830069293",
+   "name": "Standard Kogyo apartment, Ryogoku (Airbnb)",
+   "note": "Owner checked 26 Nov 2026: 'no apartments available' for 28 Jul - 2 Aug 2027, although Airbnb search lists it"
+  }
+ ]
 }

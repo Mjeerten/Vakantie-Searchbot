@@ -420,7 +420,13 @@ def pick_stay(city, checkin, nights, rules, fx, cfg):
         rb, rg = fb.result(), fg.result()
         ra = fa.result() if fa else {"hotels": []}
 
+    # stays the owner (or the control bot) found fully booked on the listing page itself, although the search still
+    # shows them (Airbnb "apartment complex" listings do this): never pick them again
+    gone = [x["id"] for x in COSTS.get("unavailableStays", [])]
+
     def good(h):
+        if any(g in (h.get("url") or "") for g in gone):
+            return False
         # Airbnb stars run high (4.7 is average there), so it needs 4.7+ where Booking needs ~7.8+
         need = max(minr, 4.7) if h.get("src") == "airbnb" else minr
         return ((h.get("rating") or 0) >= need and (h.get("reviews") or 0) >= minrev
