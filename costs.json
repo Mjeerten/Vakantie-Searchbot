@@ -164,19 +164,21 @@
       "Tokyo": {
         "checkin": "2027-07-28",
         "nights": 5,
-        "source": "owner's choice (Booking.com)",
+        "source": "owner's choice (Booking.com, re-checked 26 Nov 2026)",
         "pick": {
-          "name": "Kaku Studio Apartment Ikebukuro",
+          "name": "Shibuya South JP House",
           "src": "booking",
-          "total": 281,
-          "nightlyEur": 56,
-          "score10": 8.9,
-          "rating": 4.45,
-          "reviews": 266,
-          "miles": 3.8,
-          "beds": "double",
-          "kind": "Entire studio, 1 bathroom, 1 double bed, free cancellation",
-          "url": "https://www.booking.com/hotel/jp/ikebukuro-dong-jing-du.en-gb.html?checkin=2027-07-28&checkout=2027-08-02&group_adults=2&no_rooms=1"
+          "total": 228,
+          "publicTotal": 254,
+          "memberPrice": true,
+          "nightlyEur": 46,
+          "score10": 8.4,
+          "rating": 4.2,
+          "reviews": 66,
+          "miles": 4.1,
+          "beds": "twin",
+          "kind": "Entire apartment, 1 bedroom + living room, own bathroom and kitchen, 3 single beds + sofa bed",
+          "url": "https://www.booking.com/hotel/jp/shibuya-south-jp-house.en-gb.html?checkin=2027-07-28&checkout=2027-08-02&group_adults=2&no_rooms=1"
         }
       },
       "Koyasan": {
