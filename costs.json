@@ -164,19 +164,20 @@
       "Tokyo": {
         "checkin": "2027-07-28",
         "nights": 5,
-        "source": "owner's choice: cheapest private room with a good location (Booking.com + Google Hotels re-check, 26 Nov 2026)",
+        "source": "owner's choice: cheapest private room with a good location; owner saw EUR 189 on Booking.com and EUR 178 on Expedia with their coupon (26 Nov 2026)",
         "pick": {
           "name": "plat hostel keikyu asakusa karin",
-          "src": "booking",
-          "total": 172,
-          "nightlyEur": 34,
+          "src": "expedia",
+          "total": 178,
+          "nightlyEur": 36,
           "score10": 8.7,
           "rating": 4.35,
           "reviews": 1282,
           "miles": 4.2,
           "beds": "double",
           "kind": "Small double room, shared shower and toilet; Asakusa, 5 min walk to Asakusa station (Ginza/Asakusa lines), only 1 left at this price",
-          "url": "https://www.booking.com/hotel/jp/plat-hostel-keikyu.en-gb.html?checkin=2027-07-28&checkout=2027-08-02&group_adults=2&no_rooms=1"
+          "url": "https://www.booking.com/hotel/jp/plat-hostel-keikyu.en-gb.html?checkin=2027-07-28&checkout=2027-08-02&group_adults=2&no_rooms=1",
+          "publicTotal": 189
         }
       },
       "Koyasan": {
