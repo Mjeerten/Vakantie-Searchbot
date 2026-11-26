@@ -623,7 +623,9 @@ def evaluate(plan, cfg, st, do_hotels):
         variants = []
     # bags
     bag = 0
-    if fl and best["days"] > 10 and not all(a in COSTS["bags"]["usuallyIncluded"] for a in fl["airlines"]):
+    # every airline on the ticket must include a suitcase even in its cheapest fare ("British Airways and JAL" = 2)
+    carriers = [x.strip() for a in (fl["airlines"] if fl else []) for x in re.split(r",| and ", a or "") if x.strip()]
+    if fl and best["days"] > 10 and not (carriers and all(x in COSTS["bags"]["usuallyIncluded"] for x in carriers)):
         bag = COSTS["bags"]["extraBagEstimatePP"]
         if cfg.get("sharedBag"):
             bag = round(bag / 2)  # one suitcase for the two of you

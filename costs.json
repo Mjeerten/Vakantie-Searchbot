@@ -115,18 +115,15 @@
  },
  "unknownLegEstimate": 60,
  "bags": {
-  "_note": "Checked bag per person, return, when the trip is over 10 days and the cheapest fare likely has no bag. Full-service long-haul fares on these airlines usually include one bag; light fares may not, so the bot always flags it. British Airways/Iberia/Finnair basic long-haul fares often have no bag (Google showed EUR 90-105 per person on BA in Nov 2026).",
-  "extraBagEstimatePP": 100,
+  "_note": "One checked suitcase (23 kg), there and back, when the cheapest fare has none. Researched Nov 2026: the cheapest long-haul fares to Japan on British Airways (Basic), Finnair (Light), Lufthansa/SWISS/Austrian (Economy Light) and KLM/Air France (Light) have NO checked bag; adding one costs about EUR 75-100 per direction (finnair.com extra baggage fees, ba.com Basic fare), so ~EUR 180 return. Google Flights cannot add a checked bag to a multi-city search, so this stays an estimate. Airlines in usuallyIncluded give a suitcase in every economy fare.",
+  "extraBagEstimatePP": 180,
   "usuallyIncluded": [
-   "KLM",
-   "Lufthansa",
-   "SWISS",
-   "Austrian",
    "Emirates",
    "Qatar Airways",
    "Etihad",
    "Turkish Airlines",
    "Japan Airlines",
+   "JAL",
    "ANA",
    "Cathay Pacific",
    "Singapore Airlines",
@@ -135,7 +132,10 @@
    "EVA Air",
    "Korean Air",
    "China Airlines",
-   "Air France"
+   "Air China",
+   "China Eastern",
+   "China Southern",
+   "Hainan Airlines"
   ]
  },
  "comfort": {
