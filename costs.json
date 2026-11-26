@@ -184,16 +184,18 @@
       "Koyasan": {
         "checkin": "2027-08-08",
         "nights": 1,
-        "source": "owner's choice, book on the temple's own site (price for Aug 2027 still to confirm)",
+        "source": "owner's choice (Booking.com, re-checked 26 Nov 2026; Fukuchiin direct was JPY 55,100 = ~EUR 316)",
         "pick": {
-          "name": "Koyasan Onsen Fukuchiin (temple stay)",
-          "src": "direct",
-          "total": 195,
-          "nightlyEur": 195,
-          "jpy": 34000,
+          "name": "Kongo Sanmaiin (temple stay)",
+          "src": "booking",
+          "total": 282,
+          "nightlyEur": 282,
+          "score10": 8.0,
+          "reviews": 339,
+          "miles": 0.5,
           "beds": "futons",
-          "kind": "Japanese room, shojin-ryori dinner + breakfast, onsen; about JPY 17,000 p.p. at 2 per room",
-          "url": "https://reserve.489ban.net/client/fukuchiin/4/detail/327096"
+          "kind": "Japanese-style room with private toilet, futons, dinner + breakfast included, free cancellation",
+          "url": "https://www.booking.com/hotel/jp/kongo-sanmaiin.en-gb.html?checkin=2027-08-08&checkout=2027-08-09&group_adults=2&no_rooms=1"
         }
       }
     }
