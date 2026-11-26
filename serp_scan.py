@@ -137,7 +137,9 @@ def main():
                     jobs.append(("sweep", m, d, ret_of[d], fin, fout if m == "mc" else fin, ps))
         elif best:
             due = run._age_h(last.get("at", "")) >= REPEAT_H.get(p.get("scanTier"), 24)
-            cheaper = last.get("pricePP") and best["pricePP"] <= last["pricePP"] - 30 and best.get("source") != "serpapi"
+            serp = [c["pricePP"] + c.get("backTrainPP", 0) for c in cs if c.get("source") == "serpapi"]
+            cheaper = serp and best.get("source") != "serpapi" and \
+                best["pricePP"] + best.get("backTrainPP", 0) <= min(serp) - 30
             if due or cheaper:
                 m = best["mode"]
                 jobs.append(("drop" if cheaper and not due else "recheck", m, best["depart"], best["return"], fin,
