@@ -1,7 +1,7 @@
 {
- "updatedAt": "2026-11-26T18:47:09Z",
+ "updatedAt": "2026-11-26T19:41:38Z",
  "blocked": true,
- "queries": 15216667259909,
+ "queries": 65938891459608,
  "plans": {
   "jp-golden": [
    {
@@ -1237,6 +1237,37 @@
      "airportChange": false
     },
     "cheapestPP": 1379,
+    "anyHomeAirport": true
+   },
+   {
+    "origin": "DUS",
+    "query": "ALL",
+    "depart": "2027-07-23",
+    "return": "2027-08-08",
+    "mode": "mc",
+    "checkedAt": "2026-11-26T19:37:47Z",
+    "url": "https://www.google.com/travel/flights/search?tfs=GjYSCjIwMjctMDctMjNqBRIDQU1TagUSA0JSVWoFEgNEVVNqBRIDRUlOagUSA1JUTXIFEgNUWU8aNhIKMjAyNy0wOC0wOGoFEgNPU0FyBRIDQU1TcgUSA0JSVXIFEgNEVVNyBRIDRUlOcgUSA1JUTUABSAGYAQM&hl=en&gl=nl&curr=EUR",
+    "pricePP": 1372,
+    "airline": "British Airways",
+    "out": {
+     "pricePP": 1372,
+     "airline": "British Airways",
+     "stops": 1,
+     "duration": "16 hr 50 min",
+     "from": "Duesseldorf Airport",
+     "departs": "Friday, July 23 7:10 AM",
+     "to": "Haneda Airport",
+     "arrives": "Saturday, July 24 7:00 AM",
+     "layovers": [
+      "Heathrow Airport"
+     ],
+     "layoverMins": [
+      105
+     ],
+     "selfTransfer": false,
+     "airportChange": false
+    },
+    "cheapestPP": 1372,
     "anyHomeAirport": true
    }
   ],
@@ -3610,6 +3641,37 @@
      "airportChange": false
     },
     "cheapestPP": 1379,
+    "anyHomeAirport": true
+   },
+   {
+    "origin": "DUS",
+    "query": "ALL",
+    "depart": "2027-07-23",
+    "return": "2027-08-08",
+    "mode": "mc",
+    "checkedAt": "2026-11-26T19:37:47Z",
+    "url": "https://www.google.com/travel/flights/search?tfs=GjYSCjIwMjctMDctMjNqBRIDQU1TagUSA0JSVWoFEgNEVVNqBRIDRUlOagUSA1JUTXIFEgNUWU8aNhIKMjAyNy0wOC0wOGoFEgNPU0FyBRIDQU1TcgUSA0JSVXIFEgNEVVNyBRIDRUlOcgUSA1JUTUABSAGYAQM&hl=en&gl=nl&curr=EUR",
+    "pricePP": 1372,
+    "airline": "British Airways",
+    "out": {
+     "pricePP": 1372,
+     "airline": "British Airways",
+     "stops": 1,
+     "duration": "16 hr 50 min",
+     "from": "Duesseldorf Airport",
+     "departs": "Friday, July 23 7:10 AM",
+     "to": "Haneda Airport",
+     "arrives": "Saturday, July 24 7:00 AM",
+     "layovers": [
+      "Heathrow Airport"
+     ],
+     "layoverMins": [
+      105
+     ],
+     "selfTransfer": false,
+     "airportChange": false
+    },
+    "cheapestPP": 1372,
     "anyHomeAirport": true
    }
   ],
@@ -10508,7 +10570,7 @@
  },
  "coverage": {
   "jp-golden": [
-   5,
+   6,
    7
   ],
   "jp-golden-rev": [
@@ -10516,7 +10578,7 @@
    7
   ],
   "jp-kanazawa": [
-   5,
+   6,
    7
   ],
   "jp-kanazawa-rev": [
@@ -10565,7 +10627,7 @@
   "usedToday": 50,
   "month": "2026-11",
   "usedMonth": 50,
-  "at": "2026-11-26T17:52:47Z",
+  "at": "2026-11-26T18:52:29Z",
   "groups": {
    "TYO|OSA|15": {
     "at": "2026-11-26T14:53:13Z",
