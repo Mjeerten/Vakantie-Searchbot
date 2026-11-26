@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Japan flight checks through SerpApi's Google Flights API (free plan: 250 searches a month, no Google blocking).
 Runs in the GitHub workflow; the key comes from the repository secret SERPAPI_KEY (never stored here).
-Usage: python3 serp_scan.py <state.json> <checks_in.json> <checks_out.json> [sweep]
+Usage: python3 serp_scan.py <state.json> <checks_in.json> <checks_out.json> [sweep|links|pax2]
 
 Owner's split of the free searches (max 8 a day, 240 a month, never below 5 left on the account):
 - sweep (once, or on request): for every Japan ticket group (routes that fly the same tickets) its 3 cheapest
@@ -112,6 +112,39 @@ def booking(key, q, o, airports):
             "bags": bags, "bagsIncluded": bool(free)}, 2
 
 
+def pax_check(key, adults=2):
+    """Owner's one-off check (Nov 2026): is the golden-route flight (DUS 27 Jul 07:05 Eurowings/ANA, back HND 12 Aug
+    00:30) still sold for 2 adults, at what total, and the booking page link for 2. 3 searches."""
+    q = {"engine": "google_flights", "currency": "EUR", "gl": "nl", "hl": "en", "adults": adults, "api_key": key,
+         "type": 1, "departure_id": "DUS", "arrival_id": "HND", "outbound_date": "2027-07-27", "return_date": "2027-08-12"}
+    d = call(API + "?" + urllib.parse.urlencode(q))
+    offers = [offer(x) for x in (d.get("best_flights") or []) + (d.get("other_flights") or []) if x.get("price")]
+    print(f"PAX{adults} outbound options: {len(offers)} {d.get('error') or ''}", flush=True)
+    for o in sorted(offers, key=lambda o: o["pricePP"])[:6]:
+        print(f"  PAX{adults} EUR {o['pricePP']} total | {o['airline']} | {o['departs']} -> {o['arrives']} via {o['layovers']}", flush=True)
+    want = [o for o in offers if "7:05 AM" in o["departs"] and "July 27" in o["departs"] and "ANA" in o["airline"]]
+    if not want:
+        print(f"PAX{adults}: the 07:05 Eurowings/ANA flight is NOT offered for {adults} adults", flush=True)
+        return 1
+    o = want[0]
+    d = call(API + "?" + urllib.parse.urlencode(dict(q, departure_token=o["_dep"])))
+    back = [offer(x) for x in (d.get("best_flights") or []) + (d.get("other_flights") or []) if x.get("price")]
+    for b in sorted(back, key=lambda b: b["pricePP"])[:6]:
+        print(f"  PAX{adults} back EUR {b['pricePP']} total | {b['airline']} | {b['departs']} -> {b['arrives']} via {b['layovers']}", flush=True)
+    bw = [b for b in back if "12:30 AM" in b["departs"] and "August 12" in b["departs"]]
+    if not bw:
+        print(f"PAX{adults}: the 00:30 HND flight home is NOT offered with it for {adults} adults", flush=True)
+        return 2
+    d = call(API + "?" + urllib.parse.urlencode(dict(q, booking_token=bw[0]["_book"])))
+    for x in d.get("booking_options") or []:
+        t = x.get("together") or {}
+        print(f"  PAX{adults} BOOK {t.get('book_with')} EUR {t.get('price')} total (EUR {round((t.get('price') or 0) / adults)} p.p.) airline={bool(t.get('airline'))}", flush=True)
+    print(f"  PAX{adults} bags {(d.get('baggage_prices') or {}).get('together')}", flush=True)
+    print(f"PAX{adults} LINK {(d.get('search_metadata') or {}).get('google_flights_url')}", flush=True)
+    print(f"PAX{adults} error {d.get('error')}" if d.get("error") else f"PAX{adults} done", flush=True)
+    return 3
+
+
 def ident(o):
     return f"{o.get('airline')}|{o.get('departs')}"
 
@@ -142,6 +175,14 @@ def main():
     print(f"SerpApi: {left} searches left on the account, {state.get('usedToday', 0)} used today", flush=True)
     if err or left is None:
         print("SerpApi account check failed: " + str(err)[:120])
+        return
+
+    if mode == "pax2":
+        n = pax_check(key)
+        state["usedToday"] = state.get("usedToday", 0) + n
+        state["usedMonth"] = state.get("usedMonth", 0) + n
+        data["serpapi"] = state
+        json.dump(data, open(out_path, "w"), indent=1, ensure_ascii=False)
         return
 
     # ticket groups (routes that fly the same tickets), Japan only, owner's order

@@ -12,7 +12,7 @@ on:
         required: false
         default: ""
       serp:
-        description: "SerpApi: 'sweep' = full check of all Japan ticket groups; 'links' = refresh booking pages of the best flights; empty = daily split"
+        description: "SerpApi: 'sweep' = full check of all Japan ticket groups; 'links' = refresh booking pages of the best flights; 'pax2' = golden flight for 2 adults; empty = daily split"
         required: false
         default: ""
   push:
