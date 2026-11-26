@@ -335,8 +335,18 @@ BIG_CITIES = {"Tokyo": 4, "Seoul": 4.5, "Bangkok": 4.5, "Osaka": 3, "Kyoto": 2.5
 ALWAYS_AVOID = ["capsule", "cabin", "dorm", "bunk", "male only", "love hotel", "pod "]
 
 
+# city centres for the Airbnb map search (a box of BIG_CITIES miles around it)
+CENTRES = {"Tokyo": (35.6812, 139.7671), "Kyoto": (35.0036, 135.7681), "Osaka": (34.6863, 135.5023),
+           "Kanazawa": (36.5662, 136.6560), "Beijing": (39.9087, 116.3975), "Shanghai": (31.2304, 121.4737),
+           "Chengdu": (30.6570, 104.0660), "Chongqing": (29.5630, 106.5516), "Xi'an": (34.2610, 108.9420)}
+
+
 def _hotel_search(script, city, checkin, checkout, fx, maxmi=None):
-    extra = [str(fx)] if script == "hotels.js" else ([str(round(maxmi * 1609))] if maxmi else [])
+    if script == "airbnb.js":
+        lat, lng = CENTRES[city]
+        extra = [str(lat), str(lng), str(maxmi or 3)]
+    else:
+        extra = [str(fx)] if script == "hotels.js" else ([str(round(maxmi * 1609))] if maxmi else [])
     args = ["node", os.path.join(HERE, script), city, checkin, checkout] + extra
     try:
         p = subprocess.run(args, capture_output=True, text=True, timeout=180)
@@ -364,13 +374,18 @@ def pick_stay(city, checkin, nights, rules, fx, cfg):
     maxmi = BIG_CITIES.get(city, 3.5)
     res = {"city": city, "checkin": checkin, "checkout": checkout, "nights": nights}
     # Booking.com and Google Hotels (which compares Agoda, Trip.com, Expedia, Hotels.com and the hotels' own sites) at once
-    with ThreadPoolExecutor(2) as ex:
+    # ... and Airbnb (whole apartments and private rooms in a box around the centre; Japan only for now)
+    with ThreadPoolExecutor(3) as ex:
         fb = ex.submit(_hotel_search, "booking.js", city, checkin, checkout, fx, maxmi)
         fg = ex.submit(_hotel_search, "hotels.js", city, checkin, checkout, fx)
+        fa = ex.submit(_hotel_search, "airbnb.js", city, checkin, checkout, fx, maxmi) if city in CENTRES else None
         rb, rg = fb.result(), fg.result()
+        ra = fa.result() if fa else {"hotels": []}
 
     def good(h):
-        return ((h.get("rating") or 0) >= minr and (h.get("reviews") or 0) >= minrev
+        # Airbnb stars run high (4.7 is average there), so it needs 4.7+ where Booking needs ~7.8+
+        need = max(minr, 4.7) if h.get("src") == "airbnb" else minr
+        return ((h.get("rating") or 0) >= need and (h.get("reviews") or 0) >= minrev
                 and (h.get("miles") is None or h["miles"] <= maxmi)
                 and not any(w in (h["name"] + " " + (h.get("kind") or "")).lower() for w in avoid)
                 and not re.search(r"(?<!non-)(?<!non )smoking", (h.get("kind") or "").lower())
@@ -378,6 +393,7 @@ def pick_stay(city, checkin, nights, rules, fx, cfg):
 
     gl = [h for h in rg.get("hotels", []) if h.get("nightlyEur")]
     ok = [dict(h) for h in rb.get("hotels", []) if good(h)]
+    air = [dict(h) for h in ra.get("hotels", []) if good(h)]
     for h in ok:
         # same hotel cheaper on another site (via Google Hotels)? then use that price
         m = next((g for g in gl if same_hotel(h["name"], g["name"])), None)
@@ -386,14 +402,15 @@ def pick_stay(city, checkin, nights, rules, fx, cfg):
             h["total"] = m["nightlyEur"] * nights
             h["nightlyEur"] = m["nightlyEur"]
             h["cheaperVia"] = "Google Hotels (another booking site)"
-    src = "Booking.com"
+    src = "Booking.com" + (" + Airbnb" if air else "")
+    ok += air
     if not ok:
         # Google only: no distance known, so only as a fallback
         ok = [dict(h, total=h["nightlyEur"] * nights) for h in gl if good(h)]
         src = "Google Hotels"
     ok.sort(key=lambda h: h.get("total") or h["nightlyEur"] * nights)
     res.update({"source": src, "url": rb.get("url"), "googleUrl": rg.get("url"), "blocked": rb.get("blocked"),
-                "error": rb.get("error") or rg.get("error"), "found": len(rb.get("hotels", [])) + len(gl), "qualifying": len(ok)})
+                "error": rb.get("error") or rg.get("error"), "airbnbUrl": ra.get("url"), "found": len(rb.get("hotels", [])) + len(gl) + len(ra.get("hotels", [])), "qualifying": len(ok)})
     for h in ok:
         h["beds"] = beds(h.get("kind"))
     tw = next((h for h in ok if h["beds"] == "twin"), None)

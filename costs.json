@@ -139,9 +139,9 @@
   ]
  },
  "comfort": {
-  "_note": "Effective flight price = price + eurPerHour for every hour above hoursFree per direction; flights over maxHours are skipped. Keeps cheap but exhausting itineraries from winning.",
+  "_note": "Owner's choice (Nov 2026): the cheapest real price wins; long flights are only flagged, never charged extra. Flights over maxHours one way are skipped.",
   "hoursFree": 18,
-  "eurPerHour": 10,
+  "eurPerHour": 0,
   "maxHours": 30
  },
  "_koyasanNote": "Koyasan: Nankai line from Osaka Namba + cable car (~2 h, ~EUR 15 one way; Koyasan World Heritage Ticket incl. buses ~EUR 22). Temple stays (shukubo) include vegetarian dinner and breakfast."
