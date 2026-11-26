@@ -349,7 +349,7 @@ def google_cand(plan, c):
     return {"origin": c["origin"], "src": "google", "type": typ,
             "pricePP": c["pricePP"], "backTrainPP": back, "compare": c["pricePP"] + back, "airlines": [c.get("airline")],
             "out": c.get("out"), "back": None, "depart": c["depart"], "return": c["return"],
-            "urls": [c["url"]], "checkedAt": c["checkedAt"], "manual": bool(c.get("manual")), "anyHomeAirport": bool(c.get("anyHomeAirport"))}
+            "urls": [c["url"]], "checkedAt": c["checkedAt"], "manual": bool(c.get("manual")), "anyHomeAirport": bool(c.get("anyHomeAirport")), "serpapi": c.get("source") == "serpapi"}
 
 
 BIG_CITIES = {"Tokyo": 4, "Seoul": 4.5, "Bangkok": 4.5, "Osaka": 3, "Kyoto": 2.5, "Ho Chi Minh City": 3, "Hanoi": 2.5,

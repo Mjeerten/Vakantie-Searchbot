@@ -113,6 +113,11 @@
       : v.status === "changed" ? ` · ↻ price updated ${when(v.at)} (was ${eur(v.storedPP ?? Math.round(v.storedTotal / 2))}${v.storedTotal ? " p.p." : ""})`
       : v.status === "not found" ? ` · ⚠ not found again ${when(v.at)}` : ` · control check failed ${when(v.at)}`;
     items.append(el("li", {}, el("b", { text: `Flight ${eur(fl.pricePP)}` }), " " + fdesc + (fl.google ? ` · Google now ${eur(fl.google.pricePP)}` : "") + vb(fl.verify)));
+    if (fl.out && fl.out.departs) {
+      // what to click on the Google Flights page the button opens (it lists every flight for these dates)
+      const o = fl.out, lay = (o.layovers || []).map((l, i) => l + (o.layoverMins && o.layoverMins[i] ? " " + Math.floor(o.layoverMins[i] / 60) + "h" + String(o.layoverMins[i] % 60).padStart(2, "0") : "")).join(", ");
+      items.append(el("li", {}, el("b", { text: "Pick this flight" }), ` ${o.airline || ""} · leaves ${o.from || fl.origin} ${o.departs}${lay ? " · via " + lay : ""}${fl.type && fl.type.startsWith("multi") ? " · on the next page pick the cheapest way home" : ""}${fl.serpapi ? " · fare confirmed via SerpApi " + when(fl.checkedAt) : ""}`));
+    }
     const BEDS = { twin: "2 separate beds", double: "1 bed for 2" };
     for (const s of (b.stays || [])) {
       const p = s.pick, tw = s.twinPick;
