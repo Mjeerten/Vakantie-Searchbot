@@ -30,9 +30,18 @@ def main():
     out = {"updatedAt": max(a.get("updatedAt", ""), b.get("updatedAt", "")),
            "blocked": bool(b.get("blocked")) if b.get("updatedAt", "") >= a.get("updatedAt", "") else bool(a.get("blocked")),
            "queries": int(a.get("queries") or 0) + int(b.get("queries") or 0), "plans": {}, "coverage": {}}
-    for p in planner.plan(cfg):
+    all_plans = planner.plan(cfg)
+    # routes that fly the same tickets (same arrival/departure city in Japan and the same number of nights, e.g. the
+    # golden route and the Kanazawa route reversed) share every flight check: one search counts for all of them
+    group = {}
+    for p in all_plans:
+        g = group.setdefault(run.flight_key(p, cfg), {})
+        for k, c in plans.get(p["id"], {}).items():
+            if k not in g or c.get("checkedAt", "") > g[k].get("checkedAt", ""):
+                g[k] = c
+    for p in all_plans:
         nights, variants = run.date_variants(p, cfg)
-        checks = sorted(plans.get(p["id"], {}).values(), key=lambda c: c.get("checkedAt", ""))[-250:]
+        checks = sorted(group[run.flight_key(p, cfg)].values(), key=lambda c: c.get("checkedAt", ""))[-250:]
         out["plans"][p["id"]] = checks
         st = {"plan": p, "nights": nights, "variants": variants, "tp": [], "checks": checks, "tried": set()}
         out["coverage"][p["id"]] = list(run.coverage(st, cfg["airports"]))

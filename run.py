@@ -123,6 +123,7 @@ class Budget:
 
 FRESH_H = 48     # a Google check is used for the total up to this age
 RECHECK_H = 20   # after this age it is queued again
+RECHECK_TOP_H = 4  # same for the top route (golden route): checked again and again
 
 
 def _age_h(iso):
@@ -157,7 +158,9 @@ def next_check(st, airports):
     Open-jaw routes check both a multi-city ticket ("mc") and a return to the arrival city plus the train back ("rt")."""
     p = st["plan"]
     modes = ["mc", "rt"] if (p.get("flyOut") or p["flyIn"]) != p["flyIn"] else ["rt"]
-    recent = {(c["origin"], c["depart"], c["mode"]) for c in st["checks"] if not c.get("manual") and _age_h(c["checkedAt"]) < RECHECK_H} | st["tried"]
+    # the owner's top route (scanTier 1, the golden route) is re-checked almost continuously, the rest daily
+    rh = RECHECK_TOP_H if p.get("scanTier") == 1 else RECHECK_H
+    recent = {(c["origin"], c["depart"], c["mode"]) for c in st["checks"] if not c.get("manual") and _age_h(c["checkedAt"]) < rh} | st["tried"]
     dates = []
     if st["tp"]:
         t = min(st["tp"], key=lambda c: c["compare"])
@@ -231,7 +234,12 @@ def google_round(states, airports, budget, pause, log=print):
                 c = run_check(st["plan"], st["nights"], *nx)
                 log(f"google {st['plan']['id']} {' '.join(nx)}: " + (f"EUR {c['pricePP']}" if c.get("pricePP") else c.get("error") or "?"))
                 if c.get("pricePP"):
-                    st["checks"] = [x for x in st["checks"] if (x["origin"], x["depart"], x["mode"]) != nx] + [c]
+                    # the same tickets also serve the sibling routes (same cities in and out, same nights)
+                    for o in states:
+                        if o is st or (o["plan"]["flyIn"], o["plan"].get("flyOut") or o["plan"]["flyIn"], o["nights"]) == \
+                                (st["plan"]["flyIn"], st["plan"].get("flyOut") or st["plan"]["flyIn"], st["nights"]):
+                            o["checks"] = [x for x in o["checks"] if (x["origin"], x["depart"], x["mode"]) != nx] + [c]
+                            o["tried"].add(nx)
                 progress = True
                 time.sleep(pause)
     japan = [st for st in states if st["plan"].get("country") == "Japan"]
@@ -241,6 +249,11 @@ def google_round(states, airports, budget, pause, log=print):
     # then every route (China included) on the free Google scanner; paid-API credits are for Japan only
     loop(japan, False)
     loop(states, False)
+
+
+def flight_key(plan, cfg):
+    """Routes with the same flight key can use each other's flight checks (same tickets, same dates)."""
+    return (plan["flyIn"], plan.get("flyOut") or plan["flyIn"], date_variants(plan, cfg)[0])
 
 
 def shared_checks(path, plan_id, nights):

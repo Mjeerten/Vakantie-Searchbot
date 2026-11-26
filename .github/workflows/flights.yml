@@ -1,10 +1,10 @@
-# Hourly Google Flights scan (public repo: GitHub-hosted runners are free). Japan first, then China / SE Asia.
+# Google Flights scan every 20 min (public repo: GitHub-hosted runners are free). Japan first, then China / SE Asia.
 # Results go to the orphan branch "flight-data" (flight_checks.json); Atlas reads them on its runs.
 name: flight-checks
 on:
   schedule:
-    - cron: "41 * * * *"
-    - cron: "11 */2 * * *"
+    # owner wants near-continuous checking (golden route first): every 20 minutes
+    - cron: "*/20 * * * *"
   workflow_dispatch:
     inputs:
       budget:
