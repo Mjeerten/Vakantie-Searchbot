@@ -20,12 +20,12 @@ KEEP_LEFT, RUN_CAP = 5, 40
 
 # the golden route as booked (dates from costs.json ownerStays), with where the fun is
 CITIES = {
-    "Tokyo": {"q": "Tokyo hotel", "hubs": [(35.6812, 139.7671), (35.7138, 139.7773), (35.6896, 139.7006),
+    "Tokyo": {"q": "hotels in Taito, Tokyo, Japan", "hubs": [(35.6812, 139.7671), (35.7138, 139.7773), (35.6896, 139.7006),
                                            (35.6580, 139.7016), (35.7148, 139.7967)]},  # Tokyo st, Ueno, Shinjuku, Shibuya, Asakusa
-    "Kanazawa": {"q": "Kanazawa hotel", "hubs": [(36.5781, 136.6480), (36.5613, 136.6562)]},  # station, Korinbo/Kenrokuen
-    "Kyoto": {"q": "Kyoto hotel", "hubs": [(35.0036, 135.7681), (34.9858, 135.7588)]},  # Kawaramachi/Gion, Kyoto st
-    "Koyasan": {"q": "Koyasan temple lodging shukubo", "hubs": [(34.2131, 135.5836)]},  # Okunoin/centre
-    "Osaka": {"q": "Osaka hotel", "hubs": [(34.6687, 135.5013), (34.7025, 135.4959), (34.7334, 135.5001)]},  # Namba, Umeda, Shin-Osaka
+    "Kanazawa": {"q": "hotels in Kanazawa, Ishikawa, Japan", "hubs": [(36.5781, 136.6480), (36.5613, 136.6562)]},  # station, Korinbo/Kenrokuen
+    "Kyoto": {"q": "hotels in Kyoto, Japan", "hubs": [(35.0036, 135.7681), (34.9858, 135.7588)]},  # Kawaramachi/Gion, Kyoto st
+    "Koyasan": {"q": "shukubo temple lodging in Koyasan, Wakayama, Japan", "hubs": [(34.2131, 135.5836)]},  # Okunoin/centre
+    "Osaka": {"q": "hotels in Osaka, Japan", "hubs": [(34.6687, 135.5013), (34.7025, 135.4959), (34.7334, 135.5001)]},  # Namba, Umeda, Shin-Osaka
 }
 AVOID = ["capsule", "dorm", "bunk", "pod", "cabin", "love hotel", "male only", "female only", "women only"]
 # metro day cost p.p. in yen for a walk-away distance: within 1.2 km of a hub you walk most days
@@ -94,6 +94,8 @@ def candidate(p, city, nights):
 
 def good(c):
     text = (c["name"] or "").lower() + " " + (c.get("type") or "").lower()
+    if c["kmToCentre"] > 12:  # Google sometimes mixes in hotels near the searcher instead of the city
+        return False
     return ((c.get("type") or "hotel").lower() != "vacation rental" and not any(w in text for w in AVOID)
             and (c.get("rating") or 0) >= 3.9 and (c.get("reviews") or 0) >= 50
             and (c.get("locationRating") is None or c["locationRating"] >= 3.0))
@@ -104,6 +106,7 @@ def main():
     dry = "--dry-run" in sys.argv
     pages = int(sys.argv[sys.argv.index("--pages") + 1]) if "--pages" in sys.argv else 2
     ndet = int(sys.argv[sys.argv.index("--details") + 1]) if "--details" in sys.argv else 3
+    only = sys.argv[sys.argv.index("--cities") + 1].split(",") if "--cities" in sys.argv and sys.argv[sys.argv.index("--cities") + 1] else None
     key = os.environ.get("SERPAPI_KEY") or ("DRY" if dry else None)
     if not key:
         print("SerpApi: no key, skipped")
@@ -125,6 +128,8 @@ def main():
         return used < RUN_CAP and left - used > KEEP_LEFT
 
     for city, ci, co, n, cur in stays():
+        if only and city not in only:
+            continue
         found, token = {}, None
         for _ in range(pages):
             if not can():

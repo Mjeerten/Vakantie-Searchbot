@@ -12,6 +12,10 @@ on:
         description: price-per-site lookups for the top hotels of each city
         required: false
         default: "3"
+      cities:
+        description: comma-separated cities (empty = all five)
+        required: false
+        default: ""
 permissions:
   contents: write
 jobs:
@@ -23,7 +27,7 @@ jobs:
       - name: SerpApi Google Hotels
         env:
           SERPAPI_KEY: ${{ secrets.SERPAPI_KEY }}
-        run: python3 serp_hotels.py hotel_checks.json --pages "${{ github.event.inputs.pages || '2' }}" --details "${{ github.event.inputs.details || '3' }}"
+        run: python3 serp_hotels.py hotel_checks.json --pages "${{ github.event.inputs.pages || '2' }}" --details "${{ github.event.inputs.details || '3' }}" --cities "${{ github.event.inputs.cities }}"
       - name: Save to hotel-data branch
         env:
           TOKEN: ${{ secrets.GITHUB_TOKEN }}
