@@ -156,6 +156,8 @@ def prev_checks(dbdir, plan_id, nights):
 def next_check(st, airports):
     """Next (origin, depart, mode) to check on Google for this plan, or None when everything is fresh.
     Open-jaw routes check both a multi-city ticket ("mc") and a return to the arrival city plus the train back ("rt")."""
+    if any(c.get("booked") for c in st["checks"]):
+        return None  # ticket already bought
     p = st["plan"]
     modes = ["mc", "rt"] if (p.get("flyOut") or p["flyIn"]) != p["flyIn"] else ["rt"]
     # the owner's top route (scanTier 1, the golden route) is re-checked almost continuously, the rest daily
@@ -201,6 +203,8 @@ def next_check(st, airports):
 def coverage(st, airports):
     """Core flight options for a route: every departure day from the main airport, the other ticket type on the
     cheapest day, and the other airports on that day. Returns (checked, total)."""
+    if any(c.get("booked") for c in st["checks"]):
+        return 1, 1
     p = st["plan"]
     modes = ["mc", "rt"] if (p.get("flyOut") or p["flyIn"]) != p["flyIn"] else ["rt"]
     fresh = {(c.get("query", c["origin"]), c["depart"], c["mode"]) for c in st["checks"] if not c.get("manual") and _age_h(c.get("checkedAt", "")) <= FRESH_H} | st["tried"]
@@ -278,11 +282,12 @@ def manual_checks(cfg, plan_id, nights):
     out = []
     for m in cfg.get("manualFlights") or []:
         try:
-            if m.get("plan") != plan_id or (D(m["return"]) - D(m["depart"])).days != nights + 1 or _age_h(m["seenAt"]) > 14 * 24:
+            if m.get("plan") != plan_id or (D(m["return"]) - D(m["depart"])).days != nights + 1 or (_age_h(m["seenAt"]) > 14 * 24 and not m.get("booked")):
                 continue
             out.append({"origin": m.get("origin", "AMS"), "depart": m["depart"], "return": m["return"], "mode": m.get("mode", "mc"),
                         "checkedAt": m["seenAt"], "url": m.get("url", ""), "pricePP": int(m["pricePP"]), "airline": m.get("airline", "?"),
-                        "manual": True, "out": {"airline": m.get("airline", "?"), "stops": m.get("stops"), "layovers": m.get("layovers", []),
+                        "manual": True, "booked": bool(m.get("booked")), "bagsIncluded": bool(m.get("bagsIncluded")), "bookVia": m.get("bookVia"),
+                        "back": m.get("back"), "out": {"airline": m.get("airline", "?"), "stops": m.get("stops"), "layovers": m.get("layovers", []),
                                                 "pricePP": int(m["pricePP"]), "airportChange": False, "note": m.get("note", ""),
                                                 "duration": m.get("duration"), "departs": m.get("departs"), "arrives": m.get("arrives")}})
         except Exception:
@@ -346,7 +351,7 @@ def google_cand(plan, c):
         typ = f"multi-city ticket (in {fin}, home from {fout})"
     else:
         typ = "return " + fin + (f" (+ train back to {plan['stops'][0]['city']})" if back else "")
-    price, via, bags_in = c["pricePP"], None, bool(c.get("bagsIncluded"))
+    price, via, bags_in = c["pricePP"], c.get("bookVia"), bool(c.get("bagsIncluded"))
     # book with the airline itself when Google's booking page offers it: its bag rules are known and changes/delays are
     # handled by the airline, not a middleman (owner's choice, Nov 2026: worth ~EUR 100 more than the cheapest agency)
     opts = [x for x in c.get("bookWith") or [] if x.get("pricePP")]
@@ -847,7 +852,13 @@ def main():
         st = {"plan": p, "nights": nights, "variants": variants, "tp": [], "notes": [], "tried": set(),
               "checks": merge_checks([c for c in prev_checks(dbdir, p["id"], nights) if not c.get("manual")],
                                      shared_checks(shared, p["id"], nights), manual_checks(cfg, p["id"], nights)), "fx": fx}
-        if variants:
+        booked = [c for c in st["checks"] if c.get("booked")]
+        if booked:
+            # the owner already bought this ticket: it is the flight, whatever cheaper fares turn up later
+            st["checks"], variants = booked, [v for v in variants if v["depart"] == booked[0]["depart"]] or variants
+            st["variants"] = variants
+            st["notes"].append(f"flight booked by the owner ({booked[0].get('bookVia') or 'booked'}, EUR {booked[0]['pricePP']} p.p.)")
+        elif variants:
             st["tp"] = tp_candidates(p, nights, cfg, airports)
             if not st["tp"] and tp.STATUS["ok"] and cfg.get("useTravelpayouts") is not False:
                 ref = tp_reference(airports, p["flyIn"], cfg["windowStart"], cfg["windowEnd"])
