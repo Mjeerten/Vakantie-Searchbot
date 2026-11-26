@@ -1,7 +1,7 @@
 {
- "updatedAt": "2026-11-26T15:53:38Z",
+ "updatedAt": "2026-11-26T16:47:03Z",
  "blocked": true,
- "queries": 18444445163,
+ "queries": 571777800069,
  "plans": {
   "jp-golden": [
    {
@@ -10503,7 +10503,7 @@
   "usedToday": 50,
   "month": "2026-11",
   "usedMonth": 50,
-  "at": "2026-11-26T14:53:13Z",
+  "at": "2026-11-26T16:35:30Z",
   "groups": {
    "TYO|OSA|15": {
     "at": "2026-11-26T14:53:13Z",
