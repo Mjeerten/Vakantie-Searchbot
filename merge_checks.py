@@ -23,7 +23,7 @@ def main():
         for pid, checks in (src.get("plans") or {}).items():
             m = plans.setdefault(pid, {})
             for c in checks:
-                k = (c.get("origin"), c.get("depart"), c.get("return"), c.get("mode"))
+                k = (c.get("query", c.get("origin")), c.get("depart"), c.get("return"), c.get("mode"))
                 if k not in m or c.get("checkedAt", "") > m[k].get("checkedAt", ""):
                     m[k] = c
     cfg = json.load(open("search_config.json"))

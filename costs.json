@@ -115,8 +115,8 @@
  },
  "unknownLegEstimate": 60,
  "bags": {
-  "_note": "One checked suitcase (23 kg), there and back, when the cheapest fare has none. Researched Nov 2026: the cheapest long-haul fares to Japan on British Airways (Basic), Finnair (Light), Lufthansa/SWISS/Austrian (Economy Light) and KLM/Air France (Light) have NO checked bag; adding one costs about EUR 75-100 per direction (finnair.com extra baggage fees, ba.com Basic fare), so ~EUR 180 return. Google Flights cannot add a checked bag to a multi-city search, so this stays an estimate. Airlines in usuallyIncluded give a suitcase in every economy fare.",
-  "extraBagEstimatePP": 180,
+  "_note": "One checked suitcase (23 kg), there and back, when the cheapest fare has none. Researched Nov 2026: the cheapest long-haul fares to Japan on British Airways (Basic), Finnair (Light), Lufthansa/SWISS/Austrian (Economy Light) and KLM/Air France (Light) have NO checked bag; adding one costs about EUR 75-100 per direction (finnair.com extra baggage fees, ba.com Basic fare), so about EUR 180 return was the first estimate; Google Flights' booking page for the BA/JAL multi-city ticket (Nov 2026) shows '1st checked bag: EUR 90-114' for the whole trip, so EUR 110 per suitcase there and back. Google Flights cannot add a checked bag to a multi-city search, so this stays an estimate. Airlines in usuallyIncluded give a suitcase in every economy fare.",
+  "extraBagEstimatePP": 110,
   "usuallyIncluded": [
    "Emirates",
    "Qatar Airways",

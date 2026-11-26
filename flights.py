@@ -122,11 +122,22 @@ def _ld(num, data):
     return _v((num << 3) | 2) + _v(len(data)) + data
 
 
+HOME_AIRPORTS = {"schiphol": "AMS", "amsterdam": "AMS", "brussels": "BRU", "zaventem": "BRU", "sseldorf": "DUS",
+                 "eindhoven": "EIN", "rotterdam": "RTM", "charleroi": "CRL", "cologne": "CGN", "weeze": "NRN"}
+
+
+def home_code(name):
+    n = (name or "").lower()
+    return next((c for k, c in HOME_AIRPORTS.items() if k in n), None)
+
+
 def tfs_url(legs):
     """legs: [(date, from, to), ...]. 2 legs mirrored = round trip, otherwise multi-city. 1 adult, economy, EUR."""
     rt = len(legs) == 2 and legs[0][1] == legs[1][2] and legs[0][2] == legs[1][1]
     trip = 1 if rt else (2 if len(legs) == 1 else 3)
-    m = b"".join(_ld(3, _ld(2, d.encode()) + _ld(13, _ld(2, a.encode())) + _ld(14, _ld(2, z.encode()))) for d, a, z in legs)
+    # "AMS,BRU,DUS" = any of these airports (Google then also mixes them: out from DUS, home to AMS)
+    ap = lambda field, codes: b"".join(_ld(field, _ld(2, x.strip().encode())) for x in codes.split(","))
+    m = b"".join(_ld(3, _ld(2, d.encode()) + ap(13, a) + ap(14, z)) for d, a, z in legs)
     m += _v(8 << 3) + _v(1) + _v(9 << 3) + _v(1) + _v(19 << 3) + _v(trip)
     t = base64.urlsafe_b64encode(m).decode().rstrip("=")
     return f"https://www.google.com/travel/flights/search?tfs={t}&hl=en&gl=nl&curr=EUR"

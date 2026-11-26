@@ -160,7 +160,8 @@ def next_check(st, airports):
     modes = ["mc", "rt"] if (p.get("flyOut") or p["flyIn"]) != p["flyIn"] else ["rt"]
     # the owner's top route (scanTier 1, the golden route) is re-checked almost continuously, the rest daily
     rh = RECHECK_TOP_H if p.get("scanTier") == 1 else RECHECK_H
-    recent = {(c["origin"], c["depart"], c["mode"]) for c in st["checks"] if not c.get("manual") and _age_h(c["checkedAt"]) < rh} | st["tried"]
+    recent = {(c.get("query", c["origin"]), c["depart"], c["mode"]) for c in st["checks"] if not c.get("manual") and _age_h(c["checkedAt"]) < rh} | st["tried"]
+    airports = ["ALL"]  # one search covers every home airport (and mixed ones); no separate per-airport searches
     dates = []
     if st["tp"]:
         t = min(st["tp"], key=lambda c: c["compare"])
@@ -202,7 +203,8 @@ def coverage(st, airports):
     cheapest day, and the other airports on that day. Returns (checked, total)."""
     p = st["plan"]
     modes = ["mc", "rt"] if (p.get("flyOut") or p["flyIn"]) != p["flyIn"] else ["rt"]
-    fresh = {(c["origin"], c["depart"], c["mode"]) for c in st["checks"] if not c.get("manual") and _age_h(c.get("checkedAt", "")) <= FRESH_H} | st["tried"]
+    fresh = {(c.get("query", c["origin"]), c["depart"], c["mode"]) for c in st["checks"] if not c.get("manual") and _age_h(c.get("checkedAt", "")) <= FRESH_H} | st["tried"]
+    airports = ["ALL"]
     dates = [v["depart"] for v in st["variants"]]
     if not dates:
         return 0, 0
@@ -215,6 +217,8 @@ def coverage(st, airports):
 
 def google_round(states, airports, budget, pause, log=print):
     """Google checks: Japan routes first until their core options are covered, then every route round robin."""
+    global AIRPORTS
+    AIRPORTS = list(airports)
     def loop(group, core_only):
         progress = True
         while progress and budget.left > 0 and not flights.BLOCKED:
@@ -238,7 +242,7 @@ def google_round(states, airports, budget, pause, log=print):
                     for o in states:
                         if o is st or (o["plan"]["flyIn"], o["plan"].get("flyOut") or o["plan"]["flyIn"], o["nights"]) == \
                                 (st["plan"]["flyIn"], st["plan"].get("flyOut") or st["plan"]["flyIn"], st["nights"]):
-                            o["checks"] = [x for x in o["checks"] if (x["origin"], x["depart"], x["mode"]) != nx] + [c]
+                            o["checks"] = [x for x in o["checks"] if (x.get("query", x["origin"]), x["depart"], x["mode"]) != nx] + [c]
                             o["tried"].add(nx)
                 progress = True
                 time.sleep(pause)
@@ -289,13 +293,14 @@ def manual_checks(cfg, plan_id, nights):
 def merge_checks(*lists):
     best = {}
     for c in [c for l in lists for c in l]:
-        k = (c["origin"], c["depart"], c["mode"], bool(c.get("manual")))
+        k = (c.get("query", c["origin"]), c["depart"], c["mode"], bool(c.get("manual")))
         if k not in best or c["checkedAt"] > best[k]["checkedAt"]:
             best[k] = c
     return list(best.values())
 
 
 MAX_STOPS, MIN_LAYOVER = 2, 90
+AIRPORTS = ["AMS", "BRU", "DUS", "EIN", "RTM"]  # set from the settings in google_round
 
 
 def safe_connection(o):
@@ -307,8 +312,10 @@ def run_check(plan, nights, origin, depart, mode):
     fin, fout = plan["flyIn"], plan.get("flyOut") or plan["flyIn"]
     ret = (D(depart) + dt.timedelta(days=nights + 1)).isoformat()
     home_from = fout if mode == "mc" else fin
-    r = flights.search_legs([(depart, origin, fin), (ret, home_from, origin)])
-    c = {"origin": origin, "depart": depart, "return": ret, "mode": mode,
+    # "ALL": one search over every home airport, out from one and home to another is fine (owner goes by train/car)
+    ports = ",".join(AIRPORTS) if origin == "ALL" else origin
+    r = flights.search_legs([(depart, ports, fin), (ret, home_from, ports)])
+    c = {"origin": origin, "query": origin, "depart": depart, "return": ret, "mode": mode,
          "checkedAt": dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"), "url": r["url"]}
     if mode == "rt" and fin != fout:
         c["backTrainPP"] = leg_cost(plan["stops"][-1]["city"], plan["stops"][0]["city"])[0]
@@ -324,6 +331,9 @@ def run_check(plan, nights, origin, depart, mode):
         scored = [x for x in scored if x[0] is not None] or [(o["pricePP"], o) for o in same]
         o = min(scored, key=lambda x: x[0])[1]
         c.update({"pricePP": o["pricePP"], "airline": o["airline"], "out": o, "cheapestPP": min(x["pricePP"] for x in r["offers"])})
+        if origin == "ALL":
+            c["origin"] = flights.home_code(o.get("from")) or AIRPORTS[0]
+            c["anyHomeAirport"] = True
     else:
         c["error"] = r["error"]
     return c
@@ -339,7 +349,7 @@ def google_cand(plan, c):
     return {"origin": c["origin"], "src": "google", "type": typ,
             "pricePP": c["pricePP"], "backTrainPP": back, "compare": c["pricePP"] + back, "airlines": [c.get("airline")],
             "out": c.get("out"), "back": None, "depart": c["depart"], "return": c["return"],
-            "urls": [c["url"]], "checkedAt": c["checkedAt"], "manual": bool(c.get("manual"))}
+            "urls": [c["url"]], "checkedAt": c["checkedAt"], "manual": bool(c.get("manual")), "anyHomeAirport": bool(c.get("anyHomeAirport"))}
 
 
 BIG_CITIES = {"Tokyo": 4, "Seoul": 4.5, "Bangkok": 4.5, "Osaka": 3, "Kyoto": 2.5, "Ho Chi Minh City": 3, "Hanoi": 2.5,
@@ -726,6 +736,8 @@ def evaluate(plan, cfg, st, do_hotels):
     if fl.get("cached"):
         est_flags.append("cached fare (seen by Aviasales users recently), check the live price")
     est_flags += fl.get("comfortFlags") or []
+    if fl.get("anyHomeAirport"):
+        est_flags.append("searched from all home airports at once: the way home may land at another one of them (e.g. out from DUS, home to AMS); fine by train")
     out.update({"variants": variants, "best": {"ground": ground and ground["detail"],
         "depart": best["depart"], "return": best["return"], "days": days, "flight": fl, "stays": stays, "legs": legs,
         "parts": parts, "totalPP": total, "totalFor2": total * 2, "verdict": verdict, "flags": est_flags,

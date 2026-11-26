@@ -53,11 +53,14 @@ def verify_flight(fl):
     url = (fl.get("urls") or [None])[0]
     if fl.get("src") != "google" or not url:
         return None
+    out0 = fl.get("out") or {}
+    want = "|".join(x for x in [out0.get("airline"), f"at {_dep_key(out0)} on" if _dep_key(out0) else None] if x)
     if url not in FL_CACHE:
-        r = _node([os.path.join(HERE, "gflights.js"), url])
+        # click through like a person: this flight, then the cheapest return, then read the "Booking options" total
+        r = _node([os.path.join(HERE, "gflights.js"), url, "book", want], timeout=240)
         import html as _h
         body = " ".join('aria-label="' + _h.escape(l, quote=True) + '"' for l in r.get("labels", []))
-        FL_CACHE[url] = {"offers": flights.parse(body), "error": r.get("error"), "sorted": r.get("sorted")}
+        FL_CACHE[url] = {"offers": flights.parse(body), "error": r.get("error"), "sorted": r.get("sorted"), "book": r.get("book")}
         time.sleep(15)
     res = FL_CACHE[url]
     v = {"at": NOW(), "storedPP": fl["pricePP"], "url": url}
@@ -86,6 +89,13 @@ def verify_flight(fl):
         v.update(status="not found", note=f"{air} departing {dep} is no longer listed; cheapest on the page now €{v['cheapestNowPP']}")
         return v
     seen = min(o["pricePP"] for o in same)
+    bk = res.get("book") or {}
+    if bk.get("totalPP"):
+        # the total on Google's booking page after picking this flight and the cheapest way home
+        seen = bk["totalPP"]
+        v.update(bookingPage=True, bookWith=bk.get("options"), bag=bk.get("bag"), homeToOtherAirport=bk.get("different"))
+    elif bk.get("error"):
+        v["clickNote"] = bk["error"]
     v["seenPP"] = seen
     v["status"] = "confirmed" if abs(seen - fl["pricePP"]) <= TOL else "changed"
     return v
