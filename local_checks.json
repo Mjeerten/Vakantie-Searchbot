@@ -1,7 +1,7 @@
 {
- "updatedAt": "2026-11-26T11:54:32Z",
+ "updatedAt": "2026-11-26T12:47:51Z",
  "blocked": true,
- "queries": 1310811,
+ "queries": 6554062,
  "plans": {
   "jp-golden": [
    {
@@ -1026,6 +1026,37 @@
     "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhpCEgoyMDI3LTA3LTI4agcIARIDQU1TagcIARIDQlJVagcIARIDRFVTagcIARIDRUlOagcIARIDUlRNcgcIARIDVFlPGkISCjIwMjctMDgtMTNqBwgBEgNUWU9yBwgBEgNBTVNyBwgBEgNCUlVyBwgBEgNEVVNyBwgBEgNFSU5yBwgBEgNSVE1AAUgBcAGCAQsI____________AZgBAQ&tfu=EgQIACACIgMSATA&hl=en&gl=nl&curr=EUR",
     "backTrainPP": 90,
     "error": "not among the cheapest 9 options (cheapest from any home airport EUR 1046)"
+   },
+   {
+    "origin": "AMS",
+    "query": "ALL",
+    "depart": "2027-07-26",
+    "return": "2027-08-11",
+    "mode": "mc",
+    "checkedAt": "2026-11-26T12:28:45Z",
+    "url": "https://www.google.com/travel/flights/search?tfs=GjYSCjIwMjctMDctMjZqBRIDQU1TagUSA0JSVWoFEgNEVVNqBRIDRUlOagUSA1JUTXIFEgNUWU8aNhIKMjAyNy0wOC0xMWoFEgNPU0FyBRIDQU1TcgUSA0JSVXIFEgNEVVNyBRIDRUlOcgUSA1JUTUABSAGYAQM&hl=en&gl=nl&curr=EUR",
+    "pricePP": 1379,
+    "airline": "British Airways",
+    "out": {
+     "pricePP": 1379,
+     "airline": "British Airways",
+     "stops": 1,
+     "duration": "16 hr 45 min",
+     "from": "Amsterdam Airport Schiphol",
+     "departs": "Monday, July 26 7:15 AM",
+     "to": "Haneda Airport",
+     "arrives": "Tuesday, July 27 7:00 AM",
+     "layovers": [
+      "Heathrow Airport"
+     ],
+     "layoverMins": [
+      105
+     ],
+     "selfTransfer": false,
+     "airportChange": false
+    },
+    "cheapestPP": 1379,
+    "anyHomeAirport": true
    }
   ],
   "jp-golden-rev": [
@@ -2976,6 +3007,37 @@
     "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhpCEgoyMDI3LTA3LTI4agcIARIDQU1TagcIARIDQlJVagcIARIDRFVTagcIARIDRUlOagcIARIDUlRNcgcIARIDVFlPGkISCjIwMjctMDgtMTNqBwgBEgNUWU9yBwgBEgNBTVNyBwgBEgNCUlVyBwgBEgNEVVNyBwgBEgNFSU5yBwgBEgNSVE1AAUgBcAGCAQsI____________AZgBAQ&tfu=EgQIACACIgMSATA&hl=en&gl=nl&curr=EUR",
     "backTrainPP": 90,
     "error": "not among the cheapest 9 options (cheapest from any home airport EUR 1046)"
+   },
+   {
+    "origin": "AMS",
+    "query": "ALL",
+    "depart": "2027-07-26",
+    "return": "2027-08-11",
+    "mode": "mc",
+    "checkedAt": "2026-11-26T12:28:45Z",
+    "url": "https://www.google.com/travel/flights/search?tfs=GjYSCjIwMjctMDctMjZqBRIDQU1TagUSA0JSVWoFEgNEVVNqBRIDRUlOagUSA1JUTXIFEgNUWU8aNhIKMjAyNy0wOC0xMWoFEgNPU0FyBRIDQU1TcgUSA0JSVXIFEgNEVVNyBRIDRUlOcgUSA1JUTUABSAGYAQM&hl=en&gl=nl&curr=EUR",
+    "pricePP": 1379,
+    "airline": "British Airways",
+    "out": {
+     "pricePP": 1379,
+     "airline": "British Airways",
+     "stops": 1,
+     "duration": "16 hr 45 min",
+     "from": "Amsterdam Airport Schiphol",
+     "departs": "Monday, July 26 7:15 AM",
+     "to": "Haneda Airport",
+     "arrives": "Tuesday, July 27 7:00 AM",
+     "layovers": [
+      "Heathrow Airport"
+     ],
+     "layoverMins": [
+      105
+     ],
+     "selfTransfer": false,
+     "airportChange": false
+    },
+    "cheapestPP": 1379,
+    "anyHomeAirport": true
    }
   ],
   "jp-kanazawa-rev": [
@@ -8982,56 +9044,56 @@
  },
  "coverage": {
   "jp-golden": [
-   11,
-   11
+   1,
+   7
   ],
   "jp-golden-rev": [
-   11,
-   11
+   0,
+   7
   ],
   "jp-kanazawa": [
-   11,
-   11
+   1,
+   7
   ],
   "jp-kanazawa-rev": [
-   11,
-   11
+   0,
+   7
   ],
   "jp-koyasan": [
-   12,
-   12
+   0,
+   8
   ],
   "jp-koyasan-rev": [
-   12,
-   12
+   0,
+   8
   ],
   "jp-classic": [
-   13,
-   13
-  ],
-  "jp-classic-rev": [
-   13,
-   13
-  ],
-  "cn-chongqing-beijing": [
-   6,
-   11
-  ],
-  "cn-chongqing-beijing-19d": [
    0,
    9
   ],
+  "jp-classic-rev": [
+   0,
+   9
+  ],
+  "cn-chongqing-beijing": [
+   0,
+   7
+  ],
+  "cn-chongqing-beijing-19d": [
+   0,
+   5
+  ],
   "cn-chongqing-beijing-22d": [
-   1,
-   6
+   0,
+   2
   ],
   "cn-beijing-chongqing": [
-   3,
-   11
+   0,
+   7
   ],
   "cn-shanghai-chongqing": [
-   2,
-   12
+   0,
+   8
   ]
  }
 }
