@@ -11,9 +11,13 @@ on:
         description: Google queries this run (default from search_config.json)
         required: false
         default: ""
+      serp:
+        description: "SerpApi: 'sweep' = one full check of all Japan ticket groups (24 searches); empty = daily split"
+        required: false
+        default: ""
   push:
     branches: [claude/compassionate-hawking-lq51s3]
-    paths: [".github/workflows/flights.yml", "scan_flights.py", "search_config.json", "gflights.js", "flights.py", "routes.json", "planner.py", "merge_checks.py"]
+    paths: [".github/workflows/flights.yml", "scan_flights.py", "search_config.json", "gflights.js", "flights.py", "routes.json", "planner.py", "merge_checks.py", "serp_scan.py"]
 permissions:
   contents: write
 concurrency:
@@ -35,6 +39,10 @@ jobs:
           if git fetch -q --depth 1 origin flight-data; then git show FETCH_HEAD:flight_checks.json > prev.json; else echo '{}' > prev.json; fi
           git fetch -q --depth 1 origin ${{ github.ref_name }} && git show FETCH_HEAD:local_checks.json > local_checks.json 2>/dev/null || true
           [ -s local_checks.json ] && python3 merge_checks.py prev.json local_checks.json prev.json || true
+      - name: SerpApi checks (Japan only, capped at 8 a day / 240 a month)
+        env:
+          SERPAPI_KEY: ${{ secrets.SERPAPI_KEY }}
+        run: python3 serp_scan.py prev.json prev.json prev.json ${{ github.event.inputs.serp }} || echo "SerpApi step failed, free scan goes on"
       - name: Scan flights
         env:
           GOOGLE_BUDGET: ${{ github.event.inputs.budget }}
@@ -46,6 +54,7 @@ jobs:
           # merge with whatever another scanner saved meanwhile, so nobody overwrites anybody
           if git fetch -q --depth 1 origin flight-data; then git show FETCH_HEAD:flight_checks.json > latest.json; else echo '{}' > latest.json; fi
           [ -f local_checks.json ] && python3 merge_checks.py latest.json local_checks.json latest.json
+          python3 merge_checks.py latest.json prev.json latest.json
           python3 merge_checks.py latest.json flight_checks.json merged.json && mv merged.json flight_checks.json
           mkdir /tmp/fd && cp flight_checks.json /tmp/fd/ && cd /tmp/fd
           git init -q -b flight-data

@@ -45,6 +45,10 @@ def main():
         out["plans"][p["id"]] = checks
         st = {"plan": p, "nights": nights, "variants": variants, "tp": [], "checks": checks, "tried": set()}
         out["coverage"][p["id"]] = list(run.coverage(st, cfg["airports"]))
+    # SerpApi budget state (searches used today / this month): keep the newest
+    sp = [x["serpapi"] for x in (a, b) if x.get("serpapi")]
+    if sp:
+        out["serpapi"] = max(sp, key=lambda s: s.get("at", ""))
     json.dump(out, open(out_path, "w"), indent=1, ensure_ascii=False)
     for k, v in out["coverage"].items():
         print(k, v)
