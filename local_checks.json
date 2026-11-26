@@ -1,7 +1,7 @@
 {
- "updatedAt": "2026-11-26T00:33:47Z",
+ "updatedAt": "2026-11-26T11:54:32Z",
  "blocked": true,
- "queries": 418467,
+ "queries": 1310811,
  "plans": {
   "jp-golden": [
    {
@@ -2674,16 +2674,6 @@
     "note": "verified with the same home airport both ways (out via London and Tokyo-Haneda to Osaka-Itami)"
    },
    {
-    "origin": "RTM",
-    "depart": "2027-07-27",
-    "return": "2027-08-12",
-    "mode": "mc",
-    "checkedAt": "2026-11-25T23:44:40Z",
-    "source": "searchapi",
-    "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhpCEgoyMDI3LTA3LTI3agcIARIDQU1TagcIARIDQlJVagcIARIDRFVTagcIARIDRUlOagcIARIDUlRNcgcIARIDVFlPGkISCjIwMjctMDgtMTJqBwgBEgNPU0FyBwgBEgNBTVNyBwgBEgNCUlVyBwgBEgNEVVNyBwgBEgNFSU5yBwgBEgNSVE1AAUgBcAGCAQsI____________AZgBAw&tfu=EgQIACACIgMSATA&hl=en&gl=nl&curr=EUR",
-    "error": "not among the cheapest 21 options (cheapest from any home airport EUR 1263)"
-   },
-   {
     "origin": "DUS",
     "depart": "2027-07-27",
     "return": "2027-08-12",
@@ -2698,6 +2688,16 @@
    },
    {
     "origin": "EIN",
+    "depart": "2027-07-27",
+    "return": "2027-08-12",
+    "mode": "mc",
+    "checkedAt": "2026-11-25T23:44:40Z",
+    "source": "searchapi",
+    "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhpCEgoyMDI3LTA3LTI3agcIARIDQU1TagcIARIDQlJVagcIARIDRFVTagcIARIDRUlOagcIARIDUlRNcgcIARIDVFlPGkISCjIwMjctMDgtMTJqBwgBEgNPU0FyBwgBEgNBTVNyBwgBEgNCUlVyBwgBEgNEVVNyBwgBEgNFSU5yBwgBEgNSVE1AAUgBcAGCAQsI____________AZgBAw&tfu=EgQIACACIgMSATA&hl=en&gl=nl&curr=EUR",
+    "error": "not among the cheapest 21 options (cheapest from any home airport EUR 1263)"
+   },
+   {
+    "origin": "RTM",
     "depart": "2027-07-27",
     "return": "2027-08-12",
     "mode": "mc",
@@ -2735,34 +2735,6 @@
     "cheapestPP": 1071
    },
    {
-    "origin": "BRU",
-    "depart": "2027-07-27",
-    "return": "2027-08-12",
-    "mode": "rt",
-    "checkedAt": "2026-11-25T23:44:42Z",
-    "source": "searchapi",
-    "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhpCEgoyMDI3LTA3LTI3agcIARIDQU1TagcIARIDQlJVagcIARIDRFVTagcIARIDRUlOagcIARIDUlRNcgcIARIDVFlPGkISCjIwMjctMDgtMTJqBwgBEgNUWU9yBwgBEgNBTVNyBwgBEgNCUlVyBwgBEgNEVVNyBwgBEgNFSU5yBwgBEgNSVE1AAUgBcAGCAQsI____________AZgBAQ&tfu=EgQIACACIgMSATA&hl=en&gl=nl&curr=EUR",
-    "backTrainPP": 90,
-    "pricePP": 1071,
-    "airline": "British Airways",
-    "out": {
-     "pricePP": 1071,
-     "airline": "British Airways",
-     "stops": 1,
-     "duration": "17 hr 0 min",
-     "from": "Brussels Airport",
-     "fromId": "BRU",
-     "departs": "Tuesday, July 27 10:55 AM",
-     "to": "Haneda Airport",
-     "arrives": "Wednesday, July 28 10:55 AM",
-     "layovers": [
-      "Heathrow Airport"
-     ],
-     "airportChange": false
-    },
-    "cheapestPP": 1071
-   },
-   {
     "origin": "DUS",
     "depart": "2027-07-27",
     "return": "2027-08-12",
@@ -2785,6 +2757,34 @@
      "arrives": "Wednesday, July 28 6:55 AM",
      "layovers": [
       "Vienna International Airport"
+     ],
+     "airportChange": false
+    },
+    "cheapestPP": 1071
+   },
+   {
+    "origin": "BRU",
+    "depart": "2027-07-27",
+    "return": "2027-08-12",
+    "mode": "rt",
+    "checkedAt": "2026-11-25T23:44:42Z",
+    "source": "searchapi",
+    "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhpCEgoyMDI3LTA3LTI3agcIARIDQU1TagcIARIDQlJVagcIARIDRFVTagcIARIDRUlOagcIARIDUlRNcgcIARIDVFlPGkISCjIwMjctMDgtMTJqBwgBEgNUWU9yBwgBEgNBTVNyBwgBEgNCUlVyBwgBEgNEVVNyBwgBEgNFSU5yBwgBEgNSVE1AAUgBcAGCAQsI____________AZgBAQ&tfu=EgQIACACIgMSATA&hl=en&gl=nl&curr=EUR",
+    "backTrainPP": 90,
+    "pricePP": 1071,
+    "airline": "British Airways",
+    "out": {
+     "pricePP": 1071,
+     "airline": "British Airways",
+     "stops": 1,
+     "duration": "17 hr 0 min",
+     "from": "Brussels Airport",
+     "fromId": "BRU",
+     "departs": "Tuesday, July 27 10:55 AM",
+     "to": "Haneda Airport",
+     "arrives": "Wednesday, July 28 10:55 AM",
+     "layovers": [
+      "Heathrow Airport"
      ],
      "airportChange": false
     },
@@ -3451,19 +3451,6 @@
     "error": "not among the cheapest 18 options (cheapest from any home airport EUR 1454)"
    },
    {
-    "origin": "AMS",
-    "depart": "2027-07-26",
-    "return": "2027-08-11",
-    "mode": "mc",
-    "checkedAt": "2026-11-25T23:45:43Z",
-    "source": "searchapi",
-    "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhpCEgoyMDI3LTA3LTI2agcIARIDQU1TagcIARIDQlJVagcIARIDRFVTagcIARIDRUlOagcIARIDUlRNcgcIARIDT1NBGkISCjIwMjctMDgtMTFqBwgBEgNUWU9yBwgBEgNBTVNyBwgBEgNCUlVyBwgBEgNEVVNyBwgBEgNFSU5yBwgBEgNSVE1AAUgBcAGCAQsI____________AZgBAw&tfu=EgQIACACIgMSATA&hl=en&gl=nl&curr=EUR",
-    "airline": "British Airways and JAL",
-    "cheapestPP": 1102,
-    "mixedPricePP": 1102,
-    "error": "multi-airport search: the return may land at another home airport; price not verified for this airport"
-   },
-   {
     "origin": "DUS",
     "depart": "2027-07-26",
     "return": "2027-08-11",
@@ -3497,6 +3484,19 @@
     "airline": "Finnair",
     "cheapestPP": 1102,
     "mixedPricePP": 1241,
+    "error": "multi-airport search: the return may land at another home airport; price not verified for this airport"
+   },
+   {
+    "origin": "AMS",
+    "depart": "2027-07-26",
+    "return": "2027-08-11",
+    "mode": "mc",
+    "checkedAt": "2026-11-25T23:45:43Z",
+    "source": "searchapi",
+    "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhpCEgoyMDI3LTA3LTI2agcIARIDQU1TagcIARIDQlJVagcIARIDRFVTagcIARIDRUlOagcIARIDUlRNcgcIARIDT1NBGkISCjIwMjctMDgtMTFqBwgBEgNUWU9yBwgBEgNBTVNyBwgBEgNCUlVyBwgBEgNEVVNyBwgBEgNFSU5yBwgBEgNSVE1AAUgBcAGCAQsI____________AZgBAw&tfu=EgQIACACIgMSATA&hl=en&gl=nl&curr=EUR",
+    "airline": "British Airways and JAL",
+    "cheapestPP": 1102,
+    "mixedPricePP": 1102,
     "error": "multi-airport search: the return may land at another home airport; price not verified for this airport"
    },
    {
@@ -8791,6 +8791,31 @@
      "airportChange": false
     },
     "cheapestPP": 1471
+   },
+   {
+    "origin": "AMS",
+    "depart": "2027-07-27",
+    "return": "2027-08-12",
+    "mode": "mc",
+    "checkedAt": "2026-11-26T04:07:35Z",
+    "url": "https://www.google.com/travel/flights/search?tfs=GhoSCjIwMjctMDctMjdqBRIDQU1TcgUSA0NLRxoaEgoyMDI3LTA4LTEyagUSA0JKU3IFEgNBTVNAAUgBmAED&hl=en&gl=nl&curr=EUR",
+    "pricePP": 1166,
+    "airline": "China Southern",
+    "out": {
+     "pricePP": 1166,
+     "airline": "China Southern",
+     "stops": 1,
+     "duration": "15 hr 10 min",
+     "from": "Amsterdam Airport Schiphol",
+     "departs": "Tuesday, July 27 9:40 PM",
+     "to": "Chongqing Jiangbei International Airport",
+     "arrives": "Wednesday, July 28 6:50 PM",
+     "layovers": [
+      "Beijing Daxing International Airport"
+     ],
+     "airportChange": false
+    },
+    "cheapestPP": 1166
    }
   ],
   "cn-chongqing-beijing-19d": [],
@@ -8989,7 +9014,7 @@
    13
   ],
   "cn-chongqing-beijing": [
-   5,
+   6,
    11
   ],
   "cn-chongqing-beijing-19d": [
