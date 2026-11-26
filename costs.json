@@ -1,162 +1,199 @@
 {
- "_note": "Rough per-person estimates in EUR for summer 2027, used when the bot cannot look a price up. Edit freely; the hub settings can override perDay values. Train prices are standard reserved seats (Japan: Shinkansen Nozomi/Hikari, bought as single tickets, usually cheaper than a 7-day JR Pass for Tokyo-Kyoto-Osaka routes).",
- "countries": {
-  "Japan": {
-   "foodPerDay": 20,
-   "activitiesPerDay": 10,
-   "localTransportPerDay": 8,
-   "airportTransfer": 12,
-   "minRating": 3.9
+  "_note": "Rough per-person estimates in EUR for summer 2027, used when the bot cannot look a price up. Edit freely; the hub settings can override perDay values. Train prices are standard reserved seats (Japan: Shinkansen Nozomi/Hikari, bought as single tickets, usually cheaper than a 7-day JR Pass for Tokyo-Kyoto-Osaka routes).",
+  "countries": {
+    "Japan": {
+      "foodPerDay": 20,
+      "activitiesPerDay": 10,
+      "localTransportPerDay": 8,
+      "airportTransfer": 12,
+      "minRating": 3.9
+    },
+    "Thailand": {
+      "foodPerDay": 18,
+      "activitiesPerDay": 12,
+      "localTransportPerDay": 6,
+      "airportTransfer": 10,
+      "minRating": 4.2
+    },
+    "Vietnam": {
+      "foodPerDay": 15,
+      "activitiesPerDay": 10,
+      "localTransportPerDay": 5,
+      "airportTransfer": 10,
+      "minRating": 4.2
+    },
+    "Zuid-Korea": {
+      "foodPerDay": 30,
+      "activitiesPerDay": 12,
+      "localTransportPerDay": 6,
+      "airportTransfer": 12,
+      "minRating": 4.0
+    },
+    "Taiwan": {
+      "foodPerDay": 22,
+      "activitiesPerDay": 10,
+      "localTransportPerDay": 5,
+      "airportTransfer": 10,
+      "minRating": 4.0
+    },
+    "Indonesie": {
+      "foodPerDay": 15,
+      "activitiesPerDay": 12,
+      "localTransportPerDay": 8,
+      "airportTransfer": 12,
+      "minRating": 4.2
+    },
+    "default": {
+      "foodPerDay": 25,
+      "activitiesPerDay": 12,
+      "localTransportPerDay": 6,
+      "airportTransfer": 12,
+      "minRating": 4.1
+    },
+    "China": {
+      "foodPerDay": 15,
+      "activitiesPerDay": 12,
+      "localTransportPerDay": 4,
+      "airportTransfer": 8,
+      "minRating": 4.0
+    }
   },
-  "Thailand": {
-   "foodPerDay": 18,
-   "activitiesPerDay": 12,
-   "localTransportPerDay": 6,
-   "airportTransfer": 10,
-   "minRating": 4.2
+  "legs": {
+    "Tokyo>Kyoto": 85,
+    "Kyoto>Osaka": 5,
+    "Kyoto>Nara": 5,
+    "Nara>Osaka": 5,
+    "Osaka>Hiroshima": 65,
+    "Kyoto>Hiroshima": 70,
+    "Hiroshima>Tokyo": 120,
+    "Osaka>Tokyo": 90,
+    "Tokyo>Kanazawa": 90,
+    "Kanazawa>Kyoto": 45,
+    "Tokyo>Nikko": 30,
+    "Tokyo>Kawaguchiko": 25,
+    "Kawaguchiko>Kyoto": 85,
+    "Tokyo>Sendai": 75,
+    "Osaka>Fukuoka": 95,
+    "Hiroshima>Fukuoka": 60,
+    "Bangkok>Chiang Mai": 45,
+    "Bangkok>Phuket": 50,
+    "Bangkok>Krabi": 50,
+    "Chiang Mai>Krabi": 70,
+    "Phuket>Krabi": 15,
+    "Krabi>Koh Lanta": 15,
+    "Bangkok>Koh Samui": 70,
+    "Chiang Mai>Chiang Rai": 10,
+    "Hanoi>Ha Long Bay": 30,
+    "Hanoi>Ninh Binh": 10,
+    "Hanoi>Hoi An": 55,
+    "Hanoi>Da Nang": 50,
+    "Da Nang>Hoi An": 8,
+    "Hoi An>Ho Chi Minh City": 55,
+    "Hue>Hoi An": 15,
+    "Hanoi>Hue": 50,
+    "Seoul>Busan": 45,
+    "Busan>Osaka": 120,
+    "Taipei>Hualien": 15,
+    "Taipei>Tainan": 35,
+    "Tainan>Kaohsiung": 5,
+    "Ninh Binh>Ha Long Bay": 25,
+    "Ha Long Bay>Hoi An": 75,
+    "Chiang Mai>Koh Samui": 80,
+    "Seoul>Gyeongju": 35,
+    "Gyeongju>Busan": 10,
+    "Chiang Rai>Bangkok": 45,
+    "Chongqing>Chengdu": 13,
+    "Chengdu>Xi'an": 35,
+    "Xi'an>Beijing": 70,
+    "Beijing>Chongqing": 120,
+    "Shanghai>Zhangjiajie": 80,
+    "Zhangjiajie>Chengdu": 60,
+    "Chongqing>Shanghai": 110,
+    "Xi'an>Chongqing": 40,
+    "Kyoto>Koyasan": 25,
+    "Koyasan>Osaka": 15
   },
-  "Vietnam": {
-   "foodPerDay": 15,
-   "activitiesPerDay": 10,
-   "localTransportPerDay": 5,
-   "airportTransfer": 10,
-   "minRating": 4.2
+  "unknownLegEstimate": 60,
+  "bags": {
+    "_note": "One checked suitcase (23 kg), there and back, when the cheapest fare has none. Researched Nov 2026: the cheapest long-haul fares to Japan on British Airways (Basic), Finnair (Light), Lufthansa/SWISS/Austrian (Economy Light) and KLM/Air France (Light) have NO checked bag; adding one costs about EUR 75-100 per direction (finnair.com extra baggage fees, ba.com Basic fare), so about EUR 180 return was the first estimate; Google Flights' booking page for the BA/JAL multi-city ticket (Nov 2026) shows '1st checked bag: EUR 90-114' for the whole trip, so EUR 110 per suitcase there and back. Google Flights cannot add a checked bag to a multi-city search, so this stays an estimate. Airlines in usuallyIncluded give a suitcase in every economy fare.",
+    "extraBagEstimatePP": 110,
+    "usuallyIncluded": [
+      "Emirates",
+      "Qatar Airways",
+      "Etihad",
+      "Turkish Airlines",
+      "Japan Airlines",
+      "JAL",
+      "ANA",
+      "Cathay Pacific",
+      "Singapore Airlines",
+      "Thai",
+      "Vietnam Airlines",
+      "EVA Air",
+      "Korean Air",
+      "China Airlines",
+      "Air China",
+      "China Eastern",
+      "China Southern",
+      "Hainan Airlines"
+    ],
+    "confirmedIncluded": [
+      {
+        "airline": "Eurowings and ANA",
+        "bookWith": "Austrian",
+        "note": "Owner checked (26 Nov 2026, DUS-HND 27 Jul / HND-DUS 12 Aug, Eurowings/ANA): Austrian, Google ('1st checked bag per passenger free') and Mytrip all show 1x 23 kg checked bag + 8 kg carry-on included, also for 2 adults (Mytrip/Gotogate EUR 971 p.p.)."
+      }
+    ]
   },
-  "Zuid-Korea": {
-   "foodPerDay": 30,
-   "activitiesPerDay": 12,
-   "localTransportPerDay": 6,
-   "airportTransfer": 12,
-   "minRating": 4.0
+  "comfort": {
+    "_note": "Owner's choice (Nov 2026): the cheapest real price wins; long flights are only flagged, never charged extra. Flights over maxHours one way are skipped.",
+    "hoursFree": 18,
+    "eurPerHour": 0,
+    "maxHours": 30
   },
-  "Taiwan": {
-   "foodPerDay": 22,
-   "activitiesPerDay": 10,
-   "localTransportPerDay": 5,
-   "airportTransfer": 10,
-   "minRating": 4.0
-  },
-  "Indonesie": {
-   "foodPerDay": 15,
-   "activitiesPerDay": 12,
-   "localTransportPerDay": 8,
-   "airportTransfer": 12,
-   "minRating": 4.2
-  },
-  "default": {
-   "foodPerDay": 25,
-   "activitiesPerDay": 12,
-   "localTransportPerDay": 6,
-   "airportTransfer": 12,
-   "minRating": 4.1
-  },
-  "China": {
-   "foodPerDay": 15,
-   "activitiesPerDay": 12,
-   "localTransportPerDay": 4,
-   "airportTransfer": 8,
-   "minRating": 4.0
-  }
- },
- "legs": {
-  "Tokyo>Kyoto": 85,
-  "Kyoto>Osaka": 5,
-  "Kyoto>Nara": 5,
-  "Nara>Osaka": 5,
-  "Osaka>Hiroshima": 65,
-  "Kyoto>Hiroshima": 70,
-  "Hiroshima>Tokyo": 120,
-  "Osaka>Tokyo": 90,
-  "Tokyo>Kanazawa": 90,
-  "Kanazawa>Kyoto": 45,
-  "Tokyo>Nikko": 30,
-  "Tokyo>Kawaguchiko": 25,
-  "Kawaguchiko>Kyoto": 85,
-  "Tokyo>Sendai": 75,
-  "Osaka>Fukuoka": 95,
-  "Hiroshima>Fukuoka": 60,
-  "Bangkok>Chiang Mai": 45,
-  "Bangkok>Phuket": 50,
-  "Bangkok>Krabi": 50,
-  "Chiang Mai>Krabi": 70,
-  "Phuket>Krabi": 15,
-  "Krabi>Koh Lanta": 15,
-  "Bangkok>Koh Samui": 70,
-  "Chiang Mai>Chiang Rai": 10,
-  "Hanoi>Ha Long Bay": 30,
-  "Hanoi>Ninh Binh": 10,
-  "Hanoi>Hoi An": 55,
-  "Hanoi>Da Nang": 50,
-  "Da Nang>Hoi An": 8,
-  "Hoi An>Ho Chi Minh City": 55,
-  "Hue>Hoi An": 15,
-  "Hanoi>Hue": 50,
-  "Seoul>Busan": 45,
-  "Busan>Osaka": 120,
-  "Taipei>Hualien": 15,
-  "Taipei>Tainan": 35,
-  "Tainan>Kaohsiung": 5,
-  "Ninh Binh>Ha Long Bay": 25,
-  "Ha Long Bay>Hoi An": 75,
-  "Chiang Mai>Koh Samui": 80,
-  "Seoul>Gyeongju": 35,
-  "Gyeongju>Busan": 10,
-  "Chiang Rai>Bangkok": 45,
-  "Chongqing>Chengdu": 13,
-  "Chengdu>Xi'an": 35,
-  "Xi'an>Beijing": 70,
-  "Beijing>Chongqing": 120,
-  "Shanghai>Zhangjiajie": 80,
-  "Zhangjiajie>Chengdu": 60,
-  "Chongqing>Shanghai": 110,
-  "Xi'an>Chongqing": 40,
-  "Kyoto>Koyasan": 25,
-  "Koyasan>Osaka": 15
- },
- "unknownLegEstimate": 60,
- "bags": {
-  "_note": "One checked suitcase (23 kg), there and back, when the cheapest fare has none. Researched Nov 2026: the cheapest long-haul fares to Japan on British Airways (Basic), Finnair (Light), Lufthansa/SWISS/Austrian (Economy Light) and KLM/Air France (Light) have NO checked bag; adding one costs about EUR 75-100 per direction (finnair.com extra baggage fees, ba.com Basic fare), so about EUR 180 return was the first estimate; Google Flights' booking page for the BA/JAL multi-city ticket (Nov 2026) shows '1st checked bag: EUR 90-114' for the whole trip, so EUR 110 per suitcase there and back. Google Flights cannot add a checked bag to a multi-city search, so this stays an estimate. Airlines in usuallyIncluded give a suitcase in every economy fare.",
-  "extraBagEstimatePP": 110,
-  "usuallyIncluded": [
-   "Emirates",
-   "Qatar Airways",
-   "Etihad",
-   "Turkish Airlines",
-   "Japan Airlines",
-   "JAL",
-   "ANA",
-   "Cathay Pacific",
-   "Singapore Airlines",
-   "Thai",
-   "Vietnam Airlines",
-   "EVA Air",
-   "Korean Air",
-   "China Airlines",
-   "Air China",
-   "China Eastern",
-   "China Southern",
-   "Hainan Airlines"
+  "_koyasanNote": "Koyasan: Nankai line from Osaka Namba + cable car (~2 h, ~EUR 15 one way; Koyasan World Heritage Ticket incl. buses ~EUR 22). Temple stays (shukubo) include vegetarian dinner and breakfast.",
+  "unavailableStays": [
+    {
+      "id": "rooms/1688365990830069293",
+      "name": "Standard Kogyo apartment, Ryogoku (Airbnb)",
+      "note": "Owner checked 26 Nov 2026: 'no apartments available' for 28 Jul - 2 Aug 2027, although Airbnb search lists it"
+    }
   ],
-  "confirmedIncluded": [
-   {
-    "airline": "Eurowings and ANA",
-    "bookWith": "Austrian",
-    "note": "Owner checked (26 Nov 2026, DUS-HND 27 Jul / HND-DUS 12 Aug, Eurowings/ANA): Austrian, Google ('1st checked bag per passenger free') and Mytrip all show 1x 23 kg checked bag + 8 kg carry-on included, also for 2 adults (Mytrip/Gotogate EUR 971 p.p.)."
-   }
-  ]
- },
- "comfort": {
-  "_note": "Owner's choice (Nov 2026): the cheapest real price wins; long flights are only flagged, never charged extra. Flights over maxHours one way are skipped.",
-  "hoursFree": 18,
-  "eurPerHour": 0,
-  "maxHours": 30
- },
- "_koyasanNote": "Koyasan: Nankai line from Osaka Namba + cable car (~2 h, ~EUR 15 one way; Koyasan World Heritage Ticket incl. buses ~EUR 22). Temple stays (shukubo) include vegetarian dinner and breakfast.",
- "unavailableStays": [
-  {
-   "id": "rooms/1688365990830069293",
-   "name": "Standard Kogyo apartment, Ryogoku (Airbnb)",
-   "note": "Owner checked 26 Nov 2026: 'no apartments available' for 28 Jul - 2 Aug 2027, although Airbnb search lists it"
+  "ownerStays": {
+    "jp-golden": {
+      "Tokyo": {
+        "checkin": "2027-07-28",
+        "nights": 5,
+        "source": "owner's choice (Booking.com)",
+        "pick": {
+          "name": "Kaku Studio Apartment Ikebukuro",
+          "src": "booking",
+          "total": 281,
+          "nightlyEur": 56,
+          "score10": 8.9,
+          "rating": 4.45,
+          "reviews": 266,
+          "miles": 3.8,
+          "beds": "double",
+          "kind": "Entire studio, 1 bathroom, 1 double bed, free cancellation",
+          "url": "https://www.booking.com/hotel/jp/ikebukuro-dong-jing-du.en-gb.html?checkin=2027-07-28&checkout=2027-08-02&group_adults=2&no_rooms=1"
+        }
+      },
+      "Koyasan": {
+        "checkin": "2027-08-08",
+        "nights": 1,
+        "source": "owner's choice, book on the temple's own site (price for Aug 2027 still to confirm)",
+        "pick": {
+          "name": "Koyasan Onsen Fukuchiin (temple stay)",
+          "src": "direct",
+          "total": 195,
+          "nightlyEur": 195,
+          "jpy": 34000,
+          "beds": "futons",
+          "kind": "Japanese room, shojin-ryori dinner + breakfast, onsen; about JPY 17,000 p.p. at 2 per room",
+          "url": "https://reserve.489ban.net/client/fukuchiin/4/detail/327096"
+        }
+      }
+    }
   }
- ]
 }

@@ -123,7 +123,7 @@ def _search_stays(pick, city, ci, co):
 
 def verify_stay(sv):
     pick = sv.get("pick")
-    if not pick or sv.get("estimated") or not pick.get("total"):
+    if not pick or sv.get("estimated") or not pick.get("total") or pick.get("src") == "direct":
         return None
     ci = sv["checkin"]
     co = (dt.date.fromisoformat(ci) + dt.timedelta(days=int(sv["nights"]))).isoformat()

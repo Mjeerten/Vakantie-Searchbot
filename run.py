@@ -708,7 +708,14 @@ def evaluate(plan, cfg, st, do_hotels):
         n = int(s["nights"])
         if redeye and i == len(plan["stops"]) - 1 and n > 1:
             n -= 1
-        if do_hotels and not s.get("skipHotel"):
+        own = (COSTS.get("ownerStays", {}).get(plan["id"]) or {}).get(s["city"])
+        if own and own["checkin"] == cursor.isoformat() and int(own["nights"]) == n:
+            # the owner picked this stay himself: keep it, no search
+            pk = own["pick"]
+            sv = {"city": s["city"], "nights": n, "checkin": cursor.isoformat(),
+                  "checkout": (cursor + dt.timedelta(days=n)).isoformat(), "source": own.get("source"),
+                  "url": pk["url"], "pick": pk, "ownerChoice": True, "pricePP": round(pk["total"] / 2)}
+        elif do_hotels and not s.get("skipHotel"):
             sv = pick_stay(s.get("hotelCity") or s["city"], cursor.isoformat(), n, rules, fx, {**cfg, **(plan.get("stay") or {})})
         else:
             sv = {"city": s["city"], "nights": n, "checkin": cursor.isoformat()}
