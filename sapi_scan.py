@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
-"""Japan flight scan through SearchApi.io (official API returning Google Flights results; no Google blocking).
+"""NOTE: for multi-city ("mc") a multi-airport search may return to a different home airport than it left from;
+verify mc prices per airport (one search per origin) before trusting them.
+Japan flight scan through SearchApi.io (official API returning Google Flights results; no Google blocking).
 Usage: python3 sapi_scan.py <in_checks.json> <out_checks.json> [max_credits]
 The API key is injected by the session's network proxy (never stored here). Credits are for Japan only.
 One search covers all five home airports at once (departure_id=AMS,BRU,DUS,EIN,RTM); searches shared by several

@@ -1,7 +1,7 @@
 {
  "updatedAt": "2026-11-25T23:52:34Z",
  "blocked": true,
- "queries": 90764,
+ "queries": 181528,
  "plans": {
   "jp-golden": [
    {
@@ -12,24 +12,10 @@
     "checkedAt": "2026-11-25T23:43:58Z",
     "source": "searchapi",
     "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhpCEgoyMDI3LTA3LTIzagcIARIDQU1TagcIARIDQlJVagcIARIDRFVTagcIARIDRUlOagcIARIDUlRNcgcIARIDVFlPGkISCjIwMjctMDgtMDhqBwgBEgNPU0FyBwgBEgNBTVNyBwgBEgNCUlVyBwgBEgNEVVNyBwgBEgNFSU5yBwgBEgNSVE1AAUgBcAGCAQsI____________AZgBAw&tfu=EgQIACACIgMSATA&hl=en&gl=nl&curr=EUR",
-    "pricePP": 1379,
     "airline": "British Airways",
-    "out": {
-     "pricePP": 1379,
-     "airline": "British Airways",
-     "stops": 1,
-     "duration": "16 hr 40 min",
-     "from": "Amsterdam Airport Schiphol",
-     "fromId": "AMS",
-     "departs": "Friday, July 23 7:20 AM",
-     "to": "Haneda Airport",
-     "arrives": "Saturday, July 24 7:00 AM",
-     "layovers": [
-      "Heathrow Airport"
-     ],
-     "airportChange": false
-    },
-    "cheapestPP": 1372
+    "cheapestPP": 1372,
+    "mixedPricePP": 1379,
+    "error": "multi-airport search: the return may land at another home airport; price not verified for this airport"
    },
    {
     "origin": "BRU",
@@ -39,24 +25,10 @@
     "checkedAt": "2026-11-25T23:43:58Z",
     "source": "searchapi",
     "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhpCEgoyMDI3LTA3LTIzagcIARIDQU1TagcIARIDQlJVagcIARIDRFVTagcIARIDRUlOagcIARIDUlRNcgcIARIDVFlPGkISCjIwMjctMDgtMDhqBwgBEgNPU0FyBwgBEgNBTVNyBwgBEgNCUlVyBwgBEgNEVVNyBwgBEgNFSU5yBwgBEgNSVE1AAUgBcAGCAQsI____________AZgBAw&tfu=EgQIACACIgMSATA&hl=en&gl=nl&curr=EUR",
-    "pricePP": 1405,
     "airline": "British Airways",
-    "out": {
-     "pricePP": 1405,
-     "airline": "British Airways",
-     "stops": 1,
-     "duration": "17 hr 10 min",
-     "from": "Brussels Airport",
-     "fromId": "BRU",
-     "departs": "Friday, July 23 10:45 AM",
-     "to": "Haneda Airport",
-     "arrives": "Saturday, July 24 10:55 AM",
-     "layovers": [
-      "Heathrow Airport"
-     ],
-     "airportChange": false
-    },
-    "cheapestPP": 1372
+    "cheapestPP": 1372,
+    "mixedPricePP": 1405,
+    "error": "multi-airport search: the return may land at another home airport; price not verified for this airport"
    },
    {
     "origin": "DUS",
@@ -66,24 +38,10 @@
     "checkedAt": "2026-11-25T23:43:58Z",
     "source": "searchapi",
     "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhpCEgoyMDI3LTA3LTIzagcIARIDQU1TagcIARIDQlJVagcIARIDRFVTagcIARIDRUlOagcIARIDUlRNcgcIARIDVFlPGkISCjIwMjctMDgtMDhqBwgBEgNPU0FyBwgBEgNBTVNyBwgBEgNCUlVyBwgBEgNEVVNyBwgBEgNFSU5yBwgBEgNSVE1AAUgBcAGCAQsI____________AZgBAw&tfu=EgQIACACIgMSATA&hl=en&gl=nl&curr=EUR",
-    "pricePP": 1372,
     "airline": "British Airways",
-    "out": {
-     "pricePP": 1372,
-     "airline": "British Airways",
-     "stops": 1,
-     "duration": "16 hr 50 min",
-     "from": "Duesseldorf Airport",
-     "fromId": "DUS",
-     "departs": "Friday, July 23 7:10 AM",
-     "to": "Haneda Airport",
-     "arrives": "Saturday, July 24 7:00 AM",
-     "layovers": [
-      "Heathrow Airport"
-     ],
-     "airportChange": false
-    },
-    "cheapestPP": 1372
+    "cheapestPP": 1372,
+    "mixedPricePP": 1372,
+    "error": "multi-airport search: the return may land at another home airport; price not verified for this airport"
    },
    {
     "origin": "EIN",
@@ -219,24 +177,10 @@
     "checkedAt": "2026-11-25T23:44:08Z",
     "source": "searchapi",
     "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhpCEgoyMDI3LTA3LTI0agcIARIDQU1TagcIARIDQlJVagcIARIDRFVTagcIARIDRUlOagcIARIDUlRNcgcIARIDVFlPGkISCjIwMjctMDgtMDlqBwgBEgNPU0FyBwgBEgNBTVNyBwgBEgNCUlVyBwgBEgNEVVNyBwgBEgNFSU5yBwgBEgNSVE1AAUgBcAGCAQsI____________AZgBAw&tfu=EgQIACACIgMSATA&hl=en&gl=nl&curr=EUR",
-    "pricePP": 1445,
     "airline": "Finnair",
-    "out": {
-     "pricePP": 1445,
-     "airline": "Finnair",
-     "stops": 1,
-     "duration": "18 hr 10 min",
-     "from": "Amsterdam Airport Schiphol",
-     "fromId": "AMS",
-     "departs": "Saturday, July 24 11:55 AM",
-     "to": "Narita International Airport",
-     "arrives": "Sunday, July 25 1:05 PM",
-     "layovers": [
-      "Helsinki Airport"
-     ],
-     "airportChange": false
-    },
-    "cheapestPP": 1300
+    "cheapestPP": 1300,
+    "mixedPricePP": 1445,
+    "error": "multi-airport search: the return may land at another home airport; price not verified for this airport"
    },
    {
     "origin": "BRU",
@@ -246,24 +190,10 @@
     "checkedAt": "2026-11-25T23:44:08Z",
     "source": "searchapi",
     "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhpCEgoyMDI3LTA3LTI0agcIARIDQU1TagcIARIDQlJVagcIARIDRFVTagcIARIDRUlOagcIARIDUlRNcgcIARIDVFlPGkISCjIwMjctMDgtMDlqBwgBEgNPU0FyBwgBEgNBTVNyBwgBEgNCUlVyBwgBEgNEVVNyBwgBEgNFSU5yBwgBEgNSVE1AAUgBcAGCAQsI____________AZgBAw&tfu=EgQIACACIgMSATA&hl=en&gl=nl&curr=EUR",
-    "pricePP": 1409,
     "airline": "Cathay Pacific",
-    "out": {
-     "pricePP": 1409,
-     "airline": "Cathay Pacific",
-     "stops": 1,
-     "duration": "17 hr 35 min",
-     "from": "Brussels Airport",
-     "fromId": "BRU",
-     "departs": "Saturday, July 24 1:05 PM",
-     "to": "Narita International Airport",
-     "arrives": "Sunday, July 25 1:40 PM",
-     "layovers": [
-      "Hong Kong International Airport"
-     ],
-     "airportChange": false
-    },
-    "cheapestPP": 1300
+    "cheapestPP": 1300,
+    "mixedPricePP": 1409,
+    "error": "multi-airport search: the return may land at another home airport; price not verified for this airport"
    },
    {
     "origin": "DUS",
@@ -273,24 +203,10 @@
     "checkedAt": "2026-11-25T23:44:08Z",
     "source": "searchapi",
     "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhpCEgoyMDI3LTA3LTI0agcIARIDQU1TagcIARIDQlJVagcIARIDRFVTagcIARIDRUlOagcIARIDUlRNcgcIARIDVFlPGkISCjIwMjctMDgtMDlqBwgBEgNPU0FyBwgBEgNBTVNyBwgBEgNCUlVyBwgBEgNEVVNyBwgBEgNFSU5yBwgBEgNSVE1AAUgBcAGCAQsI____________AZgBAw&tfu=EgQIACACIgMSATA&hl=en&gl=nl&curr=EUR",
-    "pricePP": 1300,
     "airline": "Qatar Airways",
-    "out": {
-     "pricePP": 1300,
-     "airline": "Qatar Airways",
-     "stops": 1,
-     "duration": "26 hr 50 min",
-     "from": "Duesseldorf Airport",
-     "fromId": "DUS",
-     "departs": "Saturday, July 24 9:20 AM",
-     "to": "Narita International Airport",
-     "arrives": "Sunday, July 25 7:10 PM",
-     "layovers": [
-      "Hamad International Airport"
-     ],
-     "airportChange": false
-    },
-    "cheapestPP": 1300
+    "cheapestPP": 1300,
+    "mixedPricePP": 1300,
+    "error": "multi-airport search: the return may land at another home airport; price not verified for this airport"
    },
    {
     "origin": "EIN",
@@ -426,10 +342,10 @@
     "checkedAt": "2026-11-25T23:44:18Z",
     "source": "searchapi",
     "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhpCEgoyMDI3LTA3LTI1agcIARIDQU1TagcIARIDQlJVagcIARIDRFVTagcIARIDRUlOagcIARIDUlRNcgcIARIDVFlPGkISCjIwMjctMDgtMTBqBwgBEgNPU0FyBwgBEgNBTVNyBwgBEgNCUlVyBwgBEgNEVVNyBwgBEgNFSU5yBwgBEgNSVE1AAUgBcAGCAQsI____________AZgBAw&tfu=EgQIACACIgMSATA&hl=en&gl=nl&curr=EUR",
-    "pricePP": 1349,
-    "airline": "Lufthansa and ANA",
+    "pricePP": 1139,
+    "airline": "British Airways and JAL",
     "out": {
-     "pricePP": 1349,
+     "pricePP": 1139,
      "airline": "Lufthansa and ANA",
      "stops": 1,
      "duration": "15 hr 40 min",
@@ -443,7 +359,9 @@
      ],
      "airportChange": false
     },
-    "cheapestPP": 1300
+    "cheapestPP": 1300,
+    "mixedPricePP": 1349,
+    "note": "verified with the same home airport both ways (out via London and Tokyo-Haneda to Osaka-Itami)"
    },
    {
     "origin": "BRU",
@@ -453,24 +371,10 @@
     "checkedAt": "2026-11-25T23:44:18Z",
     "source": "searchapi",
     "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhpCEgoyMDI3LTA3LTI1agcIARIDQU1TagcIARIDQlJVagcIARIDRFVTagcIARIDRUlOagcIARIDUlRNcgcIARIDVFlPGkISCjIwMjctMDgtMTBqBwgBEgNPU0FyBwgBEgNBTVNyBwgBEgNCUlVyBwgBEgNEVVNyBwgBEgNFSU5yBwgBEgNSVE1AAUgBcAGCAQsI____________AZgBAw&tfu=EgQIACACIgMSATA&hl=en&gl=nl&curr=EUR",
-    "pricePP": 1325,
     "airline": "British Airways",
-    "out": {
-     "pricePP": 1325,
-     "airline": "British Airways",
-     "stops": 1,
-     "duration": "17 hr 15 min",
-     "from": "Brussels Airport",
-     "fromId": "BRU",
-     "departs": "Sunday, July 25 10:40 AM",
-     "to": "Haneda Airport",
-     "arrives": "Monday, July 26 10:55 AM",
-     "layovers": [
-      "Heathrow Airport"
-     ],
-     "airportChange": false
-    },
-    "cheapestPP": 1300
+    "cheapestPP": 1300,
+    "mixedPricePP": 1325,
+    "error": "multi-airport search: the return may land at another home airport; price not verified for this airport"
    },
    {
     "origin": "DUS",
@@ -480,24 +384,10 @@
     "checkedAt": "2026-11-25T23:44:18Z",
     "source": "searchapi",
     "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhpCEgoyMDI3LTA3LTI1agcIARIDQU1TagcIARIDQlJVagcIARIDRFVTagcIARIDRUlOagcIARIDUlRNcgcIARIDVFlPGkISCjIwMjctMDgtMTBqBwgBEgNPU0FyBwgBEgNBTVNyBwgBEgNCUlVyBwgBEgNEVVNyBwgBEgNFSU5yBwgBEgNSVE1AAUgBcAGCAQsI____________AZgBAw&tfu=EgQIACACIgMSATA&hl=en&gl=nl&curr=EUR",
-    "pricePP": 1300,
     "airline": "Qatar Airways",
-    "out": {
-     "pricePP": 1300,
-     "airline": "Qatar Airways",
-     "stops": 1,
-     "duration": "20 hr 45 min",
-     "from": "Duesseldorf Airport",
-     "fromId": "DUS",
-     "departs": "Sunday, July 25 3:25 PM",
-     "to": "Narita International Airport",
-     "arrives": "Monday, July 26 7:10 PM",
-     "layovers": [
-      "Hamad International Airport"
-     ],
-     "airportChange": false
-    },
-    "cheapestPP": 1300
+    "cheapestPP": 1300,
+    "mixedPricePP": 1300,
+    "error": "multi-airport search: the return may land at another home airport; price not verified for this airport"
    },
    {
     "origin": "EIN",
@@ -634,24 +524,10 @@
     "checkedAt": "2026-11-25T23:44:28Z",
     "source": "searchapi",
     "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhpCEgoyMDI3LTA3LTI2agcIARIDQU1TagcIARIDQlJVagcIARIDRFVTagcIARIDRUlOagcIARIDUlRNcgcIARIDVFlPGkISCjIwMjctMDgtMTFqBwgBEgNPU0FyBwgBEgNBTVNyBwgBEgNCUlVyBwgBEgNEVVNyBwgBEgNFSU5yBwgBEgNSVE1AAUgBcAGCAQsI____________AZgBAw&tfu=EgQIACACIgMSATA&hl=en&gl=nl&curr=EUR",
-    "pricePP": 1307,
     "airline": "British Airways",
-    "out": {
-     "pricePP": 1307,
-     "airline": "British Airways",
-     "stops": 1,
-     "duration": "16 hr 45 min",
-     "from": "Amsterdam Airport Schiphol",
-     "fromId": "AMS",
-     "departs": "Monday, July 26 7:15 AM",
-     "to": "Haneda Airport",
-     "arrives": "Tuesday, July 27 7:00 AM",
-     "layovers": [
-      "Heathrow Airport"
-     ],
-     "airportChange": false
-    },
-    "cheapestPP": 1307
+    "cheapestPP": 1307,
+    "mixedPricePP": 1307,
+    "error": "multi-airport search: the return may land at another home airport; price not verified for this airport"
    },
    {
     "origin": "BRU",
@@ -661,24 +537,10 @@
     "checkedAt": "2026-11-25T23:44:28Z",
     "source": "searchapi",
     "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhpCEgoyMDI3LTA3LTI2agcIARIDQU1TagcIARIDQlJVagcIARIDRFVTagcIARIDRUlOagcIARIDUlRNcgcIARIDVFlPGkISCjIwMjctMDgtMTFqBwgBEgNPU0FyBwgBEgNBTVNyBwgBEgNCUlVyBwgBEgNEVVNyBwgBEgNFSU5yBwgBEgNSVE1AAUgBcAGCAQsI____________AZgBAw&tfu=EgQIACACIgMSATA&hl=en&gl=nl&curr=EUR",
-    "pricePP": 1317,
     "airline": "Finnair and JAL",
-    "out": {
-     "pricePP": 1317,
-     "airline": "Finnair and JAL",
-     "stops": 1,
-     "duration": "20 hr 10 min",
-     "from": "Brussels Airport",
-     "fromId": "BRU",
-     "departs": "Monday, July 26 10:45 AM",
-     "to": "Haneda Airport",
-     "arrives": "Tuesday, July 27 1:55 PM",
-     "layovers": [
-      "Helsinki Airport"
-     ],
-     "airportChange": false
-    },
-    "cheapestPP": 1307
+    "cheapestPP": 1307,
+    "mixedPricePP": 1317,
+    "error": "multi-airport search: the return may land at another home airport; price not verified for this airport"
    },
    {
     "origin": "DUS",
@@ -688,24 +550,10 @@
     "checkedAt": "2026-11-25T23:44:28Z",
     "source": "searchapi",
     "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhpCEgoyMDI3LTA3LTI2agcIARIDQU1TagcIARIDQlJVagcIARIDRFVTagcIARIDRUlOagcIARIDUlRNcgcIARIDVFlPGkISCjIwMjctMDgtMTFqBwgBEgNPU0FyBwgBEgNBTVNyBwgBEgNCUlVyBwgBEgNEVVNyBwgBEgNFSU5yBwgBEgNSVE1AAUgBcAGCAQsI____________AZgBAw&tfu=EgQIACACIgMSATA&hl=en&gl=nl&curr=EUR",
-    "pricePP": 1318,
     "airline": "Emirates",
-    "out": {
-     "pricePP": 1318,
-     "airline": "Emirates",
-     "stops": 1,
-     "duration": "19 hr 10 min",
-     "from": "Duesseldorf Airport",
-     "fromId": "DUS",
-     "departs": "Monday, July 26 3:25 PM",
-     "to": "Narita International Airport",
-     "arrives": "Tuesday, July 27 5:35 PM",
-     "layovers": [
-      "Dubai International Airport"
-     ],
-     "airportChange": false
-    },
-    "cheapestPP": 1307
+    "cheapestPP": 1307,
+    "mixedPricePP": 1318,
+    "error": "multi-airport search: the return may land at another home airport; price not verified for this airport"
    },
    {
     "origin": "EIN",
@@ -841,24 +689,10 @@
     "checkedAt": "2026-11-25T23:44:40Z",
     "source": "searchapi",
     "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhpCEgoyMDI3LTA3LTI3agcIARIDQU1TagcIARIDQlJVagcIARIDRFVTagcIARIDRUlOagcIARIDUlRNcgcIARIDVFlPGkISCjIwMjctMDgtMTJqBwgBEgNPU0FyBwgBEgNBTVNyBwgBEgNCUlVyBwgBEgNEVVNyBwgBEgNFSU5yBwgBEgNSVE1AAUgBcAGCAQsI____________AZgBAw&tfu=EgQIACACIgMSATA&hl=en&gl=nl&curr=EUR",
-    "pricePP": 1373,
     "airline": "Lufthansa and ANA",
-    "out": {
-     "pricePP": 1373,
-     "airline": "Lufthansa and ANA",
-     "stops": 1,
-     "duration": "15 hr 40 min",
-     "from": "Amsterdam Airport Schiphol",
-     "fromId": "AMS",
-     "departs": "Tuesday, July 27 8:15 AM",
-     "to": "Haneda Airport",
-     "arrives": "Wednesday, July 28 6:55 AM",
-     "layovers": [
-      "Munich International Airport"
-     ],
-     "airportChange": false
-    },
-    "cheapestPP": 1263
+    "cheapestPP": 1263,
+    "mixedPricePP": 1373,
+    "error": "multi-airport search: the return may land at another home airport; price not verified for this airport"
    },
    {
     "origin": "BRU",
@@ -868,10 +702,10 @@
     "checkedAt": "2026-11-25T23:44:40Z",
     "source": "searchapi",
     "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhpCEgoyMDI3LTA3LTI3agcIARIDQU1TagcIARIDQlJVagcIARIDRFVTagcIARIDRUlOagcIARIDUlRNcgcIARIDVFlPGkISCjIwMjctMDgtMTJqBwgBEgNPU0FyBwgBEgNBTVNyBwgBEgNCUlVyBwgBEgNEVVNyBwgBEgNFSU5yBwgBEgNSVE1AAUgBcAGCAQsI____________AZgBAw&tfu=EgQIACACIgMSATA&hl=en&gl=nl&curr=EUR",
-    "pricePP": 1289,
-    "airline": "Finnair and JAL",
+    "pricePP": 1117,
+    "airline": "British Airways and JAL",
     "out": {
-     "pricePP": 1289,
+     "pricePP": 1117,
      "airline": "Finnair and JAL",
      "stops": 1,
      "duration": "20 hr 10 min",
@@ -885,7 +719,9 @@
      ],
      "airportChange": false
     },
-    "cheapestPP": 1263
+    "cheapestPP": 1263,
+    "mixedPricePP": 1289,
+    "note": "verified with the same home airport both ways (out via London and Tokyo-Haneda to Osaka-Itami)"
    },
    {
     "origin": "DUS",
@@ -895,24 +731,10 @@
     "checkedAt": "2026-11-25T23:44:40Z",
     "source": "searchapi",
     "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhpCEgoyMDI3LTA3LTI3agcIARIDQU1TagcIARIDQlJVagcIARIDRFVTagcIARIDRUlOagcIARIDUlRNcgcIARIDVFlPGkISCjIwMjctMDgtMTJqBwgBEgNPU0FyBwgBEgNBTVNyBwgBEgNCUlVyBwgBEgNEVVNyBwgBEgNFSU5yBwgBEgNSVE1AAUgBcAGCAQsI____________AZgBAw&tfu=EgQIACACIgMSATA&hl=en&gl=nl&curr=EUR",
-    "pricePP": 1263,
     "airline": "Finnair and JAL",
-    "out": {
-     "pricePP": 1263,
-     "airline": "Finnair and JAL",
-     "stops": 1,
-     "duration": "19 hr 55 min",
-     "from": "Duesseldorf Airport",
-     "fromId": "DUS",
-     "departs": "Tuesday, July 27 11:00 AM",
-     "to": "Haneda Airport",
-     "arrives": "Wednesday, July 28 1:55 PM",
-     "layovers": [
-      "Helsinki Airport"
-     ],
-     "airportChange": false
-    },
-    "cheapestPP": 1263
+    "cheapestPP": 1263,
+    "mixedPricePP": 1263,
+    "error": "multi-airport search: the return may land at another home airport; price not verified for this airport"
    },
    {
     "origin": "EIN",
@@ -1048,24 +870,10 @@
     "checkedAt": "2026-11-25T23:44:50Z",
     "source": "searchapi",
     "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhpCEgoyMDI3LTA3LTI4agcIARIDQU1TagcIARIDQlJVagcIARIDRFVTagcIARIDRUlOagcIARIDUlRNcgcIARIDVFlPGkISCjIwMjctMDgtMTNqBwgBEgNPU0FyBwgBEgNBTVNyBwgBEgNCUlVyBwgBEgNEVVNyBwgBEgNFSU5yBwgBEgNSVE1AAUgBcAGCAQsI____________AZgBAw&tfu=EgQIACACIgMSATA&hl=en&gl=nl&curr=EUR",
-    "pricePP": 1362,
     "airline": "British Airways",
-    "out": {
-     "pricePP": 1362,
-     "airline": "British Airways",
-     "stops": 1,
-     "duration": "20 hr 10 min",
-     "from": "Amsterdam Airport Schiphol",
-     "fromId": "AMS",
-     "departs": "Wednesday, July 28 7:45 AM",
-     "to": "Haneda Airport",
-     "arrives": "Thursday, July 29 10:55 AM",
-     "layovers": [
-      "Heathrow Airport"
-     ],
-     "airportChange": false
-    },
-    "cheapestPP": 1310
+    "cheapestPP": 1310,
+    "mixedPricePP": 1362,
+    "error": "multi-airport search: the return may land at another home airport; price not verified for this airport"
    },
    {
     "origin": "BRU",
@@ -1075,24 +883,10 @@
     "checkedAt": "2026-11-25T23:44:50Z",
     "source": "searchapi",
     "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhpCEgoyMDI3LTA3LTI4agcIARIDQU1TagcIARIDQlJVagcIARIDRFVTagcIARIDRUlOagcIARIDUlRNcgcIARIDVFlPGkISCjIwMjctMDgtMTNqBwgBEgNPU0FyBwgBEgNBTVNyBwgBEgNCUlVyBwgBEgNEVVNyBwgBEgNFSU5yBwgBEgNSVE1AAUgBcAGCAQsI____________AZgBAw&tfu=EgQIACACIgMSATA&hl=en&gl=nl&curr=EUR",
-    "pricePP": 1365,
     "airline": "British Airways",
-    "out": {
-     "pricePP": 1365,
-     "airline": "British Airways",
-     "stops": 1,
-     "duration": "26 hr 45 min",
-     "from": "Brussels Airport",
-     "fromId": "BRU",
-     "departs": "Wednesday, July 28 9:15 PM",
-     "to": "Haneda Airport",
-     "arrives": "Friday, July 30 7:00 AM",
-     "layovers": [
-      "Heathrow Airport"
-     ],
-     "airportChange": false
-    },
-    "cheapestPP": 1310
+    "cheapestPP": 1310,
+    "mixedPricePP": 1365,
+    "error": "multi-airport search: the return may land at another home airport; price not verified for this airport"
    },
    {
     "origin": "DUS",
@@ -1102,24 +896,10 @@
     "checkedAt": "2026-11-25T23:44:50Z",
     "source": "searchapi",
     "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhpCEgoyMDI3LTA3LTI4agcIARIDQU1TagcIARIDQlJVagcIARIDRFVTagcIARIDRUlOagcIARIDUlRNcgcIARIDVFlPGkISCjIwMjctMDgtMTNqBwgBEgNPU0FyBwgBEgNBTVNyBwgBEgNCUlVyBwgBEgNEVVNyBwgBEgNFSU5yBwgBEgNSVE1AAUgBcAGCAQsI____________AZgBAw&tfu=EgQIACACIgMSATA&hl=en&gl=nl&curr=EUR",
-    "pricePP": 1310,
     "airline": "Finnair and JAL",
-    "out": {
-     "pricePP": 1310,
-     "airline": "Finnair and JAL",
-     "stops": 1,
-     "duration": "22 hr 0 min",
-     "from": "Duesseldorf Airport",
-     "fromId": "DUS",
-     "departs": "Wednesday, July 28 8:55 AM",
-     "to": "Haneda Airport",
-     "arrives": "Thursday, July 29 1:55 PM",
-     "layovers": [
-      "Helsinki Airport"
-     ],
-     "airportChange": false
-    },
-    "cheapestPP": 1310
+    "cheapestPP": 1310,
+    "mixedPricePP": 1310,
+    "error": "multi-airport search: the return may land at another home airport; price not verified for this airport"
    },
    {
     "origin": "EIN",
@@ -1257,24 +1037,10 @@
     "checkedAt": "2026-11-25T23:45:16Z",
     "source": "searchapi",
     "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhpCEgoyMDI3LTA3LTIzagcIARIDQU1TagcIARIDQlJVagcIARIDRFVTagcIARIDRUlOagcIARIDUlRNcgcIARIDT1NBGkISCjIwMjctMDgtMDhqBwgBEgNUWU9yBwgBEgNBTVNyBwgBEgNCUlVyBwgBEgNEVVNyBwgBEgNFSU5yBwgBEgNSVE1AAUgBcAGCAQsI____________AZgBAw&tfu=EgQIACACIgMSATA&hl=en&gl=nl&curr=EUR",
-    "pricePP": 1372,
     "airline": "Finnair",
-    "out": {
-     "pricePP": 1372,
-     "airline": "Finnair",
-     "stops": 1,
-     "duration": "34 hr 10 min",
-     "from": "Amsterdam Airport Schiphol",
-     "fromId": "AMS",
-     "departs": "Friday, July 23 7:25 PM",
-     "to": "Kansai International Airport",
-     "arrives": "Sunday, July 25 12:35 PM",
-     "layovers": [
-      "Helsinki Airport"
-     ],
-     "airportChange": false
-    },
-    "cheapestPP": 1235
+    "cheapestPP": 1235,
+    "mixedPricePP": 1372,
+    "error": "multi-airport search: the return may land at another home airport; price not verified for this airport"
    },
    {
     "origin": "BRU",
@@ -1284,25 +1050,10 @@
     "checkedAt": "2026-11-25T23:45:16Z",
     "source": "searchapi",
     "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhpCEgoyMDI3LTA3LTIzagcIARIDQU1TagcIARIDQlJVagcIARIDRFVTagcIARIDRUlOagcIARIDUlRNcgcIARIDT1NBGkISCjIwMjctMDgtMDhqBwgBEgNUWU9yBwgBEgNBTVNyBwgBEgNCUlVyBwgBEgNEVVNyBwgBEgNFSU5yBwgBEgNSVE1AAUgBcAGCAQsI____________AZgBAw&tfu=EgQIACACIgMSATA&hl=en&gl=nl&curr=EUR",
-    "pricePP": 1235,
     "airline": "British Airways and JAL",
-    "out": {
-     "pricePP": 1235,
-     "airline": "British Airways and JAL",
-     "stops": 2,
-     "duration": "21 hr 50 min",
-     "from": "Brussels Airport",
-     "fromId": "BRU",
-     "departs": "Friday, July 23 10:45 AM",
-     "to": "Osaka Itami Airport",
-     "arrives": "Saturday, July 24 3:35 PM",
-     "layovers": [
-      "Heathrow Airport",
-      "Haneda Airport"
-     ],
-     "airportChange": false
-    },
-    "cheapestPP": 1235
+    "cheapestPP": 1235,
+    "mixedPricePP": 1235,
+    "error": "multi-airport search: the return may land at another home airport; price not verified for this airport"
    },
    {
     "origin": "DUS",
@@ -1312,24 +1063,10 @@
     "checkedAt": "2026-11-25T23:45:16Z",
     "source": "searchapi",
     "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhpCEgoyMDI3LTA3LTIzagcIARIDQU1TagcIARIDQlJVagcIARIDRFVTagcIARIDRUlOagcIARIDUlRNcgcIARIDT1NBGkISCjIwMjctMDgtMDhqBwgBEgNUWU9yBwgBEgNBTVNyBwgBEgNCUlVyBwgBEgNEVVNyBwgBEgNFSU5yBwgBEgNSVE1AAUgBcAGCAQsI____________AZgBAw&tfu=EgQIACACIgMSATA&hl=en&gl=nl&curr=EUR",
-    "pricePP": 1289,
     "airline": "Qatar Airways",
-    "out": {
-     "pricePP": 1289,
-     "airline": "Qatar Airways",
-     "stops": 1,
-     "duration": "43 hr 0 min",
-     "from": "Duesseldorf Airport",
-     "fromId": "DUS",
-     "departs": "Friday, July 23 3:25 PM",
-     "to": "Kansai International Airport",
-     "arrives": "Sunday, July 25 5:25 PM",
-     "layovers": [
-      "Hamad International Airport"
-     ],
-     "airportChange": false
-    },
-    "cheapestPP": 1235
+    "cheapestPP": 1235,
+    "mixedPricePP": 1289,
+    "error": "multi-airport search: the return may land at another home airport; price not verified for this airport"
    },
    {
     "origin": "EIN",
@@ -1339,25 +1076,10 @@
     "checkedAt": "2026-11-25T23:45:16Z",
     "source": "searchapi",
     "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhpCEgoyMDI3LTA3LTIzagcIARIDQU1TagcIARIDQlJVagcIARIDRFVTagcIARIDRUlOagcIARIDUlRNcgcIARIDT1NBGkISCjIwMjctMDgtMDhqBwgBEgNUWU9yBwgBEgNBTVNyBwgBEgNCUlVyBwgBEgNEVVNyBwgBEgNFSU5yBwgBEgNSVE1AAUgBcAGCAQsI____________AZgBAw&tfu=EgQIACACIgMSATA&hl=en&gl=nl&curr=EUR",
-    "pricePP": 2263,
     "airline": "KLM and ANA",
-    "out": {
-     "pricePP": 2263,
-     "airline": "KLM and ANA",
-     "stops": 2,
-     "duration": "29 hr 30 min",
-     "from": "Eindhoven Airport",
-     "fromId": "EIN",
-     "departs": "Friday, July 23 6:25 AM",
-     "to": "Osaka Itami Airport",
-     "arrives": "Saturday, July 24 6:55 PM",
-     "layovers": [
-      "Amsterdam Airport Schiphol",
-      "Narita International Airport"
-     ],
-     "airportChange": false
-    },
-    "cheapestPP": 1235
+    "cheapestPP": 1235,
+    "mixedPricePP": 2263,
+    "error": "multi-airport search: the return may land at another home airport; price not verified for this airport"
    },
    {
     "origin": "RTM",
@@ -1468,24 +1190,10 @@
     "checkedAt": "2026-11-25T23:45:25Z",
     "source": "searchapi",
     "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhpCEgoyMDI3LTA3LTI0agcIARIDQU1TagcIARIDQlJVagcIARIDRFVTagcIARIDRUlOagcIARIDUlRNcgcIARIDT1NBGkISCjIwMjctMDgtMDlqBwgBEgNUWU9yBwgBEgNBTVNyBwgBEgNCUlVyBwgBEgNEVVNyBwgBEgNFSU5yBwgBEgNSVE1AAUgBcAGCAQsI____________AZgBAw&tfu=EgQIACACIgMSATA&hl=en&gl=nl&curr=EUR",
-    "pricePP": 1364,
     "airline": "Finnair",
-    "out": {
-     "pricePP": 1364,
-     "airline": "Finnair",
-     "stops": 1,
-     "duration": "17 hr 40 min",
-     "from": "Amsterdam Airport Schiphol",
-     "fromId": "AMS",
-     "departs": "Saturday, July 24 11:55 AM",
-     "to": "Kansai International Airport",
-     "arrives": "Sunday, July 25 12:35 PM",
-     "layovers": [
-      "Helsinki Airport"
-     ],
-     "airportChange": false
-    },
-    "cheapestPP": 1275
+    "cheapestPP": 1275,
+    "mixedPricePP": 1364,
+    "error": "multi-airport search: the return may land at another home airport; price not verified for this airport"
    },
    {
     "origin": "BRU",
@@ -1495,25 +1203,10 @@
     "checkedAt": "2026-11-25T23:45:25Z",
     "source": "searchapi",
     "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhpCEgoyMDI3LTA3LTI0agcIARIDQU1TagcIARIDQlJVagcIARIDRFVTagcIARIDRUlOagcIARIDUlRNcgcIARIDT1NBGkISCjIwMjctMDgtMDlqBwgBEgNUWU9yBwgBEgNBTVNyBwgBEgNCUlVyBwgBEgNEVVNyBwgBEgNFSU5yBwgBEgNSVE1AAUgBcAGCAQsI____________AZgBAw&tfu=EgQIACACIgMSATA&hl=en&gl=nl&curr=EUR",
-    "pricePP": 1275,
     "airline": "British Airways and JAL",
-    "out": {
-     "pricePP": 1275,
-     "airline": "British Airways and JAL",
-     "stops": 2,
-     "duration": "21 hr 55 min",
-     "from": "Brussels Airport",
-     "fromId": "BRU",
-     "departs": "Saturday, July 24 10:40 AM",
-     "to": "Osaka Itami Airport",
-     "arrives": "Sunday, July 25 3:35 PM",
-     "layovers": [
-      "Heathrow Airport",
-      "Haneda Airport"
-     ],
-     "airportChange": false
-    },
-    "cheapestPP": 1275
+    "cheapestPP": 1275,
+    "mixedPricePP": 1275,
+    "error": "multi-airport search: the return may land at another home airport; price not verified for this airport"
    },
    {
     "origin": "DUS",
@@ -1523,24 +1216,10 @@
     "checkedAt": "2026-11-25T23:45:25Z",
     "source": "searchapi",
     "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhpCEgoyMDI3LTA3LTI0agcIARIDQU1TagcIARIDQlJVagcIARIDRFVTagcIARIDRUlOagcIARIDUlRNcgcIARIDT1NBGkISCjIwMjctMDgtMDlqBwgBEgNUWU9yBwgBEgNBTVNyBwgBEgNCUlVyBwgBEgNEVVNyBwgBEgNFSU5yBwgBEgNSVE1AAUgBcAGCAQsI____________AZgBAw&tfu=EgQIACACIgMSATA&hl=en&gl=nl&curr=EUR",
-    "pricePP": 1296,
     "airline": "Qatar Airways",
-    "out": {
-     "pricePP": 1296,
-     "airline": "Qatar Airways",
-     "stops": 1,
-     "duration": "25 hr 5 min",
-     "from": "Duesseldorf Airport",
-     "fromId": "DUS",
-     "departs": "Saturday, July 24 9:20 AM",
-     "to": "Kansai International Airport",
-     "arrives": "Sunday, July 25 5:25 PM",
-     "layovers": [
-      "Hamad International Airport"
-     ],
-     "airportChange": false
-    },
-    "cheapestPP": 1275
+    "cheapestPP": 1275,
+    "mixedPricePP": 1296,
+    "error": "multi-airport search: the return may land at another home airport; price not verified for this airport"
    },
    {
     "origin": "EIN",
@@ -1660,10 +1339,10 @@
     "checkedAt": "2026-11-25T23:45:35Z",
     "source": "searchapi",
     "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhpCEgoyMDI3LTA3LTI1agcIARIDQU1TagcIARIDQlJVagcIARIDRFVTagcIARIDRUlOagcIARIDUlRNcgcIARIDT1NBGkISCjIwMjctMDgtMTBqBwgBEgNUWU9yBwgBEgNBTVNyBwgBEgNCUlVyBwgBEgNEVVNyBwgBEgNFSU5yBwgBEgNSVE1AAUgBcAGCAQsI____________AZgBAw&tfu=EgQIACACIgMSATA&hl=en&gl=nl&curr=EUR",
-    "pricePP": 1100,
+    "pricePP": 1139,
     "airline": "British Airways and JAL",
     "out": {
-     "pricePP": 1100,
+     "pricePP": 1139,
      "airline": "British Airways and JAL",
      "stops": 2,
      "duration": "22 hr 30 min",
@@ -1678,7 +1357,9 @@
      ],
      "airportChange": false
     },
-    "cheapestPP": 1100
+    "cheapestPP": 1100,
+    "mixedPricePP": 1100,
+    "note": "verified with the same home airport both ways (out via London and Tokyo-Haneda to Osaka-Itami)"
    },
    {
     "origin": "BRU",
@@ -1688,25 +1369,10 @@
     "checkedAt": "2026-11-25T23:45:35Z",
     "source": "searchapi",
     "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhpCEgoyMDI3LTA3LTI1agcIARIDQU1TagcIARIDQlJVagcIARIDRFVTagcIARIDRUlOagcIARIDUlRNcgcIARIDT1NBGkISCjIwMjctMDgtMTBqBwgBEgNUWU9yBwgBEgNBTVNyBwgBEgNCUlVyBwgBEgNEVVNyBwgBEgNFSU5yBwgBEgNSVE1AAUgBcAGCAQsI____________AZgBAw&tfu=EgQIACACIgMSATA&hl=en&gl=nl&curr=EUR",
-    "pricePP": 1313,
     "airline": "Finnair and JAL",
-    "out": {
-     "pricePP": 1313,
-     "airline": "Finnair and JAL",
-     "stops": 2,
-     "duration": "23 hr 50 min",
-     "from": "Brussels Airport",
-     "fromId": "BRU",
-     "departs": "Sunday, July 25 10:45 AM",
-     "to": "Osaka Itami Airport",
-     "arrives": "Monday, July 26 5:35 PM",
-     "layovers": [
-      "Helsinki Airport",
-      "Haneda Airport"
-     ],
-     "airportChange": false
-    },
-    "cheapestPP": 1100
+    "cheapestPP": 1100,
+    "mixedPricePP": 1313,
+    "error": "multi-airport search: the return may land at another home airport; price not verified for this airport"
    },
    {
     "origin": "DUS",
@@ -1716,25 +1382,10 @@
     "checkedAt": "2026-11-25T23:45:35Z",
     "source": "searchapi",
     "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhpCEgoyMDI3LTA3LTI1agcIARIDQU1TagcIARIDQlJVagcIARIDRFVTagcIARIDRUlOagcIARIDUlRNcgcIARIDT1NBGkISCjIwMjctMDgtMTBqBwgBEgNUWU9yBwgBEgNBTVNyBwgBEgNCUlVyBwgBEgNEVVNyBwgBEgNFSU5yBwgBEgNSVE1AAUgBcAGCAQsI____________AZgBAw&tfu=EgQIACACIgMSATA&hl=en&gl=nl&curr=EUR",
-    "pricePP": 1188,
     "airline": "Lufthansa and ANA",
-    "out": {
-     "pricePP": 1188,
-     "airline": "Lufthansa and ANA",
-     "stops": 2,
-     "duration": "20 hr 0 min",
-     "from": "Duesseldorf Airport",
-     "fromId": "DUS",
-     "departs": "Sunday, July 25 6:20 AM",
-     "to": "Osaka Itami Airport",
-     "arrives": "Monday, July 26 9:20 AM",
-     "layovers": [
-      "Munich International Airport",
-      "Haneda Airport"
-     ],
-     "airportChange": false
-    },
-    "cheapestPP": 1100
+    "cheapestPP": 1100,
+    "mixedPricePP": 1188,
+    "error": "multi-airport search: the return may land at another home airport; price not verified for this airport"
    },
    {
     "origin": "EIN",
@@ -1744,25 +1395,10 @@
     "checkedAt": "2026-11-25T23:45:35Z",
     "source": "searchapi",
     "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhpCEgoyMDI3LTA3LTI1agcIARIDQU1TagcIARIDQlJVagcIARIDRFVTagcIARIDRUlOagcIARIDUlRNcgcIARIDT1NBGkISCjIwMjctMDgtMTBqBwgBEgNUWU9yBwgBEgNBTVNyBwgBEgNCUlVyBwgBEgNEVVNyBwgBEgNFSU5yBwgBEgNSVE1AAUgBcAGCAQsI____________AZgBAw&tfu=EgQIACACIgMSATA&hl=en&gl=nl&curr=EUR",
-    "pricePP": 2101,
     "airline": "KLM and ANA",
-    "out": {
-     "pricePP": 2101,
-     "airline": "KLM and ANA",
-     "stops": 2,
-     "duration": "29 hr 30 min",
-     "from": "Eindhoven Airport",
-     "fromId": "EIN",
-     "departs": "Sunday, July 25 6:25 AM",
-     "to": "Osaka Itami Airport",
-     "arrives": "Monday, July 26 6:55 PM",
-     "layovers": [
-      "Amsterdam Airport Schiphol",
-      "Narita International Airport"
-     ],
-     "airportChange": false
-    },
-    "cheapestPP": 1100
+    "cheapestPP": 1100,
+    "mixedPricePP": 2101,
+    "error": "multi-airport search: the return may land at another home airport; price not verified for this airport"
    },
    {
     "origin": "RTM",
@@ -1872,25 +1508,10 @@
     "checkedAt": "2026-11-25T23:45:43Z",
     "source": "searchapi",
     "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhpCEgoyMDI3LTA3LTI2agcIARIDQU1TagcIARIDQlJVagcIARIDRFVTagcIARIDRUlOagcIARIDUlRNcgcIARIDT1NBGkISCjIwMjctMDgtMTFqBwgBEgNUWU9yBwgBEgNBTVNyBwgBEgNCUlVyBwgBEgNEVVNyBwgBEgNFSU5yBwgBEgNSVE1AAUgBcAGCAQsI____________AZgBAw&tfu=EgQIACACIgMSATA&hl=en&gl=nl&curr=EUR",
-    "pricePP": 1134,
     "airline": "British Airways and JAL",
-    "out": {
-     "pricePP": 1134,
-     "airline": "British Airways and JAL",
-     "stops": 2,
-     "duration": "20 hr 20 min",
-     "from": "Duesseldorf Airport",
-     "fromId": "DUS",
-     "departs": "Monday, July 26 10:40 AM",
-     "to": "Kansai International Airport",
-     "arrives": "Tuesday, July 27 2:00 PM",
-     "layovers": [
-      "Heathrow Airport",
-      "Haneda Airport"
-     ],
-     "airportChange": false
-    },
-    "cheapestPP": 1102
+    "cheapestPP": 1102,
+    "mixedPricePP": 1134,
+    "error": "multi-airport search: the return may land at another home airport; price not verified for this airport"
    },
    {
     "origin": "EIN",
@@ -1910,24 +1531,10 @@
     "checkedAt": "2026-11-25T23:45:43Z",
     "source": "searchapi",
     "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhpCEgoyMDI3LTA3LTI2agcIARIDQU1TagcIARIDQlJVagcIARIDRFVTagcIARIDRUlOagcIARIDUlRNcgcIARIDT1NBGkISCjIwMjctMDgtMTFqBwgBEgNUWU9yBwgBEgNBTVNyBwgBEgNCUlVyBwgBEgNEVVNyBwgBEgNFSU5yBwgBEgNSVE1AAUgBcAGCAQsI____________AZgBAw&tfu=EgQIACACIgMSATA&hl=en&gl=nl&curr=EUR",
-    "pricePP": 1241,
     "airline": "Finnair",
-    "out": {
-     "pricePP": 1241,
-     "airline": "Finnair",
-     "stops": 1,
-     "duration": "18 hr 50 min",
-     "from": "Brussels Airport",
-     "fromId": "BRU",
-     "departs": "Monday, July 26 10:45 AM",
-     "to": "Kansai International Airport",
-     "arrives": "Tuesday, July 27 12:35 PM",
-     "layovers": [
-      "Helsinki Airport"
-     ],
-     "airportChange": false
-    },
-    "cheapestPP": 1102
+    "cheapestPP": 1102,
+    "mixedPricePP": 1241,
+    "error": "multi-airport search: the return may land at another home airport; price not verified for this airport"
    },
    {
     "origin": "AMS",
@@ -1937,25 +1544,10 @@
     "checkedAt": "2026-11-25T23:45:43Z",
     "source": "searchapi",
     "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhpCEgoyMDI3LTA3LTI2agcIARIDQU1TagcIARIDQlJVagcIARIDRFVTagcIARIDRUlOagcIARIDUlRNcgcIARIDT1NBGkISCjIwMjctMDgtMTFqBwgBEgNUWU9yBwgBEgNBTVNyBwgBEgNCUlVyBwgBEgNEVVNyBwgBEgNFSU5yBwgBEgNSVE1AAUgBcAGCAQsI____________AZgBAw&tfu=EgQIACACIgMSATA&hl=en&gl=nl&curr=EUR",
-    "pricePP": 1102,
     "airline": "British Airways and JAL",
-    "out": {
-     "pricePP": 1102,
-     "airline": "British Airways and JAL",
-     "stops": 2,
-     "duration": "20 hr 35 min",
-     "from": "Amsterdam Airport Schiphol",
-     "fromId": "AMS",
-     "departs": "Monday, July 26 10:25 AM",
-     "to": "Kansai International Airport",
-     "arrives": "Tuesday, July 27 2:00 PM",
-     "layovers": [
-      "Heathrow Airport",
-      "Haneda Airport"
-     ],
-     "airportChange": false
-    },
-    "cheapestPP": 1102
+    "cheapestPP": 1102,
+    "mixedPricePP": 1102,
+    "error": "multi-airport search: the return may land at another home airport; price not verified for this airport"
    },
    {
     "origin": "RTM",
@@ -2065,25 +1657,10 @@
     "checkedAt": "2026-11-25T23:45:52Z",
     "source": "searchapi",
     "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhpCEgoyMDI3LTA3LTI3agcIARIDQU1TagcIARIDQlJVagcIARIDRFVTagcIARIDRUlOagcIARIDUlRNcgcIARIDT1NBGkISCjIwMjctMDgtMTJqBwgBEgNUWU9yBwgBEgNBTVNyBwgBEgNCUlVyBwgBEgNEVVNyBwgBEgNFSU5yBwgBEgNSVE1AAUgBcAGCAQsI____________AZgBAw&tfu=EgQIACACIgMSATA&hl=en&gl=nl&curr=EUR",
-    "pricePP": 1260,
     "airline": "British Airways and JAL",
-    "out": {
-     "pricePP": 1260,
-     "airline": "British Airways and JAL",
-     "stops": 2,
-     "duration": "20 hr 30 min",
-     "from": "Amsterdam Airport Schiphol",
-     "fromId": "AMS",
-     "departs": "Tuesday, July 27 7:10 AM",
-     "to": "Osaka Itami Airport",
-     "arrives": "Wednesday, July 28 10:40 AM",
-     "layovers": [
-      "Heathrow Airport",
-      "Haneda Airport"
-     ],
-     "airportChange": false
-    },
-    "cheapestPP": 1050
+    "cheapestPP": 1050,
+    "mixedPricePP": 1260,
+    "error": "multi-airport search: the return may land at another home airport; price not verified for this airport"
    },
    {
     "origin": "BRU",
@@ -2093,10 +1670,10 @@
     "checkedAt": "2026-11-25T23:45:52Z",
     "source": "searchapi",
     "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhpCEgoyMDI3LTA3LTI3agcIARIDQU1TagcIARIDQlJVagcIARIDRFVTagcIARIDRUlOagcIARIDUlRNcgcIARIDT1NBGkISCjIwMjctMDgtMTJqBwgBEgNUWU9yBwgBEgNBTVNyBwgBEgNCUlVyBwgBEgNEVVNyBwgBEgNFSU5yBwgBEgNSVE1AAUgBcAGCAQsI____________AZgBAw&tfu=EgQIACACIgMSATA&hl=en&gl=nl&curr=EUR",
-    "pricePP": 1050,
+    "pricePP": 1117,
     "airline": "British Airways and JAL",
     "out": {
-     "pricePP": 1050,
+     "pricePP": 1117,
      "airline": "British Airways and JAL",
      "stops": 2,
      "duration": "21 hr 40 min",
@@ -2111,7 +1688,9 @@
      ],
      "airportChange": false
     },
-    "cheapestPP": 1050
+    "cheapestPP": 1050,
+    "mixedPricePP": 1050,
+    "note": "verified with the same home airport both ways (out via London and Tokyo-Haneda to Osaka-Itami)"
    },
    {
     "origin": "DUS",
@@ -2121,25 +1700,10 @@
     "checkedAt": "2026-11-25T23:45:52Z",
     "source": "searchapi",
     "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhpCEgoyMDI3LTA3LTI3agcIARIDQU1TagcIARIDQlJVagcIARIDRFVTagcIARIDRUlOagcIARIDUlRNcgcIARIDT1NBGkISCjIwMjctMDgtMTJqBwgBEgNUWU9yBwgBEgNBTVNyBwgBEgNCUlVyBwgBEgNEVVNyBwgBEgNFSU5yBwgBEgNSVE1AAUgBcAGCAQsI____________AZgBAw&tfu=EgQIACACIgMSATA&hl=en&gl=nl&curr=EUR",
-    "pricePP": 1134,
     "airline": "British Airways and JAL",
-    "out": {
-     "pricePP": 1134,
-     "airline": "British Airways and JAL",
-     "stops": 2,
-     "duration": "20 hr 10 min",
-     "from": "Duesseldorf Airport",
-     "fromId": "DUS",
-     "departs": "Tuesday, July 27 10:50 AM",
-     "to": "Kansai International Airport",
-     "arrives": "Wednesday, July 28 2:00 PM",
-     "layovers": [
-      "Heathrow Airport",
-      "Haneda Airport"
-     ],
-     "airportChange": false
-    },
-    "cheapestPP": 1050
+    "cheapestPP": 1050,
+    "mixedPricePP": 1134,
+    "error": "multi-airport search: the return may land at another home airport; price not verified for this airport"
    },
    {
     "origin": "EIN",
@@ -2149,25 +1713,10 @@
     "checkedAt": "2026-11-25T23:45:52Z",
     "source": "searchapi",
     "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhpCEgoyMDI3LTA3LTI3agcIARIDQU1TagcIARIDQlJVagcIARIDRFVTagcIARIDRUlOagcIARIDUlRNcgcIARIDT1NBGkISCjIwMjctMDgtMTJqBwgBEgNUWU9yBwgBEgNBTVNyBwgBEgNCUlVyBwgBEgNEVVNyBwgBEgNFSU5yBwgBEgNSVE1AAUgBcAGCAQsI____________AZgBAw&tfu=EgQIACACIgMSATA&hl=en&gl=nl&curr=EUR",
-    "pricePP": 2101,
     "airline": "KLM and ANA",
-    "out": {
-     "pricePP": 2101,
-     "airline": "KLM and ANA",
-     "stops": 2,
-     "duration": "29 hr 30 min",
-     "from": "Eindhoven Airport",
-     "fromId": "EIN",
-     "departs": "Tuesday, July 27 6:25 AM",
-     "to": "Osaka Itami Airport",
-     "arrives": "Wednesday, July 28 6:55 PM",
-     "layovers": [
-      "Amsterdam Airport Schiphol",
-      "Narita International Airport"
-     ],
-     "airportChange": false
-    },
-    "cheapestPP": 1050
+    "cheapestPP": 1050,
+    "mixedPricePP": 2101,
+    "error": "multi-airport search: the return may land at another home airport; price not verified for this airport"
    },
    {
     "origin": "RTM",
@@ -2259,24 +1808,10 @@
     "checkedAt": "2026-11-25T23:46:02Z",
     "source": "searchapi",
     "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhpCEgoyMDI3LTA3LTI4agcIARIDQU1TagcIARIDQlJVagcIARIDRFVTagcIARIDRUlOagcIARIDUlRNcgcIARIDT1NBGkISCjIwMjctMDgtMTNqBwgBEgNUWU9yBwgBEgNBTVNyBwgBEgNCUlVyBwgBEgNEVVNyBwgBEgNFSU5yBwgBEgNSVE1AAUgBcAGCAQsI____________AZgBAw&tfu=EgQIACACIgMSATA&hl=en&gl=nl&curr=EUR",
-    "pricePP": 1324,
     "airline": "Finnair",
-    "out": {
-     "pricePP": 1324,
-     "airline": "Finnair",
-     "stops": 1,
-     "duration": "17 hr 40 min",
-     "from": "Amsterdam Airport Schiphol",
-     "fromId": "AMS",
-     "departs": "Wednesday, July 28 11:55 AM",
-     "to": "Kansai International Airport",
-     "arrives": "Thursday, July 29 12:35 PM",
-     "layovers": [
-      "Helsinki Airport"
-     ],
-     "airportChange": false
-    },
-    "cheapestPP": 1115
+    "cheapestPP": 1115,
+    "mixedPricePP": 1324,
+    "error": "multi-airport search: the return may land at another home airport; price not verified for this airport"
    },
    {
     "origin": "BRU",
@@ -2286,25 +1821,10 @@
     "checkedAt": "2026-11-25T23:46:02Z",
     "source": "searchapi",
     "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhpCEgoyMDI3LTA3LTI4agcIARIDQU1TagcIARIDQlJVagcIARIDRFVTagcIARIDRUlOagcIARIDUlRNcgcIARIDT1NBGkISCjIwMjctMDgtMTNqBwgBEgNUWU9yBwgBEgNBTVNyBwgBEgNCUlVyBwgBEgNEVVNyBwgBEgNFSU5yBwgBEgNSVE1AAUgBcAGCAQsI____________AZgBAw&tfu=EgQIACACIgMSATA&hl=en&gl=nl&curr=EUR",
-    "pricePP": 1115,
     "airline": "British Airways and JAL",
-    "out": {
-     "pricePP": 1115,
-     "airline": "British Airways and JAL",
-     "stops": 2,
-     "duration": "21 hr 35 min",
-     "from": "Brussels Airport",
-     "fromId": "BRU",
-     "departs": "Wednesday, July 28 11:00 AM",
-     "to": "Osaka Itami Airport",
-     "arrives": "Thursday, July 29 3:35 PM",
-     "layovers": [
-      "Heathrow Airport",
-      "Haneda Airport"
-     ],
-     "airportChange": false
-    },
-    "cheapestPP": 1115
+    "cheapestPP": 1115,
+    "mixedPricePP": 1115,
+    "error": "multi-airport search: the return may land at another home airport; price not verified for this airport"
    },
    {
     "origin": "DUS",
@@ -2314,24 +1834,10 @@
     "checkedAt": "2026-11-25T23:46:02Z",
     "source": "searchapi",
     "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhpCEgoyMDI3LTA3LTI4agcIARIDQU1TagcIARIDQlJVagcIARIDRFVTagcIARIDRUlOagcIARIDUlRNcgcIARIDT1NBGkISCjIwMjctMDgtMTNqBwgBEgNUWU9yBwgBEgNBTVNyBwgBEgNCUlVyBwgBEgNEVVNyBwgBEgNFSU5yBwgBEgNSVE1AAUgBcAGCAQsI____________AZgBAw&tfu=EgQIACACIgMSATA&hl=en&gl=nl&curr=EUR",
-    "pricePP": 1240,
     "airline": "Finnair",
-    "out": {
-     "pricePP": 1240,
-     "airline": "Finnair",
-     "stops": 1,
-     "duration": "18 hr 35 min",
-     "from": "Duesseldorf Airport",
-     "fromId": "DUS",
-     "departs": "Wednesday, July 28 11:00 AM",
-     "to": "Kansai International Airport",
-     "arrives": "Thursday, July 29 12:35 PM",
-     "layovers": [
-      "Helsinki Airport"
-     ],
-     "airportChange": false
-    },
-    "cheapestPP": 1115
+    "cheapestPP": 1115,
+    "mixedPricePP": 1240,
+    "error": "multi-airport search: the return may land at another home airport; price not verified for this airport"
    },
    {
     "origin": "EIN",
@@ -2341,25 +1847,10 @@
     "checkedAt": "2026-11-25T23:46:02Z",
     "source": "searchapi",
     "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhpCEgoyMDI3LTA3LTI4agcIARIDQU1TagcIARIDQlJVagcIARIDRFVTagcIARIDRUlOagcIARIDUlRNcgcIARIDT1NBGkISCjIwMjctMDgtMTNqBwgBEgNUWU9yBwgBEgNBTVNyBwgBEgNCUlVyBwgBEgNEVVNyBwgBEgNFSU5yBwgBEgNSVE1AAUgBcAGCAQsI____________AZgBAw&tfu=EgQIACACIgMSATA&hl=en&gl=nl&curr=EUR",
-    "pricePP": 2158,
     "airline": "KLM and ANA",
-    "out": {
-     "pricePP": 2158,
-     "airline": "KLM and ANA",
-     "stops": 2,
-     "duration": "29 hr 30 min",
-     "from": "Eindhoven Airport",
-     "fromId": "EIN",
-     "departs": "Wednesday, July 28 6:25 AM",
-     "to": "Osaka Itami Airport",
-     "arrives": "Thursday, July 29 6:55 PM",
-     "layovers": [
-      "Amsterdam Airport Schiphol",
-      "Narita International Airport"
-     ],
-     "airportChange": false
-    },
-    "cheapestPP": 1115
+    "cheapestPP": 1115,
+    "mixedPricePP": 2158,
+    "error": "multi-airport search: the return may land at another home airport; price not verified for this airport"
    },
    {
     "origin": "RTM",
@@ -2471,24 +1962,10 @@
     "checkedAt": "2026-11-25T23:43:58Z",
     "source": "searchapi",
     "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhpCEgoyMDI3LTA3LTIzagcIARIDQU1TagcIARIDQlJVagcIARIDRFVTagcIARIDRUlOagcIARIDUlRNcgcIARIDVFlPGkISCjIwMjctMDgtMDhqBwgBEgNPU0FyBwgBEgNBTVNyBwgBEgNCUlVyBwgBEgNEVVNyBwgBEgNFSU5yBwgBEgNSVE1AAUgBcAGCAQsI____________AZgBAw&tfu=EgQIACACIgMSATA&hl=en&gl=nl&curr=EUR",
-    "pricePP": 1379,
     "airline": "British Airways",
-    "out": {
-     "pricePP": 1379,
-     "airline": "British Airways",
-     "stops": 1,
-     "duration": "16 hr 40 min",
-     "from": "Amsterdam Airport Schiphol",
-     "fromId": "AMS",
-     "departs": "Friday, July 23 7:20 AM",
-     "to": "Haneda Airport",
-     "arrives": "Saturday, July 24 7:00 AM",
-     "layovers": [
-      "Heathrow Airport"
-     ],
-     "airportChange": false
-    },
-    "cheapestPP": 1372
+    "cheapestPP": 1372,
+    "mixedPricePP": 1379,
+    "error": "multi-airport search: the return may land at another home airport; price not verified for this airport"
    },
    {
     "origin": "BRU",
@@ -2498,24 +1975,10 @@
     "checkedAt": "2026-11-25T23:43:58Z",
     "source": "searchapi",
     "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhpCEgoyMDI3LTA3LTIzagcIARIDQU1TagcIARIDQlJVagcIARIDRFVTagcIARIDRUlOagcIARIDUlRNcgcIARIDVFlPGkISCjIwMjctMDgtMDhqBwgBEgNPU0FyBwgBEgNBTVNyBwgBEgNCUlVyBwgBEgNEVVNyBwgBEgNFSU5yBwgBEgNSVE1AAUgBcAGCAQsI____________AZgBAw&tfu=EgQIACACIgMSATA&hl=en&gl=nl&curr=EUR",
-    "pricePP": 1405,
     "airline": "British Airways",
-    "out": {
-     "pricePP": 1405,
-     "airline": "British Airways",
-     "stops": 1,
-     "duration": "17 hr 10 min",
-     "from": "Brussels Airport",
-     "fromId": "BRU",
-     "departs": "Friday, July 23 10:45 AM",
-     "to": "Haneda Airport",
-     "arrives": "Saturday, July 24 10:55 AM",
-     "layovers": [
-      "Heathrow Airport"
-     ],
-     "airportChange": false
-    },
-    "cheapestPP": 1372
+    "cheapestPP": 1372,
+    "mixedPricePP": 1405,
+    "error": "multi-airport search: the return may land at another home airport; price not verified for this airport"
    },
    {
     "origin": "DUS",
@@ -2525,24 +1988,10 @@
     "checkedAt": "2026-11-25T23:43:58Z",
     "source": "searchapi",
     "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhpCEgoyMDI3LTA3LTIzagcIARIDQU1TagcIARIDQlJVagcIARIDRFVTagcIARIDRUlOagcIARIDUlRNcgcIARIDVFlPGkISCjIwMjctMDgtMDhqBwgBEgNPU0FyBwgBEgNBTVNyBwgBEgNCUlVyBwgBEgNEVVNyBwgBEgNFSU5yBwgBEgNSVE1AAUgBcAGCAQsI____________AZgBAw&tfu=EgQIACACIgMSATA&hl=en&gl=nl&curr=EUR",
-    "pricePP": 1372,
     "airline": "British Airways",
-    "out": {
-     "pricePP": 1372,
-     "airline": "British Airways",
-     "stops": 1,
-     "duration": "16 hr 50 min",
-     "from": "Duesseldorf Airport",
-     "fromId": "DUS",
-     "departs": "Friday, July 23 7:10 AM",
-     "to": "Haneda Airport",
-     "arrives": "Saturday, July 24 7:00 AM",
-     "layovers": [
-      "Heathrow Airport"
-     ],
-     "airportChange": false
-    },
-    "cheapestPP": 1372
+    "cheapestPP": 1372,
+    "mixedPricePP": 1372,
+    "error": "multi-airport search: the return may land at another home airport; price not verified for this airport"
    },
    {
     "origin": "EIN",
@@ -2678,24 +2127,10 @@
     "checkedAt": "2026-11-25T23:44:08Z",
     "source": "searchapi",
     "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhpCEgoyMDI3LTA3LTI0agcIARIDQU1TagcIARIDQlJVagcIARIDRFVTagcIARIDRUlOagcIARIDUlRNcgcIARIDVFlPGkISCjIwMjctMDgtMDlqBwgBEgNPU0FyBwgBEgNBTVNyBwgBEgNCUlVyBwgBEgNEVVNyBwgBEgNFSU5yBwgBEgNSVE1AAUgBcAGCAQsI____________AZgBAw&tfu=EgQIACACIgMSATA&hl=en&gl=nl&curr=EUR",
-    "pricePP": 1445,
     "airline": "Finnair",
-    "out": {
-     "pricePP": 1445,
-     "airline": "Finnair",
-     "stops": 1,
-     "duration": "18 hr 10 min",
-     "from": "Amsterdam Airport Schiphol",
-     "fromId": "AMS",
-     "departs": "Saturday, July 24 11:55 AM",
-     "to": "Narita International Airport",
-     "arrives": "Sunday, July 25 1:05 PM",
-     "layovers": [
-      "Helsinki Airport"
-     ],
-     "airportChange": false
-    },
-    "cheapestPP": 1300
+    "cheapestPP": 1300,
+    "mixedPricePP": 1445,
+    "error": "multi-airport search: the return may land at another home airport; price not verified for this airport"
    },
    {
     "origin": "BRU",
@@ -2705,24 +2140,10 @@
     "checkedAt": "2026-11-25T23:44:08Z",
     "source": "searchapi",
     "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhpCEgoyMDI3LTA3LTI0agcIARIDQU1TagcIARIDQlJVagcIARIDRFVTagcIARIDRUlOagcIARIDUlRNcgcIARIDVFlPGkISCjIwMjctMDgtMDlqBwgBEgNPU0FyBwgBEgNBTVNyBwgBEgNCUlVyBwgBEgNEVVNyBwgBEgNFSU5yBwgBEgNSVE1AAUgBcAGCAQsI____________AZgBAw&tfu=EgQIACACIgMSATA&hl=en&gl=nl&curr=EUR",
-    "pricePP": 1409,
     "airline": "Cathay Pacific",
-    "out": {
-     "pricePP": 1409,
-     "airline": "Cathay Pacific",
-     "stops": 1,
-     "duration": "17 hr 35 min",
-     "from": "Brussels Airport",
-     "fromId": "BRU",
-     "departs": "Saturday, July 24 1:05 PM",
-     "to": "Narita International Airport",
-     "arrives": "Sunday, July 25 1:40 PM",
-     "layovers": [
-      "Hong Kong International Airport"
-     ],
-     "airportChange": false
-    },
-    "cheapestPP": 1300
+    "cheapestPP": 1300,
+    "mixedPricePP": 1409,
+    "error": "multi-airport search: the return may land at another home airport; price not verified for this airport"
    },
    {
     "origin": "DUS",
@@ -2732,24 +2153,10 @@
     "checkedAt": "2026-11-25T23:44:08Z",
     "source": "searchapi",
     "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhpCEgoyMDI3LTA3LTI0agcIARIDQU1TagcIARIDQlJVagcIARIDRFVTagcIARIDRUlOagcIARIDUlRNcgcIARIDVFlPGkISCjIwMjctMDgtMDlqBwgBEgNPU0FyBwgBEgNBTVNyBwgBEgNCUlVyBwgBEgNEVVNyBwgBEgNFSU5yBwgBEgNSVE1AAUgBcAGCAQsI____________AZgBAw&tfu=EgQIACACIgMSATA&hl=en&gl=nl&curr=EUR",
-    "pricePP": 1300,
     "airline": "Qatar Airways",
-    "out": {
-     "pricePP": 1300,
-     "airline": "Qatar Airways",
-     "stops": 1,
-     "duration": "26 hr 50 min",
-     "from": "Duesseldorf Airport",
-     "fromId": "DUS",
-     "departs": "Saturday, July 24 9:20 AM",
-     "to": "Narita International Airport",
-     "arrives": "Sunday, July 25 7:10 PM",
-     "layovers": [
-      "Hamad International Airport"
-     ],
-     "airportChange": false
-    },
-    "cheapestPP": 1300
+    "cheapestPP": 1300,
+    "mixedPricePP": 1300,
+    "error": "multi-airport search: the return may land at another home airport; price not verified for this airport"
    },
    {
     "origin": "EIN",
@@ -2885,10 +2292,10 @@
     "checkedAt": "2026-11-25T23:44:18Z",
     "source": "searchapi",
     "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhpCEgoyMDI3LTA3LTI1agcIARIDQU1TagcIARIDQlJVagcIARIDRFVTagcIARIDRUlOagcIARIDUlRNcgcIARIDVFlPGkISCjIwMjctMDgtMTBqBwgBEgNPU0FyBwgBEgNBTVNyBwgBEgNCUlVyBwgBEgNEVVNyBwgBEgNFSU5yBwgBEgNSVE1AAUgBcAGCAQsI____________AZgBAw&tfu=EgQIACACIgMSATA&hl=en&gl=nl&curr=EUR",
-    "pricePP": 1349,
-    "airline": "Lufthansa and ANA",
+    "pricePP": 1139,
+    "airline": "British Airways and JAL",
     "out": {
-     "pricePP": 1349,
+     "pricePP": 1139,
      "airline": "Lufthansa and ANA",
      "stops": 1,
      "duration": "15 hr 40 min",
@@ -2902,7 +2309,9 @@
      ],
      "airportChange": false
     },
-    "cheapestPP": 1300
+    "cheapestPP": 1300,
+    "mixedPricePP": 1349,
+    "note": "verified with the same home airport both ways (out via London and Tokyo-Haneda to Osaka-Itami)"
    },
    {
     "origin": "BRU",
@@ -2912,24 +2321,10 @@
     "checkedAt": "2026-11-25T23:44:18Z",
     "source": "searchapi",
     "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhpCEgoyMDI3LTA3LTI1agcIARIDQU1TagcIARIDQlJVagcIARIDRFVTagcIARIDRUlOagcIARIDUlRNcgcIARIDVFlPGkISCjIwMjctMDgtMTBqBwgBEgNPU0FyBwgBEgNBTVNyBwgBEgNCUlVyBwgBEgNEVVNyBwgBEgNFSU5yBwgBEgNSVE1AAUgBcAGCAQsI____________AZgBAw&tfu=EgQIACACIgMSATA&hl=en&gl=nl&curr=EUR",
-    "pricePP": 1325,
     "airline": "British Airways",
-    "out": {
-     "pricePP": 1325,
-     "airline": "British Airways",
-     "stops": 1,
-     "duration": "17 hr 15 min",
-     "from": "Brussels Airport",
-     "fromId": "BRU",
-     "departs": "Sunday, July 25 10:40 AM",
-     "to": "Haneda Airport",
-     "arrives": "Monday, July 26 10:55 AM",
-     "layovers": [
-      "Heathrow Airport"
-     ],
-     "airportChange": false
-    },
-    "cheapestPP": 1300
+    "cheapestPP": 1300,
+    "mixedPricePP": 1325,
+    "error": "multi-airport search: the return may land at another home airport; price not verified for this airport"
    },
    {
     "origin": "DUS",
@@ -2939,24 +2334,10 @@
     "checkedAt": "2026-11-25T23:44:18Z",
     "source": "searchapi",
     "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhpCEgoyMDI3LTA3LTI1agcIARIDQU1TagcIARIDQlJVagcIARIDRFVTagcIARIDRUlOagcIARIDUlRNcgcIARIDVFlPGkISCjIwMjctMDgtMTBqBwgBEgNPU0FyBwgBEgNBTVNyBwgBEgNCUlVyBwgBEgNEVVNyBwgBEgNFSU5yBwgBEgNSVE1AAUgBcAGCAQsI____________AZgBAw&tfu=EgQIACACIgMSATA&hl=en&gl=nl&curr=EUR",
-    "pricePP": 1300,
     "airline": "Qatar Airways",
-    "out": {
-     "pricePP": 1300,
-     "airline": "Qatar Airways",
-     "stops": 1,
-     "duration": "20 hr 45 min",
-     "from": "Duesseldorf Airport",
-     "fromId": "DUS",
-     "departs": "Sunday, July 25 3:25 PM",
-     "to": "Narita International Airport",
-     "arrives": "Monday, July 26 7:10 PM",
-     "layovers": [
-      "Hamad International Airport"
-     ],
-     "airportChange": false
-    },
-    "cheapestPP": 1300
+    "cheapestPP": 1300,
+    "mixedPricePP": 1300,
+    "error": "multi-airport search: the return may land at another home airport; price not verified for this airport"
    },
    {
     "origin": "EIN",
@@ -3093,24 +2474,10 @@
     "checkedAt": "2026-11-25T23:44:28Z",
     "source": "searchapi",
     "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhpCEgoyMDI3LTA3LTI2agcIARIDQU1TagcIARIDQlJVagcIARIDRFVTagcIARIDRUlOagcIARIDUlRNcgcIARIDVFlPGkISCjIwMjctMDgtMTFqBwgBEgNPU0FyBwgBEgNBTVNyBwgBEgNCUlVyBwgBEgNEVVNyBwgBEgNFSU5yBwgBEgNSVE1AAUgBcAGCAQsI____________AZgBAw&tfu=EgQIACACIgMSATA&hl=en&gl=nl&curr=EUR",
-    "pricePP": 1307,
     "airline": "British Airways",
-    "out": {
-     "pricePP": 1307,
-     "airline": "British Airways",
-     "stops": 1,
-     "duration": "16 hr 45 min",
-     "from": "Amsterdam Airport Schiphol",
-     "fromId": "AMS",
-     "departs": "Monday, July 26 7:15 AM",
-     "to": "Haneda Airport",
-     "arrives": "Tuesday, July 27 7:00 AM",
-     "layovers": [
-      "Heathrow Airport"
-     ],
-     "airportChange": false
-    },
-    "cheapestPP": 1307
+    "cheapestPP": 1307,
+    "mixedPricePP": 1307,
+    "error": "multi-airport search: the return may land at another home airport; price not verified for this airport"
    },
    {
     "origin": "BRU",
@@ -3120,24 +2487,10 @@
     "checkedAt": "2026-11-25T23:44:28Z",
     "source": "searchapi",
     "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhpCEgoyMDI3LTA3LTI2agcIARIDQU1TagcIARIDQlJVagcIARIDRFVTagcIARIDRUlOagcIARIDUlRNcgcIARIDVFlPGkISCjIwMjctMDgtMTFqBwgBEgNPU0FyBwgBEgNBTVNyBwgBEgNCUlVyBwgBEgNEVVNyBwgBEgNFSU5yBwgBEgNSVE1AAUgBcAGCAQsI____________AZgBAw&tfu=EgQIACACIgMSATA&hl=en&gl=nl&curr=EUR",
-    "pricePP": 1317,
     "airline": "Finnair and JAL",
-    "out": {
-     "pricePP": 1317,
-     "airline": "Finnair and JAL",
-     "stops": 1,
-     "duration": "20 hr 10 min",
-     "from": "Brussels Airport",
-     "fromId": "BRU",
-     "departs": "Monday, July 26 10:45 AM",
-     "to": "Haneda Airport",
-     "arrives": "Tuesday, July 27 1:55 PM",
-     "layovers": [
-      "Helsinki Airport"
-     ],
-     "airportChange": false
-    },
-    "cheapestPP": 1307
+    "cheapestPP": 1307,
+    "mixedPricePP": 1317,
+    "error": "multi-airport search: the return may land at another home airport; price not verified for this airport"
    },
    {
     "origin": "DUS",
@@ -3147,24 +2500,10 @@
     "checkedAt": "2026-11-25T23:44:28Z",
     "source": "searchapi",
     "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhpCEgoyMDI3LTA3LTI2agcIARIDQU1TagcIARIDQlJVagcIARIDRFVTagcIARIDRUlOagcIARIDUlRNcgcIARIDVFlPGkISCjIwMjctMDgtMTFqBwgBEgNPU0FyBwgBEgNBTVNyBwgBEgNCUlVyBwgBEgNEVVNyBwgBEgNFSU5yBwgBEgNSVE1AAUgBcAGCAQsI____________AZgBAw&tfu=EgQIACACIgMSATA&hl=en&gl=nl&curr=EUR",
-    "pricePP": 1318,
     "airline": "Emirates",
-    "out": {
-     "pricePP": 1318,
-     "airline": "Emirates",
-     "stops": 1,
-     "duration": "19 hr 10 min",
-     "from": "Duesseldorf Airport",
-     "fromId": "DUS",
-     "departs": "Monday, July 26 3:25 PM",
-     "to": "Narita International Airport",
-     "arrives": "Tuesday, July 27 5:35 PM",
-     "layovers": [
-      "Dubai International Airport"
-     ],
-     "airportChange": false
-    },
-    "cheapestPP": 1307
+    "cheapestPP": 1307,
+    "mixedPricePP": 1318,
+    "error": "multi-airport search: the return may land at another home airport; price not verified for this airport"
    },
    {
     "origin": "EIN",
@@ -3300,24 +2639,10 @@
     "checkedAt": "2026-11-25T23:44:40Z",
     "source": "searchapi",
     "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhpCEgoyMDI3LTA3LTI3agcIARIDQU1TagcIARIDQlJVagcIARIDRFVTagcIARIDRUlOagcIARIDUlRNcgcIARIDVFlPGkISCjIwMjctMDgtMTJqBwgBEgNPU0FyBwgBEgNBTVNyBwgBEgNCUlVyBwgBEgNEVVNyBwgBEgNFSU5yBwgBEgNSVE1AAUgBcAGCAQsI____________AZgBAw&tfu=EgQIACACIgMSATA&hl=en&gl=nl&curr=EUR",
-    "pricePP": 1373,
     "airline": "Lufthansa and ANA",
-    "out": {
-     "pricePP": 1373,
-     "airline": "Lufthansa and ANA",
-     "stops": 1,
-     "duration": "15 hr 40 min",
-     "from": "Amsterdam Airport Schiphol",
-     "fromId": "AMS",
-     "departs": "Tuesday, July 27 8:15 AM",
-     "to": "Haneda Airport",
-     "arrives": "Wednesday, July 28 6:55 AM",
-     "layovers": [
-      "Munich International Airport"
-     ],
-     "airportChange": false
-    },
-    "cheapestPP": 1263
+    "cheapestPP": 1263,
+    "mixedPricePP": 1373,
+    "error": "multi-airport search: the return may land at another home airport; price not verified for this airport"
    },
    {
     "origin": "BRU",
@@ -3327,10 +2652,10 @@
     "checkedAt": "2026-11-25T23:44:40Z",
     "source": "searchapi",
     "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhpCEgoyMDI3LTA3LTI3agcIARIDQU1TagcIARIDQlJVagcIARIDRFVTagcIARIDRUlOagcIARIDUlRNcgcIARIDVFlPGkISCjIwMjctMDgtMTJqBwgBEgNPU0FyBwgBEgNBTVNyBwgBEgNCUlVyBwgBEgNEVVNyBwgBEgNFSU5yBwgBEgNSVE1AAUgBcAGCAQsI____________AZgBAw&tfu=EgQIACACIgMSATA&hl=en&gl=nl&curr=EUR",
-    "pricePP": 1289,
-    "airline": "Finnair and JAL",
+    "pricePP": 1117,
+    "airline": "British Airways and JAL",
     "out": {
-     "pricePP": 1289,
+     "pricePP": 1117,
      "airline": "Finnair and JAL",
      "stops": 1,
      "duration": "20 hr 10 min",
@@ -3344,7 +2669,9 @@
      ],
      "airportChange": false
     },
-    "cheapestPP": 1263
+    "cheapestPP": 1263,
+    "mixedPricePP": 1289,
+    "note": "verified with the same home airport both ways (out via London and Tokyo-Haneda to Osaka-Itami)"
    },
    {
     "origin": "RTM",
@@ -3364,24 +2691,10 @@
     "checkedAt": "2026-11-25T23:44:40Z",
     "source": "searchapi",
     "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhpCEgoyMDI3LTA3LTI3agcIARIDQU1TagcIARIDQlJVagcIARIDRFVTagcIARIDRUlOagcIARIDUlRNcgcIARIDVFlPGkISCjIwMjctMDgtMTJqBwgBEgNPU0FyBwgBEgNBTVNyBwgBEgNCUlVyBwgBEgNEVVNyBwgBEgNFSU5yBwgBEgNSVE1AAUgBcAGCAQsI____________AZgBAw&tfu=EgQIACACIgMSATA&hl=en&gl=nl&curr=EUR",
-    "pricePP": 1263,
     "airline": "Finnair and JAL",
-    "out": {
-     "pricePP": 1263,
-     "airline": "Finnair and JAL",
-     "stops": 1,
-     "duration": "19 hr 55 min",
-     "from": "Duesseldorf Airport",
-     "fromId": "DUS",
-     "departs": "Tuesday, July 27 11:00 AM",
-     "to": "Haneda Airport",
-     "arrives": "Wednesday, July 28 1:55 PM",
-     "layovers": [
-      "Helsinki Airport"
-     ],
-     "airportChange": false
-    },
-    "cheapestPP": 1263
+    "cheapestPP": 1263,
+    "mixedPricePP": 1263,
+    "error": "multi-airport search: the return may land at another home airport; price not verified for this airport"
    },
    {
     "origin": "EIN",
@@ -3507,24 +2820,10 @@
     "checkedAt": "2026-11-25T23:44:50Z",
     "source": "searchapi",
     "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhpCEgoyMDI3LTA3LTI4agcIARIDQU1TagcIARIDQlJVagcIARIDRFVTagcIARIDRUlOagcIARIDUlRNcgcIARIDVFlPGkISCjIwMjctMDgtMTNqBwgBEgNPU0FyBwgBEgNBTVNyBwgBEgNCUlVyBwgBEgNEVVNyBwgBEgNFSU5yBwgBEgNSVE1AAUgBcAGCAQsI____________AZgBAw&tfu=EgQIACACIgMSATA&hl=en&gl=nl&curr=EUR",
-    "pricePP": 1362,
     "airline": "British Airways",
-    "out": {
-     "pricePP": 1362,
-     "airline": "British Airways",
-     "stops": 1,
-     "duration": "20 hr 10 min",
-     "from": "Amsterdam Airport Schiphol",
-     "fromId": "AMS",
-     "departs": "Wednesday, July 28 7:45 AM",
-     "to": "Haneda Airport",
-     "arrives": "Thursday, July 29 10:55 AM",
-     "layovers": [
-      "Heathrow Airport"
-     ],
-     "airportChange": false
-    },
-    "cheapestPP": 1310
+    "cheapestPP": 1310,
+    "mixedPricePP": 1362,
+    "error": "multi-airport search: the return may land at another home airport; price not verified for this airport"
    },
    {
     "origin": "BRU",
@@ -3534,24 +2833,10 @@
     "checkedAt": "2026-11-25T23:44:50Z",
     "source": "searchapi",
     "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhpCEgoyMDI3LTA3LTI4agcIARIDQU1TagcIARIDQlJVagcIARIDRFVTagcIARIDRUlOagcIARIDUlRNcgcIARIDVFlPGkISCjIwMjctMDgtMTNqBwgBEgNPU0FyBwgBEgNBTVNyBwgBEgNCUlVyBwgBEgNEVVNyBwgBEgNFSU5yBwgBEgNSVE1AAUgBcAGCAQsI____________AZgBAw&tfu=EgQIACACIgMSATA&hl=en&gl=nl&curr=EUR",
-    "pricePP": 1365,
     "airline": "British Airways",
-    "out": {
-     "pricePP": 1365,
-     "airline": "British Airways",
-     "stops": 1,
-     "duration": "26 hr 45 min",
-     "from": "Brussels Airport",
-     "fromId": "BRU",
-     "departs": "Wednesday, July 28 9:15 PM",
-     "to": "Haneda Airport",
-     "arrives": "Friday, July 30 7:00 AM",
-     "layovers": [
-      "Heathrow Airport"
-     ],
-     "airportChange": false
-    },
-    "cheapestPP": 1310
+    "cheapestPP": 1310,
+    "mixedPricePP": 1365,
+    "error": "multi-airport search: the return may land at another home airport; price not verified for this airport"
    },
    {
     "origin": "DUS",
@@ -3561,24 +2846,10 @@
     "checkedAt": "2026-11-25T23:44:50Z",
     "source": "searchapi",
     "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhpCEgoyMDI3LTA3LTI4agcIARIDQU1TagcIARIDQlJVagcIARIDRFVTagcIARIDRUlOagcIARIDUlRNcgcIARIDVFlPGkISCjIwMjctMDgtMTNqBwgBEgNPU0FyBwgBEgNBTVNyBwgBEgNCUlVyBwgBEgNEVVNyBwgBEgNFSU5yBwgBEgNSVE1AAUgBcAGCAQsI____________AZgBAw&tfu=EgQIACACIgMSATA&hl=en&gl=nl&curr=EUR",
-    "pricePP": 1310,
     "airline": "Finnair and JAL",
-    "out": {
-     "pricePP": 1310,
-     "airline": "Finnair and JAL",
-     "stops": 1,
-     "duration": "22 hr 0 min",
-     "from": "Duesseldorf Airport",
-     "fromId": "DUS",
-     "departs": "Wednesday, July 28 8:55 AM",
-     "to": "Haneda Airport",
-     "arrives": "Thursday, July 29 1:55 PM",
-     "layovers": [
-      "Helsinki Airport"
-     ],
-     "airportChange": false
-    },
-    "cheapestPP": 1310
+    "cheapestPP": 1310,
+    "mixedPricePP": 1310,
+    "error": "multi-airport search: the return may land at another home airport; price not verified for this airport"
    },
    {
     "origin": "EIN",
@@ -3716,24 +2987,10 @@
     "checkedAt": "2026-11-25T23:45:16Z",
     "source": "searchapi",
     "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhpCEgoyMDI3LTA3LTIzagcIARIDQU1TagcIARIDQlJVagcIARIDRFVTagcIARIDRUlOagcIARIDUlRNcgcIARIDT1NBGkISCjIwMjctMDgtMDhqBwgBEgNUWU9yBwgBEgNBTVNyBwgBEgNCUlVyBwgBEgNEVVNyBwgBEgNFSU5yBwgBEgNSVE1AAUgBcAGCAQsI____________AZgBAw&tfu=EgQIACACIgMSATA&hl=en&gl=nl&curr=EUR",
-    "pricePP": 1372,
     "airline": "Finnair",
-    "out": {
-     "pricePP": 1372,
-     "airline": "Finnair",
-     "stops": 1,
-     "duration": "34 hr 10 min",
-     "from": "Amsterdam Airport Schiphol",
-     "fromId": "AMS",
-     "departs": "Friday, July 23 7:25 PM",
-     "to": "Kansai International Airport",
-     "arrives": "Sunday, July 25 12:35 PM",
-     "layovers": [
-      "Helsinki Airport"
-     ],
-     "airportChange": false
-    },
-    "cheapestPP": 1235
+    "cheapestPP": 1235,
+    "mixedPricePP": 1372,
+    "error": "multi-airport search: the return may land at another home airport; price not verified for this airport"
    },
    {
     "origin": "BRU",
@@ -3743,25 +3000,10 @@
     "checkedAt": "2026-11-25T23:45:16Z",
     "source": "searchapi",
     "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhpCEgoyMDI3LTA3LTIzagcIARIDQU1TagcIARIDQlJVagcIARIDRFVTagcIARIDRUlOagcIARIDUlRNcgcIARIDT1NBGkISCjIwMjctMDgtMDhqBwgBEgNUWU9yBwgBEgNBTVNyBwgBEgNCUlVyBwgBEgNEVVNyBwgBEgNFSU5yBwgBEgNSVE1AAUgBcAGCAQsI____________AZgBAw&tfu=EgQIACACIgMSATA&hl=en&gl=nl&curr=EUR",
-    "pricePP": 1235,
     "airline": "British Airways and JAL",
-    "out": {
-     "pricePP": 1235,
-     "airline": "British Airways and JAL",
-     "stops": 2,
-     "duration": "21 hr 50 min",
-     "from": "Brussels Airport",
-     "fromId": "BRU",
-     "departs": "Friday, July 23 10:45 AM",
-     "to": "Osaka Itami Airport",
-     "arrives": "Saturday, July 24 3:35 PM",
-     "layovers": [
-      "Heathrow Airport",
-      "Haneda Airport"
-     ],
-     "airportChange": false
-    },
-    "cheapestPP": 1235
+    "cheapestPP": 1235,
+    "mixedPricePP": 1235,
+    "error": "multi-airport search: the return may land at another home airport; price not verified for this airport"
    },
    {
     "origin": "DUS",
@@ -3771,24 +3013,10 @@
     "checkedAt": "2026-11-25T23:45:16Z",
     "source": "searchapi",
     "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhpCEgoyMDI3LTA3LTIzagcIARIDQU1TagcIARIDQlJVagcIARIDRFVTagcIARIDRUlOagcIARIDUlRNcgcIARIDT1NBGkISCjIwMjctMDgtMDhqBwgBEgNUWU9yBwgBEgNBTVNyBwgBEgNCUlVyBwgBEgNEVVNyBwgBEgNFSU5yBwgBEgNSVE1AAUgBcAGCAQsI____________AZgBAw&tfu=EgQIACACIgMSATA&hl=en&gl=nl&curr=EUR",
-    "pricePP": 1289,
     "airline": "Qatar Airways",
-    "out": {
-     "pricePP": 1289,
-     "airline": "Qatar Airways",
-     "stops": 1,
-     "duration": "43 hr 0 min",
-     "from": "Duesseldorf Airport",
-     "fromId": "DUS",
-     "departs": "Friday, July 23 3:25 PM",
-     "to": "Kansai International Airport",
-     "arrives": "Sunday, July 25 5:25 PM",
-     "layovers": [
-      "Hamad International Airport"
-     ],
-     "airportChange": false
-    },
-    "cheapestPP": 1235
+    "cheapestPP": 1235,
+    "mixedPricePP": 1289,
+    "error": "multi-airport search: the return may land at another home airport; price not verified for this airport"
    },
    {
     "origin": "EIN",
@@ -3798,25 +3026,10 @@
     "checkedAt": "2026-11-25T23:45:16Z",
     "source": "searchapi",
     "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhpCEgoyMDI3LTA3LTIzagcIARIDQU1TagcIARIDQlJVagcIARIDRFVTagcIARIDRUlOagcIARIDUlRNcgcIARIDT1NBGkISCjIwMjctMDgtMDhqBwgBEgNUWU9yBwgBEgNBTVNyBwgBEgNCUlVyBwgBEgNEVVNyBwgBEgNFSU5yBwgBEgNSVE1AAUgBcAGCAQsI____________AZgBAw&tfu=EgQIACACIgMSATA&hl=en&gl=nl&curr=EUR",
-    "pricePP": 2263,
     "airline": "KLM and ANA",
-    "out": {
-     "pricePP": 2263,
-     "airline": "KLM and ANA",
-     "stops": 2,
-     "duration": "29 hr 30 min",
-     "from": "Eindhoven Airport",
-     "fromId": "EIN",
-     "departs": "Friday, July 23 6:25 AM",
-     "to": "Osaka Itami Airport",
-     "arrives": "Saturday, July 24 6:55 PM",
-     "layovers": [
-      "Amsterdam Airport Schiphol",
-      "Narita International Airport"
-     ],
-     "airportChange": false
-    },
-    "cheapestPP": 1235
+    "cheapestPP": 1235,
+    "mixedPricePP": 2263,
+    "error": "multi-airport search: the return may land at another home airport; price not verified for this airport"
    },
    {
     "origin": "RTM",
@@ -3927,24 +3140,10 @@
     "checkedAt": "2026-11-25T23:45:25Z",
     "source": "searchapi",
     "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhpCEgoyMDI3LTA3LTI0agcIARIDQU1TagcIARIDQlJVagcIARIDRFVTagcIARIDRUlOagcIARIDUlRNcgcIARIDT1NBGkISCjIwMjctMDgtMDlqBwgBEgNUWU9yBwgBEgNBTVNyBwgBEgNCUlVyBwgBEgNEVVNyBwgBEgNFSU5yBwgBEgNSVE1AAUgBcAGCAQsI____________AZgBAw&tfu=EgQIACACIgMSATA&hl=en&gl=nl&curr=EUR",
-    "pricePP": 1364,
     "airline": "Finnair",
-    "out": {
-     "pricePP": 1364,
-     "airline": "Finnair",
-     "stops": 1,
-     "duration": "17 hr 40 min",
-     "from": "Amsterdam Airport Schiphol",
-     "fromId": "AMS",
-     "departs": "Saturday, July 24 11:55 AM",
-     "to": "Kansai International Airport",
-     "arrives": "Sunday, July 25 12:35 PM",
-     "layovers": [
-      "Helsinki Airport"
-     ],
-     "airportChange": false
-    },
-    "cheapestPP": 1275
+    "cheapestPP": 1275,
+    "mixedPricePP": 1364,
+    "error": "multi-airport search: the return may land at another home airport; price not verified for this airport"
    },
    {
     "origin": "BRU",
@@ -3954,25 +3153,10 @@
     "checkedAt": "2026-11-25T23:45:25Z",
     "source": "searchapi",
     "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhpCEgoyMDI3LTA3LTI0agcIARIDQU1TagcIARIDQlJVagcIARIDRFVTagcIARIDRUlOagcIARIDUlRNcgcIARIDT1NBGkISCjIwMjctMDgtMDlqBwgBEgNUWU9yBwgBEgNBTVNyBwgBEgNCUlVyBwgBEgNEVVNyBwgBEgNFSU5yBwgBEgNSVE1AAUgBcAGCAQsI____________AZgBAw&tfu=EgQIACACIgMSATA&hl=en&gl=nl&curr=EUR",
-    "pricePP": 1275,
     "airline": "British Airways and JAL",
-    "out": {
-     "pricePP": 1275,
-     "airline": "British Airways and JAL",
-     "stops": 2,
-     "duration": "21 hr 55 min",
-     "from": "Brussels Airport",
-     "fromId": "BRU",
-     "departs": "Saturday, July 24 10:40 AM",
-     "to": "Osaka Itami Airport",
-     "arrives": "Sunday, July 25 3:35 PM",
-     "layovers": [
-      "Heathrow Airport",
-      "Haneda Airport"
-     ],
-     "airportChange": false
-    },
-    "cheapestPP": 1275
+    "cheapestPP": 1275,
+    "mixedPricePP": 1275,
+    "error": "multi-airport search: the return may land at another home airport; price not verified for this airport"
    },
    {
     "origin": "DUS",
@@ -3982,24 +3166,10 @@
     "checkedAt": "2026-11-25T23:45:25Z",
     "source": "searchapi",
     "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhpCEgoyMDI3LTA3LTI0agcIARIDQU1TagcIARIDQlJVagcIARIDRFVTagcIARIDRUlOagcIARIDUlRNcgcIARIDT1NBGkISCjIwMjctMDgtMDlqBwgBEgNUWU9yBwgBEgNBTVNyBwgBEgNCUlVyBwgBEgNEVVNyBwgBEgNFSU5yBwgBEgNSVE1AAUgBcAGCAQsI____________AZgBAw&tfu=EgQIACACIgMSATA&hl=en&gl=nl&curr=EUR",
-    "pricePP": 1296,
     "airline": "Qatar Airways",
-    "out": {
-     "pricePP": 1296,
-     "airline": "Qatar Airways",
-     "stops": 1,
-     "duration": "25 hr 5 min",
-     "from": "Duesseldorf Airport",
-     "fromId": "DUS",
-     "departs": "Saturday, July 24 9:20 AM",
-     "to": "Kansai International Airport",
-     "arrives": "Sunday, July 25 5:25 PM",
-     "layovers": [
-      "Hamad International Airport"
-     ],
-     "airportChange": false
-    },
-    "cheapestPP": 1275
+    "cheapestPP": 1275,
+    "mixedPricePP": 1296,
+    "error": "multi-airport search: the return may land at another home airport; price not verified for this airport"
    },
    {
     "origin": "EIN",
@@ -4119,10 +3289,10 @@
     "checkedAt": "2026-11-25T23:45:35Z",
     "source": "searchapi",
     "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhpCEgoyMDI3LTA3LTI1agcIARIDQU1TagcIARIDQlJVagcIARIDRFVTagcIARIDRUlOagcIARIDUlRNcgcIARIDT1NBGkISCjIwMjctMDgtMTBqBwgBEgNUWU9yBwgBEgNBTVNyBwgBEgNCUlVyBwgBEgNEVVNyBwgBEgNFSU5yBwgBEgNSVE1AAUgBcAGCAQsI____________AZgBAw&tfu=EgQIACACIgMSATA&hl=en&gl=nl&curr=EUR",
-    "pricePP": 1100,
+    "pricePP": 1139,
     "airline": "British Airways and JAL",
     "out": {
-     "pricePP": 1100,
+     "pricePP": 1139,
      "airline": "British Airways and JAL",
      "stops": 2,
      "duration": "22 hr 30 min",
@@ -4137,7 +3307,9 @@
      ],
      "airportChange": false
     },
-    "cheapestPP": 1100
+    "cheapestPP": 1100,
+    "mixedPricePP": 1100,
+    "note": "verified with the same home airport both ways (out via London and Tokyo-Haneda to Osaka-Itami)"
    },
    {
     "origin": "BRU",
@@ -4147,25 +3319,10 @@
     "checkedAt": "2026-11-25T23:45:35Z",
     "source": "searchapi",
     "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhpCEgoyMDI3LTA3LTI1agcIARIDQU1TagcIARIDQlJVagcIARIDRFVTagcIARIDRUlOagcIARIDUlRNcgcIARIDT1NBGkISCjIwMjctMDgtMTBqBwgBEgNUWU9yBwgBEgNBTVNyBwgBEgNCUlVyBwgBEgNEVVNyBwgBEgNFSU5yBwgBEgNSVE1AAUgBcAGCAQsI____________AZgBAw&tfu=EgQIACACIgMSATA&hl=en&gl=nl&curr=EUR",
-    "pricePP": 1313,
     "airline": "Finnair and JAL",
-    "out": {
-     "pricePP": 1313,
-     "airline": "Finnair and JAL",
-     "stops": 2,
-     "duration": "23 hr 50 min",
-     "from": "Brussels Airport",
-     "fromId": "BRU",
-     "departs": "Sunday, July 25 10:45 AM",
-     "to": "Osaka Itami Airport",
-     "arrives": "Monday, July 26 5:35 PM",
-     "layovers": [
-      "Helsinki Airport",
-      "Haneda Airport"
-     ],
-     "airportChange": false
-    },
-    "cheapestPP": 1100
+    "cheapestPP": 1100,
+    "mixedPricePP": 1313,
+    "error": "multi-airport search: the return may land at another home airport; price not verified for this airport"
    },
    {
     "origin": "DUS",
@@ -4175,25 +3332,10 @@
     "checkedAt": "2026-11-25T23:45:35Z",
     "source": "searchapi",
     "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhpCEgoyMDI3LTA3LTI1agcIARIDQU1TagcIARIDQlJVagcIARIDRFVTagcIARIDRUlOagcIARIDUlRNcgcIARIDT1NBGkISCjIwMjctMDgtMTBqBwgBEgNUWU9yBwgBEgNBTVNyBwgBEgNCUlVyBwgBEgNEVVNyBwgBEgNFSU5yBwgBEgNSVE1AAUgBcAGCAQsI____________AZgBAw&tfu=EgQIACACIgMSATA&hl=en&gl=nl&curr=EUR",
-    "pricePP": 1188,
     "airline": "Lufthansa and ANA",
-    "out": {
-     "pricePP": 1188,
-     "airline": "Lufthansa and ANA",
-     "stops": 2,
-     "duration": "20 hr 0 min",
-     "from": "Duesseldorf Airport",
-     "fromId": "DUS",
-     "departs": "Sunday, July 25 6:20 AM",
-     "to": "Osaka Itami Airport",
-     "arrives": "Monday, July 26 9:20 AM",
-     "layovers": [
-      "Munich International Airport",
-      "Haneda Airport"
-     ],
-     "airportChange": false
-    },
-    "cheapestPP": 1100
+    "cheapestPP": 1100,
+    "mixedPricePP": 1188,
+    "error": "multi-airport search: the return may land at another home airport; price not verified for this airport"
    },
    {
     "origin": "EIN",
@@ -4203,25 +3345,10 @@
     "checkedAt": "2026-11-25T23:45:35Z",
     "source": "searchapi",
     "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhpCEgoyMDI3LTA3LTI1agcIARIDQU1TagcIARIDQlJVagcIARIDRFVTagcIARIDRUlOagcIARIDUlRNcgcIARIDT1NBGkISCjIwMjctMDgtMTBqBwgBEgNUWU9yBwgBEgNBTVNyBwgBEgNCUlVyBwgBEgNEVVNyBwgBEgNFSU5yBwgBEgNSVE1AAUgBcAGCAQsI____________AZgBAw&tfu=EgQIACACIgMSATA&hl=en&gl=nl&curr=EUR",
-    "pricePP": 2101,
     "airline": "KLM and ANA",
-    "out": {
-     "pricePP": 2101,
-     "airline": "KLM and ANA",
-     "stops": 2,
-     "duration": "29 hr 30 min",
-     "from": "Eindhoven Airport",
-     "fromId": "EIN",
-     "departs": "Sunday, July 25 6:25 AM",
-     "to": "Osaka Itami Airport",
-     "arrives": "Monday, July 26 6:55 PM",
-     "layovers": [
-      "Amsterdam Airport Schiphol",
-      "Narita International Airport"
-     ],
-     "airportChange": false
-    },
-    "cheapestPP": 1100
+    "cheapestPP": 1100,
+    "mixedPricePP": 2101,
+    "error": "multi-airport search: the return may land at another home airport; price not verified for this airport"
    },
    {
     "origin": "RTM",
@@ -4331,25 +3458,10 @@
     "checkedAt": "2026-11-25T23:45:43Z",
     "source": "searchapi",
     "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhpCEgoyMDI3LTA3LTI2agcIARIDQU1TagcIARIDQlJVagcIARIDRFVTagcIARIDRUlOagcIARIDUlRNcgcIARIDT1NBGkISCjIwMjctMDgtMTFqBwgBEgNUWU9yBwgBEgNBTVNyBwgBEgNCUlVyBwgBEgNEVVNyBwgBEgNFSU5yBwgBEgNSVE1AAUgBcAGCAQsI____________AZgBAw&tfu=EgQIACACIgMSATA&hl=en&gl=nl&curr=EUR",
-    "pricePP": 1102,
     "airline": "British Airways and JAL",
-    "out": {
-     "pricePP": 1102,
-     "airline": "British Airways and JAL",
-     "stops": 2,
-     "duration": "20 hr 35 min",
-     "from": "Amsterdam Airport Schiphol",
-     "fromId": "AMS",
-     "departs": "Monday, July 26 10:25 AM",
-     "to": "Kansai International Airport",
-     "arrives": "Tuesday, July 27 2:00 PM",
-     "layovers": [
-      "Heathrow Airport",
-      "Haneda Airport"
-     ],
-     "airportChange": false
-    },
-    "cheapestPP": 1102
+    "cheapestPP": 1102,
+    "mixedPricePP": 1102,
+    "error": "multi-airport search: the return may land at another home airport; price not verified for this airport"
    },
    {
     "origin": "DUS",
@@ -4359,25 +3471,10 @@
     "checkedAt": "2026-11-25T23:45:43Z",
     "source": "searchapi",
     "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhpCEgoyMDI3LTA3LTI2agcIARIDQU1TagcIARIDQlJVagcIARIDRFVTagcIARIDRUlOagcIARIDUlRNcgcIARIDT1NBGkISCjIwMjctMDgtMTFqBwgBEgNUWU9yBwgBEgNBTVNyBwgBEgNCUlVyBwgBEgNEVVNyBwgBEgNFSU5yBwgBEgNSVE1AAUgBcAGCAQsI____________AZgBAw&tfu=EgQIACACIgMSATA&hl=en&gl=nl&curr=EUR",
-    "pricePP": 1134,
     "airline": "British Airways and JAL",
-    "out": {
-     "pricePP": 1134,
-     "airline": "British Airways and JAL",
-     "stops": 2,
-     "duration": "20 hr 20 min",
-     "from": "Duesseldorf Airport",
-     "fromId": "DUS",
-     "departs": "Monday, July 26 10:40 AM",
-     "to": "Kansai International Airport",
-     "arrives": "Tuesday, July 27 2:00 PM",
-     "layovers": [
-      "Heathrow Airport",
-      "Haneda Airport"
-     ],
-     "airportChange": false
-    },
-    "cheapestPP": 1102
+    "cheapestPP": 1102,
+    "mixedPricePP": 1134,
+    "error": "multi-airport search: the return may land at another home airport; price not verified for this airport"
    },
    {
     "origin": "EIN",
@@ -4397,24 +3494,10 @@
     "checkedAt": "2026-11-25T23:45:43Z",
     "source": "searchapi",
     "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhpCEgoyMDI3LTA3LTI2agcIARIDQU1TagcIARIDQlJVagcIARIDRFVTagcIARIDRUlOagcIARIDUlRNcgcIARIDT1NBGkISCjIwMjctMDgtMTFqBwgBEgNUWU9yBwgBEgNBTVNyBwgBEgNCUlVyBwgBEgNEVVNyBwgBEgNFSU5yBwgBEgNSVE1AAUgBcAGCAQsI____________AZgBAw&tfu=EgQIACACIgMSATA&hl=en&gl=nl&curr=EUR",
-    "pricePP": 1241,
     "airline": "Finnair",
-    "out": {
-     "pricePP": 1241,
-     "airline": "Finnair",
-     "stops": 1,
-     "duration": "18 hr 50 min",
-     "from": "Brussels Airport",
-     "fromId": "BRU",
-     "departs": "Monday, July 26 10:45 AM",
-     "to": "Kansai International Airport",
-     "arrives": "Tuesday, July 27 12:35 PM",
-     "layovers": [
-      "Helsinki Airport"
-     ],
-     "airportChange": false
-    },
-    "cheapestPP": 1102
+    "cheapestPP": 1102,
+    "mixedPricePP": 1241,
+    "error": "multi-airport search: the return may land at another home airport; price not verified for this airport"
    },
    {
     "origin": "RTM",
@@ -4524,25 +3607,10 @@
     "checkedAt": "2026-11-25T23:45:52Z",
     "source": "searchapi",
     "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhpCEgoyMDI3LTA3LTI3agcIARIDQU1TagcIARIDQlJVagcIARIDRFVTagcIARIDRUlOagcIARIDUlRNcgcIARIDT1NBGkISCjIwMjctMDgtMTJqBwgBEgNUWU9yBwgBEgNBTVNyBwgBEgNCUlVyBwgBEgNEVVNyBwgBEgNFSU5yBwgBEgNSVE1AAUgBcAGCAQsI____________AZgBAw&tfu=EgQIACACIgMSATA&hl=en&gl=nl&curr=EUR",
-    "pricePP": 1260,
     "airline": "British Airways and JAL",
-    "out": {
-     "pricePP": 1260,
-     "airline": "British Airways and JAL",
-     "stops": 2,
-     "duration": "20 hr 30 min",
-     "from": "Amsterdam Airport Schiphol",
-     "fromId": "AMS",
-     "departs": "Tuesday, July 27 7:10 AM",
-     "to": "Osaka Itami Airport",
-     "arrives": "Wednesday, July 28 10:40 AM",
-     "layovers": [
-      "Heathrow Airport",
-      "Haneda Airport"
-     ],
-     "airportChange": false
-    },
-    "cheapestPP": 1050
+    "cheapestPP": 1050,
+    "mixedPricePP": 1260,
+    "error": "multi-airport search: the return may land at another home airport; price not verified for this airport"
    },
    {
     "origin": "BRU",
@@ -4552,10 +3620,10 @@
     "checkedAt": "2026-11-25T23:45:52Z",
     "source": "searchapi",
     "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhpCEgoyMDI3LTA3LTI3agcIARIDQU1TagcIARIDQlJVagcIARIDRFVTagcIARIDRUlOagcIARIDUlRNcgcIARIDT1NBGkISCjIwMjctMDgtMTJqBwgBEgNUWU9yBwgBEgNBTVNyBwgBEgNCUlVyBwgBEgNEVVNyBwgBEgNFSU5yBwgBEgNSVE1AAUgBcAGCAQsI____________AZgBAw&tfu=EgQIACACIgMSATA&hl=en&gl=nl&curr=EUR",
-    "pricePP": 1050,
+    "pricePP": 1117,
     "airline": "British Airways and JAL",
     "out": {
-     "pricePP": 1050,
+     "pricePP": 1117,
      "airline": "British Airways and JAL",
      "stops": 2,
      "duration": "21 hr 40 min",
@@ -4570,7 +3638,9 @@
      ],
      "airportChange": false
     },
-    "cheapestPP": 1050
+    "cheapestPP": 1050,
+    "mixedPricePP": 1050,
+    "note": "verified with the same home airport both ways (out via London and Tokyo-Haneda to Osaka-Itami)"
    },
    {
     "origin": "DUS",
@@ -4580,25 +3650,10 @@
     "checkedAt": "2026-11-25T23:45:52Z",
     "source": "searchapi",
     "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhpCEgoyMDI3LTA3LTI3agcIARIDQU1TagcIARIDQlJVagcIARIDRFVTagcIARIDRUlOagcIARIDUlRNcgcIARIDT1NBGkISCjIwMjctMDgtMTJqBwgBEgNUWU9yBwgBEgNBTVNyBwgBEgNCUlVyBwgBEgNEVVNyBwgBEgNFSU5yBwgBEgNSVE1AAUgBcAGCAQsI____________AZgBAw&tfu=EgQIACACIgMSATA&hl=en&gl=nl&curr=EUR",
-    "pricePP": 1134,
     "airline": "British Airways and JAL",
-    "out": {
-     "pricePP": 1134,
-     "airline": "British Airways and JAL",
-     "stops": 2,
-     "duration": "20 hr 10 min",
-     "from": "Duesseldorf Airport",
-     "fromId": "DUS",
-     "departs": "Tuesday, July 27 10:50 AM",
-     "to": "Kansai International Airport",
-     "arrives": "Wednesday, July 28 2:00 PM",
-     "layovers": [
-      "Heathrow Airport",
-      "Haneda Airport"
-     ],
-     "airportChange": false
-    },
-    "cheapestPP": 1050
+    "cheapestPP": 1050,
+    "mixedPricePP": 1134,
+    "error": "multi-airport search: the return may land at another home airport; price not verified for this airport"
    },
    {
     "origin": "EIN",
@@ -4608,25 +3663,10 @@
     "checkedAt": "2026-11-25T23:45:52Z",
     "source": "searchapi",
     "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhpCEgoyMDI3LTA3LTI3agcIARIDQU1TagcIARIDQlJVagcIARIDRFVTagcIARIDRUlOagcIARIDUlRNcgcIARIDT1NBGkISCjIwMjctMDgtMTJqBwgBEgNUWU9yBwgBEgNBTVNyBwgBEgNCUlVyBwgBEgNEVVNyBwgBEgNFSU5yBwgBEgNSVE1AAUgBcAGCAQsI____________AZgBAw&tfu=EgQIACACIgMSATA&hl=en&gl=nl&curr=EUR",
-    "pricePP": 2101,
     "airline": "KLM and ANA",
-    "out": {
-     "pricePP": 2101,
-     "airline": "KLM and ANA",
-     "stops": 2,
-     "duration": "29 hr 30 min",
-     "from": "Eindhoven Airport",
-     "fromId": "EIN",
-     "departs": "Tuesday, July 27 6:25 AM",
-     "to": "Osaka Itami Airport",
-     "arrives": "Wednesday, July 28 6:55 PM",
-     "layovers": [
-      "Amsterdam Airport Schiphol",
-      "Narita International Airport"
-     ],
-     "airportChange": false
-    },
-    "cheapestPP": 1050
+    "cheapestPP": 1050,
+    "mixedPricePP": 2101,
+    "error": "multi-airport search: the return may land at another home airport; price not verified for this airport"
    },
    {
     "origin": "RTM",
@@ -4718,24 +3758,10 @@
     "checkedAt": "2026-11-25T23:46:02Z",
     "source": "searchapi",
     "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhpCEgoyMDI3LTA3LTI4agcIARIDQU1TagcIARIDQlJVagcIARIDRFVTagcIARIDRUlOagcIARIDUlRNcgcIARIDT1NBGkISCjIwMjctMDgtMTNqBwgBEgNUWU9yBwgBEgNBTVNyBwgBEgNCUlVyBwgBEgNEVVNyBwgBEgNFSU5yBwgBEgNSVE1AAUgBcAGCAQsI____________AZgBAw&tfu=EgQIACACIgMSATA&hl=en&gl=nl&curr=EUR",
-    "pricePP": 1324,
     "airline": "Finnair",
-    "out": {
-     "pricePP": 1324,
-     "airline": "Finnair",
-     "stops": 1,
-     "duration": "17 hr 40 min",
-     "from": "Amsterdam Airport Schiphol",
-     "fromId": "AMS",
-     "departs": "Wednesday, July 28 11:55 AM",
-     "to": "Kansai International Airport",
-     "arrives": "Thursday, July 29 12:35 PM",
-     "layovers": [
-      "Helsinki Airport"
-     ],
-     "airportChange": false
-    },
-    "cheapestPP": 1115
+    "cheapestPP": 1115,
+    "mixedPricePP": 1324,
+    "error": "multi-airport search: the return may land at another home airport; price not verified for this airport"
    },
    {
     "origin": "BRU",
@@ -4745,25 +3771,10 @@
     "checkedAt": "2026-11-25T23:46:02Z",
     "source": "searchapi",
     "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhpCEgoyMDI3LTA3LTI4agcIARIDQU1TagcIARIDQlJVagcIARIDRFVTagcIARIDRUlOagcIARIDUlRNcgcIARIDT1NBGkISCjIwMjctMDgtMTNqBwgBEgNUWU9yBwgBEgNBTVNyBwgBEgNCUlVyBwgBEgNEVVNyBwgBEgNFSU5yBwgBEgNSVE1AAUgBcAGCAQsI____________AZgBAw&tfu=EgQIACACIgMSATA&hl=en&gl=nl&curr=EUR",
-    "pricePP": 1115,
     "airline": "British Airways and JAL",
-    "out": {
-     "pricePP": 1115,
-     "airline": "British Airways and JAL",
-     "stops": 2,
-     "duration": "21 hr 35 min",
-     "from": "Brussels Airport",
-     "fromId": "BRU",
-     "departs": "Wednesday, July 28 11:00 AM",
-     "to": "Osaka Itami Airport",
-     "arrives": "Thursday, July 29 3:35 PM",
-     "layovers": [
-      "Heathrow Airport",
-      "Haneda Airport"
-     ],
-     "airportChange": false
-    },
-    "cheapestPP": 1115
+    "cheapestPP": 1115,
+    "mixedPricePP": 1115,
+    "error": "multi-airport search: the return may land at another home airport; price not verified for this airport"
    },
    {
     "origin": "DUS",
@@ -4773,24 +3784,10 @@
     "checkedAt": "2026-11-25T23:46:02Z",
     "source": "searchapi",
     "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhpCEgoyMDI3LTA3LTI4agcIARIDQU1TagcIARIDQlJVagcIARIDRFVTagcIARIDRUlOagcIARIDUlRNcgcIARIDT1NBGkISCjIwMjctMDgtMTNqBwgBEgNUWU9yBwgBEgNBTVNyBwgBEgNCUlVyBwgBEgNEVVNyBwgBEgNFSU5yBwgBEgNSVE1AAUgBcAGCAQsI____________AZgBAw&tfu=EgQIACACIgMSATA&hl=en&gl=nl&curr=EUR",
-    "pricePP": 1240,
     "airline": "Finnair",
-    "out": {
-     "pricePP": 1240,
-     "airline": "Finnair",
-     "stops": 1,
-     "duration": "18 hr 35 min",
-     "from": "Duesseldorf Airport",
-     "fromId": "DUS",
-     "departs": "Wednesday, July 28 11:00 AM",
-     "to": "Kansai International Airport",
-     "arrives": "Thursday, July 29 12:35 PM",
-     "layovers": [
-      "Helsinki Airport"
-     ],
-     "airportChange": false
-    },
-    "cheapestPP": 1115
+    "cheapestPP": 1115,
+    "mixedPricePP": 1240,
+    "error": "multi-airport search: the return may land at another home airport; price not verified for this airport"
    },
    {
     "origin": "EIN",
@@ -4800,25 +3797,10 @@
     "checkedAt": "2026-11-25T23:46:02Z",
     "source": "searchapi",
     "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhpCEgoyMDI3LTA3LTI4agcIARIDQU1TagcIARIDQlJVagcIARIDRFVTagcIARIDRUlOagcIARIDUlRNcgcIARIDT1NBGkISCjIwMjctMDgtMTNqBwgBEgNUWU9yBwgBEgNBTVNyBwgBEgNCUlVyBwgBEgNEVVNyBwgBEgNFSU5yBwgBEgNSVE1AAUgBcAGCAQsI____________AZgBAw&tfu=EgQIACACIgMSATA&hl=en&gl=nl&curr=EUR",
-    "pricePP": 2158,
     "airline": "KLM and ANA",
-    "out": {
-     "pricePP": 2158,
-     "airline": "KLM and ANA",
-     "stops": 2,
-     "duration": "29 hr 30 min",
-     "from": "Eindhoven Airport",
-     "fromId": "EIN",
-     "departs": "Wednesday, July 28 6:25 AM",
-     "to": "Osaka Itami Airport",
-     "arrives": "Thursday, July 29 6:55 PM",
-     "layovers": [
-      "Amsterdam Airport Schiphol",
-      "Narita International Airport"
-     ],
-     "airportChange": false
-    },
-    "cheapestPP": 1115
+    "cheapestPP": 1115,
+    "mixedPricePP": 2158,
+    "error": "multi-airport search: the return may land at another home airport; price not verified for this airport"
    },
    {
     "origin": "RTM",
@@ -4930,25 +3912,10 @@
     "checkedAt": "2026-11-25T23:46:17Z",
     "source": "searchapi",
     "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhpCEgoyMDI3LTA3LTIzagcIARIDQU1TagcIARIDQlJVagcIARIDRFVTagcIARIDRUlOagcIARIDUlRNcgcIARIDVFlPGkISCjIwMjctMDgtMDdqBwgBEgNPU0FyBwgBEgNBTVNyBwgBEgNCUlVyBwgBEgNEVVNyBwgBEgNFSU5yBwgBEgNSVE1AAUgBcAGCAQsI____________AZgBAw&tfu=EgQIACACIgMSATA&hl=en&gl=nl&curr=EUR",
-    "pricePP": 1476,
     "airline": "Oman Air and THAI",
-    "out": {
-     "pricePP": 1476,
-     "airline": "Oman Air and THAI",
-     "stops": 2,
-     "duration": "26 hr 55 min",
-     "from": "Amsterdam Airport Schiphol",
-     "fromId": "AMS",
-     "departs": "Friday, July 23 8:25 PM",
-     "to": "Narita International Airport",
-     "arrives": "Sunday, July 25 6:20 AM",
-     "layovers": [
-      "Muscat International Airport",
-      "Suvarnabhumi Airport"
-     ],
-     "airportChange": false
-    },
-    "cheapestPP": 1368
+    "cheapestPP": 1368,
+    "mixedPricePP": 1476,
+    "error": "multi-airport search: the return may land at another home airport; price not verified for this airport"
    },
    {
     "origin": "BRU",
@@ -4958,24 +3925,10 @@
     "checkedAt": "2026-11-25T23:46:17Z",
     "source": "searchapi",
     "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhpCEgoyMDI3LTA3LTIzagcIARIDQU1TagcIARIDQlJVagcIARIDRFVTagcIARIDRUlOagcIARIDUlRNcgcIARIDVFlPGkISCjIwMjctMDgtMDdqBwgBEgNPU0FyBwgBEgNBTVNyBwgBEgNCUlVyBwgBEgNEVVNyBwgBEgNFSU5yBwgBEgNSVE1AAUgBcAGCAQsI____________AZgBAw&tfu=EgQIACACIgMSATA&hl=en&gl=nl&curr=EUR",
-    "pricePP": 1408,
     "airline": "Finnair and JAL",
-    "out": {
-     "pricePP": 1408,
-     "airline": "Finnair and JAL",
-     "stops": 1,
-     "duration": "20 hr 10 min",
-     "from": "Brussels Airport",
-     "fromId": "BRU",
-     "departs": "Friday, July 23 10:45 AM",
-     "to": "Haneda Airport",
-     "arrives": "Saturday, July 24 1:55 PM",
-     "layovers": [
-      "Helsinki Airport"
-     ],
-     "airportChange": false
-    },
-    "cheapestPP": 1368
+    "cheapestPP": 1368,
+    "mixedPricePP": 1408,
+    "error": "multi-airport search: the return may land at another home airport; price not verified for this airport"
    },
    {
     "origin": "DUS",
@@ -4985,24 +3938,10 @@
     "checkedAt": "2026-11-25T23:46:17Z",
     "source": "searchapi",
     "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhpCEgoyMDI3LTA3LTIzagcIARIDQU1TagcIARIDQlJVagcIARIDRFVTagcIARIDRUlOagcIARIDUlRNcgcIARIDVFlPGkISCjIwMjctMDgtMDdqBwgBEgNPU0FyBwgBEgNBTVNyBwgBEgNCUlVyBwgBEgNEVVNyBwgBEgNFSU5yBwgBEgNSVE1AAUgBcAGCAQsI____________AZgBAw&tfu=EgQIACACIgMSATA&hl=en&gl=nl&curr=EUR",
-    "pricePP": 1368,
     "airline": "Emirates",
-    "out": {
-     "pricePP": 1368,
-     "airline": "Emirates",
-     "stops": 1,
-     "duration": "19 hr 10 min",
-     "from": "Duesseldorf Airport",
-     "fromId": "DUS",
-     "departs": "Friday, July 23 3:25 PM",
-     "to": "Narita International Airport",
-     "arrives": "Saturday, July 24 5:35 PM",
-     "layovers": [
-      "Dubai International Airport"
-     ],
-     "airportChange": false
-    },
-    "cheapestPP": 1368
+    "cheapestPP": 1368,
+    "mixedPricePP": 1368,
+    "error": "multi-airport search: the return may land at another home airport; price not verified for this airport"
    },
    {
     "origin": "EIN",
@@ -5138,25 +4077,10 @@
     "checkedAt": "2026-11-25T23:46:28Z",
     "source": "searchapi",
     "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhpCEgoyMDI3LTA3LTI0agcIARIDQU1TagcIARIDQlJVagcIARIDRFVTagcIARIDRUlOagcIARIDUlRNcgcIARIDVFlPGkISCjIwMjctMDgtMDhqBwgBEgNPU0FyBwgBEgNBTVNyBwgBEgNCUlVyBwgBEgNEVVNyBwgBEgNFSU5yBwgBEgNSVE1AAUgBcAGCAQsI____________AZgBAw&tfu=EgQIACACIgMSATA&hl=en&gl=nl&curr=EUR",
-    "pricePP": 1476,
     "airline": "Oman Air and THAI",
-    "out": {
-     "pricePP": 1476,
-     "airline": "Oman Air and THAI",
-     "stops": 2,
-     "duration": "26 hr 55 min",
-     "from": "Amsterdam Airport Schiphol",
-     "fromId": "AMS",
-     "departs": "Saturday, July 24 8:25 PM",
-     "to": "Narita International Airport",
-     "arrives": "Monday, July 26 6:20 AM",
-     "layovers": [
-      "Muscat International Airport",
-      "Suvarnabhumi Airport"
-     ],
-     "airportChange": false
-    },
-    "cheapestPP": 1415
+    "cheapestPP": 1415,
+    "mixedPricePP": 1476,
+    "error": "multi-airport search: the return may land at another home airport; price not verified for this airport"
    },
    {
     "origin": "BRU",
@@ -5166,24 +4090,10 @@
     "checkedAt": "2026-11-25T23:46:28Z",
     "source": "searchapi",
     "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhpCEgoyMDI3LTA3LTI0agcIARIDQU1TagcIARIDQlJVagcIARIDRFVTagcIARIDRUlOagcIARIDUlRNcgcIARIDVFlPGkISCjIwMjctMDgtMDhqBwgBEgNPU0FyBwgBEgNBTVNyBwgBEgNCUlVyBwgBEgNEVVNyBwgBEgNFSU5yBwgBEgNSVE1AAUgBcAGCAQsI____________AZgBAw&tfu=EgQIACACIgMSATA&hl=en&gl=nl&curr=EUR",
-    "pricePP": 1449,
     "airline": "Cathay Pacific",
-    "out": {
-     "pricePP": 1449,
-     "airline": "Cathay Pacific",
-     "stops": 1,
-     "duration": "17 hr 35 min",
-     "from": "Brussels Airport",
-     "fromId": "BRU",
-     "departs": "Saturday, July 24 1:05 PM",
-     "to": "Narita International Airport",
-     "arrives": "Sunday, July 25 1:40 PM",
-     "layovers": [
-      "Hong Kong International Airport"
-     ],
-     "airportChange": false
-    },
-    "cheapestPP": 1415
+    "cheapestPP": 1415,
+    "mixedPricePP": 1449,
+    "error": "multi-airport search: the return may land at another home airport; price not verified for this airport"
    },
    {
     "origin": "DUS",
@@ -5193,24 +4103,10 @@
     "checkedAt": "2026-11-25T23:46:28Z",
     "source": "searchapi",
     "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhpCEgoyMDI3LTA3LTI0agcIARIDQU1TagcIARIDQlJVagcIARIDRFVTagcIARIDRUlOagcIARIDUlRNcgcIARIDVFlPGkISCjIwMjctMDgtMDhqBwgBEgNPU0FyBwgBEgNBTVNyBwgBEgNCUlVyBwgBEgNEVVNyBwgBEgNFSU5yBwgBEgNSVE1AAUgBcAGCAQsI____________AZgBAw&tfu=EgQIACACIgMSATA&hl=en&gl=nl&curr=EUR",
-    "pricePP": 1415,
     "airline": "Qatar Airways",
-    "out": {
-     "pricePP": 1415,
-     "airline": "Qatar Airways",
-     "stops": 1,
-     "duration": "26 hr 50 min",
-     "from": "Duesseldorf Airport",
-     "fromId": "DUS",
-     "departs": "Saturday, July 24 9:20 AM",
-     "to": "Narita International Airport",
-     "arrives": "Sunday, July 25 7:10 PM",
-     "layovers": [
-      "Hamad International Airport"
-     ],
-     "airportChange": false
-    },
-    "cheapestPP": 1415
+    "cheapestPP": 1415,
+    "mixedPricePP": 1415,
+    "error": "multi-airport search: the return may land at another home airport; price not verified for this airport"
    },
    {
     "origin": "EIN",
@@ -5346,24 +4242,10 @@
     "checkedAt": "2026-11-25T23:46:37Z",
     "source": "searchapi",
     "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhpCEgoyMDI3LTA3LTI1agcIARIDQU1TagcIARIDQlJVagcIARIDRFVTagcIARIDRUlOagcIARIDUlRNcgcIARIDVFlPGkISCjIwMjctMDgtMDlqBwgBEgNPU0FyBwgBEgNBTVNyBwgBEgNCUlVyBwgBEgNEVVNyBwgBEgNFSU5yBwgBEgNSVE1AAUgBcAGCAQsI____________AZgBAw&tfu=EgQIACACIgMSATA&hl=en&gl=nl&curr=EUR",
-    "pricePP": 1463,
     "airline": "British Airways",
-    "out": {
-     "pricePP": 1463,
-     "airline": "British Airways",
-     "stops": 1,
-     "duration": "17 hr 50 min",
-     "from": "Amsterdam Airport Schiphol",
-     "fromId": "AMS",
-     "departs": "Sunday, July 25 10:05 AM",
-     "to": "Haneda Airport",
-     "arrives": "Monday, July 26 10:55 AM",
-     "layovers": [
-      "Heathrow Airport"
-     ],
-     "airportChange": false
-    },
-    "cheapestPP": 1260
+    "cheapestPP": 1260,
+    "mixedPricePP": 1463,
+    "error": "multi-airport search: the return may land at another home airport; price not verified for this airport"
    },
    {
     "origin": "BRU",
@@ -5373,24 +4255,10 @@
     "checkedAt": "2026-11-25T23:46:37Z",
     "source": "searchapi",
     "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhpCEgoyMDI3LTA3LTI1agcIARIDQU1TagcIARIDQlJVagcIARIDRFVTagcIARIDRUlOagcIARIDUlRNcgcIARIDVFlPGkISCjIwMjctMDgtMDlqBwgBEgNPU0FyBwgBEgNBTVNyBwgBEgNCUlVyBwgBEgNEVVNyBwgBEgNFSU5yBwgBEgNSVE1AAUgBcAGCAQsI____________AZgBAw&tfu=EgQIACACIgMSATA&hl=en&gl=nl&curr=EUR",
-    "pricePP": 1438,
     "airline": "Etihad",
-    "out": {
-     "pricePP": 1438,
-     "airline": "Etihad",
-     "stops": 1,
-     "duration": "18 hr 50 min",
-     "from": "Brussels Airport",
-     "fromId": "BRU",
-     "departs": "Sunday, July 25 10:55 AM",
-     "to": "Narita International Airport",
-     "arrives": "Monday, July 26 12:45 PM",
-     "layovers": [
-      "Zayed International Airport"
-     ],
-     "airportChange": false
-    },
-    "cheapestPP": 1260
+    "cheapestPP": 1260,
+    "mixedPricePP": 1438,
+    "error": "multi-airport search: the return may land at another home airport; price not verified for this airport"
    },
    {
     "origin": "DUS",
@@ -5400,24 +4268,10 @@
     "checkedAt": "2026-11-25T23:46:37Z",
     "source": "searchapi",
     "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhpCEgoyMDI3LTA3LTI1agcIARIDQU1TagcIARIDQlJVagcIARIDRFVTagcIARIDRUlOagcIARIDUlRNcgcIARIDVFlPGkISCjIwMjctMDgtMDlqBwgBEgNPU0FyBwgBEgNBTVNyBwgBEgNCUlVyBwgBEgNEVVNyBwgBEgNFSU5yBwgBEgNSVE1AAUgBcAGCAQsI____________AZgBAw&tfu=EgQIACACIgMSATA&hl=en&gl=nl&curr=EUR",
-    "pricePP": 1260,
     "airline": "Qatar Airways",
-    "out": {
-     "pricePP": 1260,
-     "airline": "Qatar Airways",
-     "stops": 1,
-     "duration": "20 hr 45 min",
-     "from": "Duesseldorf Airport",
-     "fromId": "DUS",
-     "departs": "Sunday, July 25 3:25 PM",
-     "to": "Narita International Airport",
-     "arrives": "Monday, July 26 7:10 PM",
-     "layovers": [
-      "Hamad International Airport"
-     ],
-     "airportChange": false
-    },
-    "cheapestPP": 1260
+    "cheapestPP": 1260,
+    "mixedPricePP": 1260,
+    "error": "multi-airport search: the return may land at another home airport; price not verified for this airport"
    },
    {
     "origin": "EIN",
@@ -5553,24 +4407,10 @@
     "checkedAt": "2026-11-25T23:46:45Z",
     "source": "searchapi",
     "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhpCEgoyMDI3LTA3LTI2agcIARIDQU1TagcIARIDQlJVagcIARIDRFVTagcIARIDRUlOagcIARIDUlRNcgcIARIDVFlPGkISCjIwMjctMDgtMTBqBwgBEgNPU0FyBwgBEgNBTVNyBwgBEgNCUlVyBwgBEgNEVVNyBwgBEgNFSU5yBwgBEgNSVE1AAUgBcAGCAQsI____________AZgBAw&tfu=EgQIACACIgMSATA&hl=en&gl=nl&curr=EUR",
-    "pricePP": 1400,
     "airline": "Finnair",
-    "out": {
-     "pricePP": 1400,
-     "airline": "Finnair",
-     "stops": 1,
-     "duration": "18 hr 10 min",
-     "from": "Amsterdam Airport Schiphol",
-     "fromId": "AMS",
-     "departs": "Monday, July 26 11:55 AM",
-     "to": "Narita International Airport",
-     "arrives": "Tuesday, July 27 1:05 PM",
-     "layovers": [
-      "Helsinki Airport"
-     ],
-     "airportChange": false
-    },
-    "cheapestPP": 1308
+    "cheapestPP": 1308,
+    "mixedPricePP": 1400,
+    "error": "multi-airport search: the return may land at another home airport; price not verified for this airport"
    },
    {
     "origin": "BRU",
@@ -5580,24 +4420,10 @@
     "checkedAt": "2026-11-25T23:46:45Z",
     "source": "searchapi",
     "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhpCEgoyMDI3LTA3LTI2agcIARIDQU1TagcIARIDQlJVagcIARIDRFVTagcIARIDRUlOagcIARIDUlRNcgcIARIDVFlPGkISCjIwMjctMDgtMTBqBwgBEgNPU0FyBwgBEgNBTVNyBwgBEgNCUlVyBwgBEgNEVVNyBwgBEgNFSU5yBwgBEgNSVE1AAUgBcAGCAQsI____________AZgBAw&tfu=EgQIACACIgMSATA&hl=en&gl=nl&curr=EUR",
-    "pricePP": 1388,
     "airline": "Finnair",
-    "out": {
-     "pricePP": 1388,
-     "airline": "Finnair",
-     "stops": 1,
-     "duration": "19 hr 20 min",
-     "from": "Brussels Airport",
-     "fromId": "BRU",
-     "departs": "Monday, July 26 10:45 AM",
-     "to": "Narita International Airport",
-     "arrives": "Tuesday, July 27 1:05 PM",
-     "layovers": [
-      "Helsinki Airport"
-     ],
-     "airportChange": false
-    },
-    "cheapestPP": 1308
+    "cheapestPP": 1308,
+    "mixedPricePP": 1388,
+    "error": "multi-airport search: the return may land at another home airport; price not verified for this airport"
    },
    {
     "origin": "DUS",
@@ -5607,24 +4433,10 @@
     "checkedAt": "2026-11-25T23:46:45Z",
     "source": "searchapi",
     "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhpCEgoyMDI3LTA3LTI2agcIARIDQU1TagcIARIDQlJVagcIARIDRFVTagcIARIDRUlOagcIARIDUlRNcgcIARIDVFlPGkISCjIwMjctMDgtMTBqBwgBEgNPU0FyBwgBEgNBTVNyBwgBEgNCUlVyBwgBEgNEVVNyBwgBEgNFSU5yBwgBEgNSVE1AAUgBcAGCAQsI____________AZgBAw&tfu=EgQIACACIgMSATA&hl=en&gl=nl&curr=EUR",
-    "pricePP": 1308,
     "airline": "Qatar Airways",
-    "out": {
-     "pricePP": 1308,
-     "airline": "Qatar Airways",
-     "stops": 1,
-     "duration": "20 hr 45 min",
-     "from": "Duesseldorf Airport",
-     "fromId": "DUS",
-     "departs": "Monday, July 26 3:25 PM",
-     "to": "Narita International Airport",
-     "arrives": "Tuesday, July 27 7:10 PM",
-     "layovers": [
-      "Hamad International Airport"
-     ],
-     "airportChange": false
-    },
-    "cheapestPP": 1308
+    "cheapestPP": 1308,
+    "mixedPricePP": 1308,
+    "error": "multi-airport search: the return may land at another home airport; price not verified for this airport"
    },
    {
     "origin": "EIN",
@@ -5761,24 +4573,10 @@
     "checkedAt": "2026-11-25T23:47:10Z",
     "source": "searchapi",
     "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhpCEgoyMDI3LTA3LTI3agcIARIDQU1TagcIARIDQlJVagcIARIDRFVTagcIARIDRUlOagcIARIDUlRNcgcIARIDVFlPGkISCjIwMjctMDgtMTFqBwgBEgNPU0FyBwgBEgNBTVNyBwgBEgNCUlVyBwgBEgNEVVNyBwgBEgNFSU5yBwgBEgNSVE1AAUgBcAGCAQsI____________AZgBAw&tfu=EgQIACACIgMSATA&hl=en&gl=nl&curr=EUR",
-    "pricePP": 1313,
     "airline": "China Southern",
-    "out": {
-     "pricePP": 1313,
-     "airline": "China Southern",
-     "stops": 1,
-     "duration": "17 hr 20 min",
-     "from": "Amsterdam Airport Schiphol",
-     "fromId": "AMS",
-     "departs": "Tuesday, July 27 1:20 PM",
-     "to": "Narita International Airport",
-     "arrives": "Wednesday, July 28 1:40 PM",
-     "layovers": [
-      "Guangzhou Baiyun International Airport"
-     ],
-     "airportChange": false
-    },
-    "cheapestPP": 1261
+    "cheapestPP": 1261,
+    "mixedPricePP": 1313,
+    "error": "multi-airport search: the return may land at another home airport; price not verified for this airport"
    },
    {
     "origin": "BRU",
@@ -5788,24 +4586,10 @@
     "checkedAt": "2026-11-25T23:47:10Z",
     "source": "searchapi",
     "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhpCEgoyMDI3LTA3LTI3agcIARIDQU1TagcIARIDQlJVagcIARIDRFVTagcIARIDRUlOagcIARIDUlRNcgcIARIDVFlPGkISCjIwMjctMDgtMTFqBwgBEgNPU0FyBwgBEgNBTVNyBwgBEgNCUlVyBwgBEgNEVVNyBwgBEgNFSU5yBwgBEgNSVE1AAUgBcAGCAQsI____________AZgBAw&tfu=EgQIACACIgMSATA&hl=en&gl=nl&curr=EUR",
-    "pricePP": 1294,
     "airline": "Finnair and JAL",
-    "out": {
-     "pricePP": 1294,
-     "airline": "Finnair and JAL",
-     "stops": 1,
-     "duration": "20 hr 10 min",
-     "from": "Brussels Airport",
-     "fromId": "BRU",
-     "departs": "Tuesday, July 27 10:45 AM",
-     "to": "Haneda Airport",
-     "arrives": "Wednesday, July 28 1:55 PM",
-     "layovers": [
-      "Helsinki Airport"
-     ],
-     "airportChange": false
-    },
-    "cheapestPP": 1261
+    "cheapestPP": 1261,
+    "mixedPricePP": 1294,
+    "error": "multi-airport search: the return may land at another home airport; price not verified for this airport"
    },
    {
     "origin": "DUS",
@@ -5815,24 +4599,10 @@
     "checkedAt": "2026-11-25T23:47:10Z",
     "source": "searchapi",
     "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhpCEgoyMDI3LTA3LTI3agcIARIDQU1TagcIARIDQlJVagcIARIDRFVTagcIARIDRUlOagcIARIDUlRNcgcIARIDVFlPGkISCjIwMjctMDgtMTFqBwgBEgNPU0FyBwgBEgNBTVNyBwgBEgNCUlVyBwgBEgNEVVNyBwgBEgNFSU5yBwgBEgNSVE1AAUgBcAGCAQsI____________AZgBAw&tfu=EgQIACACIgMSATA&hl=en&gl=nl&curr=EUR",
-    "pricePP": 1261,
     "airline": "Eurowings and ANA",
-    "out": {
-     "pricePP": 1261,
-     "airline": "Eurowings and ANA",
-     "stops": 1,
-     "duration": "16 hr 50 min",
-     "from": "Duesseldorf Airport",
-     "fromId": "DUS",
-     "departs": "Tuesday, July 27 7:05 AM",
-     "to": "Haneda Airport",
-     "arrives": "Wednesday, July 28 6:55 AM",
-     "layovers": [
-      "Vienna International Airport"
-     ],
-     "airportChange": false
-    },
-    "cheapestPP": 1261
+    "cheapestPP": 1261,
+    "mixedPricePP": 1261,
+    "error": "multi-airport search: the return may land at another home airport; price not verified for this airport"
    },
    {
     "origin": "EIN",
@@ -5968,24 +4738,10 @@
     "checkedAt": "2026-11-25T23:47:20Z",
     "source": "searchapi",
     "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhpCEgoyMDI3LTA3LTI4agcIARIDQU1TagcIARIDQlJVagcIARIDRFVTagcIARIDRUlOagcIARIDUlRNcgcIARIDVFlPGkISCjIwMjctMDgtMTJqBwgBEgNPU0FyBwgBEgNBTVNyBwgBEgNCUlVyBwgBEgNEVVNyBwgBEgNFSU5yBwgBEgNSVE1AAUgBcAGCAQsI____________AZgBAw&tfu=EgQIACACIgMSATA&hl=en&gl=nl&curr=EUR",
-    "pricePP": 1324,
     "airline": "British Airways",
-    "out": {
-     "pricePP": 1324,
-     "airline": "British Airways",
-     "stops": 1,
-     "duration": "17 hr 40 min",
-     "from": "Amsterdam Airport Schiphol",
-     "fromId": "AMS",
-     "departs": "Wednesday, July 28 10:15 AM",
-     "to": "Haneda Airport",
-     "arrives": "Thursday, July 29 10:55 AM",
-     "layovers": [
-      "Heathrow Airport"
-     ],
-     "airportChange": false
-    },
-    "cheapestPP": 1276
+    "cheapestPP": 1276,
+    "mixedPricePP": 1324,
+    "error": "multi-airport search: the return may land at another home airport; price not verified for this airport"
    },
    {
     "origin": "BRU",
@@ -5995,10 +4751,10 @@
     "checkedAt": "2026-11-25T23:47:20Z",
     "source": "searchapi",
     "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhpCEgoyMDI3LTA3LTI4agcIARIDQU1TagcIARIDQlJVagcIARIDRFVTagcIARIDRUlOagcIARIDUlRNcgcIARIDVFlPGkISCjIwMjctMDgtMTJqBwgBEgNPU0FyBwgBEgNBTVNyBwgBEgNCUlVyBwgBEgNEVVNyBwgBEgNFSU5yBwgBEgNSVE1AAUgBcAGCAQsI____________AZgBAw&tfu=EgQIACACIgMSATA&hl=en&gl=nl&curr=EUR",
-    "pricePP": 1383,
-    "airline": "ITA",
+    "pricePP": 1117,
+    "airline": "British Airways and JAL",
     "out": {
-     "pricePP": 1383,
+     "pricePP": 1117,
      "airline": "ITA",
      "stops": 1,
      "duration": "15 hr 50 min",
@@ -6012,7 +4768,9 @@
      ],
      "airportChange": false
     },
-    "cheapestPP": 1276
+    "cheapestPP": 1276,
+    "mixedPricePP": 1383,
+    "note": "verified with the same home airport both ways (out via London and Tokyo-Haneda to Osaka-Itami)"
    },
    {
     "origin": "DUS",
@@ -6022,24 +4780,10 @@
     "checkedAt": "2026-11-25T23:47:20Z",
     "source": "searchapi",
     "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhpCEgoyMDI3LTA3LTI4agcIARIDQU1TagcIARIDQlJVagcIARIDRFVTagcIARIDRUlOagcIARIDUlRNcgcIARIDVFlPGkISCjIwMjctMDgtMTJqBwgBEgNPU0FyBwgBEgNBTVNyBwgBEgNCUlVyBwgBEgNEVVNyBwgBEgNFSU5yBwgBEgNSVE1AAUgBcAGCAQsI____________AZgBAw&tfu=EgQIACACIgMSATA&hl=en&gl=nl&curr=EUR",
-    "pricePP": 1276,
     "airline": "Finnair and JAL",
-    "out": {
-     "pricePP": 1276,
-     "airline": "Finnair and JAL",
-     "stops": 1,
-     "duration": "19 hr 55 min",
-     "from": "Duesseldorf Airport",
-     "fromId": "DUS",
-     "departs": "Wednesday, July 28 11:00 AM",
-     "to": "Haneda Airport",
-     "arrives": "Thursday, July 29 1:55 PM",
-     "layovers": [
-      "Helsinki Airport"
-     ],
-     "airportChange": false
-    },
-    "cheapestPP": 1276
+    "cheapestPP": 1276,
+    "mixedPricePP": 1276,
+    "error": "multi-airport search: the return may land at another home airport; price not verified for this airport"
    },
    {
     "origin": "EIN",
@@ -6175,24 +4919,10 @@
     "checkedAt": "2026-11-25T23:47:29Z",
     "source": "searchapi",
     "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhpCEgoyMDI3LTA3LTI5agcIARIDQU1TagcIARIDQlJVagcIARIDRFVTagcIARIDRUlOagcIARIDUlRNcgcIARIDVFlPGkISCjIwMjctMDgtMTNqBwgBEgNPU0FyBwgBEgNBTVNyBwgBEgNCUlVyBwgBEgNEVVNyBwgBEgNFSU5yBwgBEgNSVE1AAUgBcAGCAQsI____________AZgBAw&tfu=EgQIACACIgMSATA&hl=en&gl=nl&curr=EUR",
-    "pricePP": 1362,
     "airline": "British Airways",
-    "out": {
-     "pricePP": 1362,
-     "airline": "British Airways",
-     "stops": 1,
-     "duration": "20 hr 10 min",
-     "from": "Amsterdam Airport Schiphol",
-     "fromId": "AMS",
-     "departs": "Thursday, July 29 7:45 AM",
-     "to": "Haneda Airport",
-     "arrives": "Friday, July 30 10:55 AM",
-     "layovers": [
-      "Heathrow Airport"
-     ],
-     "airportChange": false
-    },
-    "cheapestPP": 1295
+    "cheapestPP": 1295,
+    "mixedPricePP": 1362,
+    "error": "multi-airport search: the return may land at another home airport; price not verified for this airport"
    },
    {
     "origin": "BRU",
@@ -6202,24 +4932,10 @@
     "checkedAt": "2026-11-25T23:47:29Z",
     "source": "searchapi",
     "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhpCEgoyMDI3LTA3LTI5agcIARIDQU1TagcIARIDQlJVagcIARIDRFVTagcIARIDRUlOagcIARIDUlRNcgcIARIDVFlPGkISCjIwMjctMDgtMTNqBwgBEgNPU0FyBwgBEgNBTVNyBwgBEgNCUlVyBwgBEgNEVVNyBwgBEgNFSU5yBwgBEgNSVE1AAUgBcAGCAQsI____________AZgBAw&tfu=EgQIACACIgMSATA&hl=en&gl=nl&curr=EUR",
-    "pricePP": 1365,
     "airline": "British Airways",
-    "out": {
-     "pricePP": 1365,
-     "airline": "British Airways",
-     "stops": 1,
-     "duration": "17 hr 5 min",
-     "from": "Brussels Airport",
-     "fromId": "BRU",
-     "departs": "Thursday, July 29 10:50 AM",
-     "to": "Haneda Airport",
-     "arrives": "Friday, July 30 10:55 AM",
-     "layovers": [
-      "Heathrow Airport"
-     ],
-     "airportChange": false
-    },
-    "cheapestPP": 1295
+    "cheapestPP": 1295,
+    "mixedPricePP": 1365,
+    "error": "multi-airport search: the return may land at another home airport; price not verified for this airport"
    },
    {
     "origin": "DUS",
@@ -6229,24 +4945,10 @@
     "checkedAt": "2026-11-25T23:47:29Z",
     "source": "searchapi",
     "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhpCEgoyMDI3LTA3LTI5agcIARIDQU1TagcIARIDQlJVagcIARIDRFVTagcIARIDRUlOagcIARIDUlRNcgcIARIDVFlPGkISCjIwMjctMDgtMTNqBwgBEgNPU0FyBwgBEgNBTVNyBwgBEgNCUlVyBwgBEgNEVVNyBwgBEgNFSU5yBwgBEgNSVE1AAUgBcAGCAQsI____________AZgBAw&tfu=EgQIACACIgMSATA&hl=en&gl=nl&curr=EUR",
-    "pricePP": 1295,
     "airline": "Qatar Airways",
-    "out": {
-     "pricePP": 1295,
-     "airline": "Qatar Airways",
-     "stops": 1,
-     "duration": "20 hr 35 min",
-     "from": "Duesseldorf Airport",
-     "fromId": "DUS",
-     "departs": "Thursday, July 29 9:20 AM",
-     "to": "Narita International Airport",
-     "arrives": "Friday, July 30 12:55 PM",
-     "layovers": [
-      "Hamad International Airport"
-     ],
-     "airportChange": false
-    },
-    "cheapestPP": 1295
+    "cheapestPP": 1295,
+    "mixedPricePP": 1295,
+    "error": "multi-airport search: the return may land at another home airport; price not verified for this airport"
    },
    {
     "origin": "EIN",
@@ -6384,24 +5086,10 @@
     "checkedAt": "2026-11-25T23:47:42Z",
     "source": "searchapi",
     "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhpCEgoyMDI3LTA3LTIzagcIARIDQU1TagcIARIDQlJVagcIARIDRFVTagcIARIDRUlOagcIARIDUlRNcgcIARIDT1NBGkISCjIwMjctMDgtMDdqBwgBEgNUWU9yBwgBEgNBTVNyBwgBEgNCUlVyBwgBEgNEVVNyBwgBEgNFSU5yBwgBEgNSVE1AAUgBcAGCAQsI____________AZgBAw&tfu=EgQIACACIgMSATA&hl=en&gl=nl&curr=EUR",
-    "pricePP": 1372,
     "airline": "Finnair",
-    "out": {
-     "pricePP": 1372,
-     "airline": "Finnair",
-     "stops": 1,
-     "duration": "34 hr 10 min",
-     "from": "Amsterdam Airport Schiphol",
-     "fromId": "AMS",
-     "departs": "Friday, July 23 7:25 PM",
-     "to": "Kansai International Airport",
-     "arrives": "Sunday, July 25 12:35 PM",
-     "layovers": [
-      "Helsinki Airport"
-     ],
-     "airportChange": false
-    },
-    "cheapestPP": 1372
+    "cheapestPP": 1372,
+    "mixedPricePP": 1372,
+    "error": "multi-airport search: the return may land at another home airport; price not verified for this airport"
    },
    {
     "origin": "BRU",
@@ -6411,25 +5099,10 @@
     "checkedAt": "2026-11-25T23:47:42Z",
     "source": "searchapi",
     "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhpCEgoyMDI3LTA3LTIzagcIARIDQU1TagcIARIDQlJVagcIARIDRFVTagcIARIDRUlOagcIARIDUlRNcgcIARIDT1NBGkISCjIwMjctMDgtMDdqBwgBEgNUWU9yBwgBEgNBTVNyBwgBEgNCUlVyBwgBEgNEVVNyBwgBEgNFSU5yBwgBEgNSVE1AAUgBcAGCAQsI____________AZgBAw&tfu=EgQIACACIgMSATA&hl=en&gl=nl&curr=EUR",
-    "pricePP": 1378,
     "airline": "Finnair and JAL",
-    "out": {
-     "pricePP": 1378,
-     "airline": "Finnair and JAL",
-     "stops": 2,
-     "duration": "23 hr 50 min",
-     "from": "Brussels Airport",
-     "fromId": "BRU",
-     "departs": "Friday, July 23 10:45 AM",
-     "to": "Osaka Itami Airport",
-     "arrives": "Saturday, July 24 5:35 PM",
-     "layovers": [
-      "Helsinki Airport",
-      "Haneda Airport"
-     ],
-     "airportChange": false
-    },
-    "cheapestPP": 1372
+    "cheapestPP": 1372,
+    "mixedPricePP": 1378,
+    "error": "multi-airport search: the return may land at another home airport; price not verified for this airport"
    },
    {
     "origin": "DUS",
@@ -6439,24 +5112,10 @@
     "checkedAt": "2026-11-25T23:47:42Z",
     "source": "searchapi",
     "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhpCEgoyMDI3LTA3LTIzagcIARIDQU1TagcIARIDQlJVagcIARIDRFVTagcIARIDRUlOagcIARIDUlRNcgcIARIDT1NBGkISCjIwMjctMDgtMDdqBwgBEgNUWU9yBwgBEgNBTVNyBwgBEgNCUlVyBwgBEgNEVVNyBwgBEgNFSU5yBwgBEgNSVE1AAUgBcAGCAQsI____________AZgBAw&tfu=EgQIACACIgMSATA&hl=en&gl=nl&curr=EUR",
-    "pricePP": 1425,
     "airline": "Qatar Airways",
-    "out": {
-     "pricePP": 1425,
-     "airline": "Qatar Airways",
-     "stops": 1,
-     "duration": "43 hr 0 min",
-     "from": "Duesseldorf Airport",
-     "fromId": "DUS",
-     "departs": "Friday, July 23 3:25 PM",
-     "to": "Kansai International Airport",
-     "arrives": "Sunday, July 25 5:25 PM",
-     "layovers": [
-      "Hamad International Airport"
-     ],
-     "airportChange": false
-    },
-    "cheapestPP": 1372
+    "cheapestPP": 1372,
+    "mixedPricePP": 1425,
+    "error": "multi-airport search: the return may land at another home airport; price not verified for this airport"
    },
    {
     "origin": "EIN",
@@ -6466,25 +5125,10 @@
     "checkedAt": "2026-11-25T23:47:42Z",
     "source": "searchapi",
     "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhpCEgoyMDI3LTA3LTIzagcIARIDQU1TagcIARIDQlJVagcIARIDRFVTagcIARIDRUlOagcIARIDUlRNcgcIARIDT1NBGkISCjIwMjctMDgtMDdqBwgBEgNUWU9yBwgBEgNBTVNyBwgBEgNCUlVyBwgBEgNEVVNyBwgBEgNFSU5yBwgBEgNSVE1AAUgBcAGCAQsI____________AZgBAw&tfu=EgQIACACIgMSATA&hl=en&gl=nl&curr=EUR",
-    "pricePP": 2158,
     "airline": "KLM and ANA",
-    "out": {
-     "pricePP": 2158,
-     "airline": "KLM and ANA",
-     "stops": 2,
-     "duration": "29 hr 30 min",
-     "from": "Eindhoven Airport",
-     "fromId": "EIN",
-     "departs": "Friday, July 23 6:25 AM",
-     "to": "Osaka Itami Airport",
-     "arrives": "Saturday, July 24 6:55 PM",
-     "layovers": [
-      "Amsterdam Airport Schiphol",
-      "Narita International Airport"
-     ],
-     "airportChange": false
-    },
-    "cheapestPP": 1372
+    "cheapestPP": 1372,
+    "mixedPricePP": 2158,
+    "error": "multi-airport search: the return may land at another home airport; price not verified for this airport"
    },
    {
     "origin": "RTM",
@@ -6576,24 +5220,10 @@
     "checkedAt": "2026-11-25T23:47:52Z",
     "source": "searchapi",
     "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhpCEgoyMDI3LTA3LTI0agcIARIDQU1TagcIARIDQlJVagcIARIDRFVTagcIARIDRUlOagcIARIDUlRNcgcIARIDT1NBGkISCjIwMjctMDgtMDhqBwgBEgNUWU9yBwgBEgNBTVNyBwgBEgNCUlVyBwgBEgNEVVNyBwgBEgNFSU5yBwgBEgNSVE1AAUgBcAGCAQsI____________AZgBAw&tfu=EgQIACACIgMSATA&hl=en&gl=nl&curr=EUR",
-    "pricePP": 1455,
     "airline": "Finnair",
-    "out": {
-     "pricePP": 1455,
-     "airline": "Finnair",
-     "stops": 1,
-     "duration": "17 hr 40 min",
-     "from": "Amsterdam Airport Schiphol",
-     "fromId": "AMS",
-     "departs": "Saturday, July 24 11:55 AM",
-     "to": "Kansai International Airport",
-     "arrives": "Sunday, July 25 12:35 PM",
-     "layovers": [
-      "Helsinki Airport"
-     ],
-     "airportChange": false
-    },
-    "cheapestPP": 1275
+    "cheapestPP": 1275,
+    "mixedPricePP": 1455,
+    "error": "multi-airport search: the return may land at another home airport; price not verified for this airport"
    },
    {
     "origin": "BRU",
@@ -6603,25 +5233,10 @@
     "checkedAt": "2026-11-25T23:47:52Z",
     "source": "searchapi",
     "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhpCEgoyMDI3LTA3LTI0agcIARIDQU1TagcIARIDQlJVagcIARIDRFVTagcIARIDRUlOagcIARIDUlRNcgcIARIDT1NBGkISCjIwMjctMDgtMDhqBwgBEgNUWU9yBwgBEgNBTVNyBwgBEgNCUlVyBwgBEgNEVVNyBwgBEgNFSU5yBwgBEgNSVE1AAUgBcAGCAQsI____________AZgBAw&tfu=EgQIACACIgMSATA&hl=en&gl=nl&curr=EUR",
-    "pricePP": 1275,
     "airline": "British Airways and JAL",
-    "out": {
-     "pricePP": 1275,
-     "airline": "British Airways and JAL",
-     "stops": 2,
-     "duration": "21 hr 55 min",
-     "from": "Brussels Airport",
-     "fromId": "BRU",
-     "departs": "Saturday, July 24 10:40 AM",
-     "to": "Osaka Itami Airport",
-     "arrives": "Sunday, July 25 3:35 PM",
-     "layovers": [
-      "Heathrow Airport",
-      "Haneda Airport"
-     ],
-     "airportChange": false
-    },
-    "cheapestPP": 1275
+    "cheapestPP": 1275,
+    "mixedPricePP": 1275,
+    "error": "multi-airport search: the return may land at another home airport; price not verified for this airport"
    },
    {
     "origin": "DUS",
@@ -6631,24 +5246,10 @@
     "checkedAt": "2026-11-25T23:47:52Z",
     "source": "searchapi",
     "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhpCEgoyMDI3LTA3LTI0agcIARIDQU1TagcIARIDQlJVagcIARIDRFVTagcIARIDRUlOagcIARIDUlRNcgcIARIDT1NBGkISCjIwMjctMDgtMDhqBwgBEgNUWU9yBwgBEgNBTVNyBwgBEgNCUlVyBwgBEgNEVVNyBwgBEgNFSU5yBwgBEgNSVE1AAUgBcAGCAQsI____________AZgBAw&tfu=EgQIACACIgMSATA&hl=en&gl=nl&curr=EUR",
-    "pricePP": 1327,
     "airline": "Qatar Airways",
-    "out": {
-     "pricePP": 1327,
-     "airline": "Qatar Airways",
-     "stops": 1,
-     "duration": "25 hr 5 min",
-     "from": "Duesseldorf Airport",
-     "fromId": "DUS",
-     "departs": "Saturday, July 24 9:20 AM",
-     "to": "Kansai International Airport",
-     "arrives": "Sunday, July 25 5:25 PM",
-     "layovers": [
-      "Hamad International Airport"
-     ],
-     "airportChange": false
-    },
-    "cheapestPP": 1275
+    "cheapestPP": 1275,
+    "mixedPricePP": 1327,
+    "error": "multi-airport search: the return may land at another home airport; price not verified for this airport"
    },
    {
     "origin": "EIN",
@@ -6768,25 +5369,10 @@
     "checkedAt": "2026-11-25T23:48:03Z",
     "source": "searchapi",
     "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhpCEgoyMDI3LTA3LTI1agcIARIDQU1TagcIARIDQlJVagcIARIDRFVTagcIARIDRUlOagcIARIDUlRNcgcIARIDT1NBGkISCjIwMjctMDgtMDlqBwgBEgNUWU9yBwgBEgNBTVNyBwgBEgNCUlVyBwgBEgNEVVNyBwgBEgNFSU5yBwgBEgNSVE1AAUgBcAGCAQsI____________AZgBAw&tfu=EgQIACACIgMSATA&hl=en&gl=nl&curr=EUR",
-    "pricePP": 1268,
     "airline": "Lufthansa and ANA",
-    "out": {
-     "pricePP": 1268,
-     "airline": "Lufthansa and ANA",
-     "stops": 2,
-     "duration": "19 hr 50 min",
-     "from": "Amsterdam Airport Schiphol",
-     "fromId": "AMS",
-     "departs": "Sunday, July 25 8:15 AM",
-     "to": "Osaka Itami Airport",
-     "arrives": "Monday, July 26 11:05 AM",
-     "layovers": [
-      "Munich International Airport",
-      "Haneda Airport"
-     ],
-     "airportChange": false
-    },
-    "cheapestPP": 1256
+    "cheapestPP": 1256,
+    "mixedPricePP": 1268,
+    "error": "multi-airport search: the return may land at another home airport; price not verified for this airport"
    },
    {
     "origin": "BRU",
@@ -6796,24 +5382,10 @@
     "checkedAt": "2026-11-25T23:48:03Z",
     "source": "searchapi",
     "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhpCEgoyMDI3LTA3LTI1agcIARIDQU1TagcIARIDQlJVagcIARIDRFVTagcIARIDRUlOagcIARIDUlRNcgcIARIDT1NBGkISCjIwMjctMDgtMDlqBwgBEgNUWU9yBwgBEgNBTVNyBwgBEgNCUlVyBwgBEgNEVVNyBwgBEgNFSU5yBwgBEgNSVE1AAUgBcAGCAQsI____________AZgBAw&tfu=EgQIACACIgMSATA&hl=en&gl=nl&curr=EUR",
-    "pricePP": 1354,
     "airline": "Finnair",
-    "out": {
-     "pricePP": 1354,
-     "airline": "Finnair",
-     "stops": 1,
-     "duration": "18 hr 50 min",
-     "from": "Brussels Airport",
-     "fromId": "BRU",
-     "departs": "Sunday, July 25 10:45 AM",
-     "to": "Kansai International Airport",
-     "arrives": "Monday, July 26 12:35 PM",
-     "layovers": [
-      "Helsinki Airport"
-     ],
-     "airportChange": false
-    },
-    "cheapestPP": 1256
+    "cheapestPP": 1256,
+    "mixedPricePP": 1354,
+    "error": "multi-airport search: the return may land at another home airport; price not verified for this airport"
    },
    {
     "origin": "DUS",
@@ -6823,24 +5395,10 @@
     "checkedAt": "2026-11-25T23:48:03Z",
     "source": "searchapi",
     "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhpCEgoyMDI3LTA3LTI1agcIARIDQU1TagcIARIDQlJVagcIARIDRFVTagcIARIDRUlOagcIARIDUlRNcgcIARIDT1NBGkISCjIwMjctMDgtMDlqBwgBEgNUWU9yBwgBEgNBTVNyBwgBEgNCUlVyBwgBEgNEVVNyBwgBEgNFSU5yBwgBEgNSVE1AAUgBcAGCAQsI____________AZgBAw&tfu=EgQIACACIgMSATA&hl=en&gl=nl&curr=EUR",
-    "pricePP": 1256,
     "airline": "Qatar Airways",
-    "out": {
-     "pricePP": 1256,
-     "airline": "Qatar Airways",
-     "stops": 1,
-     "duration": "19 hr 0 min",
-     "from": "Duesseldorf Airport",
-     "fromId": "DUS",
-     "departs": "Sunday, July 25 3:25 PM",
-     "to": "Kansai International Airport",
-     "arrives": "Monday, July 26 5:25 PM",
-     "layovers": [
-      "Hamad International Airport"
-     ],
-     "airportChange": false
-    },
-    "cheapestPP": 1256
+    "cheapestPP": 1256,
+    "mixedPricePP": 1256,
+    "error": "multi-airport search: the return may land at another home airport; price not verified for this airport"
    },
    {
     "origin": "EIN",
@@ -6850,25 +5408,10 @@
     "checkedAt": "2026-11-25T23:48:03Z",
     "source": "searchapi",
     "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhpCEgoyMDI3LTA3LTI1agcIARIDQU1TagcIARIDQlJVagcIARIDRFVTagcIARIDRUlOagcIARIDUlRNcgcIARIDT1NBGkISCjIwMjctMDgtMDlqBwgBEgNUWU9yBwgBEgNBTVNyBwgBEgNCUlVyBwgBEgNEVVNyBwgBEgNFSU5yBwgBEgNSVE1AAUgBcAGCAQsI____________AZgBAw&tfu=EgQIACACIgMSATA&hl=en&gl=nl&curr=EUR",
-    "pricePP": 2075,
     "airline": "KLM and ANA",
-    "out": {
-     "pricePP": 2075,
-     "airline": "KLM and ANA",
-     "stops": 2,
-     "duration": "29 hr 30 min",
-     "from": "Eindhoven Airport",
-     "fromId": "EIN",
-     "departs": "Sunday, July 25 6:25 AM",
-     "to": "Osaka Itami Airport",
-     "arrives": "Monday, July 26 6:55 PM",
-     "layovers": [
-      "Amsterdam Airport Schiphol",
-      "Narita International Airport"
-     ],
-     "airportChange": false
-    },
-    "cheapestPP": 1256
+    "cheapestPP": 1256,
+    "mixedPricePP": 2075,
+    "error": "multi-airport search: the return may land at another home airport; price not verified for this airport"
    },
    {
     "origin": "RTM",
@@ -6978,25 +5521,10 @@
     "checkedAt": "2026-11-25T23:48:13Z",
     "source": "searchapi",
     "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhpCEgoyMDI3LTA3LTI2agcIARIDQU1TagcIARIDQlJVagcIARIDRFVTagcIARIDRUlOagcIARIDUlRNcgcIARIDT1NBGkISCjIwMjctMDgtMTBqBwgBEgNUWU9yBwgBEgNBTVNyBwgBEgNCUlVyBwgBEgNEVVNyBwgBEgNFSU5yBwgBEgNSVE1AAUgBcAGCAQsI____________AZgBAw&tfu=EgQIACACIgMSATA&hl=en&gl=nl&curr=EUR",
-    "pricePP": 1299,
     "airline": "British Airways and JAL",
-    "out": {
-     "pricePP": 1299,
-     "airline": "British Airways and JAL",
-     "stops": 2,
-     "duration": "20 hr 25 min",
-     "from": "Amsterdam Airport Schiphol",
-     "fromId": "AMS",
-     "departs": "Monday, July 26 7:15 AM",
-     "to": "Osaka Itami Airport",
-     "arrives": "Tuesday, July 27 10:40 AM",
-     "layovers": [
-      "Heathrow Airport",
-      "Haneda Airport"
-     ],
-     "airportChange": false
-    },
-    "cheapestPP": 1134
+    "cheapestPP": 1134,
+    "mixedPricePP": 1299,
+    "error": "multi-airport search: the return may land at another home airport; price not verified for this airport"
    },
    {
     "origin": "BRU",
@@ -7006,24 +5534,10 @@
     "checkedAt": "2026-11-25T23:48:13Z",
     "source": "searchapi",
     "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhpCEgoyMDI3LTA3LTI2agcIARIDQU1TagcIARIDQlJVagcIARIDRFVTagcIARIDRUlOagcIARIDUlRNcgcIARIDT1NBGkISCjIwMjctMDgtMTBqBwgBEgNUWU9yBwgBEgNBTVNyBwgBEgNCUlVyBwgBEgNEVVNyBwgBEgNFSU5yBwgBEgNSVE1AAUgBcAGCAQsI____________AZgBAw&tfu=EgQIACACIgMSATA&hl=en&gl=nl&curr=EUR",
-    "pricePP": 1274,
     "airline": "Finnair",
-    "out": {
-     "pricePP": 1274,
-     "airline": "Finnair",
-     "stops": 1,
-     "duration": "18 hr 50 min",
-     "from": "Brussels Airport",
-     "fromId": "BRU",
-     "departs": "Monday, July 26 10:45 AM",
-     "to": "Kansai International Airport",
-     "arrives": "Tuesday, July 27 12:35 PM",
-     "layovers": [
-      "Helsinki Airport"
-     ],
-     "airportChange": false
-    },
-    "cheapestPP": 1134
+    "cheapestPP": 1134,
+    "mixedPricePP": 1274,
+    "error": "multi-airport search: the return may land at another home airport; price not verified for this airport"
    },
    {
     "origin": "DUS",
@@ -7033,25 +5547,10 @@
     "checkedAt": "2026-11-25T23:48:13Z",
     "source": "searchapi",
     "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhpCEgoyMDI3LTA3LTI2agcIARIDQU1TagcIARIDQlJVagcIARIDRFVTagcIARIDRUlOagcIARIDUlRNcgcIARIDT1NBGkISCjIwMjctMDgtMTBqBwgBEgNUWU9yBwgBEgNBTVNyBwgBEgNCUlVyBwgBEgNEVVNyBwgBEgNFSU5yBwgBEgNSVE1AAUgBcAGCAQsI____________AZgBAw&tfu=EgQIACACIgMSATA&hl=en&gl=nl&curr=EUR",
-    "pricePP": 1134,
     "airline": "British Airways and JAL",
-    "out": {
-     "pricePP": 1134,
-     "airline": "British Airways and JAL",
-     "stops": 2,
-     "duration": "20 hr 20 min",
-     "from": "Duesseldorf Airport",
-     "fromId": "DUS",
-     "departs": "Monday, July 26 10:40 AM",
-     "to": "Kansai International Airport",
-     "arrives": "Tuesday, July 27 2:00 PM",
-     "layovers": [
-      "Heathrow Airport",
-      "Haneda Airport"
-     ],
-     "airportChange": false
-    },
-    "cheapestPP": 1134
+    "cheapestPP": 1134,
+    "mixedPricePP": 1134,
+    "error": "multi-airport search: the return may land at another home airport; price not verified for this airport"
    },
    {
     "origin": "EIN",
@@ -7171,24 +5670,10 @@
     "checkedAt": "2026-11-25T23:48:23Z",
     "source": "searchapi",
     "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhpCEgoyMDI3LTA3LTI3agcIARIDQU1TagcIARIDQlJVagcIARIDRFVTagcIARIDRUlOagcIARIDUlRNcgcIARIDT1NBGkISCjIwMjctMDgtMTFqBwgBEgNUWU9yBwgBEgNBTVNyBwgBEgNCUlVyBwgBEgNEVVNyBwgBEgNFSU5yBwgBEgNSVE1AAUgBcAGCAQsI____________AZgBAw&tfu=EgQIACACIgMSATA&hl=en&gl=nl&curr=EUR",
-    "pricePP": 1291,
     "airline": "Finnair",
-    "out": {
-     "pricePP": 1291,
-     "airline": "Finnair",
-     "stops": 1,
-     "duration": "17 hr 40 min",
-     "from": "Amsterdam Airport Schiphol",
-     "fromId": "AMS",
-     "departs": "Tuesday, July 27 11:55 AM",
-     "to": "Kansai International Airport",
-     "arrives": "Wednesday, July 28 12:35 PM",
-     "layovers": [
-      "Helsinki Airport"
-     ],
-     "airportChange": false
-    },
-    "cheapestPP": 1087
+    "cheapestPP": 1087,
+    "mixedPricePP": 1291,
+    "error": "multi-airport search: the return may land at another home airport; price not verified for this airport"
    },
    {
     "origin": "BRU",
@@ -7198,25 +5683,10 @@
     "checkedAt": "2026-11-25T23:48:23Z",
     "source": "searchapi",
     "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhpCEgoyMDI3LTA3LTI3agcIARIDQU1TagcIARIDQlJVagcIARIDRFVTagcIARIDRUlOagcIARIDUlRNcgcIARIDT1NBGkISCjIwMjctMDgtMTFqBwgBEgNUWU9yBwgBEgNBTVNyBwgBEgNCUlVyBwgBEgNEVVNyBwgBEgNFSU5yBwgBEgNSVE1AAUgBcAGCAQsI____________AZgBAw&tfu=EgQIACACIgMSATA&hl=en&gl=nl&curr=EUR",
-    "pricePP": 1087,
     "airline": "British Airways and JAL",
-    "out": {
-     "pricePP": 1087,
-     "airline": "British Airways and JAL",
-     "stops": 2,
-     "duration": "20 hr 5 min",
-     "from": "Brussels Airport",
-     "fromId": "BRU",
-     "departs": "Tuesday, July 27 10:55 AM",
-     "to": "Kansai International Airport",
-     "arrives": "Wednesday, July 28 2:00 PM",
-     "layovers": [
-      "Heathrow Airport",
-      "Haneda Airport"
-     ],
-     "airportChange": false
-    },
-    "cheapestPP": 1087
+    "cheapestPP": 1087,
+    "mixedPricePP": 1087,
+    "error": "multi-airport search: the return may land at another home airport; price not verified for this airport"
    },
    {
     "origin": "DUS",
@@ -7226,25 +5696,10 @@
     "checkedAt": "2026-11-25T23:48:23Z",
     "source": "searchapi",
     "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhpCEgoyMDI3LTA3LTI3agcIARIDQU1TagcIARIDQlJVagcIARIDRFVTagcIARIDRUlOagcIARIDUlRNcgcIARIDT1NBGkISCjIwMjctMDgtMTFqBwgBEgNUWU9yBwgBEgNBTVNyBwgBEgNCUlVyBwgBEgNEVVNyBwgBEgNFSU5yBwgBEgNSVE1AAUgBcAGCAQsI____________AZgBAw&tfu=EgQIACACIgMSATA&hl=en&gl=nl&curr=EUR",
-    "pricePP": 1165,
     "airline": "Eurowings and ANA",
-    "out": {
-     "pricePP": 1165,
-     "airline": "Eurowings and ANA",
-     "stops": 2,
-     "duration": "20 hr 0 min",
-     "from": "Duesseldorf Airport",
-     "fromId": "DUS",
-     "departs": "Tuesday, July 27 7:05 AM",
-     "to": "Osaka Itami Airport",
-     "arrives": "Wednesday, July 28 10:05 AM",
-     "layovers": [
-      "Vienna International Airport",
-      "Haneda Airport"
-     ],
-     "airportChange": false
-    },
-    "cheapestPP": 1087
+    "cheapestPP": 1087,
+    "mixedPricePP": 1165,
+    "error": "multi-airport search: the return may land at another home airport; price not verified for this airport"
    },
    {
     "origin": "EIN",
@@ -7254,25 +5709,10 @@
     "checkedAt": "2026-11-25T23:48:23Z",
     "source": "searchapi",
     "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhpCEgoyMDI3LTA3LTI3agcIARIDQU1TagcIARIDQlJVagcIARIDRFVTagcIARIDRUlOagcIARIDUlRNcgcIARIDT1NBGkISCjIwMjctMDgtMTFqBwgBEgNUWU9yBwgBEgNBTVNyBwgBEgNCUlVyBwgBEgNEVVNyBwgBEgNFSU5yBwgBEgNSVE1AAUgBcAGCAQsI____________AZgBAw&tfu=EgQIACACIgMSATA&hl=en&gl=nl&curr=EUR",
-    "pricePP": 2101,
     "airline": "KLM and ANA",
-    "out": {
-     "pricePP": 2101,
-     "airline": "KLM and ANA",
-     "stops": 2,
-     "duration": "29 hr 30 min",
-     "from": "Eindhoven Airport",
-     "fromId": "EIN",
-     "departs": "Tuesday, July 27 6:25 AM",
-     "to": "Osaka Itami Airport",
-     "arrives": "Wednesday, July 28 6:55 PM",
-     "layovers": [
-      "Amsterdam Airport Schiphol",
-      "Narita International Airport"
-     ],
-     "airportChange": false
-    },
-    "cheapestPP": 1087
+    "cheapestPP": 1087,
+    "mixedPricePP": 2101,
+    "error": "multi-airport search: the return may land at another home airport; price not verified for this airport"
    },
    {
     "origin": "RTM",
@@ -7382,25 +5822,10 @@
     "checkedAt": "2026-11-25T23:48:31Z",
     "source": "searchapi",
     "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhpCEgoyMDI3LTA3LTI4agcIARIDQU1TagcIARIDQlJVagcIARIDRFVTagcIARIDRUlOagcIARIDUlRNcgcIARIDT1NBGkISCjIwMjctMDgtMTJqBwgBEgNUWU9yBwgBEgNBTVNyBwgBEgNCUlVyBwgBEgNEVVNyBwgBEgNFSU5yBwgBEgNSVE1AAUgBcAGCAQsI____________AZgBAw&tfu=EgQIACACIgMSATA&hl=en&gl=nl&curr=EUR",
-    "pricePP": 1299,
     "airline": "British Airways and JAL",
-    "out": {
-     "pricePP": 1299,
-     "airline": "British Airways and JAL",
-     "stops": 2,
-     "duration": "19 hr 55 min",
-     "from": "Amsterdam Airport Schiphol",
-     "fromId": "AMS",
-     "departs": "Wednesday, July 28 7:45 AM",
-     "to": "Osaka Itami Airport",
-     "arrives": "Thursday, July 29 10:40 AM",
-     "layovers": [
-      "Heathrow Airport",
-      "Haneda Airport"
-     ],
-     "airportChange": false
-    },
-    "cheapestPP": 1050
+    "cheapestPP": 1050,
+    "mixedPricePP": 1299,
+    "error": "multi-airport search: the return may land at another home airport; price not verified for this airport"
    },
    {
     "origin": "BRU",
@@ -7410,10 +5835,10 @@
     "checkedAt": "2026-11-25T23:48:31Z",
     "source": "searchapi",
     "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhpCEgoyMDI3LTA3LTI4agcIARIDQU1TagcIARIDQlJVagcIARIDRFVTagcIARIDRUlOagcIARIDUlRNcgcIARIDT1NBGkISCjIwMjctMDgtMTJqBwgBEgNUWU9yBwgBEgNBTVNyBwgBEgNCUlVyBwgBEgNEVVNyBwgBEgNFSU5yBwgBEgNSVE1AAUgBcAGCAQsI____________AZgBAw&tfu=EgQIACACIgMSATA&hl=en&gl=nl&curr=EUR",
-    "pricePP": 1050,
+    "pricePP": 1117,
     "airline": "British Airways and JAL",
     "out": {
-     "pricePP": 1050,
+     "pricePP": 1117,
      "airline": "British Airways and JAL",
      "stops": 2,
      "duration": "21 hr 35 min",
@@ -7428,7 +5853,9 @@
      ],
      "airportChange": false
     },
-    "cheapestPP": 1050
+    "cheapestPP": 1050,
+    "mixedPricePP": 1050,
+    "note": "verified with the same home airport both ways (out via London and Tokyo-Haneda to Osaka-Itami)"
    },
    {
     "origin": "DUS",
@@ -7438,24 +5865,10 @@
     "checkedAt": "2026-11-25T23:48:31Z",
     "source": "searchapi",
     "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhpCEgoyMDI3LTA3LTI4agcIARIDQU1TagcIARIDQlJVagcIARIDRFVTagcIARIDRUlOagcIARIDUlRNcgcIARIDT1NBGkISCjIwMjctMDgtMTJqBwgBEgNUWU9yBwgBEgNBTVNyBwgBEgNCUlVyBwgBEgNEVVNyBwgBEgNFSU5yBwgBEgNSVE1AAUgBcAGCAQsI____________AZgBAw&tfu=EgQIACACIgMSATA&hl=en&gl=nl&curr=EUR",
-    "pricePP": 1240,
     "airline": "Finnair",
-    "out": {
-     "pricePP": 1240,
-     "airline": "Finnair",
-     "stops": 1,
-     "duration": "18 hr 35 min",
-     "from": "Duesseldorf Airport",
-     "fromId": "DUS",
-     "departs": "Wednesday, July 28 11:00 AM",
-     "to": "Kansai International Airport",
-     "arrives": "Thursday, July 29 12:35 PM",
-     "layovers": [
-      "Helsinki Airport"
-     ],
-     "airportChange": false
-    },
-    "cheapestPP": 1050
+    "cheapestPP": 1050,
+    "mixedPricePP": 1240,
+    "error": "multi-airport search: the return may land at another home airport; price not verified for this airport"
    },
    {
     "origin": "EIN",
@@ -7465,25 +5878,10 @@
     "checkedAt": "2026-11-25T23:48:31Z",
     "source": "searchapi",
     "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhpCEgoyMDI3LTA3LTI4agcIARIDQU1TagcIARIDQlJVagcIARIDRFVTagcIARIDRUlOagcIARIDUlRNcgcIARIDT1NBGkISCjIwMjctMDgtMTJqBwgBEgNUWU9yBwgBEgNBTVNyBwgBEgNCUlVyBwgBEgNEVVNyBwgBEgNFSU5yBwgBEgNSVE1AAUgBcAGCAQsI____________AZgBAw&tfu=EgQIACACIgMSATA&hl=en&gl=nl&curr=EUR",
-    "pricePP": 2101,
     "airline": "KLM and ANA",
-    "out": {
-     "pricePP": 2101,
-     "airline": "KLM and ANA",
-     "stops": 2,
-     "duration": "29 hr 30 min",
-     "from": "Eindhoven Airport",
-     "fromId": "EIN",
-     "departs": "Wednesday, July 28 6:25 AM",
-     "to": "Osaka Itami Airport",
-     "arrives": "Thursday, July 29 6:55 PM",
-     "layovers": [
-      "Amsterdam Airport Schiphol",
-      "Narita International Airport"
-     ],
-     "airportChange": false
-    },
-    "cheapestPP": 1050
+    "cheapestPP": 1050,
+    "mixedPricePP": 2101,
+    "error": "multi-airport search: the return may land at another home airport; price not verified for this airport"
    },
    {
     "origin": "RTM",
@@ -7575,25 +5973,10 @@
     "checkedAt": "2026-11-25T23:48:43Z",
     "source": "searchapi",
     "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhpCEgoyMDI3LTA3LTI5agcIARIDQU1TagcIARIDQlJVagcIARIDRFVTagcIARIDRUlOagcIARIDUlRNcgcIARIDT1NBGkISCjIwMjctMDgtMTNqBwgBEgNUWU9yBwgBEgNBTVNyBwgBEgNCUlVyBwgBEgNEVVNyBwgBEgNFSU5yBwgBEgNSVE1AAUgBcAGCAQsI____________AZgBAw&tfu=EgQIACACIgMSATA&hl=en&gl=nl&curr=EUR",
-    "pricePP": 1344,
     "airline": "Finnair and JAL",
-    "out": {
-     "pricePP": 1344,
-     "airline": "Finnair and JAL",
-     "stops": 2,
-     "duration": "22 hr 40 min",
-     "from": "Amsterdam Airport Schiphol",
-     "fromId": "AMS",
-     "departs": "Thursday, July 29 11:55 AM",
-     "to": "Osaka Itami Airport",
-     "arrives": "Friday, July 30 5:35 PM",
-     "layovers": [
-      "Helsinki Airport",
-      "Haneda Airport"
-     ],
-     "airportChange": false
-    },
-    "cheapestPP": 1235
+    "cheapestPP": 1235,
+    "mixedPricePP": 1344,
+    "error": "multi-airport search: the return may land at another home airport; price not verified for this airport"
    },
    {
     "origin": "BRU",
@@ -7603,25 +5986,10 @@
     "checkedAt": "2026-11-25T23:48:43Z",
     "source": "searchapi",
     "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhpCEgoyMDI3LTA3LTI5agcIARIDQU1TagcIARIDQlJVagcIARIDRFVTagcIARIDRUlOagcIARIDUlRNcgcIARIDT1NBGkISCjIwMjctMDgtMTNqBwgBEgNUWU9yBwgBEgNBTVNyBwgBEgNCUlVyBwgBEgNEVVNyBwgBEgNFSU5yBwgBEgNSVE1AAUgBcAGCAQsI____________AZgBAw&tfu=EgQIACACIgMSATA&hl=en&gl=nl&curr=EUR",
-    "pricePP": 1235,
     "airline": "British Airways and JAL",
-    "out": {
-     "pricePP": 1235,
-     "airline": "British Airways and JAL",
-     "stops": 2,
-     "duration": "21 hr 45 min",
-     "from": "Brussels Airport",
-     "fromId": "BRU",
-     "departs": "Thursday, July 29 10:50 AM",
-     "to": "Osaka Itami Airport",
-     "arrives": "Friday, July 30 3:35 PM",
-     "layovers": [
-      "Heathrow Airport",
-      "Haneda Airport"
-     ],
-     "airportChange": false
-    },
-    "cheapestPP": 1235
+    "cheapestPP": 1235,
+    "mixedPricePP": 1235,
+    "error": "multi-airport search: the return may land at another home airport; price not verified for this airport"
    },
    {
     "origin": "DUS",
@@ -7631,24 +5999,10 @@
     "checkedAt": "2026-11-25T23:48:43Z",
     "source": "searchapi",
     "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhpCEgoyMDI3LTA3LTI5agcIARIDQU1TagcIARIDQlJVagcIARIDRFVTagcIARIDRUlOagcIARIDUlRNcgcIARIDT1NBGkISCjIwMjctMDgtMTNqBwgBEgNUWU9yBwgBEgNBTVNyBwgBEgNCUlVyBwgBEgNEVVNyBwgBEgNFSU5yBwgBEgNSVE1AAUgBcAGCAQsI____________AZgBAw&tfu=EgQIACACIgMSATA&hl=en&gl=nl&curr=EUR",
-    "pricePP": 1251,
     "airline": "Qatar Airways",
-    "out": {
-     "pricePP": 1251,
-     "airline": "Qatar Airways",
-     "stops": 1,
-     "duration": "25 hr 5 min",
-     "from": "Duesseldorf Airport",
-     "fromId": "DUS",
-     "departs": "Thursday, July 29 9:20 AM",
-     "to": "Kansai International Airport",
-     "arrives": "Friday, July 30 5:25 PM",
-     "layovers": [
-      "Hamad International Airport"
-     ],
-     "airportChange": false
-    },
-    "cheapestPP": 1235
+    "cheapestPP": 1235,
+    "mixedPricePP": 1251,
+    "error": "multi-airport search: the return may land at another home airport; price not verified for this airport"
    },
    {
     "origin": "EIN",
@@ -7771,25 +6125,10 @@
     "checkedAt": "2026-11-25T23:49:09Z",
     "source": "searchapi",
     "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhpCEgoyMDI3LTA3LTIzagcIARIDQU1TagcIARIDQlJVagcIARIDRFVTagcIARIDRUlOagcIARIDUlRNcgcIARIDVFlPGkISCjIwMjctMDgtMDZqBwgBEgNPU0FyBwgBEgNBTVNyBwgBEgNCUlVyBwgBEgNEVVNyBwgBEgNFSU5yBwgBEgNSVE1AAUgBcAGCAQsI____________AZgBAw&tfu=EgQIACACIgMSATA&hl=en&gl=nl&curr=EUR",
-    "pricePP": 1476,
     "airline": "Oman Air and THAI",
-    "out": {
-     "pricePP": 1476,
-     "airline": "Oman Air and THAI",
-     "stops": 2,
-     "duration": "27 hr 30 min",
-     "from": "Amsterdam Airport Schiphol",
-     "fromId": "AMS",
-     "departs": "Friday, July 23 8:25 PM",
-     "to": "Haneda Airport",
-     "arrives": "Sunday, July 25 6:55 AM",
-     "layovers": [
-      "Muscat International Airport",
-      "Suvarnabhumi Airport"
-     ],
-     "airportChange": false
-    },
-    "cheapestPP": 1331
+    "cheapestPP": 1331,
+    "mixedPricePP": 1476,
+    "error": "multi-airport search: the return may land at another home airport; price not verified for this airport"
    },
    {
     "origin": "BRU",
@@ -7799,24 +6138,10 @@
     "checkedAt": "2026-11-25T23:49:09Z",
     "source": "searchapi",
     "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhpCEgoyMDI3LTA3LTIzagcIARIDQU1TagcIARIDQlJVagcIARIDRFVTagcIARIDRUlOagcIARIDUlRNcgcIARIDVFlPGkISCjIwMjctMDgtMDZqBwgBEgNPU0FyBwgBEgNBTVNyBwgBEgNCUlVyBwgBEgNEVVNyBwgBEgNFSU5yBwgBEgNSVE1AAUgBcAGCAQsI____________AZgBAw&tfu=EgQIACACIgMSATA&hl=en&gl=nl&curr=EUR",
-    "pricePP": 1492,
     "airline": "Etihad",
-    "out": {
-     "pricePP": 1492,
-     "airline": "Etihad",
-     "stops": 1,
-     "duration": "18 hr 50 min",
-     "from": "Brussels Airport",
-     "fromId": "BRU",
-     "departs": "Friday, July 23 10:55 AM",
-     "to": "Narita International Airport",
-     "arrives": "Saturday, July 24 12:45 PM",
-     "layovers": [
-      "Zayed International Airport"
-     ],
-     "airportChange": false
-    },
-    "cheapestPP": 1331
+    "cheapestPP": 1331,
+    "mixedPricePP": 1492,
+    "error": "multi-airport search: the return may land at another home airport; price not verified for this airport"
    },
    {
     "origin": "DUS",
@@ -7826,24 +6151,10 @@
     "checkedAt": "2026-11-25T23:49:09Z",
     "source": "searchapi",
     "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhpCEgoyMDI3LTA3LTIzagcIARIDQU1TagcIARIDQlJVagcIARIDRFVTagcIARIDRUlOagcIARIDUlRNcgcIARIDVFlPGkISCjIwMjctMDgtMDZqBwgBEgNPU0FyBwgBEgNBTVNyBwgBEgNCUlVyBwgBEgNEVVNyBwgBEgNFSU5yBwgBEgNSVE1AAUgBcAGCAQsI____________AZgBAw&tfu=EgQIACACIgMSATA&hl=en&gl=nl&curr=EUR",
-    "pricePP": 1331,
     "airline": "Qatar Airways",
-    "out": {
-     "pricePP": 1331,
-     "airline": "Qatar Airways",
-     "stops": 1,
-     "duration": "20 hr 45 min",
-     "from": "Duesseldorf Airport",
-     "fromId": "DUS",
-     "departs": "Friday, July 23 3:25 PM",
-     "to": "Narita International Airport",
-     "arrives": "Saturday, July 24 7:10 PM",
-     "layovers": [
-      "Hamad International Airport"
-     ],
-     "airportChange": false
-    },
-    "cheapestPP": 1331
+    "cheapestPP": 1331,
+    "mixedPricePP": 1331,
+    "error": "multi-airport search: the return may land at another home airport; price not verified for this airport"
    },
    {
     "origin": "EIN",
@@ -7979,25 +6290,10 @@
     "checkedAt": "2026-11-25T23:49:18Z",
     "source": "searchapi",
     "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhpCEgoyMDI3LTA3LTI0agcIARIDQU1TagcIARIDQlJVagcIARIDRFVTagcIARIDRUlOagcIARIDUlRNcgcIARIDVFlPGkISCjIwMjctMDgtMDdqBwgBEgNPU0FyBwgBEgNBTVNyBwgBEgNCUlVyBwgBEgNEVVNyBwgBEgNFSU5yBwgBEgNSVE1AAUgBcAGCAQsI____________AZgBAw&tfu=EgQIACACIgMSATA&hl=en&gl=nl&curr=EUR",
-    "pricePP": 1476,
     "airline": "Oman Air and THAI",
-    "out": {
-     "pricePP": 1476,
-     "airline": "Oman Air and THAI",
-     "stops": 2,
-     "duration": "27 hr 30 min",
-     "from": "Amsterdam Airport Schiphol",
-     "fromId": "AMS",
-     "departs": "Saturday, July 24 8:25 PM",
-     "to": "Haneda Airport",
-     "arrives": "Monday, July 26 6:55 AM",
-     "layovers": [
-      "Muscat International Airport",
-      "Suvarnabhumi Airport"
-     ],
-     "airportChange": false
-    },
-    "cheapestPP": 1368
+    "cheapestPP": 1368,
+    "mixedPricePP": 1476,
+    "error": "multi-airport search: the return may land at another home airport; price not verified for this airport"
    },
    {
     "origin": "BRU",
@@ -8007,24 +6303,10 @@
     "checkedAt": "2026-11-25T23:49:18Z",
     "source": "searchapi",
     "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhpCEgoyMDI3LTA3LTI0agcIARIDQU1TagcIARIDQlJVagcIARIDRFVTagcIARIDRUlOagcIARIDUlRNcgcIARIDVFlPGkISCjIwMjctMDgtMDdqBwgBEgNPU0FyBwgBEgNBTVNyBwgBEgNCUlVyBwgBEgNEVVNyBwgBEgNFSU5yBwgBEgNSVE1AAUgBcAGCAQsI____________AZgBAw&tfu=EgQIACACIgMSATA&hl=en&gl=nl&curr=EUR",
-    "pricePP": 1502,
     "airline": "Emirates",
-    "out": {
-     "pricePP": 1502,
-     "airline": "Emirates",
-     "stops": 1,
-     "duration": "17 hr 35 min",
-     "from": "Brussels Airport",
-     "fromId": "BRU",
-     "departs": "Saturday, July 24 9:45 PM",
-     "to": "Haneda Airport",
-     "arrives": "Sunday, July 25 10:20 PM",
-     "layovers": [
-      "Dubai International Airport"
-     ],
-     "airportChange": false
-    },
-    "cheapestPP": 1368
+    "cheapestPP": 1368,
+    "mixedPricePP": 1502,
+    "error": "multi-airport search: the return may land at another home airport; price not verified for this airport"
    },
    {
     "origin": "DUS",
@@ -8034,24 +6316,10 @@
     "checkedAt": "2026-11-25T23:49:18Z",
     "source": "searchapi",
     "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhpCEgoyMDI3LTA3LTI0agcIARIDQU1TagcIARIDQlJVagcIARIDRFVTagcIARIDRUlOagcIARIDUlRNcgcIARIDVFlPGkISCjIwMjctMDgtMDdqBwgBEgNPU0FyBwgBEgNBTVNyBwgBEgNCUlVyBwgBEgNEVVNyBwgBEgNFSU5yBwgBEgNSVE1AAUgBcAGCAQsI____________AZgBAw&tfu=EgQIACACIgMSATA&hl=en&gl=nl&curr=EUR",
-    "pricePP": 1368,
     "airline": "Emirates",
-    "out": {
-     "pricePP": 1368,
-     "airline": "Emirates",
-     "stops": 1,
-     "duration": "18 hr 5 min",
-     "from": "Duesseldorf Airport",
-     "fromId": "DUS",
-     "departs": "Saturday, July 24 9:15 PM",
-     "to": "Haneda Airport",
-     "arrives": "Sunday, July 25 10:20 PM",
-     "layovers": [
-      "Dubai International Airport"
-     ],
-     "airportChange": false
-    },
-    "cheapestPP": 1368
+    "cheapestPP": 1368,
+    "mixedPricePP": 1368,
+    "error": "multi-airport search: the return may land at another home airport; price not verified for this airport"
    },
    {
     "origin": "EIN",
@@ -8187,24 +6455,10 @@
     "checkedAt": "2026-11-25T23:49:44Z",
     "source": "searchapi",
     "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhpCEgoyMDI3LTA3LTI1agcIARIDQU1TagcIARIDQlJVagcIARIDRFVTagcIARIDRUlOagcIARIDUlRNcgcIARIDVFlPGkISCjIwMjctMDgtMDhqBwgBEgNPU0FyBwgBEgNBTVNyBwgBEgNCUlVyBwgBEgNEVVNyBwgBEgNFSU5yBwgBEgNSVE1AAUgBcAGCAQsI____________AZgBAw&tfu=EgQIACACIgMSATA&hl=en&gl=nl&curr=EUR",
-    "pricePP": 1379,
     "airline": "British Airways",
-    "out": {
-     "pricePP": 1379,
-     "airline": "British Airways",
-     "stops": 1,
-     "duration": "17 hr 50 min",
-     "from": "Amsterdam Airport Schiphol",
-     "fromId": "AMS",
-     "departs": "Sunday, July 25 10:05 AM",
-     "to": "Haneda Airport",
-     "arrives": "Monday, July 26 10:55 AM",
-     "layovers": [
-      "Heathrow Airport"
-     ],
-     "airportChange": false
-    },
-    "cheapestPP": 1374
+    "cheapestPP": 1374,
+    "mixedPricePP": 1379,
+    "error": "multi-airport search: the return may land at another home airport; price not verified for this airport"
    },
    {
     "origin": "BRU",
@@ -8214,24 +6468,10 @@
     "checkedAt": "2026-11-25T23:49:44Z",
     "source": "searchapi",
     "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhpCEgoyMDI3LTA3LTI1agcIARIDQU1TagcIARIDQlJVagcIARIDRFVTagcIARIDRUlOagcIARIDUlRNcgcIARIDVFlPGkISCjIwMjctMDgtMDhqBwgBEgNPU0FyBwgBEgNBTVNyBwgBEgNCUlVyBwgBEgNEVVNyBwgBEgNFSU5yBwgBEgNSVE1AAUgBcAGCAQsI____________AZgBAw&tfu=EgQIACACIgMSATA&hl=en&gl=nl&curr=EUR",
-    "pricePP": 1405,
     "airline": "THAI",
-    "out": {
-     "pricePP": 1405,
-     "airline": "THAI",
-     "stops": 1,
-     "duration": "19 hr 25 min",
-     "from": "Brussels Airport",
-     "fromId": "BRU",
-     "departs": "Sunday, July 25 1:30 PM",
-     "to": "Narita International Airport",
-     "arrives": "Monday, July 26 3:55 PM",
-     "layovers": [
-      "Suvarnabhumi Airport"
-     ],
-     "airportChange": false
-    },
-    "cheapestPP": 1374
+    "cheapestPP": 1374,
+    "mixedPricePP": 1405,
+    "error": "multi-airport search: the return may land at another home airport; price not verified for this airport"
    },
    {
     "origin": "DUS",
@@ -8241,24 +6481,10 @@
     "checkedAt": "2026-11-25T23:49:44Z",
     "source": "searchapi",
     "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhpCEgoyMDI3LTA3LTI1agcIARIDQU1TagcIARIDQlJVagcIARIDRFVTagcIARIDRUlOagcIARIDUlRNcgcIARIDVFlPGkISCjIwMjctMDgtMDhqBwgBEgNPU0FyBwgBEgNBTVNyBwgBEgNCUlVyBwgBEgNEVVNyBwgBEgNFSU5yBwgBEgNSVE1AAUgBcAGCAQsI____________AZgBAw&tfu=EgQIACACIgMSATA&hl=en&gl=nl&curr=EUR",
-    "pricePP": 1374,
     "airline": "Finnair and JAL",
-    "out": {
-     "pricePP": 1374,
-     "airline": "Finnair and JAL",
-     "stops": 1,
-     "duration": "22 hr 0 min",
-     "from": "Duesseldorf Airport",
-     "fromId": "DUS",
-     "departs": "Sunday, July 25 8:55 AM",
-     "to": "Haneda Airport",
-     "arrives": "Monday, July 26 1:55 PM",
-     "layovers": [
-      "Helsinki Airport"
-     ],
-     "airportChange": false
-    },
-    "cheapestPP": 1374
+    "cheapestPP": 1374,
+    "mixedPricePP": 1374,
+    "error": "multi-airport search: the return may land at another home airport; price not verified for this airport"
    },
    {
     "origin": "EIN",
@@ -8394,24 +6620,10 @@
     "checkedAt": "2026-11-25T23:49:55Z",
     "source": "searchapi",
     "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhpCEgoyMDI3LTA3LTI2agcIARIDQU1TagcIARIDQlJVagcIARIDRFVTagcIARIDRUlOagcIARIDUlRNcgcIARIDVFlPGkISCjIwMjctMDgtMDlqBwgBEgNPU0FyBwgBEgNBTVNyBwgBEgNCUlVyBwgBEgNEVVNyBwgBEgNFSU5yBwgBEgNSVE1AAUgBcAGCAQsI____________AZgBAw&tfu=EgQIACACIgMSATA&hl=en&gl=nl&curr=EUR",
-    "pricePP": 1313,
     "airline": "China Southern",
-    "out": {
-     "pricePP": 1313,
-     "airline": "China Southern",
-     "stops": 1,
-     "duration": "33 hr 20 min",
-     "from": "Amsterdam Airport Schiphol",
-     "fromId": "AMS",
-     "departs": "Monday, July 26 9:40 PM",
-     "to": "Haneda Airport",
-     "arrives": "Wednesday, July 28 2:00 PM",
-     "layovers": [
-      "Beijing Daxing International Airport"
-     ],
-     "airportChange": false
-    },
-    "cheapestPP": 1264
+    "cheapestPP": 1264,
+    "mixedPricePP": 1313,
+    "error": "multi-airport search: the return may land at another home airport; price not verified for this airport"
    },
    {
     "origin": "BRU",
@@ -8421,24 +6633,10 @@
     "checkedAt": "2026-11-25T23:49:55Z",
     "source": "searchapi",
     "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhpCEgoyMDI3LTA3LTI2agcIARIDQU1TagcIARIDQlJVagcIARIDRFVTagcIARIDRUlOagcIARIDUlRNcgcIARIDVFlPGkISCjIwMjctMDgtMDlqBwgBEgNPU0FyBwgBEgNBTVNyBwgBEgNCUlVyBwgBEgNEVVNyBwgBEgNFSU5yBwgBEgNSVE1AAUgBcAGCAQsI____________AZgBAw&tfu=EgQIACACIgMSATA&hl=en&gl=nl&curr=EUR",
-    "pricePP": 1409,
     "airline": "Cathay Pacific",
-    "out": {
-     "pricePP": 1409,
-     "airline": "Cathay Pacific",
-     "stops": 1,
-     "duration": "17 hr 35 min",
-     "from": "Brussels Airport",
-     "fromId": "BRU",
-     "departs": "Monday, July 26 1:05 PM",
-     "to": "Narita International Airport",
-     "arrives": "Tuesday, July 27 1:40 PM",
-     "layovers": [
-      "Hong Kong International Airport"
-     ],
-     "airportChange": false
-    },
-    "cheapestPP": 1264
+    "cheapestPP": 1264,
+    "mixedPricePP": 1409,
+    "error": "multi-airport search: the return may land at another home airport; price not verified for this airport"
    },
    {
     "origin": "DUS",
@@ -8448,24 +6646,10 @@
     "checkedAt": "2026-11-25T23:49:55Z",
     "source": "searchapi",
     "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhpCEgoyMDI3LTA3LTI2agcIARIDQU1TagcIARIDQlJVagcIARIDRFVTagcIARIDRUlOagcIARIDUlRNcgcIARIDVFlPGkISCjIwMjctMDgtMDlqBwgBEgNPU0FyBwgBEgNBTVNyBwgBEgNCUlVyBwgBEgNEVVNyBwgBEgNFSU5yBwgBEgNSVE1AAUgBcAGCAQsI____________AZgBAw&tfu=EgQIACACIgMSATA&hl=en&gl=nl&curr=EUR",
-    "pricePP": 1264,
     "airline": "Etihad",
-    "out": {
-     "pricePP": 1264,
-     "airline": "Etihad",
-     "stops": 1,
-     "duration": "18 hr 30 min",
-     "from": "Duesseldorf Airport",
-     "fromId": "DUS",
-     "departs": "Monday, July 26 11:15 AM",
-     "to": "Narita International Airport",
-     "arrives": "Tuesday, July 27 12:45 PM",
-     "layovers": [
-      "Zayed International Airport"
-     ],
-     "airportChange": false
-    },
-    "cheapestPP": 1264
+    "cheapestPP": 1264,
+    "mixedPricePP": 1264,
+    "error": "multi-airport search: the return may land at another home airport; price not verified for this airport"
    },
    {
     "origin": "EIN",
@@ -8602,24 +6786,10 @@
     "checkedAt": "2026-11-25T23:50:05Z",
     "source": "searchapi",
     "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhpCEgoyMDI3LTA3LTI3agcIARIDQU1TagcIARIDQlJVagcIARIDRFVTagcIARIDRUlOagcIARIDUlRNcgcIARIDVFlPGkISCjIwMjctMDgtMTBqBwgBEgNPU0FyBwgBEgNBTVNyBwgBEgNCUlVyBwgBEgNEVVNyBwgBEgNFSU5yBwgBEgNSVE1AAUgBcAGCAQsI____________AZgBAw&tfu=EgQIACACIgMSATA&hl=en&gl=nl&curr=EUR",
-    "pricePP": 1442,
     "airline": "China Southern",
-    "out": {
-     "pricePP": 1442,
-     "airline": "China Southern",
-     "stops": 1,
-     "duration": "17 hr 20 min",
-     "from": "Amsterdam Airport Schiphol",
-     "fromId": "AMS",
-     "departs": "Tuesday, July 27 1:20 PM",
-     "to": "Narita International Airport",
-     "arrives": "Wednesday, July 28 1:40 PM",
-     "layovers": [
-      "Guangzhou Baiyun International Airport"
-     ],
-     "airportChange": false
-    },
-    "cheapestPP": 1268
+    "cheapestPP": 1268,
+    "mixedPricePP": 1442,
+    "error": "multi-airport search: the return may land at another home airport; price not verified for this airport"
    },
    {
     "origin": "BRU",
@@ -8629,24 +6799,10 @@
     "checkedAt": "2026-11-25T23:50:05Z",
     "source": "searchapi",
     "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhpCEgoyMDI3LTA3LTI3agcIARIDQU1TagcIARIDQlJVagcIARIDRFVTagcIARIDRUlOagcIARIDUlRNcgcIARIDVFlPGkISCjIwMjctMDgtMTBqBwgBEgNPU0FyBwgBEgNBTVNyBwgBEgNCUlVyBwgBEgNEVVNyBwgBEgNFSU5yBwgBEgNSVE1AAUgBcAGCAQsI____________AZgBAw&tfu=EgQIACACIgMSATA&hl=en&gl=nl&curr=EUR",
-    "pricePP": 1388,
     "airline": "Finnair",
-    "out": {
-     "pricePP": 1388,
-     "airline": "Finnair",
-     "stops": 1,
-     "duration": "19 hr 20 min",
-     "from": "Brussels Airport",
-     "fromId": "BRU",
-     "departs": "Tuesday, July 27 10:45 AM",
-     "to": "Narita International Airport",
-     "arrives": "Wednesday, July 28 1:05 PM",
-     "layovers": [
-      "Helsinki Airport"
-     ],
-     "airportChange": false
-    },
-    "cheapestPP": 1268
+    "cheapestPP": 1268,
+    "mixedPricePP": 1388,
+    "error": "multi-airport search: the return may land at another home airport; price not verified for this airport"
    },
    {
     "origin": "DUS",
@@ -8656,24 +6812,10 @@
     "checkedAt": "2026-11-25T23:50:05Z",
     "source": "searchapi",
     "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhpCEgoyMDI3LTA3LTI3agcIARIDQU1TagcIARIDQlJVagcIARIDRFVTagcIARIDRUlOagcIARIDUlRNcgcIARIDVFlPGkISCjIwMjctMDgtMTBqBwgBEgNPU0FyBwgBEgNBTVNyBwgBEgNCUlVyBwgBEgNEVVNyBwgBEgNFSU5yBwgBEgNSVE1AAUgBcAGCAQsI____________AZgBAw&tfu=EgQIACACIgMSATA&hl=en&gl=nl&curr=EUR",
-    "pricePP": 1268,
     "airline": "Qatar Airways",
-    "out": {
-     "pricePP": 1268,
-     "airline": "Qatar Airways",
-     "stops": 1,
-     "duration": "20 hr 35 min",
-     "from": "Duesseldorf Airport",
-     "fromId": "DUS",
-     "departs": "Tuesday, July 27 9:20 AM",
-     "to": "Narita International Airport",
-     "arrives": "Wednesday, July 28 12:55 PM",
-     "layovers": [
-      "Hamad International Airport"
-     ],
-     "airportChange": false
-    },
-    "cheapestPP": 1268
+    "cheapestPP": 1268,
+    "mixedPricePP": 1268,
+    "error": "multi-airport search: the return may land at another home airport; price not verified for this airport"
    },
    {
     "origin": "EIN",
@@ -8809,24 +6951,10 @@
     "checkedAt": "2026-11-25T23:50:14Z",
     "source": "searchapi",
     "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhpCEgoyMDI3LTA3LTI4agcIARIDQU1TagcIARIDQlJVagcIARIDRFVTagcIARIDRUlOagcIARIDUlRNcgcIARIDVFlPGkISCjIwMjctMDgtMTFqBwgBEgNPU0FyBwgBEgNBTVNyBwgBEgNCUlVyBwgBEgNEVVNyBwgBEgNFSU5yBwgBEgNSVE1AAUgBcAGCAQsI____________AZgBAw&tfu=EgQIACACIgMSATA&hl=en&gl=nl&curr=EUR",
-    "pricePP": 1388,
     "airline": "China Southern",
-    "out": {
-     "pricePP": 1388,
-     "airline": "China Southern",
-     "stops": 1,
-     "duration": "18 hr 0 min",
-     "from": "Amsterdam Airport Schiphol",
-     "fromId": "AMS",
-     "departs": "Wednesday, July 28 1:20 PM",
-     "to": "Haneda Airport",
-     "arrives": "Thursday, July 29 2:20 PM",
-     "layovers": [
-      "Guangzhou Baiyun International Airport"
-     ],
-     "airportChange": false
-    },
-    "cheapestPP": 1275
+    "cheapestPP": 1275,
+    "mixedPricePP": 1388,
+    "error": "multi-airport search: the return may land at another home airport; price not verified for this airport"
    },
    {
     "origin": "BRU",
@@ -8836,10 +6964,10 @@
     "checkedAt": "2026-11-25T23:50:14Z",
     "source": "searchapi",
     "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhpCEgoyMDI3LTA3LTI4agcIARIDQU1TagcIARIDQlJVagcIARIDRFVTagcIARIDRUlOagcIARIDUlRNcgcIARIDVFlPGkISCjIwMjctMDgtMTFqBwgBEgNPU0FyBwgBEgNBTVNyBwgBEgNCUlVyBwgBEgNEVVNyBwgBEgNFSU5yBwgBEgNSVE1AAUgBcAGCAQsI____________AZgBAw&tfu=EgQIACACIgMSATA&hl=en&gl=nl&curr=EUR",
-    "pricePP": 1375,
-    "airline": "ITA",
+    "pricePP": 1117,
+    "airline": "British Airways and JAL",
     "out": {
-     "pricePP": 1375,
+     "pricePP": 1117,
      "airline": "ITA",
      "stops": 1,
      "duration": "15 hr 50 min",
@@ -8853,7 +6981,9 @@
      ],
      "airportChange": false
     },
-    "cheapestPP": 1275
+    "cheapestPP": 1275,
+    "mixedPricePP": 1375,
+    "note": "verified with the same home airport both ways (out via London and Tokyo-Haneda to Osaka-Itami)"
    },
    {
     "origin": "DUS",
@@ -8863,24 +6993,10 @@
     "checkedAt": "2026-11-25T23:50:14Z",
     "source": "searchapi",
     "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhpCEgoyMDI3LTA3LTI4agcIARIDQU1TagcIARIDQlJVagcIARIDRFVTagcIARIDRUlOagcIARIDUlRNcgcIARIDVFlPGkISCjIwMjctMDgtMTFqBwgBEgNPU0FyBwgBEgNBTVNyBwgBEgNCUlVyBwgBEgNEVVNyBwgBEgNFSU5yBwgBEgNSVE1AAUgBcAGCAQsI____________AZgBAw&tfu=EgQIACACIgMSATA&hl=en&gl=nl&curr=EUR",
-    "pricePP": 1275,
     "airline": "Eurowings and ANA",
-    "out": {
-     "pricePP": 1275,
-     "airline": "Eurowings and ANA",
-     "stops": 1,
-     "duration": "16 hr 55 min",
-     "from": "Duesseldorf Airport",
-     "fromId": "DUS",
-     "departs": "Wednesday, July 28 7:00 AM",
-     "to": "Haneda Airport",
-     "arrives": "Thursday, July 29 6:55 AM",
-     "layovers": [
-      "Munich International Airport"
-     ],
-     "airportChange": false
-    },
-    "cheapestPP": 1275
+    "cheapestPP": 1275,
+    "mixedPricePP": 1275,
+    "error": "multi-airport search: the return may land at another home airport; price not verified for this airport"
    },
    {
     "origin": "EIN",
@@ -9016,24 +7132,10 @@
     "checkedAt": "2026-11-25T23:50:24Z",
     "source": "searchapi",
     "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhpCEgoyMDI3LTA3LTI5agcIARIDQU1TagcIARIDQlJVagcIARIDRFVTagcIARIDRUlOagcIARIDUlRNcgcIARIDVFlPGkISCjIwMjctMDgtMTJqBwgBEgNPU0FyBwgBEgNBTVNyBwgBEgNCUlVyBwgBEgNEVVNyBwgBEgNFSU5yBwgBEgNSVE1AAUgBcAGCAQsI____________AZgBAw&tfu=EgQIACACIgMSATA&hl=en&gl=nl&curr=EUR",
-    "pricePP": 1324,
     "airline": "British Airways",
-    "out": {
-     "pricePP": 1324,
-     "airline": "British Airways",
-     "stops": 1,
-     "duration": "20 hr 10 min",
-     "from": "Amsterdam Airport Schiphol",
-     "fromId": "AMS",
-     "departs": "Thursday, July 29 7:45 AM",
-     "to": "Haneda Airport",
-     "arrives": "Friday, July 30 10:55 AM",
-     "layovers": [
-      "Heathrow Airport"
-     ],
-     "airportChange": false
-    },
-    "cheapestPP": 1263
+    "cheapestPP": 1263,
+    "mixedPricePP": 1324,
+    "error": "multi-airport search: the return may land at another home airport; price not verified for this airport"
    },
    {
     "origin": "BRU",
@@ -9043,24 +7145,10 @@
     "checkedAt": "2026-11-25T23:50:24Z",
     "source": "searchapi",
     "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhpCEgoyMDI3LTA3LTI5agcIARIDQU1TagcIARIDQlJVagcIARIDRFVTagcIARIDRUlOagcIARIDUlRNcgcIARIDVFlPGkISCjIwMjctMDgtMTJqBwgBEgNPU0FyBwgBEgNBTVNyBwgBEgNCUlVyBwgBEgNEVVNyBwgBEgNFSU5yBwgBEgNSVE1AAUgBcAGCAQsI____________AZgBAw&tfu=EgQIACACIgMSATA&hl=en&gl=nl&curr=EUR",
-    "pricePP": 1369,
     "airline": "Finnair",
-    "out": {
-     "pricePP": 1369,
-     "airline": "Finnair",
-     "stops": 1,
-     "duration": "19 hr 20 min",
-     "from": "Brussels Airport",
-     "fromId": "BRU",
-     "departs": "Thursday, July 29 10:45 AM",
-     "to": "Narita International Airport",
-     "arrives": "Friday, July 30 1:05 PM",
-     "layovers": [
-      "Helsinki Airport"
-     ],
-     "airportChange": false
-    },
-    "cheapestPP": 1263
+    "cheapestPP": 1263,
+    "mixedPricePP": 1369,
+    "error": "multi-airport search: the return may land at another home airport; price not verified for this airport"
    },
    {
     "origin": "DUS",
@@ -9070,24 +7158,10 @@
     "checkedAt": "2026-11-25T23:50:24Z",
     "source": "searchapi",
     "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhpCEgoyMDI3LTA3LTI5agcIARIDQU1TagcIARIDQlJVagcIARIDRFVTagcIARIDRUlOagcIARIDUlRNcgcIARIDVFlPGkISCjIwMjctMDgtMTJqBwgBEgNPU0FyBwgBEgNBTVNyBwgBEgNCUlVyBwgBEgNEVVNyBwgBEgNFSU5yBwgBEgNSVE1AAUgBcAGCAQsI____________AZgBAw&tfu=EgQIACACIgMSATA&hl=en&gl=nl&curr=EUR",
-    "pricePP": 1263,
     "airline": "Qatar Airways",
-    "out": {
-     "pricePP": 1263,
-     "airline": "Qatar Airways",
-     "stops": 1,
-     "duration": "20 hr 35 min",
-     "from": "Duesseldorf Airport",
-     "fromId": "DUS",
-     "departs": "Thursday, July 29 9:20 AM",
-     "to": "Narita International Airport",
-     "arrives": "Friday, July 30 12:55 PM",
-     "layovers": [
-      "Hamad International Airport"
-     ],
-     "airportChange": false
-    },
-    "cheapestPP": 1263
+    "cheapestPP": 1263,
+    "mixedPricePP": 1263,
+    "error": "multi-airport search: the return may land at another home airport; price not verified for this airport"
    },
    {
     "origin": "EIN",
@@ -9223,24 +7297,10 @@
     "checkedAt": "2026-11-25T23:50:34Z",
     "source": "searchapi",
     "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhpCEgoyMDI3LTA3LTMwagcIARIDQU1TagcIARIDQlJVagcIARIDRFVTagcIARIDRUlOagcIARIDUlRNcgcIARIDVFlPGkISCjIwMjctMDgtMTNqBwgBEgNPU0FyBwgBEgNBTVNyBwgBEgNCUlVyBwgBEgNEVVNyBwgBEgNFSU5yBwgBEgNSVE1AAUgBcAGCAQsI____________AZgBAw&tfu=EgQIACACIgMSATA&hl=en&gl=nl&curr=EUR",
-    "pricePP": 1404,
     "airline": "British Airways",
-    "out": {
-     "pricePP": 1404,
-     "airline": "British Airways",
-     "stops": 1,
-     "duration": "20 hr 35 min",
-     "from": "Amsterdam Airport Schiphol",
-     "fromId": "AMS",
-     "departs": "Friday, July 30 7:20 AM",
-     "to": "Haneda Airport",
-     "arrives": "Saturday, July 31 10:55 AM",
-     "layovers": [
-      "Heathrow Airport"
-     ],
-     "airportChange": false
-    },
-    "cheapestPP": 1286
+    "cheapestPP": 1286,
+    "mixedPricePP": 1404,
+    "error": "multi-airport search: the return may land at another home airport; price not verified for this airport"
    },
    {
     "origin": "BRU",
@@ -9250,24 +7310,10 @@
     "checkedAt": "2026-11-25T23:50:34Z",
     "source": "searchapi",
     "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhpCEgoyMDI3LTA3LTMwagcIARIDQU1TagcIARIDQlJVagcIARIDRFVTagcIARIDRUlOagcIARIDUlRNcgcIARIDVFlPGkISCjIwMjctMDgtMTNqBwgBEgNPU0FyBwgBEgNBTVNyBwgBEgNCUlVyBwgBEgNEVVNyBwgBEgNFSU5yBwgBEgNSVE1AAUgBcAGCAQsI____________AZgBAw&tfu=EgQIACACIgMSATA&hl=en&gl=nl&curr=EUR",
-    "pricePP": 1367,
     "airline": "British Airways",
-    "out": {
-     "pricePP": 1367,
-     "airline": "British Airways",
-     "stops": 1,
-     "duration": "26 hr 30 min",
-     "from": "Brussels Airport",
-     "fromId": "BRU",
-     "departs": "Friday, July 30 9:30 PM",
-     "to": "Haneda Airport",
-     "arrives": "Sunday, August 1 7:00 AM",
-     "layovers": [
-      "Heathrow Airport"
-     ],
-     "airportChange": false
-    },
-    "cheapestPP": 1286
+    "cheapestPP": 1286,
+    "mixedPricePP": 1367,
+    "error": "multi-airport search: the return may land at another home airport; price not verified for this airport"
    },
    {
     "origin": "DUS",
@@ -9277,24 +7323,10 @@
     "checkedAt": "2026-11-25T23:50:34Z",
     "source": "searchapi",
     "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhpCEgoyMDI3LTA3LTMwagcIARIDQU1TagcIARIDQlJVagcIARIDRFVTagcIARIDRUlOagcIARIDUlRNcgcIARIDVFlPGkISCjIwMjctMDgtMTNqBwgBEgNPU0FyBwgBEgNBTVNyBwgBEgNCUlVyBwgBEgNEVVNyBwgBEgNFSU5yBwgBEgNSVE1AAUgBcAGCAQsI____________AZgBAw&tfu=EgQIACACIgMSATA&hl=en&gl=nl&curr=EUR",
-    "pricePP": 1286,
     "airline": "Qatar Airways",
-    "out": {
-     "pricePP": 1286,
-     "airline": "Qatar Airways",
-     "stops": 1,
-     "duration": "20 hr 45 min",
-     "from": "Duesseldorf Airport",
-     "fromId": "DUS",
-     "departs": "Friday, July 30 3:25 PM",
-     "to": "Narita International Airport",
-     "arrives": "Saturday, July 31 7:10 PM",
-     "layovers": [
-      "Hamad International Airport"
-     ],
-     "airportChange": false
-    },
-    "cheapestPP": 1286
+    "cheapestPP": 1286,
+    "mixedPricePP": 1286,
+    "error": "multi-airport search: the return may land at another home airport; price not verified for this airport"
    },
    {
     "origin": "EIN",
@@ -9432,24 +7464,10 @@
     "checkedAt": "2026-11-25T23:50:45Z",
     "source": "searchapi",
     "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhpCEgoyMDI3LTA3LTIzagcIARIDQU1TagcIARIDQlJVagcIARIDRFVTagcIARIDRUlOagcIARIDUlRNcgcIARIDT1NBGkISCjIwMjctMDgtMDZqBwgBEgNUWU9yBwgBEgNBTVNyBwgBEgNCUlVyBwgBEgNEVVNyBwgBEgNFSU5yBwgBEgNSVE1AAUgBcAGCAQsI____________AZgBAw&tfu=EgQIACACIgMSATA&hl=en&gl=nl&curr=EUR",
-    "pricePP": 1372,
     "airline": "Finnair",
-    "out": {
-     "pricePP": 1372,
-     "airline": "Finnair",
-     "stops": 1,
-     "duration": "34 hr 10 min",
-     "from": "Amsterdam Airport Schiphol",
-     "fromId": "AMS",
-     "departs": "Friday, July 23 7:25 PM",
-     "to": "Kansai International Airport",
-     "arrives": "Sunday, July 25 12:35 PM",
-     "layovers": [
-      "Helsinki Airport"
-     ],
-     "airportChange": false
-    },
-    "cheapestPP": 1235
+    "cheapestPP": 1235,
+    "mixedPricePP": 1372,
+    "error": "multi-airport search: the return may land at another home airport; price not verified for this airport"
    },
    {
     "origin": "BRU",
@@ -9459,25 +7477,10 @@
     "checkedAt": "2026-11-25T23:50:45Z",
     "source": "searchapi",
     "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhpCEgoyMDI3LTA3LTIzagcIARIDQU1TagcIARIDQlJVagcIARIDRFVTagcIARIDRUlOagcIARIDUlRNcgcIARIDT1NBGkISCjIwMjctMDgtMDZqBwgBEgNUWU9yBwgBEgNBTVNyBwgBEgNCUlVyBwgBEgNEVVNyBwgBEgNFSU5yBwgBEgNSVE1AAUgBcAGCAQsI____________AZgBAw&tfu=EgQIACACIgMSATA&hl=en&gl=nl&curr=EUR",
-    "pricePP": 1235,
     "airline": "British Airways and JAL",
-    "out": {
-     "pricePP": 1235,
-     "airline": "British Airways and JAL",
-     "stops": 2,
-     "duration": "21 hr 50 min",
-     "from": "Brussels Airport",
-     "fromId": "BRU",
-     "departs": "Friday, July 23 10:45 AM",
-     "to": "Osaka Itami Airport",
-     "arrives": "Saturday, July 24 3:35 PM",
-     "layovers": [
-      "Heathrow Airport",
-      "Haneda Airport"
-     ],
-     "airportChange": false
-    },
-    "cheapestPP": 1235
+    "cheapestPP": 1235,
+    "mixedPricePP": 1235,
+    "error": "multi-airport search: the return may land at another home airport; price not verified for this airport"
    },
    {
     "origin": "DUS",
@@ -9487,24 +7490,10 @@
     "checkedAt": "2026-11-25T23:50:45Z",
     "source": "searchapi",
     "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhpCEgoyMDI3LTA3LTIzagcIARIDQU1TagcIARIDQlJVagcIARIDRFVTagcIARIDRUlOagcIARIDUlRNcgcIARIDT1NBGkISCjIwMjctMDgtMDZqBwgBEgNUWU9yBwgBEgNBTVNyBwgBEgNCUlVyBwgBEgNEVVNyBwgBEgNFSU5yBwgBEgNSVE1AAUgBcAGCAQsI____________AZgBAw&tfu=EgQIACACIgMSATA&hl=en&gl=nl&curr=EUR",
-    "pricePP": 1329,
     "airline": "Qatar Airways",
-    "out": {
-     "pricePP": 1329,
-     "airline": "Qatar Airways",
-     "stops": 1,
-     "duration": "43 hr 0 min",
-     "from": "Duesseldorf Airport",
-     "fromId": "DUS",
-     "departs": "Friday, July 23 3:25 PM",
-     "to": "Kansai International Airport",
-     "arrives": "Sunday, July 25 5:25 PM",
-     "layovers": [
-      "Hamad International Airport"
-     ],
-     "airportChange": false
-    },
-    "cheapestPP": 1235
+    "cheapestPP": 1235,
+    "mixedPricePP": 1329,
+    "error": "multi-airport search: the return may land at another home airport; price not verified for this airport"
    },
    {
     "origin": "EIN",
@@ -9514,25 +7503,10 @@
     "checkedAt": "2026-11-25T23:50:45Z",
     "source": "searchapi",
     "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhpCEgoyMDI3LTA3LTIzagcIARIDQU1TagcIARIDQlJVagcIARIDRFVTagcIARIDRUlOagcIARIDUlRNcgcIARIDT1NBGkISCjIwMjctMDgtMDZqBwgBEgNUWU9yBwgBEgNBTVNyBwgBEgNCUlVyBwgBEgNEVVNyBwgBEgNFSU5yBwgBEgNSVE1AAUgBcAGCAQsI____________AZgBAw&tfu=EgQIACACIgMSATA&hl=en&gl=nl&curr=EUR",
-    "pricePP": 2224,
     "airline": "KLM and ANA",
-    "out": {
-     "pricePP": 2224,
-     "airline": "KLM and ANA",
-     "stops": 2,
-     "duration": "29 hr 30 min",
-     "from": "Eindhoven Airport",
-     "fromId": "EIN",
-     "departs": "Friday, July 23 6:25 AM",
-     "to": "Osaka Itami Airport",
-     "arrives": "Saturday, July 24 6:55 PM",
-     "layovers": [
-      "Amsterdam Airport Schiphol",
-      "Narita International Airport"
-     ],
-     "airportChange": false
-    },
-    "cheapestPP": 1235
+    "cheapestPP": 1235,
+    "mixedPricePP": 2224,
+    "error": "multi-airport search: the return may land at another home airport; price not verified for this airport"
    },
    {
     "origin": "RTM",
@@ -9642,24 +7616,10 @@
     "checkedAt": "2026-11-25T23:50:55Z",
     "source": "searchapi",
     "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhpCEgoyMDI3LTA3LTI0agcIARIDQU1TagcIARIDQlJVagcIARIDRFVTagcIARIDRUlOagcIARIDUlRNcgcIARIDT1NBGkISCjIwMjctMDgtMDdqBwgBEgNUWU9yBwgBEgNBTVNyBwgBEgNCUlVyBwgBEgNEVVNyBwgBEgNFSU5yBwgBEgNSVE1AAUgBcAGCAQsI____________AZgBAw&tfu=EgQIACACIgMSATA&hl=en&gl=nl&curr=EUR",
-    "pricePP": 1375,
     "airline": "Finnair",
-    "out": {
-     "pricePP": 1375,
-     "airline": "Finnair",
-     "stops": 1,
-     "duration": "17 hr 40 min",
-     "from": "Amsterdam Airport Schiphol",
-     "fromId": "AMS",
-     "departs": "Saturday, July 24 11:55 AM",
-     "to": "Kansai International Airport",
-     "arrives": "Sunday, July 25 12:35 PM",
-     "layovers": [
-      "Helsinki Airport"
-     ],
-     "airportChange": false
-    },
-    "cheapestPP": 1375
+    "cheapestPP": 1375,
+    "mixedPricePP": 1375,
+    "error": "multi-airport search: the return may land at another home airport; price not verified for this airport"
    },
    {
     "origin": "BRU",
@@ -9669,25 +7629,10 @@
     "checkedAt": "2026-11-25T23:50:55Z",
     "source": "searchapi",
     "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhpCEgoyMDI3LTA3LTI0agcIARIDQU1TagcIARIDQlJVagcIARIDRFVTagcIARIDRUlOagcIARIDUlRNcgcIARIDT1NBGkISCjIwMjctMDgtMDdqBwgBEgNUWU9yBwgBEgNBTVNyBwgBEgNCUlVyBwgBEgNEVVNyBwgBEgNFSU5yBwgBEgNSVE1AAUgBcAGCAQsI____________AZgBAw&tfu=EgQIACACIgMSATA&hl=en&gl=nl&curr=EUR",
-    "pricePP": 1470,
     "airline": "Finnair and JAL",
-    "out": {
-     "pricePP": 1470,
-     "airline": "Finnair and JAL",
-     "stops": 2,
-     "duration": "23 hr 50 min",
-     "from": "Brussels Airport",
-     "fromId": "BRU",
-     "departs": "Saturday, July 24 10:45 AM",
-     "to": "Osaka Itami Airport",
-     "arrives": "Sunday, July 25 5:35 PM",
-     "layovers": [
-      "Helsinki Airport",
-      "Haneda Airport"
-     ],
-     "airportChange": false
-    },
-    "cheapestPP": 1375
+    "cheapestPP": 1375,
+    "mixedPricePP": 1470,
+    "error": "multi-airport search: the return may land at another home airport; price not verified for this airport"
    },
    {
     "origin": "DUS",
@@ -9697,24 +7642,10 @@
     "checkedAt": "2026-11-25T23:50:55Z",
     "source": "searchapi",
     "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhpCEgoyMDI3LTA3LTI0agcIARIDQU1TagcIARIDQlJVagcIARIDRFVTagcIARIDRUlOagcIARIDUlRNcgcIARIDT1NBGkISCjIwMjctMDgtMDdqBwgBEgNUWU9yBwgBEgNBTVNyBwgBEgNCUlVyBwgBEgNEVVNyBwgBEgNFSU5yBwgBEgNSVE1AAUgBcAGCAQsI____________AZgBAw&tfu=EgQIACACIgMSATA&hl=en&gl=nl&curr=EUR",
-    "pricePP": 1463,
     "airline": "Qatar Airways",
-    "out": {
-     "pricePP": 1463,
-     "airline": "Qatar Airways",
-     "stops": 1,
-     "duration": "25 hr 5 min",
-     "from": "Duesseldorf Airport",
-     "fromId": "DUS",
-     "departs": "Saturday, July 24 9:20 AM",
-     "to": "Kansai International Airport",
-     "arrives": "Sunday, July 25 5:25 PM",
-     "layovers": [
-      "Hamad International Airport"
-     ],
-     "airportChange": false
-    },
-    "cheapestPP": 1375
+    "cheapestPP": 1375,
+    "mixedPricePP": 1463,
+    "error": "multi-airport search: the return may land at another home airport; price not verified for this airport"
    },
    {
     "origin": "EIN",
@@ -9816,24 +7747,10 @@
     "checkedAt": "2026-11-25T23:51:05Z",
     "source": "searchapi",
     "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhpCEgoyMDI3LTA3LTI1agcIARIDQU1TagcIARIDQlJVagcIARIDRFVTagcIARIDRUlOagcIARIDUlRNcgcIARIDT1NBGkISCjIwMjctMDgtMDhqBwgBEgNUWU9yBwgBEgNBTVNyBwgBEgNCUlVyBwgBEgNEVVNyBwgBEgNFSU5yBwgBEgNSVE1AAUgBcAGCAQsI____________AZgBAw&tfu=EgQIACACIgMSATA&hl=en&gl=nl&curr=EUR",
-    "pricePP": 1425,
     "airline": "THAI",
-    "out": {
-     "pricePP": 1425,
-     "airline": "THAI",
-     "stops": 1,
-     "duration": "18 hr 40 min",
-     "from": "Amsterdam Airport Schiphol",
-     "fromId": "AMS",
-     "departs": "Sunday, July 25 2:15 PM",
-     "to": "Kansai International Airport",
-     "arrives": "Monday, July 26 3:55 PM",
-     "layovers": [
-      "Suvarnabhumi Airport"
-     ],
-     "airportChange": false
-    },
-    "cheapestPP": 1287
+    "cheapestPP": 1287,
+    "mixedPricePP": 1425,
+    "error": "multi-airport search: the return may land at another home airport; price not verified for this airport"
    },
    {
     "origin": "BRU",
@@ -9843,25 +7760,10 @@
     "checkedAt": "2026-11-25T23:51:05Z",
     "source": "searchapi",
     "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhpCEgoyMDI3LTA3LTI1agcIARIDQU1TagcIARIDQlJVagcIARIDRFVTagcIARIDRUlOagcIARIDUlRNcgcIARIDT1NBGkISCjIwMjctMDgtMDhqBwgBEgNUWU9yBwgBEgNBTVNyBwgBEgNCUlVyBwgBEgNEVVNyBwgBEgNFSU5yBwgBEgNSVE1AAUgBcAGCAQsI____________AZgBAw&tfu=EgQIACACIgMSATA&hl=en&gl=nl&curr=EUR",
-    "pricePP": 1391,
     "airline": "Lufthansa and ANA",
-    "out": {
-     "pricePP": 1391,
-     "airline": "Lufthansa and ANA",
-     "stops": 2,
-     "duration": "17 hr 40 min",
-     "from": "Brussels Airport",
-     "fromId": "BRU",
-     "departs": "Sunday, July 25 8:40 AM",
-     "to": "Osaka Itami Airport",
-     "arrives": "Monday, July 26 9:20 AM",
-     "layovers": [
-      "Munich International Airport",
-      "Haneda Airport"
-     ],
-     "airportChange": false
-    },
-    "cheapestPP": 1287
+    "cheapestPP": 1287,
+    "mixedPricePP": 1391,
+    "error": "multi-airport search: the return may land at another home airport; price not verified for this airport"
    },
    {
     "origin": "DUS",
@@ -9871,24 +7773,10 @@
     "checkedAt": "2026-11-25T23:51:05Z",
     "source": "searchapi",
     "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhpCEgoyMDI3LTA3LTI1agcIARIDQU1TagcIARIDQlJVagcIARIDRFVTagcIARIDRUlOagcIARIDUlRNcgcIARIDT1NBGkISCjIwMjctMDgtMDhqBwgBEgNUWU9yBwgBEgNBTVNyBwgBEgNCUlVyBwgBEgNEVVNyBwgBEgNFSU5yBwgBEgNSVE1AAUgBcAGCAQsI____________AZgBAw&tfu=EgQIACACIgMSATA&hl=en&gl=nl&curr=EUR",
-    "pricePP": 1287,
     "airline": "Qatar Airways",
-    "out": {
-     "pricePP": 1287,
-     "airline": "Qatar Airways",
-     "stops": 1,
-     "duration": "19 hr 0 min",
-     "from": "Duesseldorf Airport",
-     "fromId": "DUS",
-     "departs": "Sunday, July 25 3:25 PM",
-     "to": "Kansai International Airport",
-     "arrives": "Monday, July 26 5:25 PM",
-     "layovers": [
-      "Hamad International Airport"
-     ],
-     "airportChange": false
-    },
-    "cheapestPP": 1287
+    "cheapestPP": 1287,
+    "mixedPricePP": 1287,
+    "error": "multi-airport search: the return may land at another home airport; price not verified for this airport"
    },
    {
     "origin": "EIN",
@@ -9898,25 +7786,10 @@
     "checkedAt": "2026-11-25T23:51:05Z",
     "source": "searchapi",
     "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhpCEgoyMDI3LTA3LTI1agcIARIDQU1TagcIARIDQlJVagcIARIDRFVTagcIARIDRUlOagcIARIDUlRNcgcIARIDT1NBGkISCjIwMjctMDgtMDhqBwgBEgNUWU9yBwgBEgNBTVNyBwgBEgNCUlVyBwgBEgNEVVNyBwgBEgNFSU5yBwgBEgNSVE1AAUgBcAGCAQsI____________AZgBAw&tfu=EgQIACACIgMSATA&hl=en&gl=nl&curr=EUR",
-    "pricePP": 2263,
     "airline": "KLM and ANA",
-    "out": {
-     "pricePP": 2263,
-     "airline": "KLM and ANA",
-     "stops": 2,
-     "duration": "29 hr 30 min",
-     "from": "Eindhoven Airport",
-     "fromId": "EIN",
-     "departs": "Sunday, July 25 6:25 AM",
-     "to": "Osaka Itami Airport",
-     "arrives": "Monday, July 26 6:55 PM",
-     "layovers": [
-      "Amsterdam Airport Schiphol",
-      "Narita International Airport"
-     ],
-     "airportChange": false
-    },
-    "cheapestPP": 1287
+    "cheapestPP": 1287,
+    "mixedPricePP": 2263,
+    "error": "multi-airport search: the return may land at another home airport; price not verified for this airport"
    },
    {
     "origin": "RTM",
@@ -10026,25 +7899,10 @@
     "checkedAt": "2026-11-25T23:51:39Z",
     "source": "searchapi",
     "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhpCEgoyMDI3LTA3LTI2agcIARIDQU1TagcIARIDQlJVagcIARIDRFVTagcIARIDRUlOagcIARIDUlRNcgcIARIDT1NBGkISCjIwMjctMDgtMDlqBwgBEgNUWU9yBwgBEgNBTVNyBwgBEgNCUlVyBwgBEgNEVVNyBwgBEgNFSU5yBwgBEgNSVE1AAUgBcAGCAQsI____________AZgBAw&tfu=EgQIACACIgMSATA&hl=en&gl=nl&curr=EUR",
-    "pricePP": 1343,
     "airline": "Lufthansa and ANA",
-    "out": {
-     "pricePP": 1343,
-     "airline": "Lufthansa and ANA",
-     "stops": 2,
-     "duration": "18 hr 5 min",
-     "from": "Amsterdam Airport Schiphol",
-     "fromId": "AMS",
-     "departs": "Monday, July 26 8:15 AM",
-     "to": "Osaka Itami Airport",
-     "arrives": "Tuesday, July 27 9:20 AM",
-     "layovers": [
-      "Munich International Airport",
-      "Haneda Airport"
-     ],
-     "airportChange": false
-    },
-    "cheapestPP": 1240
+    "cheapestPP": 1240,
+    "mixedPricePP": 1343,
+    "error": "multi-airport search: the return may land at another home airport; price not verified for this airport"
    },
    {
     "origin": "BRU",
@@ -10054,24 +7912,10 @@
     "checkedAt": "2026-11-25T23:51:39Z",
     "source": "searchapi",
     "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhpCEgoyMDI3LTA3LTI2agcIARIDQU1TagcIARIDQlJVagcIARIDRFVTagcIARIDRUlOagcIARIDUlRNcgcIARIDT1NBGkISCjIwMjctMDgtMDlqBwgBEgNUWU9yBwgBEgNBTVNyBwgBEgNCUlVyBwgBEgNEVVNyBwgBEgNFSU5yBwgBEgNSVE1AAUgBcAGCAQsI____________AZgBAw&tfu=EgQIACACIgMSATA&hl=en&gl=nl&curr=EUR",
-    "pricePP": 1274,
     "airline": "Finnair",
-    "out": {
-     "pricePP": 1274,
-     "airline": "Finnair",
-     "stops": 1,
-     "duration": "18 hr 50 min",
-     "from": "Brussels Airport",
-     "fromId": "BRU",
-     "departs": "Monday, July 26 10:45 AM",
-     "to": "Kansai International Airport",
-     "arrives": "Tuesday, July 27 12:35 PM",
-     "layovers": [
-      "Helsinki Airport"
-     ],
-     "airportChange": false
-    },
-    "cheapestPP": 1240
+    "cheapestPP": 1240,
+    "mixedPricePP": 1274,
+    "error": "multi-airport search: the return may land at another home airport; price not verified for this airport"
    },
    {
     "origin": "DUS",
@@ -10081,24 +7925,10 @@
     "checkedAt": "2026-11-25T23:51:39Z",
     "source": "searchapi",
     "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhpCEgoyMDI3LTA3LTI2agcIARIDQU1TagcIARIDQlJVagcIARIDRFVTagcIARIDRUlOagcIARIDUlRNcgcIARIDT1NBGkISCjIwMjctMDgtMDlqBwgBEgNUWU9yBwgBEgNBTVNyBwgBEgNCUlVyBwgBEgNEVVNyBwgBEgNFSU5yBwgBEgNSVE1AAUgBcAGCAQsI____________AZgBAw&tfu=EgQIACACIgMSATA&hl=en&gl=nl&curr=EUR",
-    "pricePP": 1240,
     "airline": "Finnair",
-    "out": {
-     "pricePP": 1240,
-     "airline": "Finnair",
-     "stops": 1,
-     "duration": "20 hr 40 min",
-     "from": "Duesseldorf Airport",
-     "fromId": "DUS",
-     "departs": "Monday, July 26 8:55 AM",
-     "to": "Kansai International Airport",
-     "arrives": "Tuesday, July 27 12:35 PM",
-     "layovers": [
-      "Helsinki Airport"
-     ],
-     "airportChange": false
-    },
-    "cheapestPP": 1240
+    "cheapestPP": 1240,
+    "mixedPricePP": 1240,
+    "error": "multi-airport search: the return may land at another home airport; price not verified for this airport"
    },
    {
     "origin": "EIN",
@@ -10218,25 +8048,10 @@
     "checkedAt": "2026-11-25T23:51:49Z",
     "source": "searchapi",
     "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhpCEgoyMDI3LTA3LTI3agcIARIDQU1TagcIARIDQlJVagcIARIDRFVTagcIARIDRUlOagcIARIDUlRNcgcIARIDT1NBGkISCjIwMjctMDgtMTBqBwgBEgNUWU9yBwgBEgNBTVNyBwgBEgNCUlVyBwgBEgNEVVNyBwgBEgNFSU5yBwgBEgNSVE1AAUgBcAGCAQsI____________AZgBAw&tfu=EgQIACACIgMSATA&hl=en&gl=nl&curr=EUR",
-    "pricePP": 1299,
     "airline": "British Airways and JAL",
-    "out": {
-     "pricePP": 1299,
-     "airline": "British Airways and JAL",
-     "stops": 2,
-     "duration": "20 hr 30 min",
-     "from": "Amsterdam Airport Schiphol",
-     "fromId": "AMS",
-     "departs": "Tuesday, July 27 7:10 AM",
-     "to": "Osaka Itami Airport",
-     "arrives": "Wednesday, July 28 10:40 AM",
-     "layovers": [
-      "Heathrow Airport",
-      "Haneda Airport"
-     ],
-     "airportChange": false
-    },
-    "cheapestPP": 1134
+    "cheapestPP": 1134,
+    "mixedPricePP": 1299,
+    "error": "multi-airport search: the return may land at another home airport; price not verified for this airport"
    },
    {
     "origin": "BRU",
@@ -10246,24 +8061,10 @@
     "checkedAt": "2026-11-25T23:51:49Z",
     "source": "searchapi",
     "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhpCEgoyMDI3LTA3LTI3agcIARIDQU1TagcIARIDQlJVagcIARIDRFVTagcIARIDRUlOagcIARIDUlRNcgcIARIDT1NBGkISCjIwMjctMDgtMTBqBwgBEgNUWU9yBwgBEgNBTVNyBwgBEgNCUlVyBwgBEgNEVVNyBwgBEgNFSU5yBwgBEgNSVE1AAUgBcAGCAQsI____________AZgBAw&tfu=EgQIACACIgMSATA&hl=en&gl=nl&curr=EUR",
-    "pricePP": 1234,
     "airline": "Finnair",
-    "out": {
-     "pricePP": 1234,
-     "airline": "Finnair",
-     "stops": 1,
-     "duration": "18 hr 50 min",
-     "from": "Brussels Airport",
-     "fromId": "BRU",
-     "departs": "Tuesday, July 27 10:45 AM",
-     "to": "Kansai International Airport",
-     "arrives": "Wednesday, July 28 12:35 PM",
-     "layovers": [
-      "Helsinki Airport"
-     ],
-     "airportChange": false
-    },
-    "cheapestPP": 1134
+    "cheapestPP": 1134,
+    "mixedPricePP": 1234,
+    "error": "multi-airport search: the return may land at another home airport; price not verified for this airport"
    },
    {
     "origin": "DUS",
@@ -10273,25 +8074,10 @@
     "checkedAt": "2026-11-25T23:51:49Z",
     "source": "searchapi",
     "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhpCEgoyMDI3LTA3LTI3agcIARIDQU1TagcIARIDQlJVagcIARIDRFVTagcIARIDRUlOagcIARIDUlRNcgcIARIDT1NBGkISCjIwMjctMDgtMTBqBwgBEgNUWU9yBwgBEgNBTVNyBwgBEgNCUlVyBwgBEgNEVVNyBwgBEgNFSU5yBwgBEgNSVE1AAUgBcAGCAQsI____________AZgBAw&tfu=EgQIACACIgMSATA&hl=en&gl=nl&curr=EUR",
-    "pricePP": 1134,
     "airline": "British Airways and JAL",
-    "out": {
-     "pricePP": 1134,
-     "airline": "British Airways and JAL",
-     "stops": 2,
-     "duration": "20 hr 10 min",
-     "from": "Duesseldorf Airport",
-     "fromId": "DUS",
-     "departs": "Tuesday, July 27 10:50 AM",
-     "to": "Kansai International Airport",
-     "arrives": "Wednesday, July 28 2:00 PM",
-     "layovers": [
-      "Heathrow Airport",
-      "Haneda Airport"
-     ],
-     "airportChange": false
-    },
-    "cheapestPP": 1134
+    "cheapestPP": 1134,
+    "mixedPricePP": 1134,
+    "error": "multi-airport search: the return may land at another home airport; price not verified for this airport"
    },
    {
     "origin": "EIN",
@@ -10301,25 +8087,10 @@
     "checkedAt": "2026-11-25T23:51:49Z",
     "source": "searchapi",
     "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhpCEgoyMDI3LTA3LTI3agcIARIDQU1TagcIARIDQlJVagcIARIDRFVTagcIARIDRUlOagcIARIDUlRNcgcIARIDT1NBGkISCjIwMjctMDgtMTBqBwgBEgNUWU9yBwgBEgNBTVNyBwgBEgNCUlVyBwgBEgNEVVNyBwgBEgNFSU5yBwgBEgNSVE1AAUgBcAGCAQsI____________AZgBAw&tfu=EgQIACACIgMSATA&hl=en&gl=nl&curr=EUR",
-    "pricePP": 2101,
     "airline": "KLM and ANA",
-    "out": {
-     "pricePP": 2101,
-     "airline": "KLM and ANA",
-     "stops": 2,
-     "duration": "29 hr 30 min",
-     "from": "Eindhoven Airport",
-     "fromId": "EIN",
-     "departs": "Tuesday, July 27 6:25 AM",
-     "to": "Osaka Itami Airport",
-     "arrives": "Wednesday, July 28 6:55 PM",
-     "layovers": [
-      "Amsterdam Airport Schiphol",
-      "Narita International Airport"
-     ],
-     "airportChange": false
-    },
-    "cheapestPP": 1134
+    "cheapestPP": 1134,
+    "mixedPricePP": 2101,
+    "error": "multi-airport search: the return may land at another home airport; price not verified for this airport"
    },
    {
     "origin": "RTM",
@@ -10429,25 +8200,10 @@
     "checkedAt": "2026-11-25T23:51:59Z",
     "source": "searchapi",
     "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhpCEgoyMDI3LTA3LTI4agcIARIDQU1TagcIARIDQlJVagcIARIDRFVTagcIARIDRUlOagcIARIDUlRNcgcIARIDT1NBGkISCjIwMjctMDgtMTFqBwgBEgNUWU9yBwgBEgNBTVNyBwgBEgNCUlVyBwgBEgNEVVNyBwgBEgNFSU5yBwgBEgNSVE1AAUgBcAGCAQsI____________AZgBAw&tfu=EgQIACACIgMSATA&hl=en&gl=nl&curr=EUR",
-    "pricePP": 1275,
     "airline": "ITA and ANA",
-    "out": {
-     "pricePP": 1275,
-     "airline": "ITA and ANA",
-     "stops": 2,
-     "duration": "20 hr 10 min",
-     "from": "Amsterdam Airport Schiphol",
-     "fromId": "AMS",
-     "departs": "Wednesday, July 28 11:55 AM",
-     "to": "Kansai International Airport",
-     "arrives": "Thursday, July 29 3:05 PM",
-     "layovers": [
-      "Leonardo da Vinci International Airport",
-      "Haneda Airport"
-     ],
-     "airportChange": false
-    },
-    "cheapestPP": 1085
+    "cheapestPP": 1085,
+    "mixedPricePP": 1275,
+    "error": "multi-airport search: the return may land at another home airport; price not verified for this airport"
    },
    {
     "origin": "BRU",
@@ -10457,10 +8213,10 @@
     "checkedAt": "2026-11-25T23:51:59Z",
     "source": "searchapi",
     "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhpCEgoyMDI3LTA3LTI4agcIARIDQU1TagcIARIDQlJVagcIARIDRFVTagcIARIDRUlOagcIARIDUlRNcgcIARIDT1NBGkISCjIwMjctMDgtMTFqBwgBEgNUWU9yBwgBEgNBTVNyBwgBEgNCUlVyBwgBEgNEVVNyBwgBEgNFSU5yBwgBEgNSVE1AAUgBcAGCAQsI____________AZgBAw&tfu=EgQIACACIgMSATA&hl=en&gl=nl&curr=EUR",
-    "pricePP": 1085,
+    "pricePP": 1117,
     "airline": "British Airways and JAL",
     "out": {
-     "pricePP": 1085,
+     "pricePP": 1117,
      "airline": "British Airways and JAL",
      "stops": 2,
      "duration": "21 hr 35 min",
@@ -10475,7 +8231,9 @@
      ],
      "airportChange": false
     },
-    "cheapestPP": 1085
+    "cheapestPP": 1085,
+    "mixedPricePP": 1085,
+    "note": "verified with the same home airport both ways (out via London and Tokyo-Haneda to Osaka-Itami)"
    },
    {
     "origin": "DUS",
@@ -10485,25 +8243,10 @@
     "checkedAt": "2026-11-25T23:51:59Z",
     "source": "searchapi",
     "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhpCEgoyMDI3LTA3LTI4agcIARIDQU1TagcIARIDQlJVagcIARIDRFVTagcIARIDRUlOagcIARIDUlRNcgcIARIDT1NBGkISCjIwMjctMDgtMTFqBwgBEgNUWU9yBwgBEgNBTVNyBwgBEgNCUlVyBwgBEgNEVVNyBwgBEgNFSU5yBwgBEgNSVE1AAUgBcAGCAQsI____________AZgBAw&tfu=EgQIACACIgMSATA&hl=en&gl=nl&curr=EUR",
-    "pricePP": 1179,
     "airline": "Eurowings and ANA",
-    "out": {
-     "pricePP": 1179,
-     "airline": "Eurowings and ANA",
-     "stops": 2,
-     "duration": "20 hr 5 min",
-     "from": "Duesseldorf Airport",
-     "fromId": "DUS",
-     "departs": "Wednesday, July 28 7:00 AM",
-     "to": "Osaka Itami Airport",
-     "arrives": "Thursday, July 29 10:05 AM",
-     "layovers": [
-      "Munich International Airport",
-      "Haneda Airport"
-     ],
-     "airportChange": false
-    },
-    "cheapestPP": 1085
+    "cheapestPP": 1085,
+    "mixedPricePP": 1179,
+    "error": "multi-airport search: the return may land at another home airport; price not verified for this airport"
    },
    {
     "origin": "EIN",
@@ -10513,25 +8256,10 @@
     "checkedAt": "2026-11-25T23:51:59Z",
     "source": "searchapi",
     "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhpCEgoyMDI3LTA3LTI4agcIARIDQU1TagcIARIDQlJVagcIARIDRFVTagcIARIDRUlOagcIARIDUlRNcgcIARIDT1NBGkISCjIwMjctMDgtMTFqBwgBEgNUWU9yBwgBEgNBTVNyBwgBEgNCUlVyBwgBEgNEVVNyBwgBEgNFSU5yBwgBEgNSVE1AAUgBcAGCAQsI____________AZgBAw&tfu=EgQIACACIgMSATA&hl=en&gl=nl&curr=EUR",
-    "pricePP": 2101,
     "airline": "KLM and ANA",
-    "out": {
-     "pricePP": 2101,
-     "airline": "KLM and ANA",
-     "stops": 2,
-     "duration": "29 hr 30 min",
-     "from": "Eindhoven Airport",
-     "fromId": "EIN",
-     "departs": "Wednesday, July 28 6:25 AM",
-     "to": "Osaka Itami Airport",
-     "arrives": "Thursday, July 29 6:55 PM",
-     "layovers": [
-      "Amsterdam Airport Schiphol",
-      "Narita International Airport"
-     ],
-     "airportChange": false
-    },
-    "cheapestPP": 1085
+    "cheapestPP": 1085,
+    "mixedPricePP": 2101,
+    "error": "multi-airport search: the return may land at another home airport; price not verified for this airport"
    },
    {
     "origin": "RTM",
@@ -10642,25 +8370,10 @@
     "checkedAt": "2026-11-25T23:52:18Z",
     "source": "searchapi",
     "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhpCEgoyMDI3LTA3LTI5agcIARIDQU1TagcIARIDQlJVagcIARIDRFVTagcIARIDRUlOagcIARIDUlRNcgcIARIDT1NBGkISCjIwMjctMDgtMTJqBwgBEgNUWU9yBwgBEgNBTVNyBwgBEgNCUlVyBwgBEgNEVVNyBwgBEgNFSU5yBwgBEgNSVE1AAUgBcAGCAQsI____________AZgBAw&tfu=EgQIACACIgMSATA&hl=en&gl=nl&curr=EUR",
-    "pricePP": 1320,
     "airline": "Finnair and JAL",
-    "out": {
-     "pricePP": 1320,
-     "airline": "Finnair and JAL",
-     "stops": 2,
-     "duration": "22 hr 40 min",
-     "from": "Amsterdam Airport Schiphol",
-     "fromId": "AMS",
-     "departs": "Thursday, July 29 11:55 AM",
-     "to": "Osaka Itami Airport",
-     "arrives": "Friday, July 30 5:35 PM",
-     "layovers": [
-      "Helsinki Airport",
-      "Haneda Airport"
-     ],
-     "airportChange": false
-    },
-    "cheapestPP": 1205
+    "cheapestPP": 1205,
+    "mixedPricePP": 1320,
+    "error": "multi-airport search: the return may land at another home airport; price not verified for this airport"
    },
    {
     "origin": "BRU",
@@ -10670,25 +8383,10 @@
     "checkedAt": "2026-11-25T23:52:18Z",
     "source": "searchapi",
     "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhpCEgoyMDI3LTA3LTI5agcIARIDQU1TagcIARIDQlJVagcIARIDRFVTagcIARIDRUlOagcIARIDUlRNcgcIARIDT1NBGkISCjIwMjctMDgtMTJqBwgBEgNUWU9yBwgBEgNBTVNyBwgBEgNCUlVyBwgBEgNEVVNyBwgBEgNFSU5yBwgBEgNSVE1AAUgBcAGCAQsI____________AZgBAw&tfu=EgQIACACIgMSATA&hl=en&gl=nl&curr=EUR",
-    "pricePP": 1205,
     "airline": "British Airways and JAL",
-    "out": {
-     "pricePP": 1205,
-     "airline": "British Airways and JAL",
-     "stops": 2,
-     "duration": "21 hr 45 min",
-     "from": "Brussels Airport",
-     "fromId": "BRU",
-     "departs": "Thursday, July 29 10:50 AM",
-     "to": "Osaka Itami Airport",
-     "arrives": "Friday, July 30 3:35 PM",
-     "layovers": [
-      "Heathrow Airport",
-      "Haneda Airport"
-     ],
-     "airportChange": false
-    },
-    "cheapestPP": 1205
+    "cheapestPP": 1205,
+    "mixedPricePP": 1205,
+    "error": "multi-airport search: the return may land at another home airport; price not verified for this airport"
    },
    {
     "origin": "DUS",
@@ -10698,24 +8396,10 @@
     "checkedAt": "2026-11-25T23:52:18Z",
     "source": "searchapi",
     "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhpCEgoyMDI3LTA3LTI5agcIARIDQU1TagcIARIDQlJVagcIARIDRFVTagcIARIDRUlOagcIARIDUlRNcgcIARIDT1NBGkISCjIwMjctMDgtMTJqBwgBEgNUWU9yBwgBEgNBTVNyBwgBEgNCUlVyBwgBEgNEVVNyBwgBEgNFSU5yBwgBEgNSVE1AAUgBcAGCAQsI____________AZgBAw&tfu=EgQIACACIgMSATA&hl=en&gl=nl&curr=EUR",
-    "pricePP": 1221,
     "airline": "Qatar Airways",
-    "out": {
-     "pricePP": 1221,
-     "airline": "Qatar Airways",
-     "stops": 1,
-     "duration": "25 hr 5 min",
-     "from": "Duesseldorf Airport",
-     "fromId": "DUS",
-     "departs": "Thursday, July 29 9:20 AM",
-     "to": "Kansai International Airport",
-     "arrives": "Friday, July 30 5:25 PM",
-     "layovers": [
-      "Hamad International Airport"
-     ],
-     "airportChange": false
-    },
-    "cheapestPP": 1205
+    "cheapestPP": 1205,
+    "mixedPricePP": 1221,
+    "error": "multi-airport search: the return may land at another home airport; price not verified for this airport"
    },
    {
     "origin": "EIN",
@@ -10818,24 +8502,10 @@
     "checkedAt": "2026-11-25T23:52:32Z",
     "source": "searchapi",
     "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhpCEgoyMDI3LTA3LTMwagcIARIDQU1TagcIARIDQlJVagcIARIDRFVTagcIARIDRUlOagcIARIDUlRNcgcIARIDT1NBGkISCjIwMjctMDgtMTNqBwgBEgNUWU9yBwgBEgNBTVNyBwgBEgNCUlVyBwgBEgNEVVNyBwgBEgNFSU5yBwgBEgNSVE1AAUgBcAGCAQsI____________AZgBAw&tfu=EgQIACACIgMSATA&hl=en&gl=nl&curr=EUR",
-    "pricePP": 1364,
     "airline": "Finnair",
-    "out": {
-     "pricePP": 1364,
-     "airline": "Finnair",
-     "stops": 1,
-     "duration": "17 hr 40 min",
-     "from": "Amsterdam Airport Schiphol",
-     "fromId": "AMS",
-     "departs": "Friday, July 30 11:55 AM",
-     "to": "Kansai International Airport",
-     "arrives": "Saturday, July 31 12:35 PM",
-     "layovers": [
-      "Helsinki Airport"
-     ],
-     "airportChange": false
-    },
-    "cheapestPP": 1197
+    "cheapestPP": 1197,
+    "mixedPricePP": 1364,
+    "error": "multi-airport search: the return may land at another home airport; price not verified for this airport"
    },
    {
     "origin": "BRU",
@@ -10845,25 +8515,10 @@
     "checkedAt": "2026-11-25T23:52:32Z",
     "source": "searchapi",
     "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhpCEgoyMDI3LTA3LTMwagcIARIDQU1TagcIARIDQlJVagcIARIDRFVTagcIARIDRUlOagcIARIDUlRNcgcIARIDT1NBGkISCjIwMjctMDgtMTNqBwgBEgNUWU9yBwgBEgNBTVNyBwgBEgNCUlVyBwgBEgNEVVNyBwgBEgNFSU5yBwgBEgNSVE1AAUgBcAGCAQsI____________AZgBAw&tfu=EgQIACACIgMSATA&hl=en&gl=nl&curr=EUR",
-    "pricePP": 1197,
     "airline": "British Airways and JAL",
-    "out": {
-     "pricePP": 1197,
-     "airline": "British Airways and JAL",
-     "stops": 2,
-     "duration": "21 hr 50 min",
-     "from": "Brussels Airport",
-     "fromId": "BRU",
-     "departs": "Friday, July 30 10:45 AM",
-     "to": "Osaka Itami Airport",
-     "arrives": "Saturday, July 31 3:35 PM",
-     "layovers": [
-      "Heathrow Airport",
-      "Haneda Airport"
-     ],
-     "airportChange": false
-    },
-    "cheapestPP": 1197
+    "cheapestPP": 1197,
+    "mixedPricePP": 1197,
+    "error": "multi-airport search: the return may land at another home airport; price not verified for this airport"
    },
    {
     "origin": "DUS",
@@ -10873,24 +8528,10 @@
     "checkedAt": "2026-11-25T23:52:32Z",
     "source": "searchapi",
     "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhpCEgoyMDI3LTA3LTMwagcIARIDQU1TagcIARIDQlJVagcIARIDRFVTagcIARIDRUlOagcIARIDUlRNcgcIARIDT1NBGkISCjIwMjctMDgtMTNqBwgBEgNUWU9yBwgBEgNBTVNyBwgBEgNCUlVyBwgBEgNEVVNyBwgBEgNFSU5yBwgBEgNSVE1AAUgBcAGCAQsI____________AZgBAw&tfu=EgQIACACIgMSATA&hl=en&gl=nl&curr=EUR",
-    "pricePP": 1245,
     "airline": "Qatar Airways",
-    "out": {
-     "pricePP": 1245,
-     "airline": "Qatar Airways",
-     "stops": 1,
-     "duration": "43 hr 0 min",
-     "from": "Duesseldorf Airport",
-     "fromId": "DUS",
-     "departs": "Friday, July 30 3:25 PM",
-     "to": "Kansai International Airport",
-     "arrives": "Sunday, August 1 5:25 PM",
-     "layovers": [
-      "Hamad International Airport"
-     ],
-     "airportChange": false
-    },
-    "cheapestPP": 1197
+    "cheapestPP": 1197,
+    "mixedPricePP": 1245,
+    "error": "multi-airport search: the return may land at another home airport; price not verified for this airport"
    },
    {
     "origin": "EIN",
@@ -10900,25 +8541,10 @@
     "checkedAt": "2026-11-25T23:52:32Z",
     "source": "searchapi",
     "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhpCEgoyMDI3LTA3LTMwagcIARIDQU1TagcIARIDQlJVagcIARIDRFVTagcIARIDRUlOagcIARIDUlRNcgcIARIDT1NBGkISCjIwMjctMDgtMTNqBwgBEgNUWU9yBwgBEgNBTVNyBwgBEgNCUlVyBwgBEgNEVVNyBwgBEgNFSU5yBwgBEgNSVE1AAUgBcAGCAQsI____________AZgBAw&tfu=EgQIACACIgMSATA&hl=en&gl=nl&curr=EUR",
-    "pricePP": 2158,
     "airline": "KLM and ANA",
-    "out": {
-     "pricePP": 2158,
-     "airline": "KLM and ANA",
-     "stops": 2,
-     "duration": "29 hr 30 min",
-     "from": "Eindhoven Airport",
-     "fromId": "EIN",
-     "departs": "Friday, July 30 6:25 AM",
-     "to": "Osaka Itami Airport",
-     "arrives": "Saturday, July 31 6:55 PM",
-     "layovers": [
-      "Amsterdam Airport Schiphol",
-      "Narita International Airport"
-     ],
-     "airportChange": false
-    },
-    "cheapestPP": 1197
+    "cheapestPP": 1197,
+    "mixedPricePP": 2158,
+    "error": "multi-airport search: the return may land at another home airport; price not verified for this airport"
    },
    {
     "origin": "RTM",
