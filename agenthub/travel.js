@@ -117,6 +117,8 @@
       // what to click on the Google Flights page the button opens (it lists every flight for these dates)
       const o = fl.out, lay = (o.layovers || []).map((l, i) => l + (o.layoverMins && o.layoverMins[i] ? " " + Math.floor(o.layoverMins[i] / 60) + "h" + String(o.layoverMins[i] % 60).padStart(2, "0") : "")).join(", ");
       items.append(el("li", {}, el("b", { text: "Pick this flight" }), ` ${o.airline || ""} · leaves ${o.from || fl.origin} ${o.departs}${lay ? " · via " + lay : ""}${fl.type && fl.type.startsWith("multi") ? " · on the next page pick the cheapest way home" : ""}${fl.serpapi ? " · fare confirmed via SerpApi " + when(fl.checkedAt) : ""}`));
+      if (fl.back && fl.back.departs) items.append(el("li", {}, el("b", { text: "Way home" }), ` ${fl.back.airline || ""} · leaves ${fl.back.from || ""} ${fl.back.departs} → ${fl.back.to || ""}`));
+      if (fl.bookUrl) items.append(el("li", {}, el("b", { text: "Booking page" }), ` "Book this flight" opens Google's booking page with exactly these flights: ${(fl.bookWith || []).map((x) => x.name + " " + eur(x.pricePP)).join(" · ")}${(fl.bags || []).length ? " · bags: " + fl.bags.join(", ") : ""}${fl.bagsIncluded ? " (suitcase included, no bag cost added)" : ""}`));
     }
     const BEDS = { twin: "2 separate beds", double: "1 bed for 2" };
     for (const s of (b.stays || [])) {
@@ -147,6 +149,8 @@
     const why = S.plans.find((p) => p.id === t.planId)?.why;
     const acts = el("div", { class: "dact" });
     const seen = new Set();
+    const bk = safe(fl.bookUrl);
+    if (bk) { seen.add(bk); acts.append(el("a", { class: "btn sm", href: bk, target: "_blank", rel: "noopener", text: "Book this flight ↗" })); }
     for (const u of [...(fl.urls || []), fl.google?.url]) { const s = safe(u); if (s && !seen.has(s)) { seen.add(s); acts.append(el("a", { class: "btn sm", href: s, target: "_blank", rel: "noopener", text: s.includes("aviasales") ? "Flight ↗" : "Google Flights ↗" })); } }
     acts.append(el("p", { class: "hint", text: "Checking a price yourself? On Google Flights click \"Sort by: price\" (it opens on \"Top flights\"), keep 1 adult (prices are per person) and look for the same airline and departure time. Booking shows Genius prices only when you are logged in (free account). Prices move during the day." }));
     for (const s of (b.stays || [])) { const u = safe(s.pick?.url) || safe(s.url); if (u) acts.append(el("a", { class: "btn sm", href: u, target: "_blank", rel: "noopener", text: (s.pick?.url ? "Stay " : "Hotels ") + s.city + " ↗" })); }
