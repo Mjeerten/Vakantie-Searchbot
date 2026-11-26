@@ -26,6 +26,13 @@ import tp
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 COSTS = json.load(open(os.path.join(HERE, "costs.json")))
+try:
+    DETAILS = json.load(open(os.path.join(HERE, "city_details.json")))  # itemised Japan ground costs (JPY)
+except Exception:
+    DETAILS = {"cities": {}, "legsJPY": {}, "airportsJPY": {}}
+JPY_PER_EUR = 174.0  # replaced by the live rate in main()
+AIRPORT_NAMES = {"Haneda": "HND", "Narita": "NRT", "Itami": "ITM", "Kansai": "KIX"}
+DEFAULT_AIRPORT = {"TYO": "HND", "OSA": "KIX"}
 D = dt.date.fromisoformat
 
 
@@ -46,7 +53,29 @@ def usd_to_eur():
         return 0.92
 
 
+def jpy(x):
+    return round(x / JPY_PER_EUR)
+
+
+def eur_to_jpy():
+    try:
+        with urllib.request.urlopen("https://api.frankfurter.app/latest?from=EUR&to=JPY", timeout=15) as r:
+            return float(json.load(r)["rates"]["JPY"])
+    except Exception:
+        return 174.0
+
+
+def leg_detail(a, b):
+    for k in (f"{a}>{b}", f"{b}>{a}"):
+        if k in DETAILS.get("legsJPY", {}):
+            return DETAILS["legsJPY"][k]
+    return None
+
+
 def leg_cost(a, b):
+    d = leg_detail(a, b)
+    if d:
+        return jpy(d["jpy"]), True
     legs = COSTS["legs"]
     for k in (f"{a}>{b}", f"{b}>{a}"):
         if k in legs:
@@ -277,7 +306,7 @@ def run_check(plan, nights, origin, depart, mode):
 
 def google_cand(plan, c):
     fin, fout = plan["flyIn"], plan.get("flyOut") or plan["flyIn"]
-    back = c.get("backTrainPP", 0)
+    back = leg_cost(plan["stops"][-1]["city"], plan["stops"][0]["city"])[0] if c["mode"] == "rt" and fin != fout else c.get("backTrainPP", 0)
     if c["mode"] == "mc":
         typ = f"multi-city ticket (in {fin}, home from {fout})"
     else:
@@ -303,6 +332,16 @@ def _hotel_search(script, city, checkin, checkout, fx, maxmi=None):
         return {"hotels": [], "error": f"{script} failed: {e}"[:160]}
 
 
+def beds(kind):
+    """'twin' (2 separate beds/futons), 'double' (one bed for 2) or 'bad' (not for 2 adults: semi-double, single)."""
+    k = (kind or "").lower()
+    if re.search(r"semi[- ]?double|single room|\b1 single bed\b(?!.*(single|double|futon|sofa))", k) and not re.search(r"\b[2-9] (single|twin|futon)", k):
+        return "bad"
+    if re.search(r"twin|\b[2-9] (single|twin|futon|bunk)|\b[2-9] beds", k):
+        return "twin"
+    return "double"
+
+
 def pick_stay(city, checkin, nights, rules, fx, cfg):
     """Cheapest decent private room for 2: Booking.com first (real totals for the stay), Google Hotels as backup."""
     checkout = (D(checkin) + dt.timedelta(days=nights)).isoformat()
@@ -321,7 +360,8 @@ def pick_stay(city, checkin, nights, rules, fx, cfg):
         return ((h.get("rating") or 0) >= minr and (h.get("reviews") or 0) >= minrev
                 and (h.get("miles") is None or h["miles"] <= maxmi)
                 and not any(w in (h["name"] + " " + (h.get("kind") or "")).lower() for w in avoid)
-                and not re.search(r"(?<!non-)(?<!non )smoking", (h.get("kind") or "").lower()))
+                and not re.search(r"(?<!non-)(?<!non )smoking", (h.get("kind") or "").lower())
+                and beds(h.get("kind")) != "bad")
 
     gl = [h for h in rg.get("hotels", []) if h.get("nightlyEur")]
     ok = [dict(h) for h in rb.get("hotels", []) if good(h)]
@@ -341,6 +381,12 @@ def pick_stay(city, checkin, nights, rules, fx, cfg):
     ok.sort(key=lambda h: h.get("total") or h["nightlyEur"] * nights)
     res.update({"source": src, "url": rb.get("url"), "googleUrl": rg.get("url"), "blocked": rb.get("blocked"),
                 "error": rb.get("error") or rg.get("error"), "found": len(rb.get("hotels", [])) + len(gl), "qualifying": len(ok)})
+    for h in ok:
+        h["beds"] = beds(h.get("kind"))
+    tw = next((h for h in ok if h["beds"] == "twin"), None)
+    if tw:
+        res["twinPick"] = tw  # cheapest with 2 separate beds (for friends who'd rather not share a bed)
+        res["twinPricePP"] = round((tw.get("total") or tw["nightlyEur"] * nights) / 2)
     if ok:
         top = ok[:3]
         res["pick"] = top[0]
@@ -497,6 +543,41 @@ def load_city_nights(dbdir):
                 CITY_NIGHT.setdefault(s["city"], []).append(s["pricePP"] * 2 / int(s["nights"]))
 
 
+def itemised(plan, stays, fl, rules, on_ground):
+    """Itemised ground costs from city_details.json (real entry fees, local transport, city tax, airport transfers).
+    Only when every stop of the route is in the file; otherwise the per-day estimates stay."""
+    cities = DETAILS.get("cities", {})
+    if not plan["stops"] or not all(s["city"] in cities for s in plan["stops"]):
+        return None
+    acts, opt, local, tax, meals = [], [], [], 0, 0
+    for s, sv in zip(plan["stops"], stays):
+        c, n = cities[s["city"]], int(s["nights"])
+        for a in c.get("activities", []):
+            row = {"city": s["city"], "name": a["name"], "eur": jpy(a["jpy"]), "jpy": a["jpy"], "note": a.get("note"), "src": a.get("src")}
+            (acts if a.get("core") else opt).append(row)
+        local.append({"city": s["city"], "days": n, "eur": jpy(c.get("localPerDayJPY", 0) * n), "note": c.get("localNote")})
+        t = jpy(c.get("cityTaxPPNightJPY", 0) * n)
+        if t:
+            sv["cityTaxPP"] = t
+            tax += t
+        meals += c.get("mealsIncluded", 0)
+    ap = []
+    arr = next((v for k, v in AIRPORT_NAMES.items() if k in ((fl or {}).get("out") or {}).get("to", "")), None) or DEFAULT_AIRPORT.get(plan["flyIn"])
+    # a return ticket flies home from where it landed; a multi-city ticket from the last city
+    dep = DEFAULT_AIRPORT.get(plan["flyIn"] if (fl or {}).get("type", "").startswith("return") else (plan.get("flyOut") or plan["flyIn"]))
+    for code, when in ((arr, "arrival"), (dep, "departure")):
+        a = DETAILS.get("airportsJPY", {}).get(code)
+        if a:
+            ap.append({"airport": code, "when": when, "eur": jpy(a["jpy"]), "how": a["how"]})
+    food = rules["foodPerDay"] * on_ground - round(meals * rules["foodPerDay"] * 0.75)
+    return {"parts": {"activities": sum(a["eur"] for a in acts), "local": sum(l["eur"] for l in local),
+                      "food": food, "stays": sum(s["pricePP"] for s in stays) + tax},
+            "airportPP": sum(a["eur"] for a in ap) if ap else 2 * rules["airportTransfer"],
+            "detail": {"activities": acts, "optional": opt, "local": local, "airports": ap, "cityTaxPP": tax,
+                       "jpyPerEur": round(JPY_PER_EUR, 1), "mealsIncludedNights": meals,
+                       "foodNote": f"€{rules['foodPerDay']} p.p. a day" + (f"; {meals} night(s) with dinner + breakfast included" if meals else "")}}
+
+
 def evaluate(plan, cfg, st, do_hotels):
     country = plan.get("country", "default")
     rules = country_costs(country, cfg)
@@ -559,7 +640,7 @@ def evaluate(plan, cfg, st, do_hotels):
     legs, cities = [], [s["city"] for s in plan["stops"]]
     for a, b in zip(cities, cities[1:]):
         c, known = leg_cost(a, b)
-        legs.append({"from": a, "to": b, "pricePP": c, "known": known})
+        legs.append({"from": a, "to": b, "pricePP": c, "known": known, "how": (leg_detail(a, b) or {}).get("how")})
     if (plan.get("flyOut") or plan["flyIn"]) == plan["flyIn"] and plan.get("returnCity") and plan["returnCity"] != cities[-1]:
         c, known = leg_cost(cities[-1], plan["returnCity"])
         legs.append({"from": cities[-1], "to": plan["returnCity"], "pricePP": c, "known": known})
@@ -573,6 +654,10 @@ def evaluate(plan, cfg, st, do_hotels):
         "activities": rules["activitiesPerDay"] * on_ground,
         "local": rules["localTransportPerDay"] * on_ground,
     }
+    ground = itemised(plan, stays, fl, rules, on_ground)
+    if ground:
+        parts.update(ground["parts"])
+        parts["transport"] = sum(l["pricePP"] for l in legs) + (fl or {}).get("backTrainPP", 0) + ground["airportPP"]
     total = sum(parts.values())
     bmin, bmax = cfg.get("budgetMinPP", 1500), cfg.get("budgetMaxPP", 2500)
     verdict = "top deal" if total <= bmin else "within budget" if total <= bmax else f"€{total - bmax} over budget"
@@ -597,7 +682,7 @@ def evaluate(plan, cfg, st, do_hotels):
     if fl.get("cached"):
         est_flags.append("cached fare (seen by Aviasales users recently), check the live price")
     est_flags += fl.get("comfortFlags") or []
-    out.update({"variants": variants, "best": {
+    out.update({"variants": variants, "best": {"ground": ground and ground["detail"],
         "depart": best["depart"], "return": best["return"], "days": days, "flight": fl, "stays": stays, "legs": legs,
         "parts": parts, "totalPP": total, "totalFor2": total * 2, "verdict": verdict, "flags": est_flags,
         "flightSource": src}})
@@ -646,6 +731,8 @@ def main():
     if cfg.get("comfortHours"):
         COSTS.setdefault("comfort", {})["hoursFree"] = float(cfg["comfortHours"])
     fx = usd_to_eur()
+    global JPY_PER_EUR
+    JPY_PER_EUR = eur_to_jpy()
     budget = Budget(int(cfg.get("googleQueryBudget", 8)))
     pause = float(cfg.get("googlePauseSec", 20))
     dbdir = next((f.split("=", 1)[1] for f in flags if f.startswith("--prev=")), None)

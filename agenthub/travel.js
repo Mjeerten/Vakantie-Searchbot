@@ -109,8 +109,32 @@
     const items = el("ul");
     const fdesc = [fl.type, fl.out && (fl.out.stops != null ? (fl.out.stops ? fl.out.stops + " stop" + (fl.out.stops > 1 ? "s" : "") : "direct") : null), fl.out && (fl.out.duration || (fl.out.hours ? fl.out.hours + " h" : null))].filter(Boolean).join(" · ");
     items.append(el("li", {}, el("b", { text: `Flight ${eur(fl.pricePP)}` }), " " + fdesc + (fl.google ? ` · Google now ${eur(fl.google.pricePP)}` : "")));
-    for (const s of (b.stays || [])) items.append(el("li", {}, el("b", { text: `${s.city} ${s.nights} nights ${eur(s.pricePP)}` }), " " + (s.pick ? `${s.pick.name} · ${s.pick.score10 != null ? s.pick.score10 + "/10" : (s.pick.rating ?? "?") + "★"} (${s.pick.reviews ?? "?"} reviews) · ${eur(s.pick.nightlyEur)}/night for 2${s.pick.kind ? " · " + s.pick.kind.split(/ (Free cancellation|We have|Breakfast)/)[0] : ""}${s.pick.cheaperVia ? " · cheaper on another site via Google Hotels (Booking " + eur(s.pick.bookingTotal) + ")" : s.source ? " · " + s.source : ""}` : "estimated, no hotel price found")));
-    for (const l of (b.legs || [])) items.append(el("li", {}, el("b", { text: `${l.from} → ${l.to} ${eur(l.pricePP)}` }), l.known ? " train/bus" : " estimate"));
+    const BEDS = { twin: "2 separate beds", double: "1 bed for 2" };
+    for (const s of (b.stays || [])) {
+      const p = s.pick, tw = s.twinPick;
+      items.append(el("li", {}, el("b", { text: `${s.city} ${s.nights} nights ${eur(s.pricePP)}` }), " " + (p ? `${p.name} · ${p.score10 != null ? p.score10 + "/10" : (p.rating ?? "?") + "★"} (${p.reviews ?? "?"} reviews) · ${eur(p.nightlyEur)}/night for 2${p.kind ? " · " + p.kind.split(/ (Free cancellation|We have|Breakfast|No prepayment)/)[0] : ""}${p.beds ? " · " + BEDS[p.beds] : ""}${p.memberPrice ? " · Genius price (free Booking account)" + (p.publicTotal ? ", without account " + eur(Math.round(p.publicTotal / 2)) + " p.p." : "") : ""}${s.cityTaxPP ? " · + city tax " + eur(s.cityTaxPP) + " p.p. paid at the hotel" : ""}${p.cheaperVia ? " · cheaper on another site via Google Hotels (Booking " + eur(p.bookingTotal) + ")" : s.source ? " · " + s.source : ""}` : (s.estimatedFrom ? "estimated from " + s.estimatedFrom : "estimated, no hotel price found"))));
+      if (tw && p && tw.name !== p.name) items.append(el("li", { class: "sub" }, `  ↳ with 2 separate beds: ${tw.name} · ${tw.score10}/10 · ${eur(s.twinPricePP)} p.p. (+${eur(s.twinPricePP - Math.round((p.total || 0) / 2))})`));
+    }
+    for (const l of (b.legs || [])) items.append(el("li", {}, el("b", { text: `${l.from} → ${l.to} ${eur(l.pricePP)}` }), l.how ? " " + l.how : l.known ? " train/bus" : " estimate"));
+    const g = b.ground;
+    if (g) {
+      for (const a of (g.airports || [])) items.append(el("li", {}, el("b", { text: `Airport ${a.airport} (${a.when}) ${eur(a.eur)}` }), " " + a.how));
+      items.append(el("li", {}, el("b", { text: `Activities ${eur(parts.activities)}` }), ` (entry fees at ¥${g.jpyPerEur} per euro)`));
+      const ul = el("ul", { class: "tv-acts" });
+      for (const a of (g.activities || [])) ul.append(el("li", {}, `${a.city}: ${a.name} `, el("b", { text: a.eur ? eur(a.eur) : "free" }), a.jpy ? ` (¥${a.jpy.toLocaleString("en")})` : "", a.note && a.jpy ? " · " + a.note : ""));
+      items.append(ul);
+      if ((g.optional || []).length) {
+        items.append(el("li", {}, el("b", { text: "Optional extras (not in the total)" })));
+        const uo = el("ul", { class: "tv-acts" });
+        for (const a of g.optional) uo.append(el("li", {}, `${a.city}: ${a.name} `, el("b", { text: eur(a.eur) }), a.note ? " · " + a.note : ""));
+        items.append(uo);
+      }
+      items.append(el("li", {}, el("b", { text: `Local transport ${eur(parts.local)}` }), " " + (g.local || []).filter((l) => l.eur).map((l) => `${l.city} ${eur(l.eur)} (${l.days} d)`).join(" · ")));
+      const ln = el("ul", { class: "tv-acts" });
+      for (const l of (g.local || [])) if (l.note) ln.append(el("li", { text: `${l.city}: ${l.note}` }));
+      items.append(ln);
+      items.append(el("li", {}, el("b", { text: `Food ${eur(parts.food)}` }), " " + (g.foodNote || "")));
+    }
     const why = S.plans.find((p) => p.id === t.planId)?.why;
     const acts = el("div", { class: "dact" });
     const seen = new Set();

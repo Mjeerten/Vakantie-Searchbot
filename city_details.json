@@ -1,0 +1,86 @@
+{
+ "_note": "Itemised ground costs per city, in JPY, researched Nov 2026 from official sites (prices for summer 2027 where announced). run.py turns these into EUR with the live rate. core=true items count in the trip total; the rest are listed as optional extras. Edit freely.",
+ "currency": "JPY",
+ "cities": {
+  "Tokyo": {
+   "activities": [
+    {"name": "teamLab Planets (Toyosu)", "jpy": 4000, "core": true, "note": "from 3,800 yen, price depends on the day; book online ahead", "src": "https://teamlabplanets.dmm.com/en/ticket"},
+    {"name": "Shibuya Sky at sunset", "jpy": 3400, "core": true, "note": "online ticket from 15:00 (2,700 yen before 15:00); sunset slots sell out, book ~4 weeks ahead", "src": "https://www.gotokyo.org/en/spot/1749/index.html"},
+    {"name": "Karaoke night (Shibuya/Shinjuku, ~2 h)", "jpy": 1500, "core": true, "note": "typical chain price for 2 h incl. soft drinks"},
+    {"name": "Senso-ji, Meiji Jingu, Shibuya crossing, Harajuku, Akihabara, Shinjuku Golden Gai, Tokyo Metropolitan Govt observatory", "jpy": 0, "core": true, "note": "free"},
+    {"name": "Day trip Kamakura (Great Buddha + Hase-dera)", "jpy": 2400, "core": false, "note": "JR from Tokyo ~1,000 yen each way + Daibutsu 300 yen; Hase-dera 400 yen"}
+   ],
+   "localPerDayJPY": 750,
+   "localNote": "Suica/PASMO on the phone; ~3-4 metro rides a day. Tip: Tokyo Subway Ticket 72 h = 2,000 yen for the busiest days",
+   "cityTaxPPNightJPY": 0,
+   "cityTaxNote": "Tokyo accommodation tax only above 10,000 yen per person per night"
+  },
+  "Kanazawa": {
+   "activities": [
+    {"name": "Kenroku-en garden + Kanazawa Castle turrets (Kenrokuen+1 ticket)", "jpy": 500, "core": true, "src": "https://shiro-niwa.pref.ishikawa.lg.jp/kanazawa-castle/en/info/fee.php"},
+    {"name": "21st Century Museum (paid exhibition)", "jpy": 1400, "core": true, "note": "free zone incl. parts of the building; exhibition price varies per show (approx.)"},
+    {"name": "Nomura samurai house (Nagamachi)", "jpy": 550, "core": true, "note": "approx."},
+    {"name": "Higashi Chaya geisha district, Omicho market", "jpy": 0, "core": true, "note": "free (food in the food budget)"}
+   ],
+   "localPerDayJPY": 800,
+   "localNote": "Kanazawa City One-Day bus pass 800 yen (also gives discounts at 27 sights)",
+   "cityTaxPPNightJPY": 200
+  },
+  "Kyoto": {
+   "activities": [
+    {"name": "Fushimi Inari (early morning)", "jpy": 0, "core": true, "note": "free"},
+    {"name": "Kiyomizu-dera", "jpy": 500, "core": true, "src": "https://www.kiyomizudera.or.jp/en/info/"},
+    {"name": "Kinkaku-ji (Golden Pavilion)", "jpy": 500, "core": true},
+    {"name": "Ginkaku-ji (Silver Pavilion)", "jpy": 1000, "core": true, "note": "doubled to 1,000 yen in April 2026"},
+    {"name": "Arashiyama bamboo grove + Tenryu-ji garden", "jpy": 500, "core": true, "src": "https://www.tenryuji.com/en/visit/"},
+    {"name": "Nijo Castle + Ninomaru Palace", "jpy": 2000, "core": true, "note": "Kyoto plans 2,000 yen for non-residents from fiscal 2027 (now 1,300 yen)"},
+    {"name": "Day trip Nara: Kintetsu train Kyoto-Nara return + Todai-ji Great Buddha", "jpy": 2320, "core": true, "note": "train 760 yen each way + Todai-ji 800 yen; deer park free"},
+    {"name": "Gion / Pontocho evening walk", "jpy": 0, "core": true, "note": "free"}
+   ],
+   "localPerDayJPY": 1100,
+   "localNote": "city bus 230 yen now; Kyoto plans ~360 yen for visitors from April 2027. Subway where possible, and walk",
+   "cityTaxPPNightJPY": 200,
+   "cityTaxNote": "Kyoto tax 200 yen p.p. per night for rooms under 6,000 yen p.p. (400 yen up to 20,000)"
+  },
+  "Koyasan": {
+   "activities": [
+    {"name": "Kongobu-ji temple (incl. rock garden and tea)", "jpy": 1000, "core": true},
+    {"name": "Danjo Garan: Konpon Daito pagoda + Kondo hall", "jpy": 1000, "core": true, "note": "500 yen each"},
+    {"name": "Okunoin cemetery walk, morning prayers at the temple", "jpy": 0, "core": true, "note": "free"},
+    {"name": "Okunoin night tour (Awesome Tours, English)", "jpy": 5000, "core": false, "note": "from 5,000 yen, book online"}
+   ],
+   "localPerDayJPY": 0,
+   "localNote": "buses on the mountain are in the Koyasan World Heritage Ticket",
+   "mealsIncluded": 1,
+   "mealsNote": "temple lodging includes vegetarian dinner and breakfast",
+   "cityTaxPPNightJPY": 0
+  },
+  "Osaka": {
+   "activities": [
+    {"name": "Osaka Castle main tower", "jpy": 1200, "core": true, "note": "1,200 yen since April 2025"},
+    {"name": "Umeda Sky Building observatory", "jpy": 2000, "core": true, "src": "https://www.kuchu-teien.com/en/"},
+    {"name": "Dotonbori, Shinsekai, Kuromon market", "jpy": 0, "core": true, "note": "free (street food in the food budget)"},
+    {"name": "Universal Studios Japan (1 day)", "jpy": 9800, "core": false, "note": "8,600-10,900 yen depending on the day"},
+    {"name": "Kaiyukan aquarium", "jpy": 2700, "core": false}
+   ],
+   "localPerDayJPY": 800,
+   "localNote": "Osaka Metro 190-390 yen a ride; Enjoy Eco 1-day card ~820 yen on weekdays",
+   "cityTaxPPNightJPY": 200
+  }
+ },
+ "legsJPY": {
+  "Tokyo>Kanazawa": {"jpy": 14800, "how": "Hokuriku Shinkansen Kagayaki, reserved seat (14,600 yen + summer peak 200)"},
+  "Kanazawa>Kyoto": {"jpy": 7700, "how": "Tsurugi Shinkansen to Tsuruga + Thunderbird to Kyoto, reserved (7,520 yen + peak)"},
+  "Tokyo>Kyoto": {"jpy": 15070, "how": "Nozomi reserved (price from 1 Jul 2027 incl. +700 yen rise and summer peak); Hikari is ~1,000 yen cheaper"},
+  "Osaka>Tokyo": {"jpy": 15620, "how": "Nozomi Shin-Osaka-Tokyo reserved: 15,420 yen from 1 Jul 2027 + summer peak 200; Hikari ~1,000 yen cheaper"},
+  "Kyoto>Osaka": {"jpy": 580, "how": "JR Special Rapid Kyoto-Osaka"},
+  "Kyoto>Koyasan": {"jpy": 2660, "how": "Keihan + metro Kyoto-Namba (670 yen) + half of the Koyasan World Heritage Ticket (3,980 yen digital: Namba-Koyasan return, cable car, buses)"},
+  "Koyasan>Osaka": {"jpy": 1990, "how": "other half of the Koyasan World Heritage Ticket back to Namba"}
+ },
+ "airportsJPY": {
+  "HND": {"jpy": 500, "how": "Keikyu or monorail to the city"},
+  "NRT": {"jpy": 1500, "how": "Keisei Access Express / bus to the city"},
+  "ITM": {"jpy": 650, "how": "airport limousine bus to Umeda"},
+  "KIX": {"jpy": 1000, "how": "Nankai to Namba (rapi:t 1,490 yen)"}
+ }
+}

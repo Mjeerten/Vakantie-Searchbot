@@ -28,7 +28,8 @@ const { chromium } = require('playwright');
       const pr = [...e.querySelectorAll('[data-testid="price-and-discounted-price"]')].map(n => n.innerText.trim());
       return { name: t('[data-testid="title"]'), price: pr[pr.length - 1] || '', rate: t('[data-testid="availability-rate-information"]'),
         score: t('[data-testid="review-score"]'), dist: t('[data-testid="distance"]'),
-        room: t('[data-testid="recommended-units"]'), href: a ? a.href : '' };
+        room: t('[data-testid="recommended-units"]'), href: a ? a.href : '',
+        member: /members-only|genius/i.test(e.innerText), orig: ((e.innerText.match(/Original price €\s*([\d.,]+)/) || [])[1]) || '' };
     }));
     for (const k of cards) {
       const num = x => parseInt(String(x).replace(/[.,]/g, ''), 10);
@@ -44,7 +45,9 @@ const { chromium } = require('playwright');
       try { const u = new URL(k.href); if (u.protocol === 'https:' && /(^|\.)booking\.com$/.test(u.hostname)) link = `https://${u.hostname}${u.pathname}?checkin=${ci}&checkout=${co}&group_adults=2&no_rooms=1`; } catch (e) {}
       out.hotels.push({ name: k.name, total, nightlyEur: Math.round(total / nights), score10: +sm[1], rating: +(sm[1] / 2).toFixed(2),
         reviews: rv ? parseInt(rv[1].replace(/,/g, ''), 10) : 0, kind: k.room.replace(/\s+/g, ' ').slice(0, 160),
-        miles: miles == null ? null : +miles.toFixed(1), url: link, src: 'booking' });
+        miles: miles == null ? null : +miles.toFixed(1), url: link, src: 'booking',
+        // members-only (Genius) price: needs a free Booking.com account; publicTotal is the price without one
+        memberPrice: k.member || undefined, publicTotal: k.member && k.orig ? num(k.orig) + (tax ? num(tax) : 0) : undefined });
     }
   } catch (e) {
     out.error = String(e).slice(0, 160);
