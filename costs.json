@@ -141,7 +141,7 @@
    {
     "airline": "Eurowings and ANA",
     "bookWith": "Austrian",
-    "note": "Owner checked Google's booking page (26 Nov 2026, DUS-HND 27 Jul / HND-DUS 12 Aug): '1 free carry-on, 1st checked bag free'; SerpApi returned no bag line for this ticket."
+    "note": "Owner checked (26 Nov 2026, DUS-HND 27 Jul / HND-DUS 12 Aug, Eurowings/ANA): Austrian, Google ('1st checked bag per passenger free') and Mytrip all show 1x 23 kg checked bag + 8 kg carry-on included, also for 2 adults (Mytrip/Gotogate EUR 971 p.p.)."
    }
   ]
  },

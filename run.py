@@ -349,13 +349,16 @@ def google_cand(plan, c):
     price, via, bags_in = c["pricePP"], None, bool(c.get("bagsIncluded"))
     # book with the airline itself when Google's booking page offers it: its bag rules are known and changes/delays are
     # handled by the airline, not a middleman (owner's choice, Nov 2026: worth ~EUR 100 more than the cheapest agency)
-    air = [x for x in c.get("bookWith") or [] if x.get("airline") and x.get("pricePP")]
-    if air:
+    opts = [x for x in c.get("bookWith") or [] if x.get("pricePP")]
+    air = [x for x in opts if x.get("airline")]
+    known = [k for k in COSTS["bags"].get("confirmedIncluded", []) if k["airline"] == c.get("airline")]
+    if known and opts:
+        # owner checked this ticket: the suitcase is in the fare whoever sells it, so the cheapest seller is fine
+        a = min(opts, key=lambda x: x["pricePP"])
+        price, via, bags_in = a["pricePP"], a["name"], True
+    elif air:
         a = min(air, key=lambda x: x["pricePP"])
         price, via = a["pricePP"], a["name"]
-        for k in COSTS["bags"].get("confirmedIncluded", []):
-            if k["airline"] == c.get("airline") and k["bookWith"] == via:
-                bags_in = True
     return {"origin": c["origin"], "src": "google", "type": typ,
             "pricePP": price, "bookVia": via, "backTrainPP": back, "compare": price + back, "airlines": [c.get("airline")],
             "out": c.get("out"), "back": None, "depart": c["depart"], "return": c["return"],
