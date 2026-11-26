@@ -1,7 +1,7 @@
 {
- "updatedAt": "2026-11-26T19:55:29Z",
+ "updatedAt": "2026-11-26T20:47:10Z",
  "blocked": true,
- "queries": 116661115659306,
+ "queries": 816627809615153,
  "plans": {
   "jp-golden": [
    {
@@ -2232,150 +2232,6 @@
     "cheapestPP": 1065
    },
    {
-    "origin": "AMS",
-    "query": "ALL",
-    "anyHomeAirport": true,
-    "depart": "2027-07-25",
-    "return": "2027-08-10",
-    "mode": "mc",
-    "checkedAt": "2026-11-26T14:24:27Z",
-    "source": "serpapi",
-    "url": "https://www.google.com/travel/flights?hl=en&gl=nl&curr=EUR&tfs=CBwQAhpLEgoyMDI3LTA3LTI1agcIARIDQU1TagcIARIDQlJVagcIARIDRFVTagcIARIDRUlOagcIARIDUlRNcgcIARIDS0lYcgcIARIDSVRNGksSCjIwMjctMDgtMTBqBwgBEgNITkRqBwgBEgNOUlRyBwgBEgNBTVNyBwgBEgNCUlVyBwgBEgNEVVNyBwgBEgNFSU5yBwgBEgNSVE1AAUgBcAGYAQM&tfu=EgIIAQ",
-    "pricePP": 1139,
-    "airline": "British Airways and JAL",
-    "out": {
-     "pricePP": 1139,
-     "airline": "British Airways and JAL",
-     "stops": 2,
-     "duration": "22 hr 30 min",
-     "from": "Amsterdam Airport Schiphol",
-     "fromId": "AMS",
-     "departs": "Sunday, July 25 10:05 AM",
-     "to": "Osaka Itami Airport",
-     "arrives": "Monday, July 26 3:35 PM",
-     "layovers": [
-      "Heathrow Airport",
-      "Haneda Airport"
-     ],
-     "layoverMins": [
-      155,
-      215
-     ],
-     "selfTransfer": false,
-     "airportChange": false
-    },
-    "cheapestPP": 1139
-   },
-   {
-    "origin": "DUS",
-    "query": "ALL",
-    "anyHomeAirport": true,
-    "depart": "2027-07-23",
-    "return": "2027-08-08",
-    "mode": "mc",
-    "checkedAt": "2026-11-26T14:24:27Z",
-    "source": "serpapi",
-    "url": "https://www.google.com/travel/flights?hl=en&gl=nl&curr=EUR&tfs=CBwQAhpLEgoyMDI3LTA3LTIzagcIARIDQU1TagcIARIDQlJVagcIARIDRFVTagcIARIDRUlOagcIARIDUlRNcgcIARIDS0lYcgcIARIDSVRNGksSCjIwMjctMDgtMDhqBwgBEgNITkRqBwgBEgNOUlRyBwgBEgNBTVNyBwgBEgNCUlVyBwgBEgNEVVNyBwgBEgNFSU5yBwgBEgNSVE1AAUgBcAGYAQM&tfu=EgIIAQ",
-    "pricePP": 1289,
-    "airline": "Qatar Airways",
-    "out": {
-     "pricePP": 1289,
-     "airline": "Qatar Airways",
-     "stops": 1,
-     "duration": "43 hr 0 min",
-     "from": "Duesseldorf Airport",
-     "fromId": "DUS",
-     "departs": "Friday, July 23 3:25 PM",
-     "to": "Kansai International Airport",
-     "arrives": "Sunday, July 25 5:25 PM",
-     "layovers": [
-      "Hamad International Airport"
-     ],
-     "layoverMins": [
-      1645
-     ],
-     "selfTransfer": false,
-     "airportChange": false
-    },
-    "cheapestPP": 1289
-   },
-   {
-    "origin": "DUS",
-    "query": "ALL",
-    "anyHomeAirport": true,
-    "depart": "2027-07-27",
-    "return": "2027-08-12",
-    "mode": "mc",
-    "checkedAt": "2026-11-26T14:53:13Z",
-    "source": "serpapi",
-    "url": "https://www.google.com/travel/flights?hl=en&gl=nl&curr=EUR&tfs=CBwQAhpLEgoyMDI3LTA3LTI3agcIARIDQU1TagcIARIDQlJVagcIARIDRFVTagcIARIDRUlOagcIARIDUlRNcgcIARIDS0lYcgcIARIDSVRNGksSCjIwMjctMDgtMTJqBwgBEgNITkRqBwgBEgNOUlRyBwgBEgNBTVNyBwgBEgNCUlVyBwgBEgNEVVNyBwgBEgNFSU5yBwgBEgNSVE1AAUgBcAGYAQM&tfu=EgIIAQ",
-    "pricePP": 1134,
-    "airline": "British Airways and JAL",
-    "out": {
-     "pricePP": 1134,
-     "airline": "British Airways and JAL",
-     "stops": 2,
-     "duration": "20 hr 10 min",
-     "from": "Duesseldorf Airport",
-     "fromId": "DUS",
-     "departs": "Tuesday, July 27 10:50 AM",
-     "to": "Kansai International Airport",
-     "arrives": "Wednesday, July 28 2:00 PM",
-     "layovers": [
-      "Heathrow Airport",
-      "Haneda Airport"
-     ],
-     "layoverMins": [
-      105,
-      100
-     ],
-     "selfTransfer": false,
-     "airportChange": false,
-     "toId": "KIX"
-    },
-    "cheapestPP": 1134,
-    "searchPricePP": 1134,
-    "bookUrl": "https://www.google.com/travel/flights?hl=en&gl=nl&curr=EUR&tfs=CBwQAhqsARIKMjAyNy0wNy0yNyIfCgNEVVMSCjIwMjctMDctMjcaA0xIUioCQkEyAzkxOSIdCgNMSFISCjIwMjctMDctMjcaA0hORCoCQkEyATUiHwoDSE5EEgoyMDI3LTA3LTI4GgNLSVgqAkpMMgMyMjVqBwgBEgNBTVNqBwgBEgNCUlVqBwgBEgNEVVNqBwgBEgNFSU5qBwgBEgNSVE1yBwgBEgNLSVhyBwgBEgNJVE0aiwESCjIwMjctMDgtMTIiHQoDSE5EEgoyMDI3LTA4LTEyGgNMSFIqAkJBMgE4Ih8KA0xIUhIKMjAyNy0wOC0xMhoDQU1TKgJCQTIDNDQ0agcIARIDSE5EagcIARIDTlJUcgcIARIDQU1TcgcIARIDQlJVcgcIARIDRFVTcgcIARIDRUlOcgcIARIDUlRNQAFIAXABmAED&tfu=EgIIAQ",
-    "bookWith": [
-     {
-      "name": "British Airways",
-      "pricePP": 1134,
-      "airline": true
-     },
-     {
-      "name": "Tripado",
-      "pricePP": 1174,
-      "airline": false
-     }
-    ],
-    "bags": [
-     "1 free carry-on",
-     "1st checked bag: 90-114"
-    ],
-    "bagsIncluded": false,
-    "back": {
-     "pricePP": 1134,
-     "airline": "British Airways",
-     "stops": 1,
-     "duration": "20 hr 5 min",
-     "from": "Haneda Airport",
-     "fromId": "HND",
-     "departs": "Thursday, August 12 8:55 AM",
-     "to": "Amsterdam Airport Schiphol",
-     "arrives": "Thursday, August 12 10:00 PM",
-     "layovers": [
-      "Heathrow Airport"
-     ],
-     "layoverMins": [
-      235
-     ],
-     "selfTransfer": false,
-     "airportChange": false,
-     "toId": "AMS"
-    },
-    "bookedAt": "2026-11-26T14:53:13Z"
-   },
-   {
     "origin": "DUS",
     "query": "ALL",
     "depart": "2027-07-26",
@@ -2404,6 +2260,130 @@
      "airportChange": false
     },
     "cheapestPP": 1251,
+    "anyHomeAirport": true
+   },
+   {
+    "origin": "AMS",
+    "query": "ALL",
+    "depart": "2027-07-23",
+    "return": "2027-08-08",
+    "mode": "mc",
+    "checkedAt": "2026-11-26T19:54:22Z",
+    "url": "https://www.google.com/travel/flights/search?tfs=GjYSCjIwMjctMDctMjNqBRIDQU1TagUSA0JSVWoFEgNEVVNqBRIDRUlOagUSA1JUTXIFEgNPU0EaNhIKMjAyNy0wOC0wOGoFEgNUWU9yBRIDQU1TcgUSA0JSVXIFEgNEVVNyBRIDRUlOcgUSA1JUTUABSAGYAQM&hl=en&gl=nl&curr=EUR",
+    "pricePP": 1482,
+    "airline": "Finnair",
+    "out": {
+     "pricePP": 1482,
+     "airline": "Finnair",
+     "stops": 1,
+     "duration": "17 hr 40 min",
+     "from": "Amsterdam Airport Schiphol",
+     "departs": "Friday, July 23 11:55 AM",
+     "to": "Kansai International Airport",
+     "arrives": "Saturday, July 24 12:35 PM",
+     "layovers": [
+      "Helsinki Airport"
+     ],
+     "layoverMins": [
+      150
+     ],
+     "selfTransfer": false,
+     "airportChange": false
+    },
+    "cheapestPP": 1482,
+    "anyHomeAirport": true
+   },
+   {
+    "origin": "AMS",
+    "query": "ALL",
+    "depart": "2027-07-25",
+    "return": "2027-08-10",
+    "mode": "mc",
+    "checkedAt": "2026-11-26T19:56:31Z",
+    "url": "https://www.google.com/travel/flights/search?tfs=GjYSCjIwMjctMDctMjVqBRIDQU1TagUSA0JSVWoFEgNEVVNqBRIDRUlOagUSA1JUTXIFEgNPU0EaNhIKMjAyNy0wOC0xMGoFEgNUWU9yBRIDQU1TcgUSA0JSVXIFEgNEVVNyBRIDRUlOcgUSA1JUTUABSAGYAQM&hl=en&gl=nl&curr=EUR",
+    "pricePP": 1364,
+    "airline": "Finnair",
+    "out": {
+     "pricePP": 1364,
+     "airline": "Finnair",
+     "stops": 1,
+     "duration": "17 hr 40 min",
+     "from": "Amsterdam Airport Schiphol",
+     "departs": "Sunday, July 25 11:55 AM",
+     "to": "Kansai International Airport",
+     "arrives": "Monday, July 26 12:35 PM",
+     "layovers": [
+      "Helsinki Airport"
+     ],
+     "layoverMins": [
+      150
+     ],
+     "selfTransfer": false,
+     "airportChange": false
+    },
+    "cheapestPP": 1364,
+    "anyHomeAirport": true
+   },
+   {
+    "origin": "BRU",
+    "query": "ALL",
+    "depart": "2027-07-27",
+    "return": "2027-08-12",
+    "mode": "mc",
+    "checkedAt": "2026-11-26T19:57:29Z",
+    "url": "https://www.google.com/travel/flights/search?tfs=GjYSCjIwMjctMDctMjdqBRIDQU1TagUSA0JSVWoFEgNEVVNqBRIDRUlOagUSA1JUTXIFEgNPU0EaNhIKMjAyNy0wOC0xMmoFEgNUWU9yBRIDQU1TcgUSA0JSVXIFEgNEVVNyBRIDRUlOcgUSA1JUTUABSAGYAQM&hl=en&gl=nl&curr=EUR",
+    "pricePP": 1234,
+    "airline": "Finnair",
+    "out": {
+     "pricePP": 1234,
+     "airline": "Finnair",
+     "stops": 1,
+     "duration": "18 hr 50 min",
+     "from": "Brussels Airport",
+     "departs": "Tuesday, July 27 10:45 AM",
+     "to": "Kansai International Airport",
+     "arrives": "Wednesday, July 28 12:35 PM",
+     "layovers": [
+      "Helsinki Airport"
+     ],
+     "layoverMins": [
+      210
+     ],
+     "selfTransfer": false,
+     "airportChange": false
+    },
+    "cheapestPP": 1234,
+    "anyHomeAirport": true
+   },
+   {
+    "origin": "DUS",
+    "query": "ALL",
+    "depart": "2027-07-28",
+    "return": "2027-08-13",
+    "mode": "mc",
+    "checkedAt": "2026-11-26T19:58:18Z",
+    "url": "https://www.google.com/travel/flights/search?tfs=GjYSCjIwMjctMDctMjhqBRIDQU1TagUSA0JSVWoFEgNEVVNqBRIDRUlOagUSA1JUTXIFEgNPU0EaNhIKMjAyNy0wOC0xM2oFEgNUWU9yBRIDQU1TcgUSA0JSVXIFEgNEVVNyBRIDRUlOcgUSA1JUTUABSAGYAQM&hl=en&gl=nl&curr=EUR",
+    "pricePP": 1240,
+    "airline": "Finnair",
+    "out": {
+     "pricePP": 1240,
+     "airline": "Finnair",
+     "stops": 1,
+     "duration": "18 hr 35 min",
+     "from": "Duesseldorf Airport",
+     "departs": "Wednesday, July 28 11:00 AM",
+     "to": "Kansai International Airport",
+     "arrives": "Thursday, July 29 12:35 PM",
+     "layovers": [
+      "Helsinki Airport"
+     ],
+     "layoverMins": [
+      205
+     ],
+     "selfTransfer": false,
+     "airportChange": false
+    },
+    "cheapestPP": 1240,
     "anyHomeAirport": true
    }
   ],
@@ -4636,150 +4616,6 @@
     "cheapestPP": 1065
    },
    {
-    "origin": "AMS",
-    "query": "ALL",
-    "anyHomeAirport": true,
-    "depart": "2027-07-25",
-    "return": "2027-08-10",
-    "mode": "mc",
-    "checkedAt": "2026-11-26T14:24:27Z",
-    "source": "serpapi",
-    "url": "https://www.google.com/travel/flights?hl=en&gl=nl&curr=EUR&tfs=CBwQAhpLEgoyMDI3LTA3LTI1agcIARIDQU1TagcIARIDQlJVagcIARIDRFVTagcIARIDRUlOagcIARIDUlRNcgcIARIDS0lYcgcIARIDSVRNGksSCjIwMjctMDgtMTBqBwgBEgNITkRqBwgBEgNOUlRyBwgBEgNBTVNyBwgBEgNCUlVyBwgBEgNEVVNyBwgBEgNFSU5yBwgBEgNSVE1AAUgBcAGYAQM&tfu=EgIIAQ",
-    "pricePP": 1139,
-    "airline": "British Airways and JAL",
-    "out": {
-     "pricePP": 1139,
-     "airline": "British Airways and JAL",
-     "stops": 2,
-     "duration": "22 hr 30 min",
-     "from": "Amsterdam Airport Schiphol",
-     "fromId": "AMS",
-     "departs": "Sunday, July 25 10:05 AM",
-     "to": "Osaka Itami Airport",
-     "arrives": "Monday, July 26 3:35 PM",
-     "layovers": [
-      "Heathrow Airport",
-      "Haneda Airport"
-     ],
-     "layoverMins": [
-      155,
-      215
-     ],
-     "selfTransfer": false,
-     "airportChange": false
-    },
-    "cheapestPP": 1139
-   },
-   {
-    "origin": "DUS",
-    "query": "ALL",
-    "anyHomeAirport": true,
-    "depart": "2027-07-23",
-    "return": "2027-08-08",
-    "mode": "mc",
-    "checkedAt": "2026-11-26T14:24:27Z",
-    "source": "serpapi",
-    "url": "https://www.google.com/travel/flights?hl=en&gl=nl&curr=EUR&tfs=CBwQAhpLEgoyMDI3LTA3LTIzagcIARIDQU1TagcIARIDQlJVagcIARIDRFVTagcIARIDRUlOagcIARIDUlRNcgcIARIDS0lYcgcIARIDSVRNGksSCjIwMjctMDgtMDhqBwgBEgNITkRqBwgBEgNOUlRyBwgBEgNBTVNyBwgBEgNCUlVyBwgBEgNEVVNyBwgBEgNFSU5yBwgBEgNSVE1AAUgBcAGYAQM&tfu=EgIIAQ",
-    "pricePP": 1289,
-    "airline": "Qatar Airways",
-    "out": {
-     "pricePP": 1289,
-     "airline": "Qatar Airways",
-     "stops": 1,
-     "duration": "43 hr 0 min",
-     "from": "Duesseldorf Airport",
-     "fromId": "DUS",
-     "departs": "Friday, July 23 3:25 PM",
-     "to": "Kansai International Airport",
-     "arrives": "Sunday, July 25 5:25 PM",
-     "layovers": [
-      "Hamad International Airport"
-     ],
-     "layoverMins": [
-      1645
-     ],
-     "selfTransfer": false,
-     "airportChange": false
-    },
-    "cheapestPP": 1289
-   },
-   {
-    "origin": "DUS",
-    "query": "ALL",
-    "anyHomeAirport": true,
-    "depart": "2027-07-27",
-    "return": "2027-08-12",
-    "mode": "mc",
-    "checkedAt": "2026-11-26T14:53:13Z",
-    "source": "serpapi",
-    "url": "https://www.google.com/travel/flights?hl=en&gl=nl&curr=EUR&tfs=CBwQAhpLEgoyMDI3LTA3LTI3agcIARIDQU1TagcIARIDQlJVagcIARIDRFVTagcIARIDRUlOagcIARIDUlRNcgcIARIDS0lYcgcIARIDSVRNGksSCjIwMjctMDgtMTJqBwgBEgNITkRqBwgBEgNOUlRyBwgBEgNBTVNyBwgBEgNCUlVyBwgBEgNEVVNyBwgBEgNFSU5yBwgBEgNSVE1AAUgBcAGYAQM&tfu=EgIIAQ",
-    "pricePP": 1134,
-    "airline": "British Airways and JAL",
-    "out": {
-     "pricePP": 1134,
-     "airline": "British Airways and JAL",
-     "stops": 2,
-     "duration": "20 hr 10 min",
-     "from": "Duesseldorf Airport",
-     "fromId": "DUS",
-     "departs": "Tuesday, July 27 10:50 AM",
-     "to": "Kansai International Airport",
-     "arrives": "Wednesday, July 28 2:00 PM",
-     "layovers": [
-      "Heathrow Airport",
-      "Haneda Airport"
-     ],
-     "layoverMins": [
-      105,
-      100
-     ],
-     "selfTransfer": false,
-     "airportChange": false,
-     "toId": "KIX"
-    },
-    "cheapestPP": 1134,
-    "searchPricePP": 1134,
-    "bookUrl": "https://www.google.com/travel/flights?hl=en&gl=nl&curr=EUR&tfs=CBwQAhqsARIKMjAyNy0wNy0yNyIfCgNEVVMSCjIwMjctMDctMjcaA0xIUioCQkEyAzkxOSIdCgNMSFISCjIwMjctMDctMjcaA0hORCoCQkEyATUiHwoDSE5EEgoyMDI3LTA3LTI4GgNLSVgqAkpMMgMyMjVqBwgBEgNBTVNqBwgBEgNCUlVqBwgBEgNEVVNqBwgBEgNFSU5qBwgBEgNSVE1yBwgBEgNLSVhyBwgBEgNJVE0aiwESCjIwMjctMDgtMTIiHQoDSE5EEgoyMDI3LTA4LTEyGgNMSFIqAkJBMgE4Ih8KA0xIUhIKMjAyNy0wOC0xMhoDQU1TKgJCQTIDNDQ0agcIARIDSE5EagcIARIDTlJUcgcIARIDQU1TcgcIARIDQlJVcgcIARIDRFVTcgcIARIDRUlOcgcIARIDUlRNQAFIAXABmAED&tfu=EgIIAQ",
-    "bookWith": [
-     {
-      "name": "British Airways",
-      "pricePP": 1134,
-      "airline": true
-     },
-     {
-      "name": "Tripado",
-      "pricePP": 1174,
-      "airline": false
-     }
-    ],
-    "bags": [
-     "1 free carry-on",
-     "1st checked bag: 90-114"
-    ],
-    "bagsIncluded": false,
-    "back": {
-     "pricePP": 1134,
-     "airline": "British Airways",
-     "stops": 1,
-     "duration": "20 hr 5 min",
-     "from": "Haneda Airport",
-     "fromId": "HND",
-     "departs": "Thursday, August 12 8:55 AM",
-     "to": "Amsterdam Airport Schiphol",
-     "arrives": "Thursday, August 12 10:00 PM",
-     "layovers": [
-      "Heathrow Airport"
-     ],
-     "layoverMins": [
-      235
-     ],
-     "selfTransfer": false,
-     "airportChange": false,
-     "toId": "AMS"
-    },
-    "bookedAt": "2026-11-26T14:53:13Z"
-   },
-   {
     "origin": "DUS",
     "query": "ALL",
     "depart": "2027-07-26",
@@ -4808,6 +4644,130 @@
      "airportChange": false
     },
     "cheapestPP": 1251,
+    "anyHomeAirport": true
+   },
+   {
+    "origin": "AMS",
+    "query": "ALL",
+    "depart": "2027-07-23",
+    "return": "2027-08-08",
+    "mode": "mc",
+    "checkedAt": "2026-11-26T19:54:22Z",
+    "url": "https://www.google.com/travel/flights/search?tfs=GjYSCjIwMjctMDctMjNqBRIDQU1TagUSA0JSVWoFEgNEVVNqBRIDRUlOagUSA1JUTXIFEgNPU0EaNhIKMjAyNy0wOC0wOGoFEgNUWU9yBRIDQU1TcgUSA0JSVXIFEgNEVVNyBRIDRUlOcgUSA1JUTUABSAGYAQM&hl=en&gl=nl&curr=EUR",
+    "pricePP": 1482,
+    "airline": "Finnair",
+    "out": {
+     "pricePP": 1482,
+     "airline": "Finnair",
+     "stops": 1,
+     "duration": "17 hr 40 min",
+     "from": "Amsterdam Airport Schiphol",
+     "departs": "Friday, July 23 11:55 AM",
+     "to": "Kansai International Airport",
+     "arrives": "Saturday, July 24 12:35 PM",
+     "layovers": [
+      "Helsinki Airport"
+     ],
+     "layoverMins": [
+      150
+     ],
+     "selfTransfer": false,
+     "airportChange": false
+    },
+    "cheapestPP": 1482,
+    "anyHomeAirport": true
+   },
+   {
+    "origin": "AMS",
+    "query": "ALL",
+    "depart": "2027-07-25",
+    "return": "2027-08-10",
+    "mode": "mc",
+    "checkedAt": "2026-11-26T19:56:31Z",
+    "url": "https://www.google.com/travel/flights/search?tfs=GjYSCjIwMjctMDctMjVqBRIDQU1TagUSA0JSVWoFEgNEVVNqBRIDRUlOagUSA1JUTXIFEgNPU0EaNhIKMjAyNy0wOC0xMGoFEgNUWU9yBRIDQU1TcgUSA0JSVXIFEgNEVVNyBRIDRUlOcgUSA1JUTUABSAGYAQM&hl=en&gl=nl&curr=EUR",
+    "pricePP": 1364,
+    "airline": "Finnair",
+    "out": {
+     "pricePP": 1364,
+     "airline": "Finnair",
+     "stops": 1,
+     "duration": "17 hr 40 min",
+     "from": "Amsterdam Airport Schiphol",
+     "departs": "Sunday, July 25 11:55 AM",
+     "to": "Kansai International Airport",
+     "arrives": "Monday, July 26 12:35 PM",
+     "layovers": [
+      "Helsinki Airport"
+     ],
+     "layoverMins": [
+      150
+     ],
+     "selfTransfer": false,
+     "airportChange": false
+    },
+    "cheapestPP": 1364,
+    "anyHomeAirport": true
+   },
+   {
+    "origin": "BRU",
+    "query": "ALL",
+    "depart": "2027-07-27",
+    "return": "2027-08-12",
+    "mode": "mc",
+    "checkedAt": "2026-11-26T19:57:29Z",
+    "url": "https://www.google.com/travel/flights/search?tfs=GjYSCjIwMjctMDctMjdqBRIDQU1TagUSA0JSVWoFEgNEVVNqBRIDRUlOagUSA1JUTXIFEgNPU0EaNhIKMjAyNy0wOC0xMmoFEgNUWU9yBRIDQU1TcgUSA0JSVXIFEgNEVVNyBRIDRUlOcgUSA1JUTUABSAGYAQM&hl=en&gl=nl&curr=EUR",
+    "pricePP": 1234,
+    "airline": "Finnair",
+    "out": {
+     "pricePP": 1234,
+     "airline": "Finnair",
+     "stops": 1,
+     "duration": "18 hr 50 min",
+     "from": "Brussels Airport",
+     "departs": "Tuesday, July 27 10:45 AM",
+     "to": "Kansai International Airport",
+     "arrives": "Wednesday, July 28 12:35 PM",
+     "layovers": [
+      "Helsinki Airport"
+     ],
+     "layoverMins": [
+      210
+     ],
+     "selfTransfer": false,
+     "airportChange": false
+    },
+    "cheapestPP": 1234,
+    "anyHomeAirport": true
+   },
+   {
+    "origin": "DUS",
+    "query": "ALL",
+    "depart": "2027-07-28",
+    "return": "2027-08-13",
+    "mode": "mc",
+    "checkedAt": "2026-11-26T19:58:18Z",
+    "url": "https://www.google.com/travel/flights/search?tfs=GjYSCjIwMjctMDctMjhqBRIDQU1TagUSA0JSVWoFEgNEVVNqBRIDRUlOagUSA1JUTXIFEgNPU0EaNhIKMjAyNy0wOC0xM2oFEgNUWU9yBRIDQU1TcgUSA0JSVXIFEgNEVVNyBRIDRUlOcgUSA1JUTUABSAGYAQM&hl=en&gl=nl&curr=EUR",
+    "pricePP": 1240,
+    "airline": "Finnair",
+    "out": {
+     "pricePP": 1240,
+     "airline": "Finnair",
+     "stops": 1,
+     "duration": "18 hr 35 min",
+     "from": "Duesseldorf Airport",
+     "departs": "Wednesday, July 28 11:00 AM",
+     "to": "Kansai International Airport",
+     "arrives": "Thursday, July 29 12:35 PM",
+     "layovers": [
+      "Helsinki Airport"
+     ],
+     "layoverMins": [
+      205
+     ],
+     "selfTransfer": false,
+     "airportChange": false
+    },
+    "cheapestPP": 1240,
     "anyHomeAirport": true
    }
   ],
@@ -10574,7 +10534,7 @@
    7
   ],
   "jp-golden-rev": [
-   5,
+   6,
    7
   ],
   "jp-kanazawa": [
@@ -10582,7 +10542,7 @@
    7
   ],
   "jp-kanazawa-rev": [
-   5,
+   6,
    7
   ],
   "jp-koyasan": [
@@ -10627,7 +10587,7 @@
   "usedToday": 50,
   "month": "2026-11",
   "usedMonth": 50,
-  "at": "2026-11-26T18:52:29Z",
+  "at": "2026-11-26T20:41:50Z",
   "groups": {
    "TYO|OSA|15": {
     "at": "2026-11-26T14:53:13Z",
