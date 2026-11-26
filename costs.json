@@ -168,8 +168,8 @@
         "pick": {
           "name": "plat hostel keikyu minowa forest",
           "src": "booking",
-          "total": 179,
-          "nightlyEur": 36,
+          "total": 231,
+          "nightlyEur": 46,
           "score10": 8.4,
           "rating": 4.2,
           "reviews": 1211,
@@ -182,17 +182,17 @@
       "Koyasan": {
         "checkin": "2027-08-08",
         "nights": 1,
-        "source": "owner's choice (Booking.com, re-checked 26 Nov 2026; Fukuchiin direct was JPY 55,100 = ~EUR 316)",
+        "source": "owner's choice (Booking.com, owner saw EUR 310 on 26 Nov 2026)",
         "pick": {
           "name": "Kongo Sanmaiin (temple stay)",
           "src": "booking",
-          "total": 282,
-          "nightlyEur": 282,
+          "total": 310,
+          "nightlyEur": 310,
           "score10": 8.0,
           "reviews": 339,
           "miles": 0.5,
           "beds": "futons",
-          "kind": "Japanese-style room with private toilet, futons, dinner + breakfast included, free cancellation",
+          "kind": "Japanese-style triple room with private toilet, 3 futons, dinner + breakfast included, free cancellation until 25 Jul 2027, pay nothing until 23 Jul 2027",
           "url": "https://www.booking.com/hotel/jp/kongo-sanmaiin.en-gb.html?checkin=2027-08-08&checkout=2027-08-09&group_adults=2&no_rooms=1"
         }
       },
@@ -203,8 +203,8 @@
         "pick": {
           "name": "CHISUN BUDGET Kanazawa Ekimae",
           "src": "booking",
-          "total": 75,
-          "nightlyEur": 38,
+          "total": 85,
+          "nightlyEur": 43,
           "score10": 8.0,
           "reviews": 2570,
           "miles": 1.4,
