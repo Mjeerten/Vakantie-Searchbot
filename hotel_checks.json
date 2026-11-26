@@ -1,0 +1,563 @@
+{
+ "searchesUsed": 12,
+ "leftBefore": 180,
+ "cities": {
+  "Tokyo": {
+   "checkin": "2027-07-28",
+   "checkout": "2027-08-02",
+   "nights": 5,
+   "seen": 49,
+   "qualifying": 36,
+   "current": {
+    "name": "plat hostel keikyu minowa forest",
+    "total": 231
+   },
+   "top": [
+    {
+     "name": "plat hostel keikyu asakusa karin",
+     "type": "hotel",
+     "total": 171,
+     "nightlyEur": 34,
+     "rating": 4.8,
+     "reviews": 321,
+     "locationRating": 3.8,
+     "hotelClass": 2,
+     "kmToCentre": 0.9,
+     "transportPPday": 0.0,
+     "effectiveTotal": 171,
+     "link": "https://plat-hostel-keikyu.com/hostel/asakusa-karin/",
+     "token": "ChkI1MrD_uqdm5ZmGg0vZy8xMWZqdzNna3Q0EAE",
+     "amenities": [
+      "Free Wi-Fi",
+      "Kid-friendly"
+     ],
+     "nearby": [
+      "Sensō-ji",
+      "Haneda Airport",
+      "Trattoria Nero"
+     ],
+     "prices": [
+      {
+       "source": "Booking.com",
+       "total": 171,
+       "link": "https://www.google.com/travel/lodging/clk?pc=AJ0xEyggjMwq6cX3sk53z3gpwxfpZixXfGDDJtCWx5ZzadECZhdFNYhglJREZsqd8yVbWSaXRnPC5E_OKGEdCwsqM6O9qoozAYo7neb1mJBxsZ25JBQHZLRFiXQHbIalI9rTVeGUP-xBgOg6zB-MKW6JRJp7Wz5oOSMLmWWnXx9KGf9C7A4gi1ojlNu0Q8dqgF4_UPWGXg&pcurl=https://www.booking.com/searchresults.en.html?dest_id%3D4480296%26highlighted_hotels%3D4480296%26dest_type%3Dhotel%26checkin%3D2027-07-28%26checkout%3D2027-08-02%26group_adults%3D2%26req_adults%3D2%26show_room%3D448029609_134853510_2_0_0%26lang%3Den%26selected_currency%3DEUR%26exrt%3D0.00572283%26ext_price_total%3D171.09%26ext_price_tax%3D16.29%26xfc%3DJPY%26hca%3Dm%26group_children%3D0%26req_children%3D0%26%26no_rooms%3D2%26ts%3D1795630187%26base_block_id%3D448029609_134853510_1_0_0%26edgtid%3D_K4Nb75WSj2nkAFRd-Ut7A%26efpc%3DFJSLGKKYlrNqVQ%26utm_source%3Dmetagha%26utm_medium%3Dlocaluniversal%26utm_campaign%3DGB%26utm_term%3Dhotel-4480296%26utm_content%3Ddev-desktop_los-5_bw-243_dow-Wednesday_defdate-0_room-0_gstadt-2_rateid-ig_aud-0_gacid-_mcid-50_bc-AERdKA_ppa-0_clrid-0_ad-0_gstkid-0_checkin-20270728_ppt-GB%26aid%3D2127493%26label%3Dmetagha-link-LUGB-hotel-4480296_dev-desktop_los-5_bw-243_dow-Wednesday_defdate-0_room-0_gstadt-2_rateid-ig_aud-0_gacid-_mcid-50_bc-AERdKA_ppa-0_clrid-0_ad-0_gstkid-0_checkin-20270728_ppt-GB&s=ALZo0YIowqYu8t-8Y-Egt89D5Pxy&ap=1",
+       "official": false
+      },
+      {
+       "source": "Booking.com",
+       "total": 171,
+       "link": "https://www.google.com/aclk?sa=l&ai=DChsSEwjpgdKRzaaYAxWaklAGHbRuAhQYACICCAEQExoCZGc&co=1&ase=2&gclid=EAIaIQobChMI6YHSkc2mmAMVmpJQBh20bgIUEAoYAiABEgLOTvD_BwE&cid=CAASlwHkaAnTovpRj9njB9vyb081vO9WX2_vusZOf6JnEpHmV8wXBGMC9I2_D-wopFdVVrFDX0zNz-sl8UBNIxilhZjAkFSfkYdLhyYGrZ-89VViNojqorCzci3rsZ1jdm2QiP9QYe7d-WT_5jGmdvEP3YFa4byesuMlP8MPJnckai-YNbhdo2SDGnpqdAwcbdSHQ4CJ0AV3Bivw&category=acrcp_v1_48&sig=AOD64_21QIk7NolRbGIirf0Wp1fFzRrYKA&adurl",
+       "official": false
+      },
+      {
+       "source": "Hotels.com",
+       "total": 188,
+       "link": "https://www.google.com/travel/lodging/clk?pc=AJ0xEyho3-kqDuVHj6C0ocWJ1qttzZ8Wef2Z6Cy8ghAUf9Qjxj5cEvW1A9952nc6V4lv498GlHAMs7dCyoAIuWS9rC6wenF8J7TcbsdDkJKfPktAT2mNGsgYQRXTSugSFaMMjo26OpaOZ3jC_ZjTx3X6OdSmuDNnb2v3CYn40T9FvMAnobJDiSINlnCjHjDJSlg&pcurl=https://uk.hotels.com/Hotel-Search?selected%3D33331173%26startDate%3D2027-07-28%26endDate%3D2027-08-02%26mdpcid%3DHCOM-GB.META.HPA.HOTEL-ORGANIC-desktop.HOTEL%26MDPDTL%3DHTL.33331173.20270728.20270802.DDF.243.CID..AUDID.%26adults%3D2%26children%3D%26mctc%3D10%26mpf%3D188.24%26mpg%3DEUR%26mpl%3DGBP%26mpj%3D17.12%26mpr%3D0.00%26rffrid%3Dsem.hcom.GB.156.024.localuniversal.02.desktop-5.kwrd%3DGGMETA.33331173GBen-20270728-N-ABW%3D243-camp%3D-aud%3D-N%26rateplanid%3D260267686%26mpm%3D24%26mpn%3D216031569%26mpo%3DEC%26mpe%3D1795660387%26mpp%3D1&s=ALZo0YIxwkeaMPKSmCgc8tBkmAIX&ap=1",
+       "official": false
+      },
+      {
+       "source": "Expedia.co.uk",
+       "total": 188,
+       "link": "https://www.google.com/travel/lodging/clk?pc=AJ0xEygG9X7aMMwGKD3vNtegsaE3SQDAxSAbtQawAalWhWQlbQTFETpahgLvcfuMbeaddHUkoXLLjjft-F83V6ITzZAdXD0PHoFALz3AEthYo-DIEE-VRvJyFxrcj3DBlqNdOX-va0Vo1CkCAKPUQYfEucYdVY3QuwN7h8E_eXU6Tk7NCtW3eoUtKtxsVohc46zt&pcurl=https://www.expedia.co.uk/Hotel-Search?selected%3D33331173%26startDate%3D2027-07-28%26endDate%3D2027-08-02%26MDPCID%3DGB.META.HPA.HOTEL-ORGANIC-desktop.HOTEL%26MDPDTL%3DHTL.33331173.20270728.20270802.DDF.243.CID..AUDID..RRID.bex_uk_desktop%26adults%3D2%26children%3D%26mctc%3D10%26ct%3Dhotel%26mpg%3DEUR%26mpf%3D188.24%26mpj%3D17.12%26mpr%3D0.00%26mpr%3D0.00%26mpl%3DGBP%26exp_pg%3Dgoogle%26langid%3Den%26ad%3D2%26tp%3D%26utm_source%3Dgoogle%26utm_medium%3Dcpc%26utm_term%3D33331173%26utm_content%3Dlocaluniversal%26utm_campaign%3DHotelAds%26rateplanid%3D260267686%26mpm%3D24%26mpn%3D216031569%26mpo%3DEC%26mpe%3D1795703036%26mpp%3D1&s=ALZo0YJ5wdZRGH0977fkdC75OVAU&ap=1",
+       "official": false
+      },
+      {
+       "source": "Expedia.co.uk",
+       "total": 188,
+       "link": "https://www.google.com/aclk?sa=l&ai=DChsSEwjpgdKRzaaYAxWaklAGHbRuAhQYACICCAEQBxoCZGc&co=1&ase=2&gclid=EAIaIQobChMI6YHSkc2mmAMVmpJQBh20bgIUEAoYASABEgKXrfD_BwE&cid=CAASlwHkaAnTovpRj9njB9vyb081vO9WX2_vusZOf6JnEpHmV8wXBGMC9I2_D-wopFdVVrFDX0zNz-sl8UBNIxilhZjAkFSfkYdLhyYGrZ-89VViNojqorCzci3rsZ1jdm2QiP9QYe7d-WT_5jGmdvEP3YFa4byesuMlP8MPJnckai-YNbhdo2SDGnpqdAwcbdSHQ4CJ0AV3Bivw&category=acrcp_v1_48&sig=AOD64_0wZ4oST_6rmh-Ic5SY4Q8B4rWwyA&adurl",
+       "official": false
+      }
+     ],
+     "address": "2 Chome-11-2 Higashikomagata, Sumida City, Tokyo 130-0005, Japan",
+     "checkIn": "4:00 PM",
+     "excludedAmenities": [
+      "Breakfast",
+      "Parking",
+      "Pool",
+      "Hot tub",
+      "Accessible"
+     ]
+    },
+    {
+     "name": "plat hostel keikyu asakusa station",
+     "type": "hotel",
+     "total": 182,
+     "nightlyEur": 36,
+     "rating": 4.4,
+     "reviews": 358,
+     "locationRating": 4.2,
+     "hotelClass": 2,
+     "kmToCentre": 0.6,
+     "transportPPday": 0.0,
+     "effectiveTotal": 182,
+     "link": "https://plat-hostel-keikyu.com/?utm_source=google&utm_medium=maps&utm_campaign=gmbasakusastation",
+     "token": "ChoIzqObqf7crIuRARoNL2cvMTFmNzc1dDZycBAB",
+     "amenities": [
+      "Free Wi-Fi"
+     ],
+     "nearby": [
+      "Sensō-ji",
+      "Haneda Airport",
+      "Deli&Bar ONE LOVE"
+     ],
+     "prices": [
+      {
+       "source": "Booking.com",
+       "total": 182,
+       "link": "https://www.google.com/travel/lodging/clk?pc=AJ0xEyg7bAx6Lj3Ov7H7BcJiYJqM9mZkyuftq7pVXHwpewKm1m7yR1lLyCk2Wtu2rWFGlMD0mWPvqNyicYE9iDKHy9txR58U2rzn8HKCASWYfbrRcugRdat4R8MA7qmDAqzEBUjCtMBZmFFbImspCYQJVLRiih7tdqg5xVSAQwJEElCkgfbIPmU2HFGhIdniHcVXShaRow&pcurl=https://www.booking.com/searchresults.en.html?dest_id%3D3483448%26highlighted_hotels%3D3483448%26dest_type%3Dhotel%26checkin%3D2027-07-28%26checkout%3D2027-08-02%26group_adults%3D2%26req_adults%3D2%26show_room%3D348344804_123414140_2_0_0%26lang%3Den%26selected_currency%3DEUR%26exrt%3D0.00572283%26ext_price_total%3D181.71%26ext_price_tax%3D18.54%26xfc%3DJPY%26hca%3Dm%26group_children%3D0%26req_children%3D0%26%26no_rooms%3D2%26ts%3D1795315774%26base_block_id%3D348344804_123414140_0_0_0%26edgtid%3DWq7AGmIqQy2bZqTFosx1wg%26efpc%3DFYdrAKMXUrAKVQ%26utm_source%3Dmetagha%26utm_medium%3Dlocaluniversal%26utm_campaign%3DMX%26utm_term%3Dhotel-3483448%26utm_content%3Ddev-desktop_los-5_bw-243_dow-Wednesday_defdate-0_room-0_gstadt-2_rateid-public_aud-0_gacid-_mcid-50_bc-ADUnOA_ppa-0_clrid-0_ad-0_gstkid-0_checkin-20270728_ppt-B%26aid%3D2127720%26label%3Dmetagha-link-LUMX-hotel-3483448_dev-desktop_los-5_bw-243_dow-Wednesday_defdate-0_room-0_gstadt-2_rateid-public_aud-0_gacid-_mcid-50_bc-ADUnOA_ppa-0_clrid-0_ad-0_gstkid-0_checkin-20270728_ppt-B&s=ALZo0YKEBnCR5gKGAtiLY8BkNOlS&ap=1",
+       "official": false
+      },
+      {
+       "source": "Booking.com",
+       "total": 182,
+       "link": "https://www.google.com/aclk?sa=l&ai=DChsSEwiXvpKSzaaYAxU0DGgBHZFpDjIYACICCAEQARoCb2E&co=1&gclid=EAIaIQobChMIl76Sks2mmAMVNAxoAR2RaQ4yEAoYAiABEgK-DfD_BwE&cid=CAASugHkaKiq1DZESMgCR-Jpo_Gl0YJwg2HJ9_wEgNAQEuXTXTc6Io-THcZNwJP_ktk4VlbEefQPkcszpziKKrZvbDutMwYk5b13dYhiQUj_aXYzJcLFV1jnyVcBUY8uCFKySUcxReSAJTGW630DToDSrmc4sfFSZgDkYXsxt-NNKNtz3mDooahUiHlmuoCEnfDYH01M8Lgg3N1RIVlBgWvhxanDHi4kjznmx5sjNKiZGqK7M0KpTk4H9cynXFc&sig=AOD64_0635Sc-lsFOulvxttM9GuGj40row&adurl",
+       "official": false
+      },
+      {
+       "source": "Hostelworld",
+       "total": 204,
+       "link": "https://www.google.com/travel/lodging/clk?pc=AJ0xEyjRy9xqR4lzcFKTpTAVwhQTUY-CUTxm5HhAnN6u08Om5nLf2e5ixuo8zkBHq1LDv_O6CzVZGEc7O1aVm20W7sCQWSWyj99UbSxbUolpHDMVJ_sBuaOh8cd6MakE8mS0DtkJaHzQgW4YaTQDvALAr1U1kvmv4-2TBPt5AdEE6hhBXvcPdeGaVxvy23A&pcurl=https://www.hostelworld.com/pwa/hosteldetails.php/289672?from%3D2027-07-28%26to%3D2027-08-02%26HostelNumber%3D289672%26guests%3D2%26Type%3D0%26aff2%3DMX_x_desktop%26utm_medium%3Dmetasearch%26utm_source%3Dgooglehotelfinder%26utm_content%3Dhpa_28_07_2027_5_localuniversal_289672_MX_desktop_selected___2%26utm_campaign%3DMX%26lead_time%3D243%26campaign_id%3D%26hpa_click_type%3Dhotel%26hpa_date_search_type%3Dselected%26hpa_site_property%3Dlocaluniversal%26hpa_occupancy%3D2%26hpa_d_tax%3D0.00%26hpa_d_total%3D204.16%26hpa_rateplan_id%3D392912%7C2%26hpa_u_country%3DMX%26hpa_u_currency%3DEUR%26hpa_u_lang%3Den%26hpa_u_list_id%3D%26number_of_guests%3D2%26hpa_room_id%3D632437%26hpa_pos%3Den&s=ALZo0YI5MgjoxIEFx03VeA-ichGr&ap=1",
+       "official": false
+      },
+      {
+       "source": "Hostelworld",
+       "total": 204,
+       "link": "https://www.google.com/aclk?sa=l&ai=DChsSEwiXvpKSzaaYAxU0DGgBHZFpDjIYACICCAEQBxoCb2E&co=1&gclid=EAIaIQobChMIl76Sks2mmAMVNAxoAR2RaQ4yEAoYASABEgKFHfD_BwE&cid=CAASugHkaKiq1DZESMgCR-Jpo_Gl0YJwg2HJ9_wEgNAQEuXTXTc6Io-THcZNwJP_ktk4VlbEefQPkcszpziKKrZvbDutMwYk5b13dYhiQUj_aXYzJcLFV1jnyVcBUY8uCFKySUcxReSAJTGW630DToDSrmc4sfFSZgDkYXsxt-NNKNtz3mDooahUiHlmuoCEnfDYH01M8Lgg3N1RIVlBgWvhxanDHi4kjznmx5sjNKiZGqK7M0KpTk4H9cynXFc&sig=AOD64_0xTtmuhosVA8WQ0inmB3RID78hug&adurl",
+       "official": false
+      }
+     ],
+     "address": "2 Chome-17-11 Nishiasakusa, Taito City, Tokyo 111-0035, Japan",
+     "checkIn": "4:00 PM",
+     "excludedAmenities": [
+      "Pool",
+      "Hot tub",
+      "Parking",
+      "Fitness center",
+      "Spa"
+     ]
+    },
+    {
+     "name": "Little japan",
+     "type": "hotel",
+     "total": 175,
+     "nightlyEur": 35,
+     "rating": 4.3,
+     "reviews": 325,
+     "locationRating": 3.3,
+     "hotelClass": 1,
+     "kmToCentre": 1.5,
+     "transportPPday": 2.2,
+     "effectiveTotal": 197,
+     "link": "http://www.littlejapan.jp/",
+     "token": "ChkIisKTm7Sap89hGg0vZy8xMWMycHBkdDVsEAE",
+     "amenities": [
+      "Free Wi-Fi",
+      "Restaurant",
+      "Kid-friendly"
+     ],
+     "nearby": [
+      "Sensō-ji",
+      "Haneda Airport",
+      "Gracia"
+     ],
+     "prices": [
+      {
+       "source": "Hostelworld",
+       "total": 175,
+       "link": "https://www.google.com/travel/lodging/clk?pc=AJ0xEyhJoEk9E_ZhvsPzgkL0jLQZdvaAOpyElWb2zdA_TDuHZyUj71LGqHnRnzkYwetPaWxlFHg9DKTKdpbvVD0V-APj72yrhm_vJt789dRORmoPAld2Q6nIKudwwO-0r_5JOzS_4L1JEdMaHmJmlHgUwXR9fyAkzls4E_OmFongLbPppOe7MOHu35amLK8&pcurl=https://www.hostelworld.com/pwa/hosteldetails.php/277898?from%3D2027-07-28%26to%3D2027-08-02%26HostelNumber%3D277898%26guests%3D2%26Type%3D0%26aff2%3DMX_x_desktop%26utm_medium%3Dmetasearch%26utm_source%3Dgooglehotelfinder%26utm_content%3Dhpa_28_07_2027_5_localuniversal_277898_MX_desktop_selected___2%26utm_campaign%3DMX%26lead_time%3D243%26campaign_id%3D%26hpa_click_type%3Dhotel%26hpa_date_search_type%3Dselected%26hpa_site_property%3Dlocaluniversal%26hpa_occupancy%3D2%26hpa_d_tax%3D0.00%26hpa_d_total%3D175.37%26hpa_rateplan_id%3D451258%7C2%26hpa_u_country%3DMX%26hpa_u_currency%3DEUR%26hpa_u_lang%3Den%26hpa_u_list_id%3D%26number_of_guests%3D2%26hpa_room_id%3D549303%26hpa_pos%3Den&s=ALZo0YLMDNnzmJgN6jOxWNCeQjCa&ap=1",
+       "official": false
+      },
+      {
+       "source": "Hostelworld",
+       "total": 175,
+       "link": "https://www.google.com/aclk?sa=l&ai=DChsSEwjQhNWSzaaYAxUpBWgBHYRkCw8YACICCAEQERoCb2E&co=1&gclid=EAIaIQobChMI0ITVks2mmAMVKQVoAR2EZAsPEAoYASABEgJxEvD_BwE&cid=CAAS0gHkaP_KbP7z45ow3sSILuMiVYO-ESJ9zOp6PQZ2fQBo3wEeDbJ_xvSVBlZ9p94VKTYp5nBa3MgD9rq8fmchHNN1ESumae7sS56rtgus0NG0GcXEQ31bqXu9PjVqLt5FTPmhmtKQ7cK2ubaAji8rafPRuzggPy_GVLtrBBKhh5zfIjFz8tcUJKimDtjL99ImzWCbf54_AFnt1wRCDLWnFvChHZefFQ705_De-4o2z6QcuTS6KcVxYQ2Dufb1KoIYfT1ISSiaaopL49FDF_sDpryFCaU&sig=AOD64_24XdlNo7enpYYI_mCvffQ8V7ND1w&adurl",
+       "official": false
+      },
+      {
+       "source": "Booking.com",
+       "total": 261,
+       "link": "https://www.google.com/travel/lodging/clk?pc=AJ0xEyiReyRjA2PR4EISueFJEjqfRhk9JU2v9eluJd-BDcBVWjfFhHW_vZWkSwWAoJOHqiBWX69ZjUM6w-P_HW8JptePod3heW1Lno8EgWB3jP2Vr3DbbfzRpD_u19NENwVxGE-yvHhKNjr0j84u-zrFFxMYHqznuQY5DKEREGv49BG4S6PEoMlSDYKpmOO1CXVfaJutKA&pcurl=https://www.booking.com/searchresults.en.html?dest_id%3D2328708%26highlighted_hotels%3D2328708%26dest_type%3Dhotel%26checkin%3D2027-07-28%26checkout%3D2027-08-02%26group_adults%3D2%26req_adults%3D2%26show_room%3D232870806_100563060_2_0_0%26lang%3Den%26selected_currency%3DEUR%26exrt%3D0.00572283%26ext_price_total%3D260.96%26ext_price_tax%3D23.73%26xfc%3DJPY%26hca%3Dm%26group_children%3D0%26req_children%3D0%26%26base_block_id%3D232870806_100563060_1_0_0%26ts%3D1794580116%26no_rooms%3D2%26edgtid%3DnspoHCoRRYqSpaZ-ISp-7g%26efpc%3DIoALAKRWALAKVQ%26utm_source%3Dmetagha%26utm_medium%3Dlocaluniversal%26utm_campaign%3DMX%26utm_term%3Dhotel-2328708%26utm_content%3Ddev-desktop_los-5_bw-243_dow-Wednesday_defdate-0_room-0_gstadt-2_rateid-0_aud-0_gacid-_mcid-10_ppa-0_clrid-ein1P_ad-0_gstkid-0_checkin-20270728_ppt-0%26aid%3D2127720%26label%3Dmetagha-link-LUMX-hotel-2328708_dev-desktop_los-5_bw-243_dow-Wednesday_defdate-0_room-0_gstadt-2_rateid-0_aud-0_gacid-_mcid-10_ppa-0_clrid-ein1P_ad-0_gstkid-0_checkin-20270728_ppt-0&s=ALZo0YLcbbwX6mle13C6w5k6Qo6L&ap=1",
+       "official": false
+      },
+      {
+       "source": "Booking.com",
+       "total": 261,
+       "link": "https://www.google.com/aclk?sa=l&ai=DChsSEwjQhNWSzaaYAxUpBWgBHYRkCw8YACICCAEQARoCb2E&co=1&gclid=EAIaIQobChMI0ITVks2mmAMVKQVoAR2EZAsPEAoYAiABEgKzsPD_BwE&cid=CAAS0gHkaP_KbP7z45ow3sSILuMiVYO-ESJ9zOp6PQZ2fQBo3wEeDbJ_xvSVBlZ9p94VKTYp5nBa3MgD9rq8fmchHNN1ESumae7sS56rtgus0NG0GcXEQ31bqXu9PjVqLt5FTPmhmtKQ7cK2ubaAji8rafPRuzggPy_GVLtrBBKhh5zfIjFz8tcUJKimDtjL99ImzWCbf54_AFnt1wRCDLWnFvChHZefFQ705_De-4o2z6QcuTS6KcVxYQ2Dufb1KoIYfT1ISSiaaopL49FDF_sDpryFCaU&sig=AOD64_3LGU8eYxrpar9eOXvapXvZDucWYA&adurl",
+       "official": false
+      },
+      {
+       "source": "Super.com",
+       "total": 340,
+       "link": "https://www.google.com/travel/lodging/clk?pc=AJ0xEyjhgpvwlw7KA2l8jAZOj2AagNZRHlecxImoAXfu6tty1PnKg1CzpxedUQhhpeFgPp3HFfk9lBMeNKMufFUO5frkdFjMrYvxQuxmwrli0RB68B8IvGnLQxRxdxXD8dmWRfS5dGFGn3hLNjVeg61zx9fa8-KuOfsEA4wSmMWIora-PC-f_kXnGeHixQ&pcurl=https://www.super.com/travel/transition/?data%3Dprice%3D54391.72%2526total_price%3D59496.0%2526request_id%3D12567447610070036480%2526ps%3D1671434612%2526pb%3D0-slAkZlDjP06IhVxwa_7Nsa_i4PDJfMLUuAGKmPKnKyZL34Zj2AY-xUl37GOUJEO-BCalZN4Q1tTzIRjkh43s5WQP-dU7uXiKJWAKqVZuOhEAV8RAosTQNO2LiJ5NkgiZs7s7mRiRsGmu2WSUSuiDAwzHctovBblbrGzt9W2mU%25253D%2526gha_pull_request%3DTrue%2526alwd_rand%3Dfalse%2526gt%3D1795644918%2526sg%3Dfdowv%2526sid%3DGHA_MD4%2526cmab_id%3D33%2526ib%3Dfalse%2526all_inclusive%3Dfalse%26utm_source%3Dgha%26utm_content%3Dlocaluniversal%26currency%3DJPY%26user_country%3DMX%26verification%3Dfalse%26rate_rule_ids%3D%26date_type%3Dselected%26rate_rule_id%3Dsignedout_desktop%26display_currency%3DEUR%26display_all_inclusive_price%3D340.49%26checkin_at%3D2027-07-28%26checkout_at%3D2027-08-02%26provider_hotel_id%3D10009220056%26provider%3Dhtl%26num_adults%3D2%26children%3D%5B%5D%26hotel_campaign%3D%26utm_campaign%3D%26user_locale%3Den-MX%26user_list_id%3D%26utm_medium%3Dorganic%26utm_id%3Dgha_organic&s=ALZo0YKM-PJOR_Wxu-EjnsyLVnay&ap=1",
+       "official": false
+      }
+     ],
+     "address": "3 Chome-10-8 Asakusabashi, Taito City, Tokyo 111-0053, Japan",
+     "checkIn": "3:00 PM",
+     "excludedAmenities": [
+      "Pool",
+      "Hot tub",
+      "Fitness center",
+      "Spa",
+      "Pet-friendly"
+     ]
+    },
+    {
+     "name": "plat hostel keikyu minowa forest",
+     "type": "hotel",
+     "total": 182,
+     "nightlyEur": 36,
+     "rating": 4.7,
+     "reviews": 456,
+     "locationRating": 3.3,
+     "hotelClass": 2,
+     "kmToCentre": 1.3,
+     "transportPPday": 2.2,
+     "effectiveTotal": 204,
+     "link": "https://plat-hostel-keikyu.com/?utm_source=google&utm_medium=maps&utm_campaign=gmbminowaforest",
+     "token": "ChkI9tGsnLKYw9hVGg0vZy8xMWZzMm5iMzZ0EAE",
+     "amenities": [
+      "Free Wi-Fi",
+      "Kid-friendly"
+     ],
+     "nearby": [
+      "Sensō-ji",
+      "⑥ 一葉記念館入口",
+      "Haneda Airport"
+     ]
+    },
+    {
+     "name": "CAFE/MINIMAL HOTEL OUR OUR",
+     "type": "hotel",
+     "total": 203,
+     "nightlyEur": 41,
+     "rating": 4.3,
+     "reviews": 249,
+     "locationRating": 3.8,
+     "hotelClass": 2,
+     "kmToCentre": 1.8,
+     "transportPPday": 2.2,
+     "effectiveTotal": 225,
+     "link": "https://ourour.jp/",
+     "token": "ChkI-rftsqzz1fxjGg0vZy8xMWgxOHpxdnBqEAE",
+     "amenities": [
+      "Public bath",
+      "Free Wi-Fi",
+      "Restaurant"
+     ],
+     "nearby": [
+      "Sensō-ji",
+      "⑪ 柳橋分院入口",
+      "Haneda Airport"
+     ]
+    },
+    {
+     "name": "Sakura Hostel Asakusa",
+     "type": "hotel",
+     "total": 225,
+     "nightlyEur": 45,
+     "rating": 4.2,
+     "reviews": 887,
+     "locationRating": 4.5,
+     "hotelClass": 1,
+     "kmToCentre": 0.2,
+     "transportPPday": 0.0,
+     "effectiveTotal": 225,
+     "link": "https://www.sakura-hotel.co.jp/asakusa/?utm_source=google&utm_medium=organic&utm_campaign=gbp_asakusa",
+     "token": "ChgIk8TjuLn64sWDARoLL2cvMXRqMjFqeG4QAQ",
+     "amenities": [
+      "Free Wi-Fi",
+      "Parking ($)",
+      "Bar",
+      "Restaurant",
+      "Kid-friendly"
+     ],
+     "nearby": [
+      "Sensō-ji",
+      "Oku-Asakusa",
+      "Haneda Airport"
+     ]
+    }
+   ]
+  },
+  "Koyasan": {
+   "checkin": "2027-08-08",
+   "checkout": "2027-08-09",
+   "nights": 1,
+   "seen": 17,
+   "qualifying": 10,
+   "current": {
+    "name": "Kongo Sanmaiin (temple stay)",
+    "total": 310
+   },
+   "top": [
+    {
+     "name": "Route Inn Hashimoto Hotel",
+     "type": "hotel",
+     "total": 94,
+     "nightlyEur": 94,
+     "rating": 3.9,
+     "reviews": 912,
+     "locationRating": 3.7,
+     "hotelClass": 3,
+     "kmToCentre": 11.3,
+     "transportPPday": 3.7,
+     "effectiveTotal": 101,
+     "link": "https://www.route-inn.co.jp/hotel_list/wakayama/index_hotel_id_616/?utm_source=google&utm_medium=gbp&utm_campaign=web",
+     "token": "ChkIkeLKw6HR7cM1Gg0vZy8xMWI1dnoxa3BqEAE",
+     "amenities": [
+      "Public bath",
+      "Free Wi-Fi",
+      "Free parking",
+      "Restaurant",
+      "Accessible",
+      "Kid-friendly"
+     ],
+     "nearby": [
+      "ROUTE-INN Hashimoto",
+      "Kansai International Airport",
+      "酒と飯 Mitu食堂"
+     ],
+     "prices": [
+      {
+       "source": "Booking.com",
+       "total": 94,
+       "link": "https://www.google.com/travel/lodging/clk?pc=AJ0xEyiwgbgfhYcVfBidOAyTjR-ATIGLAs8qsZbNus_gsTsOCiIUFGgC-vTdNBCXCVjf1nNs3w6i6dBOU4HYN2Uv20vwRvnpxccBsPrk_ENxxgBjn2sHU18EeV5GDpVP8Gu0Y3n2sDhUuL2eAnMGSOeaAJRxe4wBpVrv3Ipp0PEuxYvev_qlxr8LbQavuapK79H4wc_Jaw&pcurl=https://www.booking.com/searchresults.en.html?dest_id%3D894395%26highlighted_hotels%3D894395%26dest_type%3Dhotel%26checkin%3D2027-08-08%26checkout%3D2027-08-09%26group_adults%3D2%26req_adults%3D2%26show_room%3D89439512_413623305_2_1_0%26lang%3Den%26selected_currency%3DEUR%26exrt%3D0.00572283%26ext_price_total%3D93.56%26ext_price_tax%3D9.55%26xfc%3DJPY%26hca%3Dm%26group_children%3D0%26req_children%3D0%26%26no_rooms%3D1%26ts%3D1795685688%26edgtid%3Dk6KzhUnARWilC9WgahYhAQ%26efpc%3DFjSLGKFjSLGKVQ%26utm_source%3Dmetagha%26utm_medium%3Dlocaluniversal%26utm_campaign%3DMX%26utm_term%3Dhotel-894395%26utm_content%3Ddev-desktop_los-1_bw-254_dow-Sunday_defdate-0_room-0_gstadt-2_rateid-public_aud-0_gacid-_mcid-50_bc-AA2luw_ppa-0_clrid-0_ad-0_gstkid-0_checkin-20270808_ppt-B%26aid%3D2127720%26label%3Dmetagha-link-LUMX-hotel-894395_dev-desktop_los-1_bw-254_dow-Sunday_defdate-0_room-0_gstadt-2_rateid-public_aud-0_gacid-_mcid-50_bc-AA2luw_ppa-0_clrid-0_ad-0_gstkid-0_checkin-20270808_ppt-B&s=ALZo0YIHY74ida6vP-2MHRF9_AkZ&ap=1",
+       "official": false
+      },
+      {
+       "source": "Super.com",
+       "total": 102,
+       "link": "https://www.google.com/travel/lodging/clk?pc=AJ0xEyj4PTJtz0n57ER5X0M1W9C1e1FLAOX67CnE_KE914sciFtNgMFdt_i6M269Vz1AA4aUAkWNUIZgm_2jbEWNEPHpCNAmgelilDUw7bQphoKcz5HqlEk373u9zbA2BlTV_s0TQbzj1TsGQ5O1wRgYW34LD6sBRG2AdzrbyFUyQdVhf1QrDT6VBOadXQ&pcurl=https://www.super.com/travel/transition/?data%3Dprice%3D16945.88%2526total_price%3D17843.0%2526retail_price%3D17429.29%2526retail_total_price%3D18352.0%2526request_id%3D10962786389281757184%2526ps%3D22273116%2526pb%3D0-slAkZlDjP06IhVxwa_7O6xhTIE58h3H1dw8zhmV9rxdWWb6fJKnwZcDgnlCv6szHmAK9N2yPjSGNu5C_zznjvixbguoRLkP3B32JvH-7Wg4S3xNB6aqMECZeflKMI6Lkv2M8qe6qN2KLnjsuo_WGZ9CV-0gd61SRn0IJ-H2mQ%25253D%2526gha_pull_request%3DTrue%2526alwd_rand%3Dfalse%2526gt%3D1795658868%2526sg%3D06I8k%2526sid%3DGHA_MD2%2526cmab_id%3D33%2526ru%3D1817391600%2526ib%3Dfalse%2526all_inclusive%3Dfalse%26utm_source%3Dgha%26utm_content%3Dlocaluniversal%26currency%3DJPY%26user_country%3DMX%26verification%3Dfalse%26rate_rule_ids%3D%26date_type%3Dselected%26rate_rule_id%3Dsignedout_desktop%26display_currency%3DEUR%26display_all_inclusive_price%3D102.11%26checkin_at%3D2027-08-08%26checkout_at%3D2027-08-09%26provider_hotel_id%3D10005970067%26provider%3Dhtl%26num_adults%3D2%26children%3D%5B%5D%26hotel_campaign%3D%26utm_campaign%3D%26user_locale%3Den-MX%26user_list_id%3D%26utm_medium%3Dorganic%26utm_id%3Dgha_organic&s=ALZo0YJwQsNAhDX1ho5BIHrnhgLQ&ap=1",
+       "official": false
+      },
+      {
+       "source": "Rakuten Travel",
+       "total": 105,
+       "link": "https://www.google.com/travel/lodging/clk?pc=AJ0xEygVvY08CrangJaNQqF3_73UeiRiygF4vHFyTzFhQef2byzHa9BE1fKKhzdqHxnMPShbEMVQuL1MGSP-_xnsv5vAp-j8UiNgR64_tUmBaSD0bFQZ9dQ-qGoF6gR6FJeM9GbwkRH6dS6e0KCWU2IpCD32L1tBjwFIk8nxTMKlwe-JhM5fynxHpgGDgSd_dV21k84XVK_MLBsqiw&pcurl=https://travel.rakuten.com/usa/en-us/hotel_info_item/10123456863234?startServiceDate%3D20270808%26endServiceDate%3D20270809%26numberOfUnits%3D1%26numberOfAdults_1%3D2%26numberOfChildren_1%3D0%26ageOfChild_1-1%3D%26scid%3Dwe_trv_paid_ha_mex_pc%26ifd%3D147027%26iasid%3Dweg_trmi_travel-inbound-booking_%26ultra_advid%3D9382700371%26ultra_cid%3D%26ultra_agid%3DMX&s=ALZo0YKTctnCgMaPaXWdstuPVKfB&ap=1",
+       "official": false
+      },
+      {
+       "source": "Reserving",
+       "total": 105,
+       "link": "https://www.google.com/travel/lodging/clk?pc=AJ0xEyiU6JCJfQwu8PCwNR-nvPCNiNL-KFO3YY2PINnRQxnj4bVH1zhOiyujF24w8ovdH_9RSRgwC88arigp8C0vjZ98OQTrd08esfjHvpaA8YoiQ3RUpkpCw7-JkRK2Aw2DOdwVfQvrWWa1kQJSa-bfd7aGs1mtzGn-ZxlNCz_XhOGZfcwpzO3XJA_wDGnERuUM3A&pcurl=https://h-en.reserving.com/search?i%3D7103%26rf%3DGOOGLEHOTELS%26portal%3Drsvcom%26lang%3Den%26auto%3D1%26tipo%3DS%26id%3D439682%26numero_habs%3D1%26no_adultos_hab1%3D2%26no_ninos_hab1%3D0%26fecha_entrada%3D08%252F08%252F2027%26fecha_salida%3D09%252F08%252F2027%26refp%3D105.01%26campaing-id%3D%26tp%3D%26moneda%3DEUR%26device%3Ddesktop%26pais_dom%3DMX%26sg%3Db%3D105.12,b$%3DJPY,bhab%3D1930,big%3D2027-08-06T16:59:00%2B02:00,bmid%3D100,bpd%3Des,bpt%3D9.56,breg%3D11,bwp%3D0Y2Vnro9MhM,ts%3D2026-11-26T08:47:58%2B01:00/B:FEB44B8D147BA97344E20B5F5A83743885470A744A0AF393E957D6A9%26c3%3Dmode%3DP,d%3D2,ts_id%3D6792782545249230%26r%3DCAMPAIGN-ID%3D;TRACKING-PARAM%3D;RATE-RULE%3DBASERATE;PRICE-DISPLAYED-TOTAL%3D105.01;DEFAULT-DATE%3D0;CLICK-TYPE%3Dhotel;USER-COUNTRY%3DMX;DEVICE%3Ddesktop;SITE%3Dlocaluniversal;USER-LANGUAGE%3Den;USER-CURRENCY%3DEUR;POS%3DALL-ALL-ALL-RSVCOM;AD-CLICK%3D0;PAYMENT-ID%3Dfree;C2%3Db%3D105.12,b$%3DJPY,bhab%3D1930,big%3D2027-08-06T16:59:00%2B02:00,bmid%3D100,bpd%3Des,bpt%3D9.56,breg%3D11,bwp%3D0Y2Vnro9MhM,ts%3D2026-11-26T08:47:58%2B01:00/B:FEB44B8D147BA97344E20B5F5A83743885470A744A0AF393E957D6A9;C3%3Dmode%3DP,d%3D2,ts_id%3D6792782545249230&s=ALZo0YLbJJIvHQ3k31q9mnAcIyQs&ap=1",
+       "official": false
+      }
+     ],
+     "address": "Hotel Route Inn, 4 Chome-10-10番28号 Ichiwaki, Hashimoto, Wakayama 648-0073, Japan",
+     "checkIn": "12:00 AM",
+     "excludedAmenities": [
+      "Pool",
+      "Fitness center",
+      "Pet-friendly"
+     ]
+    },
+    {
+     "name": "Fukuchi-in Temple (Pilgrim's Lodging)",
+     "type": "hotel",
+     "total": 227,
+     "nightlyEur": 227,
+     "rating": 4.2,
+     "reviews": 742,
+     "locationRating": 4.6,
+     "hotelClass": 3,
+     "kmToCentre": 0.3,
+     "transportPPday": 0.0,
+     "effectiveTotal": 227,
+     "link": "http://www.fukuchiin.com/",
+     "token": "ChkIz7CA0vmuuor7ARoML2cvMTF4Y3o5ejVkEAE",
+     "amenities": [
+      "Public bath",
+      "Onsen",
+      "Open air bath",
+      "Free Wi-Fi",
+      "Free parking",
+      "Restaurant",
+      "Kid-friendly"
+     ],
+     "nearby": [
+      "Kongobu-ji",
+      "Koyakeisatsu-mae",
+      "Kansai International Airport"
+     ],
+     "prices": [
+      {
+       "source": "Ikyu.com",
+       "total": 227,
+       "link": "https://www.google.com/travel/lodging/clk?pc=AJ0xEyj_3oQ8jDUJv4cR7Bma6lfwjveQf5yIoashH5M96fYp8EWIAXNnzvSVPEhvxgj4wq5eMICivl5keI3jznLKhuscXQfw7u_9u-QSJvYPElyaKs6aWRhjEYEiv3eknJBu33l4hf9VYJd0TmiVHDVx0QWQ78wQZbFbltioJ18eadvGnC9uIA&pcurl=https://www.ikyu.com/ikCo.ashx?cosid%3Dgooglehpa_enUS%26cosuid%3D_00917000_free%26surl%3D%252Fen-us%252F00917000%252F%253Fpln%253D11544738%2526rm%253D10256018%2526cid%253D20270808%2526cod%253D20270809%2526ppc%253D2%2526si%253D1%26adcid%3D%26adgid%3D%26adfid%3D00917000%26datetype%3Dselected&s=ALZo0YKz8ZiUNwlydHYEtlytw2C6&ap=1",
+       "official": false
+      },
+      {
+       "source": "Ikyu.com",
+       "total": 227,
+       "link": "https://www.google.com/aclk?sa=l&ai=DChsSEwjxuKWYzaaYAxVkqAMAHVt1CSEYACICCAEQARoCb2E&co=1&ase=2&gclid=EAIaIQobChMI8bilmM2mmAMVZKgDAB1bdQkhEAoYASABEgLwzfD_BwE&cid=CAASugHkaOIp5Sl4HZu9dGeA33iPmldJ-HtOlJgjLwCTGePeTDLH9QPmpv64U5Y8Fv8JDhSyzneEvGv5374kD3Y3l95kEl0ez5vnVStp90Ho9rBw_FLDqdcUVu2gDxhye5F46j5fbtKEZqk0b6raNVhg-J8gl-ihOFiVSRRILQy9fzTNY8HOC65uenXLZ9v_Ui1FIPqLEnZgPSNKhnkTljFznLGZDqxZdG7BtAcG3uy7PwLlLWxto29qAW0kHTU&category=acrcp_v1_48&sig=AOD64_24_V3o6GHr8Rlz_Stwl_PCr0VZrw&adurl",
+       "official": false
+      },
+      {
+       "source": "JAPANiCAN.com",
+       "total": 255,
+       "link": "https://www.google.com/travel/lodging/clk?pc=AJ0xEyi_6kaToRE5iGEw1l2phoiJn0B24uxtFSD201LDsz5urKnwGc_Bl7hqHDtD5Dr_fNA2mXyVzk7B_UQKCcWA3qkgfU_LxMl1O-0U5E60C4tEXhcvuHtMFGv1ppmsIIlgEuyjE4-t__oYih_mF6MGcaUZ8T1KcO4UjNLaEZI6vYKUDrlF7Ol2QKSH&pcurl=https://www.japanican.com/ShisetsuDetail.aspx?cid%3D1913979%26rr%3Drow_desktop%26hid%3D9076220%26checkin%3D2027-08-08%26checkout%3D2027-08-09%26utm_medium%3Dcpc%26utm_source%3Dhs%26utm_campaign%3Dhs_japanican_hs-MX%26utm_content%3Dhs__meta_9076220_%26adType%3D0%26default_date%3Dfalse%26mpt%3DNlJzRVViUjI5UG4xazF2amxzdERNSC9PdnJaV3pTRThWUTU3dTEycWNOQkM3MjFJMGMwdFNvN3JEMHJ3UWkzSHRQNUVWTEhJUjV1V0lWdGU%26Currency%3DEUR%26gaClickSrc%3D%26clickType%3Dhotel%26lang%3Den%26pkgId%3DBreakfast_Dinner_false%26PriceFee%3D0.00%26PriceTotal%3D254.83%26PriceTax%3D25.18%26PartnerCurrency%3DJPY%26NumberOfRooms%3D1%26NumberOfAdults%3D2%26NumberOfChildren%3D0%26childages%3D&s=ALZo0YLtYvGfiTMGPk3ZIRvvA-7a&ap=1",
+       "official": false
+      },
+      {
+       "source": "JAPANiCAN.com",
+       "total": 255,
+       "link": "https://www.google.com/aclk?sa=l&ai=DChsSEwjxuKWYzaaYAxVkqAMAHVt1CSEYACICCAEQAxoCb2E&co=1&ase=2&gclid=EAIaIQobChMI8bilmM2mmAMVZKgDAB1bdQkhEAoYAiABEgLUnfD_BwE&cid=CAASugHkaOIp5Sl4HZu9dGeA33iPmldJ-HtOlJgjLwCTGePeTDLH9QPmpv64U5Y8Fv8JDhSyzneEvGv5374kD3Y3l95kEl0ez5vnVStp90Ho9rBw_FLDqdcUVu2gDxhye5F46j5fbtKEZqk0b6raNVhg-J8gl-ihOFiVSRRILQy9fzTNY8HOC65uenXLZ9v_Ui1FIPqLEnZgPSNKhnkTljFznLGZDqxZdG7BtAcG3uy7PwLlLWxto29qAW0kHTU&category=acrcp_v1_48&sig=AOD64_1fTG2ziVxKpfn6G5j5XeeifWUy9g&adurl",
+       "official": false
+      }
+     ],
+     "address": "657 Koyasan, Koya, Ito District, Wakayama 648-0211, Japan",
+     "checkIn": "3:00 PM",
+     "excludedAmenities": [
+      "Pool",
+      "Fitness center",
+      "Pet-friendly"
+     ]
+    },
+    {
+     "name": "Koyasan Saizen-in Temple",
+     "type": "hotel",
+     "total": 258,
+     "nightlyEur": 258,
+     "rating": 4.5,
+     "reviews": 370,
+     "locationRating": 4.1,
+     "hotelClass": 3,
+     "kmToCentre": 0.4,
+     "transportPPday": 0.0,
+     "effectiveTotal": 258,
+     "link": "http://www.koya.or.jp/?utm_source=GBP&utm_medium=GBP&utm_term=GBP&utm_content=GBP&utm_campaign=GBP",
+     "token": "ChgI-sud0JvTo428ARoLL2cvMXR4NDZfbjUQAQ",
+     "amenities": [
+      "Free Wi-Fi",
+      "Free parking"
+     ],
+     "nearby": [
+      "Kongobu-ji Danjo Garan (Elevated Precinct)",
+      "Koyasan koukou-mae",
+      "Kansai International Airport"
+     ],
+     "prices": [
+      {
+       "source": "Ikyu.com",
+       "total": 258,
+       "link": "https://www.google.com/travel/lodging/clk?pc=AJ0xEyhV32DCz3V7EaxNt-cCekoVU2lLf_iqRg80ZLTbIGeMGUcKM3eTFFyCNKdlMPeDunFrSraaXQCqLZv8oBObwwJtojsXlIFD3bldsc2U0SbykNptDUOwgrGyJoc169vjS3t7TSeZy43DZD_DoM1i0s252etOacXHFYfKOQVEdOzbqgAvWw&pcurl=https://www.ikyu.com/ikCo.ashx?cosid%3Dgooglehpa_enUS%26cosuid%3D_00908635_free%26surl%3D%252Fen-us%252F00908635%252F%253Fpln%253D10729450%2526rm%253D10228455%2526cid%253D20270808%2526cod%253D20270809%2526ppc%253D2%2526si%253D1%26adcid%3D%26adgid%3D%26adfid%3D00908635%26datetype%3Dselected&s=ALZo0YJGwhdy7-axb_T7GCMf76YK&ap=1",
+       "official": false
+      },
+      {
+       "source": "Ikyu.com",
+       "total": 258,
+       "link": "https://www.google.com/aclk?sa=l&ai=DChsSEwiwi9OZzaaYAxUSiWYCHdFCNsMYACICCAEQARoCc20&co=1&ase=2&gclid=EAIaIQobChMIsIvTmc2mmAMVEolmAh3RQjbDEAoYAiABEgImzPD_BwE&cid=CAASugHkaAup831y2nVrP1NaxTqaNlzyw1JucpxKwOfgZqhRZVdipWtv7UYBIQY_tp7JDBsemw1Jy_9mTuIbJ4R6SzExJrFEM1xdETOltcSHyn8xQl7Je8JvO2XtAZFWdEU_YwpR69FAb9Z9nxI-GBKmMUpNwWF1HZA2knkBYp5tUTDJKrhaOZlgRsQ6rVw0n1UY6lnp3Nyg7jDdwqAbNVwgQrDk5TSqkBkXpldu2UXXWatbe26UVQh5iLv82M4&category=acrcp_v1_48&sig=AOD64_211xolzVDHybeU47Xu44kmRgW_FA&adurl",
+       "official": false
+      },
+      {
+       "source": "Booking.com",
+       "total": 398,
+       "link": "https://www.google.com/travel/lodging/clk?pc=AJ0xEygSuAKN6IMtws9RBMFYnA2z7Bfscg2CKnVXpnbdSOoIvN0gayK_veEBJEn2hgXl0GOvH_cRlg8Fc5BC8cSZohG88Livu-vmcXb0_sParpecaH1abB5nbUsgvjy7hWTRV6X6wvByIUrVd4wiI406U0cjaSuU29_6wt3vKePFO8dIub1-q-fDY4hbh5rXGiekrD9llA&pcurl=https://www.booking.com/searchresults.en.html?dest_id%3D1171809%26highlighted_hotels%3D1171809%26dest_type%3Dhotel%26checkin%3D2027-08-08%26checkout%3D2027-08-09%26group_adults%3D2%26req_adults%3D2%26show_room%3D117180914_437440186_2_17_0_1291%26lang%3Den%26selected_currency%3DEUR%26exrt%3D0.00572283%26ext_price_total%3D397.67%26ext_price_tax%3D40.56%26xfc%3DJPY%26hca%3Dm%26group_children%3D0%26req_children%3D0%26%26ts%3D1795711397%26no_rooms%3D1%26edgtid%3DucTVZ7YjSE-GO8Aq0p6fzw%26efpc%3DaUkLkaaUkLkaVQ%26utm_source%3Dmetagha%26utm_medium%3Dlocaluniversal%26utm_campaign%3DID%26utm_term%3Dhotel-1171809%26utm_content%3Ddev-desktop_los-1_bw-254_dow-Sunday_defdate-0_room-0_gstadt-2_rateid-public_aud-0_gacid-_mcid-50_bc-ABHhYQ_ppa-0_clrid-0_ad-0_gstkid-0_checkin-20270808_ppt-B%26aid%3D2127680%26label%3Dmetagha-link-LUID-hotel-1171809_dev-desktop_los-1_bw-254_dow-Sunday_defdate-0_room-0_gstadt-2_rateid-public_aud-0_gacid-_mcid-50_bc-ABHhYQ_ppa-0_clrid-0_ad-0_gstkid-0_checkin-20270808_ppt-B&s=ALZo0YJ6iflAIEQstPAnQksrP9n7&ap=1",
+       "official": false
+      },
+      {
+       "source": "Booking.com",
+       "total": 398,
+       "link": "https://www.google.com/aclk?sa=l&ai=DChsSEwiwi9OZzaaYAxUSiWYCHdFCNsMYACICCAEQAxoCc20&co=1&ase=2&gclid=EAIaIQobChMIsIvTmc2mmAMVEolmAh3RQjbDEAoYASABEgJt2_D_BwE&cid=CAASugHkaAup831y2nVrP1NaxTqaNlzyw1JucpxKwOfgZqhRZVdipWtv7UYBIQY_tp7JDBsemw1Jy_9mTuIbJ4R6SzExJrFEM1xdETOltcSHyn8xQl7Je8JvO2XtAZFWdEU_YwpR69FAb9Z9nxI-GBKmMUpNwWF1HZA2knkBYp5tUTDJKrhaOZlgRsQ6rVw0n1UY6lnp3Nyg7jDdwqAbNVwgQrDk5TSqkBkXpldu2UXXWatbe26UVQh5iLv82M4&category=acrcp_v1_48&sig=AOD64_0TR0OjXMcL4_fNNz45kETezqRCog&adurl",
+       "official": false
+      },
+      {
+       "source": "Hotels.com",
+       "total": 441,
+       "link": "https://www.google.com/travel/lodging/clk?pc=AJ0xEyiAMeGQNfXDN5hSEjy4Qg7GP-lfbmGXBirHpGITYUVCQEpUhVbBbj8tFfWUlJmLDmb2ZLf9Fs0Ov_CTGhOoiojogn-_dqz_DKMbQv240ZgZqV3eOTMxZ7MwYFHcCoIGBnQAujTZvTLkqdgHbUgwOUx6B1vDsYam1FaxrlXccR2V-eNlc_ZVvx0IYNJfBV8&pcurl=https://id.hotels.com/Hotel-Search?selected%3D27280781%26startDate%3D2027-08-08%26endDate%3D2027-08-09%26locale%3Den_GB%26siteid%3D321200046%26mdpcid%3DHCOM-ID.META.HPA.HOTEL-ORGANIC-desktop.HOTEL%26MDPDTL%3DHTL.27280781.20270808.20270809.DDF.254.CID..AUDID.%26adults%3D2%26children%3D%26mctc%3D10%26mpf%3D441.23%26mpg%3DEUR%26mpl%3DIDR%26mpj%3D40.49%26mpr%3D0.00%26rffrid%3Dsem.hcom.ID.156.024.localuniversal.02.desktop-1.kwrd%3DGGMETA.27280781IDen-20270808-N-ABW%3D254-camp%3D-aud%3D-N%26rateplanid%3D272057273%26mpm%3D24%26mpn%3D217819332%26mpo%3DEC%26mpe%3D1795672485%26mpp%3D1&s=ALZo0YI8nevsmU7zXHACJ5H_GVyw&ap=1",
+       "official": false
+      }
+     ],
+     "address": "154 Koyasan, Koya, Ito District, Wakayama 648-0289, Japan",
+     "checkIn": "3:00 PM",
+     "excludedAmenities": [
+      "Pool",
+      "Hot tub",
+      "Fitness center",
+      "Spa",
+      "Pet-friendly"
+     ]
+    },
+    {
+     "name": "Kongo Sammai-in",
+     "type": "hotel",
+     "total": 278,
+     "nightlyEur": 278,
+     "rating": 4.2,
+     "reviews": 694,
+     "locationRating": 4.3,
+     "hotelClass": null,
+     "kmToCentre": 0.4,
+     "transportPPday": 0.0,
+     "effectiveTotal": 278,
+     "link": "https://www.kongosanmaiin.or.jp/",
+     "token": "ChcI5telgenx8qBbGgsvZy8xMjI0MTBkdhAB",
+     "amenities": [
+      "Public bath",
+      "Private bath",
+      "Wi-Fi",
+      "Parking",
+      "Restaurant"
+     ],
+     "nearby": [
+      "Kongobu-ji",
+      "Senjuin-bashi",
+      "Kansai International Airport"
+     ]
+    },
+    {
+     "name": "Dai'en-in Temple (Pilgrim's Lodging)",
+     "type": "hotel",
+     "total": 314,
+     "nightlyEur": 314,
+     "rating": 4.3,
+     "reviews": 212,
+     "locationRating": 4.6,
+     "hotelClass": null,
+     "kmToCentre": 0.5,
+     "transportPPday": 0.0,
+     "effectiveTotal": 314,
+     "link": "https://hpdsp.jp/daienin/",
+     "token": "ChgIoeWp6pf1t8DMARoLL2cvMTIyN2QzdmIQAQ",
+     "amenities": [
+      "Public bath",
+      "Free Wi-Fi",
+      "Parking",
+      "Kid-friendly"
+     ],
+     "nearby": [
+      "Fudo-in",
+      "Rengedani",
+      "Kansai International Airport"
+     ]
+    },
+    {
+     "name": "Joki-in Temple (Pilgrim's Lodging)",
+     "type": "hotel",
+     "total": 365,
+     "nightlyEur": 365,
+     "rating": 4.6,
+     "reviews": 274,
+     "locationRating": 4.5,
+     "hotelClass": 3,
+     "kmToCentre": 0.1,
+     "transportPPday": 0.0,
+     "effectiveTotal": 365,
+     "link": "https://jokiin.jp/",
+     "token": "ChgI08eqrt3tueHjARoLL2cvMXRjd2Z5aDIQAQ",
+     "amenities": [
+      "Public bath",
+      "Free Wi-Fi",
+      "Parking"
+     ],
+     "nearby": [
+      "Kongobu-ji",
+      "Kongobuji-mae",
+      "Kansai International Airport"
+     ]
+    }
+   ]
+  }
+ }
+}
