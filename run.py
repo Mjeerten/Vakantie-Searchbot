@@ -295,6 +295,14 @@ def merge_checks(*lists):
     return list(best.values())
 
 
+MAX_STOPS, MIN_LAYOVER = 2, 90
+
+
+def safe_connection(o):
+    return (not o.get("airportChange") and not o.get("selfTransfer") and (o.get("stops") or 0) <= MAX_STOPS
+            and all(m >= MIN_LAYOVER for m in o.get("layoverMins") or []))
+
+
 def run_check(plan, nights, origin, depart, mode):
     fin, fout = plan["flyIn"], plan.get("flyOut") or plan["flyIn"]
     ret = (D(depart) + dt.timedelta(days=nights + 1)).isoformat()
@@ -304,12 +312,16 @@ def run_check(plan, nights, origin, depart, mode):
          "checkedAt": dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"), "url": r["url"]}
     if mode == "rt" and fin != fout:
         c["backTrainPP"] = leg_cost(plan["stops"][-1]["city"], plan["stops"][0]["city"])[0]
-    if r["offers"]:
+    if r["offers"] and not any(safe_connection(o) for o in r["offers"]):
+        c["error"] = "only risky connections (self transfer, 3+ stops or a change under 90 min)"
+    elif r["offers"]:
         # cheapest after the comfort penalty (long or night flights), not just the cheapest
         # never a layover where you must change airports (e.g. land at London City, depart from Heathrow)
-        same = [o for o in r["offers"] if not o.get("airportChange")]
-        scored = [(comfort({"out": o, "compare": o["pricePP"]})[0], o) for o in (same or r["offers"])]
-        scored = [x for x in scored if x[0] is not None] or [(o["pricePP"], o) for o in r["offers"]]
+        # safe connections only: one ticket (the airline rebooks you if a delay makes you miss the next flight),
+        # at most 2 stops and at least 90 min for every change (time for walking, security and a small delay)
+        same = [o for o in r["offers"] if safe_connection(o)]
+        scored = [(comfort({"out": o, "compare": o["pricePP"]})[0], o) for o in same]
+        scored = [x for x in scored if x[0] is not None] or [(o["pricePP"], o) for o in same]
         o = min(scored, key=lambda x: x[0])[1]
         c.update({"pricePP": o["pricePP"], "airline": o["airline"], "out": o, "cheapestPP": min(x["pricePP"] for x in r["offers"])})
     else:

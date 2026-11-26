@@ -77,6 +77,10 @@ def verify_flight(fl):
     out = fl.get("out") or {}
     air, dep = (out.get("airline") or (fl.get("airlines") or [""])[0]), _dep_key(out)
     same = [o for o in res["offers"] if o.get("airline") == air and _dep_key(o) == dep]
+    if same and not any(run.safe_connection(o) for o in same):
+        v.update(status="not found", note=f"{air} departing {dep} has a risky connection (self transfer, 3+ stops or a change under 90 min)")
+        return v
+    same = [o for o in same if run.safe_connection(o)]
     v["cheapestNowPP"] = min(o["pricePP"] for o in res["offers"])
     if not same:
         v.update(status="not found", note=f"{air} departing {dep} is no longer listed; cheapest on the page now €{v['cheapestNowPP']}")

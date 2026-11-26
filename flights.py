@@ -60,6 +60,12 @@ def parse(body):
             "from": leave.group(1) if leave else None, "departs": f"{leave.group(3)} {leave.group(2)}" if leave else None,
             "to": leave.group(4) if leave else None, "arrives": f"{leave.group(6)} {leave.group(5)}" if leave else None,
             "layovers": lay[:3],
+            # "is a 1 hr 35 min layover" / "is a 55 min layover" / "10 hr 5 min overnight layover"
+            "layoverMins": [int(h or 0) * 60 + int(mi or 0) for h, mi in
+                            re.findall(r"(?:(\d+) hr)?\s*(?:(\d+) min)?\s+(?:overnight )?layover at", lab) if h or mi],
+            # Google marks itineraries on separate tickets ("Self transfer", "Separate tickets booked together"):
+            # a missed connection there is your own problem, so those are skipped
+            "selfTransfer": bool(re.search(r"self[- ]transfer|separate tickets", lab, re.I)),
             # Google says e.g. "Change of airport" / "airport change" / "transfer to Heathrow"; a layover naming two airports counts too
             "airportChange": bool(re.search(r"change (of )?airports?|airport change|different airport|transfer to", lab, re.I))
                              or any(len(re.findall(r"Airport", x)) > 1 for x in lay),
