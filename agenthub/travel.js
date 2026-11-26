@@ -191,6 +191,39 @@
     for (const t of rest) box.append(tripCard(t));
   }
 
+  /* every route, both directions, side by side: the quick comparison above the detailed cards */
+  function renderTable() {
+    const box = $("tvTable"); if (!box) return; box.replaceChildren();
+    const list = S.trips.filter((t) => t.best);
+    if (!list.length) return;
+    const ORDER = ["jp-golden", "jp-koyasan", "jp-classic", "jp-kanazawa"];
+    const fam = (t) => String(t.planId || "").replace(/-rev$/, "");
+    const rk = (t) => { const i = ORDER.indexOf(fam(t)); return t.country !== "Japan" ? 50 : i < 0 ? 9 : i; };
+    list.sort((a, b) => rk(a) - rk(b) || a.best.totalPP - b.best.totalPP);
+    const minT = Math.min(...list.map((t) => t.best.totalPP)), maxB = S.cfg?.budgetMaxPP || 2500;
+    const checks = (b) => { const v = [b.flight?.verify, ...(b.stays || []).map((s) => s.verify)].filter(Boolean);
+      if (!v.length) return "–"; const n = (k) => v.filter((x) => x.status === k).length;
+      return [n("confirmed") && `✓${n("confirmed")}`, n("changed") && `↻${n("changed")}`, n("not found") && `⚠${n("not found")}`].filter(Boolean).join(" ") || "–"; };
+    const tb = el("table", { class: "tv-table" });
+    tb.append(el("thead", {}, el("tr", {}, ...["Route", "Total p.p.", "Dates", "Airport", "Flight", "Stays", "Checked"].map((h) => el("th", { text: h })))));
+    const body = el("tbody");
+    for (const t of list) {
+      const b = t.best, fl = b.flight || {}, p = b.parts || {};
+      const tr = el("tr", { class: (b.totalPP === minT ? "best " : "") + (b.totalPP > maxB ? "over" : "") },
+        el("td", {}, el("b", { text: t.country === "Japan" ? (t.name || t.planId).replace(/^Japan /, "").replace(/:.*/, "") : (t.name || t.planId).replace(/:.*/, "") + " · " + (b.stays || []).map((s) => s.city).filter((c, i, a) => a.indexOf(c) === i).slice(0, 2).join("–") }), el("small", { text: " " + (b.stays || []).map((s) => s.city + " " + s.nights).join(" · ") })),
+        el("td", {}, el("b", { text: eur(b.totalPP) })),
+        el("td", { text: `${day(b.depart)} – ${day(b.return)} · ${b.days}d` }),
+        el("td", { text: (fl.origin || "–") + (fl.anyHomeAirport ? "*" : "") }),
+        el("td", { text: fl.pricePP ? `${eur(fl.pricePP)} ${(fl.airlines || []).join("/")}` : "–" }),
+        el("td", { text: eur(p.stays || 0) }),
+        el("td", { text: checks(b) }));
+      body.append(tr);
+    }
+    tb.append(body);
+    box.append(el("div", { class: "tv-tablewrap" }, tb),
+      el("p", { class: "hint", text: "All in per person: flight, bag, stays, trains, food, activities, local transport. * = home may land at another of your airports. Checked: ✓ price confirmed by the control bot, ↻ price changed and updated, ⚠ not found again." }));
+  }
+
   function renderPackages() {
     const box = $("tvPkgWrap"); box.replaceChildren();
     const rows = [];
@@ -238,7 +271,7 @@
     box.append(el("div", { class: "log" }, el("table", {}, el("thead", {}, el("tr", {}, ["When", "Result", "Sources"].map((h) => el("th", { text: h })))), tb)));
   }
 
-  function renderAll() { renderTop(); renderReadouts(); renderFeed(); renderPackages(); renderRoutes(); renderLog(); }
+  function renderAll() { renderTop(); renderReadouts(); renderTable(); renderFeed(); renderPackages(); renderRoutes(); renderLog(); }
 
   /* ---------- settings drawer ---------- */
   function checks(boxId, options, selected, lab = (x) => x) {

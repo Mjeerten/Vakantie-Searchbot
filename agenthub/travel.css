@@ -35,3 +35,13 @@
 /* divider between the Japan trips and the rest of the feed */
 #tvView .tv-divider { margin: 18px 0 6px; padding-top: 10px; border-top: 1px dashed var(--line);
   font: 500 11px/1 var(--f-mono); letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
+
+.tv-tablewrap { overflow-x: auto; border: 1px solid var(--line); }
+.tv-table { width: 100%; border-collapse: collapse; font: 12px/1.35 var(--f-mono); min-width: 640px; }
+.tv-table th { text-align: left; color: var(--muted); font-weight: 500; padding: 8px 10px; border-bottom: 1px solid var(--line); white-space: nowrap; }
+.tv-table td { padding: 8px 10px; border-bottom: 1px solid var(--line); vertical-align: top; }
+.tv-table td small { color: var(--muted); display: block; }
+.tv-table td:nth-child(2) { white-space: nowrap; }
+.tv-table tr.best td:nth-child(2) b { color: var(--good); }
+.tv-table tr.over td:nth-child(2) b { color: var(--amber); }
+#tvView .flags .chip { white-space: normal; max-width: 100%; height: auto; line-height: 1.35; padding-top: 3px; padding-bottom: 3px; overflow-wrap: anywhere; }
