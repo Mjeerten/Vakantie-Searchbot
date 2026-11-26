@@ -60,8 +60,13 @@ def offer(x):
             "airportChange": any(s["departure_airport"]["id"] != p["arrival_airport"]["id"] for p, s in zip(f, f[1:]))}
 
 
+# SerpApi takes airport codes, not Google's city codes (TYO/OSA gave "no results")
+CITY = {"TYO": "HND,NRT", "OSA": "KIX,ITM", "SPK": "CTS", "NGO": "NGO", "FUK": "FUK"}
+
+
 def search(key, kind, depart, ret, fin, fout, airports):
     ap = ",".join(airports)
+    fin, fout = CITY.get(fin, fin), CITY.get(fout, fout)
     q = {"engine": "google_flights", "currency": "EUR", "gl": "nl", "hl": "en", "adults": 1, "api_key": key}
     if kind == "rt":
         q.update(type=1, departure_id=ap, arrival_id=fin, outbound_date=depart, return_date=ret)
@@ -141,7 +146,7 @@ def main():
     jobs.sort(key=lambda j: {"sweep": 0, "recheck": 1, "drop": 2}[j[0]])
     cap = SWEEP_CAP if sweep else max(0, DAY_CAP - state.get("usedToday", 0))
     cap = min(cap, MONTH_CAP - state.get("usedMonth", 0))
-    done = 0
+    done, empty = 0, 0
     for why, kind, depart, ret, fin, fout, ps in jobs:
         if done >= cap or left - done <= KEEP_LEFT:
             print("SerpApi: daily/monthly cap or account reserve reached", flush=True)
@@ -150,6 +155,10 @@ def main():
         done += 1
         state["usedToday"] = state.get("usedToday", 0) + 1
         state["usedMonth"] = state.get("usedMonth", 0) + 1
+        empty = 0 if offers else empty + 1
+        if empty >= 2:
+            print("SerpApi: two empty answers in a row, stopping so no searches are wasted", flush=True)
+            break
         safe = [o for o in offers if o["fromId"] in airports and run.safe_connection(o)]
         o = min(safe, key=lambda o: o["pricePP"]) if safe else None
         print(f"SerpApi {why} {kind} {fin}>{fout} {depart}..{ret}: " + (f"EUR {o['pricePP']} {o['fromId']} {o['airline']}" if o else (err or "no safe connection")), flush=True)
