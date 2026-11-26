@@ -691,8 +691,14 @@ def evaluate(plan, cfg, st, do_hotels):
             bag = round(bag / 2)  # one suitcase for the two of you
     # 3) stays for the best date
     stays, cursor = [], D(best["checkin"])
-    for s in plan["stops"]:
+    # a flight home just after midnight (e.g. HND 00:30 on 12 Aug) leaves the evening before: the last hotel night
+    # would be spent at the airport, so book one night less there and say so
+    m = re.search(r"(\d{1,2}):\d{2}\s*(AM|PM)", str(((fl or {}).get("back") or {}).get("departs") or ""))
+    redeye = bool(m) and m.group(2) == "AM" and (int(m.group(1)) % 12) < 6
+    for i, s in enumerate(plan["stops"]):
         n = int(s["nights"])
+        if redeye and i == len(plan["stops"]) - 1 and n > 1:
+            n -= 1
         if do_hotels and not s.get("skipHotel"):
             sv = pick_stay(s.get("hotelCity") or s["city"], cursor.isoformat(), n, rules, fx, {**cfg, **(plan.get("stay") or {})})
         else:
@@ -757,6 +763,8 @@ def evaluate(plan, cfg, st, do_hotels):
     if fl.get("cached"):
         est_flags.append("cached fare (seen by Aviasales users recently), check the live price")
     est_flags += fl.get("comfortFlags") or []
+    if redeye:
+        est_flags.append(f"flight home leaves just after midnight ({fl['back']['departs']}): be at the airport the evening before, so the last stay is one night shorter")
     if fl.get("anyHomeAirport"):
         est_flags.append("searched from all home airports at once: the way home may land at another one of them (e.g. out from DUS, home to AMS); fine by train")
     out.update({"variants": variants, "best": {"ground": ground and ground["detail"],
