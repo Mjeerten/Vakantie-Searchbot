@@ -164,25 +164,25 @@
       "Tokyo": {
         "checkin": "2027-07-28",
         "nights": 5,
-        "source": "owner's choice: cheapest with a good location (Booking.com, checked 26 Nov 2026)",
+        "source": "owner's choice: cheapest private room with a good location (Booking.com + Google Hotels re-check, 26 Nov 2026)",
         "pick": {
-          "name": "plat hostel keikyu minowa forest",
+          "name": "plat hostel keikyu asakusa karin",
           "src": "booking",
-          "total": 231,
-          "nightlyEur": 46,
-          "score10": 8.4,
-          "rating": 4.2,
-          "reviews": 1211,
-          "miles": 4.5,
+          "total": 172,
+          "nightlyEur": 34,
+          "score10": 8.7,
+          "rating": 4.35,
+          "reviews": 1282,
+          "miles": 4.2,
           "beds": "double",
-          "kind": "Private double room, breakfast included; Minowa, Hibiya line to Ueno/Akihabara/Ginza",
-          "url": "https://www.booking.com/hotel/jp/amp-and-hostel-minowa.en-gb.html?checkin=2027-07-28&checkout=2027-08-02&group_adults=2&no_rooms=1"
+          "kind": "Small double room, shared shower and toilet; Asakusa, 5 min walk to Asakusa station (Ginza/Asakusa lines), only 1 left at this price",
+          "url": "https://www.booking.com/hotel/jp/plat-hostel-keikyu.en-gb.html?checkin=2027-07-28&checkout=2027-08-02&group_adults=2&no_rooms=1"
         }
       },
       "Koyasan": {
         "checkin": "2027-08-08",
         "nights": 1,
-        "source": "owner's choice (Booking.com, owner saw EUR 310 on 26 Nov 2026)",
+        "source": "owner's choice (Booking.com, owner saw EUR 310 on 26 Nov 2026); cheaper on Ikyu.com (Japanese site, via Google Hotels 26 Nov): Fukuchi-in EUR 227, Saizen-in EUR 258, Kongo Sanmaiin ~EUR 278",
         "pick": {
           "name": "Kongo Sanmaiin (temple stay)",
           "src": "booking",
@@ -199,18 +199,19 @@
       "Kanazawa": {
         "checkin": "2027-08-02",
         "nights": 2,
-        "source": "owner's choice: cheapest with a good location (Booking.com, checked 26 Nov 2026)",
+        "source": "owner's choice: cheapest private room with a good location (Booking.com + Google Hotels re-check, 26 Nov 2026)",
         "pick": {
-          "name": "CHISUN BUDGET Kanazawa Ekimae",
+          "name": "LINNAS Kanazawa",
           "src": "booking",
-          "total": 85,
-          "nightlyEur": 43,
-          "score10": 8.0,
-          "reviews": 2570,
-          "miles": 1.4,
+          "total": 78,
+          "nightlyEur": 39,
+          "score10": 8.7,
+          "rating": 4.35,
+          "reviews": 927,
+          "miles": 0.7,
           "beds": "double",
-          "kind": "Double room by Kanazawa station",
-          "url": "https://www.booking.com/hotel/jp/chisun-budget-kanazawa-ekimae.en-gb.html?checkin=2027-08-02&checkout=2027-08-04&group_adults=2&no_rooms=1"
+          "kind": "Double room with shared bathroom; between the station and Omicho market/Higashi Chaya, guests 18+ only",
+          "url": "https://www.booking.com/hotel/jp/emblem-stay-kanazawa.en-gb.html?checkin=2027-08-02&checkout=2027-08-04&group_adults=2&no_rooms=1"
         }
       },
       "Kyoto": {
@@ -236,8 +237,8 @@
         "pick": {
           "name": "Via Inn Shin-Osaka West",
           "src": "booking",
-          "total": 61,
-          "nightlyEur": 31,
+          "total": 58,
+          "nightlyEur": 29,
           "score10": 7.8,
           "reviews": 1176,
           "miles": 2.2,
