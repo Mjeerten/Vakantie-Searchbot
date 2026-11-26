@@ -643,7 +643,15 @@ def evaluate(plan, cfg, st, do_hotels):
         out["notes"].append("Route does not fit the travel window.")
         return out
     # live Google prices win; cached Travelpayouts fares only when no Google check exists yet
-    gc = [google_cand(plan, c) for c in st["checks"] if c.get("pricePP")]
+    # a SerpApi check covers every home airport for its dates: an older free-scanner fare for the same dates
+    # that SerpApi did not find again is gone, so it no longer counts
+    serp = {}
+    for c in st["checks"]:
+        if c.get("source") == "serpapi":
+            k = (c["depart"], c.get("return"), c["mode"])
+            serp[k] = max(serp.get(k, ""), c.get("checkedAt", ""))
+    live = [c for c in st["checks"] if c.get("source") == "serpapi" or c.get("checkedAt", "") > serp.get((c["depart"], c.get("return"), c["mode"]), "")]
+    gc = [google_cand(plan, c) for c in live if c.get("pricePP")]
     cands, src = (gc, "google") if gc else (list(st["tp"]), "travelpayouts")
     fl = None
     if cands:
