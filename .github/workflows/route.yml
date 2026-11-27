@@ -1,0 +1,19 @@
+# One-off SerpApi flight check for any route (run by hand). Output is in the job log only.
+name: route-check
+on:
+  workflow_dispatch:
+    inputs:
+      from: {description: "departure airports, comma-separated", required: true, default: "AMS,EIN,RTM,DUS,BRU"}
+      to: {description: "destination airport", required: true}
+      dates: {description: "date pairs dep:ret, comma-separated", required: true}
+      adults: {description: "adults", required: false, default: "1"}
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - name: SerpApi Google Flights
+        env:
+          SERPAPI_KEY: ${{ secrets.SERPAPI_KEY }}
+        run: python3 serp_route.py "${{ github.event.inputs.from }}" "${{ github.event.inputs.to }}" "${{ github.event.inputs.dates }}" "${{ github.event.inputs.adults }}"
