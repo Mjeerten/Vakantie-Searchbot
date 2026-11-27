@@ -19,7 +19,7 @@
   const when = (iso) => { if (!iso) return "never"; const d = new Date(iso); if (isNaN(d)) return "–"; const t = d.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" }); return d.toDateString() === new Date().toDateString() ? "today " + t : d.toLocaleDateString("en-GB", { weekday: "short", day: "numeric", month: "short" }) + " " + t; };
   let toastT; const toast = (t) => { const e = $("tvToast"); e.textContent = t; e.hidden = false; clearTimeout(toastT); toastT = setTimeout(() => e.hidden = true, 2600); };
 
-  const S = { db: null, cfg: null, cfgVer: 0, trips: [], plans: [], pkgs: [], runs: [], connected: false };
+  const S = { db: null, check: null, cfg: null, cfgVer: 0, trips: [], plans: [], pkgs: [], runs: [], connected: false };
   const SEG = [["flight", "Flight", "var(--amber)"], ["bag", "Bag", "var(--dim)"], ["stays", "Stays", "var(--cyan)"], ["transport", "Trains", "#b394ff"], ["food", "Food", "var(--good)"], ["activities", "Activities", "#ff7eb6"], ["local", "Local transport", "var(--muted)"]];
   const INTERESTS = [["city", "City, food & nightlife"], ["culture", "Culture & temples"], ["nature", "Nature & views"], ["beach", "Beach & relaxing"]];
   const COUNTRIES = ["Japan", "China", "Vietnam", "Thailand", "Zuid-Korea"];
@@ -280,7 +280,29 @@
     box.append(el("div", { class: "log" }, el("table", {}, el("thead", {}, el("tr", {}, ["When", "Result", "Sources"].map((h) => el("th", { text: h })))), tb)));
   }
 
-  function renderAll() { renderTop(); renderReadouts(); renderTable(); renderFeed(); renderPackages(); renderRoutes(); renderLog(); }
+  function renderCheck() {
+    const box = $("tvCheck"); if (!box) return; box.replaceChildren();
+    const c = S.check;
+    if (!c || !Array.isArray(c.groups)) { box.append(el("div", { class: "empty" }, el("strong", { text: "No checklist yet" }))); return; }
+    const done = (c.done && typeof c.done === "object") ? c.done : {};
+    const all = c.groups.flatMap((g) => g.items || []), n = all.filter((i) => done[i.id]).length;
+    $("tvCheckS").textContent = `${n} of ${all.length} done. Tick things off; it saves for both of you.`;
+    for (const g of c.groups) {
+      const ul = el("ul", { class: "tv-check" });
+      for (const it of g.items || []) {
+        const id = "tvc-" + String(it.id).replace(/[^\w-]/g, "");
+        const cb = el("input", { type: "checkbox", id, checked: !!done[it.id], disabled: !S.db });
+        cb.addEventListener("change", async () => {
+          const next = { ...done, [it.id]: cb.checked };
+          try { await S.db.doc("travel_config/checklist").update({ done: next }); } catch (x) { cb.checked = !cb.checked; toast("Could not save the tick."); }
+        });
+        ul.append(el("li", { class: done[it.id] ? "done" : "" }, cb, el("label", { for: id, text: it.text || "" })));
+      }
+      box.append(el("div", { class: "tv-check-g" }, el("h3", { text: g.when || "" }), ul));
+    }
+  }
+
+  function renderAll() { renderCheck(); renderTop(); renderReadouts(); renderTable(); renderFeed(); renderPackages(); renderRoutes(); renderLog(); }
 
   /* ---------- settings drawer ---------- */
   function checks(boxId, options, selected, lab = (x) => x) {
@@ -349,6 +371,7 @@
     const rows = (q) => q.docs.map((d) => ({ id: d.id, ...d.data() }));
     const timer = setTimeout(() => { if (!S.connected) { $("tvDbState").textContent = "Not reachable yet"; } }, 10000);
     db.doc("travel_config/settings").onSnapshot((d) => { S.cfg = d.exists ? d.data() : null; if (!d.metadata.fromCache) { S.connected = true; clearTimeout(timer); } renderAll(); }, () => { clearTimeout(timer); renderAll(); });
+    db.doc("travel_config/checklist").onSnapshot((d) => { S.check = d.exists ? d.data() : null; renderCheck(); }, () => {});
     db.collection("travel_trips").onSnapshot((q) => { S.trips = rows(q).map((t) => ({ planId: t.id, ...t })); renderAll(); }, () => {});
     db.collection("travel_plans").onSnapshot((q) => { S.plans = rows(q); renderAll(); }, () => {});
     db.collection("travel_packages").onSnapshot((q) => { S.pkgs = rows(q); renderPackages(); }, () => {});

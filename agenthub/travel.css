@@ -45,3 +45,12 @@
 .tv-table tr.best td:nth-child(2) b { color: var(--good); }
 .tv-table tr.over td:nth-child(2) b { color: var(--amber); }
 #tvView .flags .chip { white-space: normal; max-width: 100%; height: auto; line-height: 1.35; padding-top: 3px; padding-bottom: 3px; overflow-wrap: anywhere; }
+
+/* trip checklist */
+#tvCheck { display: grid; gap: 14px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr)); }
+.tv-check-g { border: 1px solid var(--line, rgba(255,255,255,.12)); border-radius: 10px; padding: 12px 14px; background: var(--panel, transparent); }
+.tv-check-g h3 { margin: 0 0 8px; font-size: 13px; letter-spacing: .04em; text-transform: uppercase; color: var(--amber, inherit); }
+ul.tv-check { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+ul.tv-check li { display: grid; grid-template-columns: 18px 1fr; gap: 8px; align-items: start; font-size: 13px; line-height: 1.45; }
+ul.tv-check input { margin: 2px 0 0; width: 16px; height: 16px; accent-color: var(--cyan, auto); }
+ul.tv-check li.done label { color: var(--muted, #888); text-decoration: line-through; }
