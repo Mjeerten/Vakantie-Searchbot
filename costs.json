@@ -164,7 +164,7 @@
       "Tokyo": {
         "checkin": "2027-07-28",
         "nights": 5,
-        "source": "owner's choice: cheapest private room with a good location; owner saw EUR 189 on Booking.com and EUR 178 on Expedia with their coupon (26 Nov 2026)",
+        "source": "Owner booked and paid (27 Nov 2026). owner's choice: cheapest private room with a good location; owner saw EUR 189 on Booking.com and EUR 178 on Expedia with their coupon (26 Nov 2026)",
         "pick": {
           "name": "plat hostel keikyu asakusa karin",
           "src": "expedia",
@@ -183,12 +183,12 @@
       "Koyasan": {
         "checkin": "2027-08-08",
         "nights": 1,
-        "source": "owner's choice (Booking.com, owner saw EUR 310 on 26 Nov 2026); cheaper on Ikyu.com (Japanese site, via Google Hotels 26 Nov): Fukuchi-in EUR 227, Saizen-in EUR 258, Kongo Sanmaiin ~EUR 278",
+        "source": "Owner booked on Booking (27 Nov 2026): €309 for 2, dinner + breakfast, direct debit scheduled, free cancellation before 25 Jul 2027. owner's choice (Booking.com, owner saw EUR 310 on 26 Nov 2026); cheaper on Ikyu.com (Japanese site, via Google Hotels 26 Nov): Fukuchi-in EUR 227, Saizen-in EUR 258, Kongo Sanmaiin ~EUR 278",
         "pick": {
           "name": "Kongo Sanmaiin (temple stay)",
           "src": "booking",
-          "total": 310,
-          "nightlyEur": 310,
+          "total": 309,
+          "nightlyEur": 309,
           "score10": 8.0,
           "reviews": 339,
           "miles": 0.5,
